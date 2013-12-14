@@ -1,0 +1,203 @@
+\section{Nepřesná znalost stavu}
+
+Dosud jsme předpokládali, že regulátor zná přesně stav systému. Tento předpoklad však často nebývá splněn. Příkladem buďte měřicí přístroj s omezenou přesností, nedostupné stavové komponenty nebo jen \uv{drahý} přístup k přesnějším informacím. Modelem budiž měření stavu systému zatížené stochastickou chybou. Dále ukážeme, jak tyto problémy přeformulovat na problém s přesnou znalostí stavu a řešit modifikovaným DP algoritmem.
+
+Nejprve si zformulujeme základní problém s nepřesnou znalostí stavu. Uvažujme základní problém dle \ref{def:zakl_prob}, ve kterém namísto $x_k$ zná regulátor jen pozorování $z_k$ tvaru
+$$ z_0 = h_0(x_0, v_0), \quad z_k = h_k(x_k, u_{k-1}, v_k), \quad k = \adob{1}{N-1} . $$
+Pozorování $z_k$ náleží prostoru $Z_k$ a náhodné poruchy $v_k$ náleží pravděpodobnostnímu prostoru $(V_k, P_k)$, kde $P_k$ je tvaru
+$$ P_k(\cdot \mid \adob{x_k}{x_0}, \adob{u_{k-1}}{u_0}, \adob{w_{k-1}}{w_0}, \adob{v_{k-1}}{v_0}) . $$
+Počáteční stav je též náhodný, charakterizovaný rozdělením $P_{x_0}$. Dále, stejně jako v původní definici \ref{def:zakl_prob}, rozdělení $P_{w_k}(\cdot \mid x_k, u_k)$ může explicitně záviset pouze na $x_k$ a $u_k$. Nakonec $u_k$ je omezeno ve svých hodnotách množinami $U_k$, které v tomto případě {\em nezávisí} na $x_k$.
+
+Označme si $I_k$ veškerou tou dobou dostupnou informaci, konkrétně
+\begin{align*}
+	I_k &= (\adob{z_0}{z_k}, \adob{u_0}{u_{k-1}}), \quad k = \adob{1}{N-1}, \\
+	I_0 &= (z_0).
+\end{align*}
+
+Strategie $\pi = ( \adob{\mu_0}{\mu_{N-1}} )$ se v tomto případě skládá z funkcí $\mu_k$ zobrazujících informační vektor $I_k$ do množiny zásahů $U_k$. Našim cílem zůstává minimalizovat očekávanou ztrátu, tentokrát tvaru
+$$ J_\pi = \E\limits_{x_0, w_i, v_i} \Biggl\{ g_N(x_N) + \sum\limits_{j=0}^{N-1} g_j \bigl( x_j, \mu_j(I_j), w_j \bigr) \Biggr\} , $$
+kde $x_k$ se vyvíjí podle rovnice
+$$ x_{k+1} = f_k \bigl( x_k, \mu_k(I_k), w_k \bigr) , \quad k = \adob{0}{N-1} $$
+a kontroleru známé měření $z_k$ se vyvíjí podle rovnic
+$$ z_0 = h_0(x_0, v_0), \quad z_k = h_k \bigl( x_k, \mu_{k-1}(I_{k-1}), v_k \bigr), \quad k = \adob{1}{N-1} . $$
+Takto však problém nezapadá do rámce základního problému \ref{def:zakl_prob}.
+
+\subsection{Převod na problém s přesnou znalostí stavu}
+	
+	Stav nového systému pro nás bude veškerá do té doby známá informace, z definice informačního vektoru ihned dostáváme rovnice vývoje systému
+	\begin{align}
+		I_0 &= z_0 , \nonumber\\
+		I_{k+1} &= (I_k, u_k, z_{k+1}), \quad k = \adob{0}{N-2} . \label{eqn:imp_sys}
+	\end{align}
+	Stav takového systému už známe přesně. Dále $u_k$ je náš zásah a $z_{k+1}$ můžeme vnímat jako náhodnou poruchu. Musíme však ověřit, že pravděpodobnostní rozdělení $z_{k+1}$ závisí jen na současném stavu $I_k$ a zásahu $u_k$. Protože ale současný stav zahrnuje všechny předchozí zásahy i poruchy (odp. měřením), závisí pouze na něm a současném zásahu.
+	
+	Dle vztahu $\E(X) = \E\bigl(\E(X \mid Y)\bigr)$ píšeme
+	$$ \E\limits_{w_k}\bigl\{g_k(x_k, u_k, w_k)\bigr\} = \E\limits_{I_k, u_k}\bigg\{ \E\limits_{w_k} \bigl\{g_k(x_k, u_k, w_k) \bigm| I_k, u_k \bigr\} \bigg\} $$
+	a získáváme novou ztrátovou funkci ve tvaru
+	\begin{equation}
+		\tilde{g}_k(I_k, u_k) = \E\limits_{x_k, w_k} \bigl\{ g_k(x_k, u_k, w_k) \bigm| I_k, u_k \bigr\} , \label{eqn:imp_ztr}
+	\end{equation}
+	kde jsme přidali středování přes $x_k$, protože je pro nás neznámé. Potřebné rozdělení bude odvozeno později (rovnost \eqref{eqn:rozdel}).
+	
+	Těmito úpravami jsme dostali systém se znalostí stavu, vývojem podle \eqref{eqn:imp_sys} a ztrátou \eqref{eqn:imp_ztr}. Tento systém už můžeme přímo dosadit do základního DP algoritmu (tvrzení \ref{tvr:DP_alg}). Napišme příslušný DP algoritmus:
+	\begin{align}
+		J_{N-1} (I_{N-1}) = &\min\limits_{u_{N-1} \in U_{N-1}} \Biggl[ \E\limits_{x_{N-1}, w_{N-1}} \Bigl\{ g_N \bigl( f_{N-1} (x_{N-1}, u_{N-1}, w_{N-1}) \bigr) + \nonumber\\
+		&+ g_{N-1} (x_{N-1}, u_{N-1}, w_{N-1}) \Bigm| I_{N-1}, u_{N-1} \Bigr\} \Biggr] \label{eqn:DP_inf_N-1}
+	\end{align}
+	a pro $k = \adob{0}{N-2}$
+	\begin{equation}
+		J_k(I_k) = \min\limits_{u_k \in U_k} \Biggl[ \E\limits_{x_k, w_k, z_{k+1}} \Bigl\{ g_k (x_k, u_k, w_k) + J_{k+1} (I_k, z_{k+1}, u_k) \Bigm| I_k, u_k \Bigr\} \Biggr] . \label{eqn:DP_inf_k}
+	\end{equation}
+	
+\subsection{Statistiky}
+	
+	Hlavním problémem předchozího přístupu je nárust složitosti kvůli růstu informačního vektoru. Dostatečné statistiky omezují informační vektory jen na opravdu nezbytnou informaci. Je ovšem problém obecně odvodit, jak vypadají. Nyní si vystačíme pouze s obecnými statistikami, kterou takovou vlastnost mít nemusí.
+	
+	Předpokládejme, že nalezneme funkci $S_k(I_k)$ takovou, že optimální strategie $\pi^*$ závisí na $I_k$ přes $S_k(I_k)$. Neboli můžeme přepsat minimalizaci $k$-tého kroku DP algoritmu pomocí nějaké funkce $H_k$ jako
+	\begin{equation}
+		\min\limits_{u_k \in U_k} H_k(S_k(I_k), u_k) \label{eqn:stat_min}
+	\end{equation}
+	a zároveň pro takto získanou optimální strategii $\bar{\pi}$ platí
+	$$ \bar{\mu}_k \bigl( S_k(I_k) \bigr) = \mu_k^* (I_k) $$
+	pro každý přípustný vektor $I_k$. Potom funkce $S_k$ nazveme {\em statistikou}.
+	
+	Pokud navíc $S_k$ snižuje dimenzi nebo počet přípustných $I_k$ (což je naše primární o\-če\-ká\-vá\-ní), sníží se použitím výpočetní náročnost. V aplikacích nám navíc bude stačit nalézt statistiku, která bude dávat suboptimální, ale dostatečně dobré řešení.
+	
+\subsection{Filtrační hustota pravděpodobnosti} \label{sec:filtr}
+	
+	Filtrační hustotou respektive rozdělením pravděpodobnosti rozumíme hustotu respektive roz\-dě\-le\-ní tvaru
+	\begin{equation}
+		p(x_k \mid I_k) \textnormal{ resp. } P_{x_k \mid I_k} 
+	\end{equation}
+	a určuje pravděpodobnost stavu $x_k$ při daném informačním vektoru $I_k$.
+	
+	Podmíněně nezávislé veličiny (viz pozorování \ref{poz:podm_nez}) sehrají zásadní roli při odvozování po\-třeb\-ných hustot. Využijeme například $p(w_k \mid I_k, x_k, u_k) = p(w_k \mid x_k, u_k)$, protože $w_k$ závisí explicitně pouze na $x_k$ a $u_k$, je tedy s $I_k$ podmíněně nezávislé. V dalších případech vyplyne podmíněná nezávislost z podobných důvodů, proto i následující předpoklad.
+	
+	\begin{predpoklad}\label{predp:nezav_mer}
+		Předpokládejme navíc, že pravděpodobnostní rozdělení náhodné poruchy pozorování $v_{k+1}$ závisí explicitně {\em pouze} na současném stavu $x_{k+1}$, bezprostředně předchozím zásahu $u_k$ a náhodné poruše systému $w_k$.
+	\end{predpoklad}
+	
+	\begin{tvrzeni}\label{tvr:podm_stav}
+		Za předpokladu \ref{predp:nezav_mer} lze filtrační rozdělení $P_{x_k \mid I_k}$ získat rekurzí tvaru
+		\begin{equation}
+			P_{x_{k+1} \mid I_{k+1}} = \Phi_k ( P_{x_k \mid I_k}, u_k, z_{k+1} ) , \label{eqn:podm_stav}
+		\end{equation}
+		kde $\Phi_k$ a $P_{x_0 \mid I_0}$ jsou odvoditelné ze znalosti problému.
+	\end{tvrzeni}
+	
+	\begin{proof}
+		Provedeme jen náznak důkazu. Matematicky korektní důkaz je dán v \cite[kapitola 10]{bib:ber_shr}.
+		
+		Nechť mají všechny použité náhodné veličiny hustotu pravděpodobnosti. Indukci začneme odvozením pro $k=0$:
+		\begin{equation*}
+			p(x_0 \mid I_0) = p(x_0 \mid z_0) = \frac{p(z_0 \mid x_0) \; p(x_0)}{\int p(z_0 \mid x_0) \; p(x_0) \de x_0} .
+		\end{equation*}
+		Známe $p(x_0)$, dále upravíme $p(z_0 \mid x_0) = p\bigl( h_0(x_0, v_0) \mid x_0 \bigr)$. Transformací můžeme vyjádřit ze známé hustoty $p(v_0 \mid x_0)$.
+		
+		Za indukčního předpokladu, že známe $p(x_k \mid I_k)$, přepíšeme
+		\begin{equation*}
+			p(x_{k+1} \mid I_{k+1}) = p(x_{k+1} \mid z_{k+1}; I_k, u_k) = \frac{p(z_{k+1} \mid x_{k+1}; I_k, u_k)\,p(x_{k+1} \mid I_k, u_k)}{\int p(z_{k+1} \mid x_{k+1}; I_k, u_k)\,p(x_{k+1} \mid I_k, u_k) \de x_{k+1}} .
+		\end{equation*}
+		Zde máme dva neznámé členy. Vyjádříme nejprve $p(x_{k+1} \mid I_k, u_k) = p\bigl(f_k(x_k, u_k, w_k) \bigm| I_k, u_k\bigr)$, což transformací vyjádříme pomocí $p(x_k, w_k \mid I_k, u_k)$. Dále přepíšeme
+		\begin{equation}
+			p(x_k, w_k \mid I_k, u_k) = p(x_k \mid w_k, I_k, u_k) \; p(w_k \mid I_k, u_k) = p(x_k \mid I_k) \; p(w_k \mid I_k, u_k) , \label{eqn:rozdel}
+		\end{equation}
+		kde jsme použili pozorování \ref{poz:podm_nez} ($x_k$ závisí explicitně pouze na $I_k$). Dále rozepíšeme hustotu
+		\begin{equation}
+			p(w_k \mid I_k, u_k) = \int p(w_k \mid x_k, I_k, u_k) \; p(x_k \mid I_k, u_k) \de x_k = \int p(w_k \mid x_k, u_k) \; p(x_k \mid I_k) \de x_k , \label{eqn:wiu}
+		\end{equation}
+		kde už oba členy známe. Ve druhé rovnosti jsme opět využili pozorování \ref{poz:podm_nez}.
+		
+		Hustotu $p(z_{k+1} \mid x_{k+1}, I_k, u_k) = p\bigl(h_{k+1}(x_{k+1}, u_k, v_{k+1}) \bigm| x_{k+1}, I_k, u_k\bigr)$ transformací vy\-já\-dří\-me pomocí $p(v_{k+1} \mid x_{k+1}, I_k, u_k)$, kterou dále upravíme
+		\begin{align*}
+			p(v_{k+1} \mid x_{k+1}, I_k, u_k) &= \int p(v_{k+1} \mid w_k, x_{k+1}, I_k, u_k) \; p(w_k \mid x_{k+1}, I_k, u_k) \de w_k = \\
+			&= \int p(v_{k+1} \mid x_{k+1}, u_k, w_k) \; p(w_k \mid I_k, u_k) \de w_k ,
+		\end{align*}
+		kde jsme opět využili pozorování \ref{poz:podm_nez}, $p(v_{k+1} \mid x_{k+1}, u_k, w_k)$ je daná a $p(w_k \mid I_k, u_k)$ již máme odvozenou v \eqref{eqn:wiu}. Vše máme vyjádřené pomocí známých hustot a tím dostáváme požadovanou rekurzi.
+	\end{proof}
+	
+	\begin{lemma} \label{lem:stat_vyj}
+		Hustoty pravděpodobnosti $p(x_{N-1}, w_{N-1} \mid I_{N-1}, u_{N-1})$ a $p(x_k, w_k, v_{k+1} \mid I_k, u_k)$, $k = \adob{0}{N-2}$, lze vyjádřit pomocí známých hustot.
+	\end{lemma}
+	
+	\begin{proof}
+		Dokážeme jen pro $k = \adob{0}{N-2}$ a budeme hojně využívat pozorování \ref{poz:podm_nez}.
+		\begin{align*}
+			p(v_{k+1}, x_k, w_k \mid I_k, u_k) &= \frac{p(v_{k+1}, x_k, w_k, u_k)}{p(I_k, u_k)} \cdot p(I_k \mid v_{k+1}, x_k, w_k, u_k) = \\
+			&= \frac{p(v_{k+1}, x_k, w_k, u_k)}{p(I_k, u_k)} \cdot p(I_k \mid x_k, w_k, u_k) = \\
+			&= p(v_{k+1} \mid x_k, w_k, u_k) \; p(x_k, w_k \mid I_k, u_k) .
+		\end{align*}
+		$p(v_{k+1} \mid x_k, w_k, u_k)$ známe, pokračujme s
+		\begin{align*}
+			p(x_k, w_k \mid I_k, u_k) &= p(w_k \mid x_k, I_k, u_k) \; p(x_k \mid I_k, u_k) = \\
+			&= p(w_k \mid x_k, u_k) \; p(x_k \mid I_k) .
+		\end{align*}
+	\end{proof}
+	
+	\begin{tvrzeni}
+		Za předpokladu \ref{predp:nezav_mer} platí
+		\begin{equation}
+			J_k(I_k) = \min\limits_{u_k \in U_k} H_k (P_{x_k \mid I_k}, u_k) = \bar{J}_k (P_{x_k \mid I_k}) , \label{eqn:dost_J}
+		\end{equation}
+		kde $H_k$ a $\bar{J}_k$ jsou příslušné funkce. % Jinými slovy, $P_{x_k \mid I_k}$ je dle \eqref{eqn:stat_min} statistika.
+	\end{tvrzeni}
+	
+	\begin{proof}
+		Pro výpočet střední hodnoty v pravé straně \eqref{eqn:DP_inf_N-1} potřebujeme znát rozdělení \newline $P_{x_{N-1}, w_{N-1} \mid I_{N-1}, u_{N-1}}$, to nám zajišťuje lemma \ref{lem:stat_vyj} za pomoci rekurze z tvrzení \ref{tvr:podm_stav}. K tomu nám stačí znát pouze $P_{x_{N-1} \mid I_{N-1}}$ a $u_{N-1}$. Odtud má minimalizace pravé strany  \eqref{eqn:DP_inf_N-1} tvar
+		$$ J_{N-1} (I_{N-1}) = \min\limits_{u_{N-1} \in U_{N-1}} H_{N-1} (P_{x_{N-1} \mid I_{N-1}}, u_{N-1}) = \bar{J}_{N-1} (P_{x_{N-1} \mid I_{N-1}}) , $$
+		kde $H_{N-1}$ a $\bar{J}_{N-1}$ jsou příslušné funkce.
+		
+		Předpokládejme pro indukci
+		\begin{equation}
+			J_{k+1} (I_{k+1}) = \min\limits_{u_{k+1} \in U_{k+1}} H_{k+1} (P_{x_{k+1} \mid I_{k+1}}, u_{k+1}) = \bar{J}_{k+1} (P_{x_{k+1} \mid I_{k+1}}) . \label{eqn:stat_ip}
+		\end{equation}
+		S využitím rekurze \eqref{eqn:podm_stav} a indukčního předpokladu \eqref{eqn:stat_ip} dostává \eqref{eqn:DP_inf_k} tvar
+		\begin{equation}
+			J_k (I_k) = \min\limits_{u_k \in U_k} \Biggl[ \E\limits_{x_k, w_k, z_{k+1}} \Bigl\{ g_k (x_k, u_k, w_k) + \bar{J}_{k+1} \bigl( \Phi_k (P_{x_k \mid I_k}, u_k, z_{k+1}) \bigr) \Bigm| I_k, u_k \Bigr\} \Biggr] . \label{eqn:DP_remake}
+		\end{equation}
+		Potřebné rozdělení $P_{x_k, w_k, z_{k+1} \mid I_k, u_k}$ nám opět zajistí lemma \ref{lem:stat_vyj}.
+		Celý výraz \eqref{eqn:DP_remake} lze tedy přepsat jen pomocí $P_{x_k \mid I_k}$ a $u_k$ do tvaru
+		\begin{equation}
+			J_k (I_k) = \min\limits_{u_k \in U_k} H_k (P_{x_k \mid I_k}, u_k) = \bar{J}_k (P_{x_k \mid I_k}) . \label{eqn:stat_dk}
+		\end{equation}
+		Tím jsme indukci dokončili.
+	\end{proof}
+	
+	Nyní už můžeme napsat variantu DP algoritmu pro statistiku $P_{x_k \mid I_k}$. Užitím rovností \eqref{eqn:DP_inf_N-1}, \eqref{eqn:stat_dk} a \eqref{eqn:DP_remake} dostáváme pro $k < N-1$
+	\begin{equation}
+		\bar{J}_k (P_{x_k \mid I_k}) = \min\limits_{u_k \in U_k} \Biggl[ \E\limits_{x_k, w_k, z_{k+1}} \Bigl\{ g_k (x_k, u_k, w_k) + \bar{J}_{k+1} \bigl( \Phi_k(P_{x_k \mid I_k}, u_k, z_{k+1}) \bigr) \Bigm| I_k, u_k \Bigr\} \Biggr] , \label{eqn:DP_inf_final_k}
+	\end{equation}
+	pro $k = N-1$ pak
+	\begin{align}
+		\bar{J}_{N-1} (P_{x_{N-1} \mid I_{N-1}}) = &\min\limits_{u_{N-1} \in U_{N-1}} \Biggl[ \E\limits_{x_{N-1}, w_{N-1}} \Bigl\{ g_N \bigl( f_{N-1} (x_{N-1}, u_{N-1}, w_{N-1}) \bigr) + \nonumber\\
+		&+ g_{N-1} (x_{N-1}, u_{N-1}, w_{N-1}) \Bigm| I_{N-1}, u_{N-1} \Bigr\} \Biggr] . \label{eqn:DP_inf_final_N-1}
+	\end{align}
+	Tento DP algoritmus pak dává optimální střední ztrátu
+	$$ J^* = \E\limits_{z_0} \bigl\{ \bar{J}_0 (P_{x_0 \mid z_0}) \bigr\} , $$
+	kde $\bar{J_0}$ dostanu z posledního kroku a rozdělení $z_0$ z rovnice měření $z_0 = h_0(x_0, v_0)$ a roz\-dě\-le\-ní $x_0$ a $v_0$.
+	
+	Rovnice \eqref{eqn:DP_inf_final_k} má tvar jako ve standartním DP algoritmu, roli stavu formálně hraje $P_{x_k \mid I_k}$, vývoj systému se řídí rekurzí \eqref{eqn:podm_stav}, roli poruch zde hrajou $z_k$ a roli zásahů $u_k$. Regulátor navíc umí v každém kroku spočítat $P_{x_k \mid I_k}$, tudíž se zachovává přesná znalost stavu. Problém tedy stále zapadá do rámce základního problému dynamického programování.
+	
+	Mohlo by se zdát, že jsme si situaci zavedením filtračních hustot jen zkomplikovali. Výhodu ale budeme mít v případě, kdy dokážeme popsat $P_{x_k \mid I_k}$ pomocí menšího počtu parametrů, než kdybychom si pamatovali celý informační vektor $I_k$. Odtud je statistikou i ona množina parametrů jednoznačně popisující $P_{x_k \mid I_k}$.
+	
+\subsection{Systém s neznámými parametry} \label{sec:nezn_par}
+	
+	Zatím jsme v daném systému znali přesně rovnici vývoje. I to může být v praxi nereálné, často se setkáváme se systémy, v jejichž rovnici vývoje se vyskytují neznámé parametry. Jeden z možných přístupů odhaduje parametry z informačního vektoru na základě znalosti systému. Tato oblast je velmi rozsáhlá a podrobněji popsaná například v \cite{bib:kumar}.
+	
+	V této sekci ukážeme přístup, jak takový problém přeformulovat do rámce základního problému. Mějme rovnici vývoje systému ve tvaru
+	$$ x_{k+1} = f_k(x_k, \theta, u_k, w_k) , $$
+	kde $\theta$ je vektor neznámých parametrů s daným apriorním rozdělením. Zavedeme-li nový rozšířený stav jako $\tilde x_k = (x_k, \theta)$, dostáváme rovnici vývoje
+	$$ \tilde x_{k+1} = \tilde f_k(\tilde x_k, u_k, w_k) , $$
+	kde $\tilde f_k$ je příslušná funkce. Tím jsme problém přeformulovali na problém s nepřesnou znalostí stavu, který jsme již dříve přeformulovali do rámce základního problému.
+	
+	Zkusme aplikovat filtrační rozdělení respektive hustotu jako statistiku, přičemž další kroky pro jednoduchost provedeme za předpokladu existence potřebných hustot. V prvním kroku potřebujeme rozdělení $P_{\tilde x_0 \mid \xi_0} = P_{(x_0, \theta) \mid \xi_0} \sim \delta(x_0 - \xi_0) \;p(\theta \mid x_0)$, kde $\xi_0$ je daný počáteční stav a $\delta$ značí Diracovo rozdělení. $p(\theta \mid x_0)$ je apriorní informace o $\theta$ a podle povahy problému může či nemusí být na $x_0$ závislá.
+	
+	Dále budeme pokračovat podobně, ale už jen s hustotami bez Diracova rozdělení. Pro další kroky budeme potřebovat
+	\begin{align}
+		p(\theta \mid I_{k+1}) &= p(\theta \mid x_{k+1}; u_k, I_k) = \nonumber\\
+		&= \frac{p(x_{k+1} \mid \theta ; u_k, I_k) \; p(\theta \mid u_k, I_k)}{\int p(x_{k+1} \mid \theta ; u_k, I_k) \; p(\theta \mid u_k, I_k) \de \theta} = \nonumber \\
+		&= \frac{p(x_{k+1} \mid \theta ; u_k, I_k) \; p(\theta \mid I_k)}{\int p(x_{k+1} \mid \theta ; u_k, I_k) \; p(\theta \mid I_k) \de \theta} . \label{eqn:bay_uc}
+	\end{align}
+	V posledním kroku jsme použili pozorování \ref{poz:podm_nez} -- $u_k$ nijak neovlivní naší znalost o $\theta$. Tímto jsme obdrželi tzv. vzorec Bayesovkého učení \cite{bib:peterka}, který využijeme při minimalizaci očekávané ztráty
+	$$ \E\limits_{\theta, w_i} \Biggl\{ g_N(x_N, \theta) + \sum\limits_{j=0}^{N-1} g_j \bigl( x_j, \theta, \mu_j(I_j), w_j \bigr) \Biggr\} . $$
+	

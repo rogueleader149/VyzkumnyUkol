@@ -1,0 +1,140 @@
+\subsection{Teoretické vlastnosti KL-UCB}
+
+\begin{tvrzeni}\label{tvr:EN}
+	Uvažme problém $K$-rukého bandity s nezávislými odměnami omezenými v $[0,1]$. Buď $\varepsilon > 0$ a vezměme $c = 3$ do funkce \eqref{eqn:bound}. Dále $a^*$ nechť značí ruku s nejvyšší střední odměnou $\mu_{a^*}$ a nechť $a$ je ruka taková, že $\mu_a < \mu_{a^*}$. Pro libovolný čas $n \in \N$ je pak střední počet vybrání ruky $a$ algoritmem \ref{alg:KL-UCB} shora omezen
+	\begin{equation*}
+		\E \{N_a(n)\} \leq \frac{\log n}{d(\mu_a, \mu_{a^*})} (1+\varepsilon) + C_1 \log(\log n) + \frac{C_2(\varepsilon)}{n^{\beta(\varepsilon)}} ,
+	\end{equation*}
+	kde $C_1$ je kladná konstanta a $C_2(\varepsilon)$, $\beta(\varepsilon)$ jsou kladné funkce $\varepsilon$. Odtud
+	\begin{equation*}
+		\limsup\limits_{n\to\infty} \frac{\E\{N_a(n)\}}{\log n} \leq \frac{1}{d(\mu_a, \mu_{a^*})} .
+	\end{equation*}
+\end{tvrzeni}
+
+\begin{pozn}
+	V důkazu provedeme jen ty kroky, kde se přímo pracuje s omezovací funkcí z řádku 6 algoritmu \ref{alg:KL-UCB}, aby byly vidět všechny podmínky, které musí splňovat.
+\end{pozn}
+
+\begin{proof}
+	Uvažujme $n \in \N$, $\varepsilon > 0$, optimální ruka buď BÚNO $a^* = 1$. Pro ruku $b$ označme její průměrný zisk v čase $t$ jako $\hat\mu_b(t) = S_b(t) / N_b(t)$, její průměrný zisk po $s$ taženích jako $\hat\mu_{b,s} = (X_{b,1} + \ldots + X_{b,s}) / s$, tedy $\hat\mu_b(t) = \hat\mu_{b,N_b(t)}$. Horní přípustná hranice pro KL-UCB je
+	\begin{equation*}
+		u_b(t) = \max\bigl\{q > \hat\mu_b(t) :\; N_b(t) \; d\bigl(\hat\mu_b(t), q\bigr) \leq \log t + c \log\bigl(\log t\bigr) \bigr\} .
+	\end{equation*}
+	%~ $$
+		%~ \clubsuit, \spadesuit, \diamondsuit, \heartsuit, \blacklozenge, \bigstar, \maltese
+	%~ $$
+	Pro $(x,y) \in [0,1]^2$ definujeme $d^+(x,y) = d(x,y) \indicator_{x<y}$. Střední hodnotu $N_a(n)$ lze omezit
+	\begin{align*}
+		\E\{N_a(n)\} &= \E \Biggl\{ \sum\limits_{t=1}^n \indicator \{A_t = a\} \Biggr\} \leq \\
+		&\leq \E \Biggl\{ \sum\limits_{t=1}^n \indicator \{\mu_1 > u_1(t)\} \Biggr\} + \E \Biggl\{ \sum\limits_{t=1}^n \indicator \{A_t = a,\,\mu_1 \leq u_1(t)\} \Biggr\} \leq \\
+		&\leq \sum\limits_{t=1}^n \P\bigl(\mu_1 > u_1(t)\bigr) + \E \Biggl\{ \sum\limits_{s=1}^n \indicator \{s d^+(\hat\mu_{a,s}, \mu_1) < \log n + 3 \log(\log n)\} \Biggr\} ,
+	\end{align*}
+	kde poslední nerovnost plyne z lemmatu \ref{lem:7}. První sčítanec lze omezit ze tvrzení \ref{tvr:10}
+	\begin{align*}
+		\P\bigl(\mu_1 > u_1(t)\bigr) \leq e \lceil \log t (\log t + 3 \log (\log t)) \rceil \exp (-\log t - 3 \log (\log t)) ,
+	\end{align*}
+	kde $e$ značí Eulerovo číslo a $\lceil \cdot \rceil$ horní celou část, dále úpravami
+	\begin{equation}
+		\sum\limits_{t=1}^n \P\bigl(\mu_1 > u_1(t)\bigr) \leq \sum\limits_{t=1}^n \frac{e \lceil (\log t)^2 + 3 \log t \log (\log t)) \rceil}{t (\log t)^3} \leq C'_1 \log (\log n) \label{eqn:1}
+	\end{equation}
+	pro nějakou kladnou konstantu $C'_1$. Zde je důležité nepřehlédnout, že trojka se objeví jako mocnina i ve jmenovateli a je pro tento odhad kruciální. Pro konstantu menší než 3 by odhad neplatil. Dále označme
+	\begin{equation}
+		K_n = \biggl\lfloor \frac{1+\varepsilon}{d(\mu_a, \mu_1)}\Bigl( \log n + 3 \log (\log n) \Bigr) \biggr\rfloor ,
+	\end{equation}
+	potom
+	\begin{align}
+		& \sum\limits_{s=1}^n \P \bigl(s d^+(\hat\mu_{a,s}, \mu_1) < \log n + 3 \log(\log n)\bigr) \leq \nonumber\\
+		\leq & ~K_n + \sum\limits_{s=K_n+1}^\infty \P \bigl(s d^+(\hat\mu_{a,s}, \mu_1) < \log n + 3 \log(\log n)\bigr) \leq \nonumber\\
+		\leq & ~K_n + \sum\limits_{s=K_n+1}^\infty \P \bigl(K_n d^+(\hat\mu_{a,s}, \mu_1) < \log n + 3 \log(\log n)\bigr) = \nonumber\\
+		= & ~K_n + \sum\limits_{s=K_n+1}^\infty \P \bigl( d^+(\hat\mu_{a,s}, \mu_1) < \frac{d(\mu_a, \mu_)}{1+\varepsilon} \bigr) \leq \nonumber\\
+		\leq & ~\frac{1+\varepsilon}{d(\mu_a, \mu_1)}\bigl( \log n + 3 \log (\log n) \bigr) + \frac{C_2(\varepsilon)}{n^{\beta(\varepsilon)}} , \label{eqn:2}
+	\end{align}
+	kde poslední nerovnost plyne z lemmatu \ref{lem:8}.
+\end{proof}
+
+% =============================   Q E D   ==============================
+
+\newpage
+\begin{tvrzeni}\label{tvr:10}
+	Buď $(X_t)_{t \geq 1}$ posloupnost stejně rozdělených nezávislých náhodných veličin omezených v intervalu $[0,1]$. Uvažujme předem danou posloupnost $(\varepsilon_t)_{t \geq 1}$ Bernoulliho pro\-měn\-ných a $\delta > 0$. Pro každé $t \in \hat n$ označme
+	\begin{align*}
+		S(n) &= \sum\limits_{t=1}^n \varepsilon_t X_t , \qquad N(n) = \sum\limits_{t=1}^n \varepsilon_t , \qquad \hat\mu(n) = \frac{S(n)}{N(n)} , \\
+		u(n) &= \max \{ q > \hat\mu(n) :\; N(n) \, d(\hat\mu(n), q) \leq \delta \} .
+	\end{align*}
+	Potom
+	\begin{equation*}
+		\P(u(n) < \mu) \leq e \lceil \delta \log n \rceil \exp(-\delta) .
+	\end{equation*}
+\end{tvrzeni}
+
+\begin{proof}
+	Bude vynechán -- je zdlouhavý, technicky náročný a hlavně se v něm neobjevuje omezovací funkce, místo ní bere libovolné $\delta > 0$.
+\end{proof}
+
+\begin{lemma}\label{lem:7}
+	\begin{equation*}
+		\sum\limits_{t=1}^n \indicator\{ A_t = a, \mu_1 \leq u_1(t) \} \leq \sum\limits_{s=1}^n \indicator\{ s d^+(\hat\mu_{a,s}, \mu_1) < \log n + 3 \log (\log n) \} .
+	\end{equation*}
+\end{lemma}
+
+\begin{proof}
+	Všimněme si nejprve, že $\bigl(A_t = a \land \mu_1 \leq u_1(t)\bigr) \Rightarrow u_a(t) \geq u_1(t) \geq \mu_1$, a tedy
+	\begin{equation*}
+		d^+(\hat\mu_a(t), \mu_1) \leq d(\hat\mu_a(t), u_a(t)) = \frac{\log t + 3 \log (\log t)}{N_a(t)} .
+	\end{equation*}
+	Pokračujeme odhady
+	\begin{align*}
+		&\sum\limits_{t=1}^n \indicator \{ A_t = a, \mu_1 \leq u_1(t) \} \leq \\
+		\leq &\sum\limits_{t=1}^n \indicator \{ A_t = a, N_a(t) d^+(\hat\mu_a(t), \mu_1) \leq \log t + 3 \log (\log t) \} = \\
+		= &\sum\limits_{t=1}^n \sum\limits_{s=1}^t \indicator \{ N_a(t) = s, A_t = a, s d^+(\hat\mu_{a,s}, \mu_1) \leq \log t + 3 \log (\log t) \} \leq \\
+		\leq &\sum\limits_{t=1}^n \sum\limits_{s=1}^t \indicator \{ N_a(t) = s, A_t = a \} \indicator \{ s d^+(\hat\mu_{a,s}, \mu_1) \leq \log n + 3 \log (\log n) \} = \\
+		= &\sum\limits_{s=1}^n \indicator \{ s d^+(\hat\mu_{a,s}, \mu_1) \leq \log n + 3 \log (\log n) \} \sum\limits_{t=s}^n \indicator \{ N_a(t) = s, A_t = a \} \leq \\
+		\leq &\sum\limits_{s=1}^n \indicator \{ s d^+(\hat\mu_{a,s}, \mu_1) \leq \log n + 3 \log (\log n) \} ,
+	\end{align*}
+	kde poslední nerovnost plyne z $\sum_{t=s}^n \indicator \{ N_a(t) = s, A_t = a \} \leq 1$.
+\end{proof}
+
+\begin{lemma}\label{lem:8}
+	Pro každé $\varepsilon > 0$ existují $C_2(\varepsilon) > 0$, $\beta(\varepsilon) > 0$ takové, že
+	\begin{equation*}
+		\sum\limits_{s=K_n+1}^\infty \P\Bigl( d^+(\hat\mu_{a,s}, \mu_1) < \frac{d(\mu_a, \mu_1)}{1+\varepsilon} \Bigr) \leq \frac{C_2(\varepsilon)}{n^{\beta(\varepsilon)}} .
+	\end{equation*}
+\end{lemma}
+
+\begin{proof}
+	Pokud $d^+(\hat\mu_{a,s}, \mu_1) < d(\mu_a, \mu_1) / (1+\varepsilon)$, potom $\hat\mu_{a,s} > r(\varepsilon)$, kde $r(\varepsilon)$ zobrazuje do $(\mu_a, \mu_1)$ a platí $d(r(\varepsilon), \mu_1) = d(\mu_a, \mu_1) / (1+\varepsilon)$. Potom
+	\begin{align*}
+		\P\biggl( d^+(\hat\mu_{a,s}, \mu_1) < \frac{d(\mu_a, \mu_1)}{1+\varepsilon} \biggr) &\leq \P\Bigl( d^+(\hat\mu_{a,s}, \mu_a) > d(r(\varepsilon), \mu_a), \hat\mu_{a,s} > \mu_a \Bigr) \leq \\
+		&\leq \P\bigl( \hat\mu_{a,s} > r(\varepsilon) \bigr) \leq \exp\bigl( -s d(r(\varepsilon), \mu_a) \bigr) ,
+	\end{align*}
+	a tedy
+	\begin{equation}
+		\sum\limits_{s=K_n+1}^\infty \P \biggl( d^+(\hat\mu_{a,s}, \mu_1) < \frac{d(\mu_a, \mu_1)}{1+\varepsilon} \biggr) \leq \frac{\exp\bigl( -K_n\,d(r(\varepsilon), \mu_a) \bigr)}{1 - \exp\bigl(  -d(r(\varepsilon), \mu_a) \bigr)} \leq \frac{C_2(\varepsilon)}{n^{\beta(\varepsilon)}} , \label{eqn:3}
+	\end{equation}
+	kde jsme vzali $C_2(\varepsilon) = \Bigl(1 - \exp\bigl(  -d(r(\varepsilon), \mu_a) \bigr)\Bigr)^{-1}$ a $\beta(\varepsilon) = (1+\varepsilon)d(r(\varepsilon), \mu_1) / d(\mu_a, \mu_1)$.
+\end{proof}
+
+\begin{dusledek}
+	Za předpokladů tvrzení \ref{tvr:EN} platí
+	\begin{equation}
+		\limsup\limits_{n\to\infty} \frac{\E\{R_n\}}{\log n} \leq \sum\limits_{a:\,\mu_a < \mu_{a^*}} \frac{\mu_{a^*} - \mu_a}{d(\mu_a, \mu_{a^*})} . \label{eqn:kl-ucb_Rn}
+	\end{equation}
+\end{dusledek}
+
+\begin{dusledek}
+	Pokud jsou rozdělení automatů Bernoulliho, algoritmus \ref{alg:KL-UCB} je asymptoticky optimální ve smyslu dosažení dolní hranice \eqref{eqn:lai}
+	\begin{equation}
+		N_a(n) \geq \biggl( \frac{1}{d(\mu_a, \mu_{a^*})} + o(1) \biggr) \log n
+	\end{equation}
+	s pravděpodobností jdoucí k jedné.
+\end{dusledek}
+
+\begin{pozorovani}
+	Algoritmus \ref{alg:KL-UCB} počítá horní přípustnou hranici jako
+	\begin{equation}
+		\max_{q \in \Theta_a}\biggl\{ N[a] \; d\biggl(\frac{S[a]}{N[a]}, q\biggr) \leq \log t + c \log(\log t) \biggr\} .
+	\end{equation}
+	Úroveň přípustnosti je parametrizována funkcí $\log t + c \log\bigl(\log t\bigr)$, pro kterou platí teoretické závěry jakmile $c \geq 3$. Lze však nahlédnout, že též funkce $(1 + \varepsilon) \log t$ tyto závěry splní, jelikož pro dostatečně velké $t$ platí nerovnost $(1 + \varepsilon) \log t \geq \log t + c \log\bigl(\log t\bigr)$.
+\end{pozorovani}
+
+Původní záměr byl tuto hranici nějak {\em zásadněji} pozměnit při zachování teoretických vlastností a konstrukce důkazu, avšak vzhledem k citlivému nastavení to nebylo možné (viz rovnici \eqref{eqn:1} a komentář pod ní).

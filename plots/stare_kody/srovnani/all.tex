@@ -1,0 +1,215 @@
+% GNUPLOT: LaTeX picture with Postscript
+\begingroup
+  \makeatletter
+  \providecommand\color[2][]{%
+    \GenericError{(gnuplot) \space\space\space\@spaces}{%
+      Package color not loaded in conjunction with
+      terminal option `colourtext'%
+    }{See the gnuplot documentation for explanation.%
+    }{Either use 'blacktext' in gnuplot or load the package
+      color.sty in LaTeX.}%
+    \renewcommand\color[2][]{}%
+  }%
+  \providecommand\includegraphics[2][]{%
+    \GenericError{(gnuplot) \space\space\space\@spaces}{%
+      Package graphicx or graphics not loaded%
+    }{See the gnuplot documentation for explanation.%
+    }{The gnuplot epslatex terminal needs graphicx.sty or graphics.sty.}%
+    \renewcommand\includegraphics[2][]{}%
+  }%
+  \providecommand\rotatebox[2]{#2}%
+  \@ifundefined{ifGPcolor}{%
+    \newif\ifGPcolor
+    \GPcolortrue
+  }{}%
+  \@ifundefined{ifGPblacktext}{%
+    \newif\ifGPblacktext
+    \GPblacktextfalse
+  }{}%
+  % define a \g@addto@macro without @ in the name:
+  \let\gplgaddtomacro\g@addto@macro
+  % define empty templates for all commands taking text:
+  \gdef\gplbacktext{}%
+  \gdef\gplfronttext{}%
+  \makeatother
+  \ifGPblacktext
+    % no textcolor at all
+    \def\colorrgb#1{}%
+    \def\colorgray#1{}%
+  \else
+    % gray or color?
+    \ifGPcolor
+      \def\colorrgb#1{\color[rgb]{#1}}%
+      \def\colorgray#1{\color[gray]{#1}}%
+      \expandafter\def\csname LTw\endcsname{\color{white}}%
+      \expandafter\def\csname LTb\endcsname{\color{black}}%
+      \expandafter\def\csname LTa\endcsname{\color{black}}%
+      \expandafter\def\csname LT0\endcsname{\color[rgb]{1,0,0}}%
+      \expandafter\def\csname LT1\endcsname{\color[rgb]{0,1,0}}%
+      \expandafter\def\csname LT2\endcsname{\color[rgb]{0,0,1}}%
+      \expandafter\def\csname LT3\endcsname{\color[rgb]{1,0,1}}%
+      \expandafter\def\csname LT4\endcsname{\color[rgb]{0,1,1}}%
+      \expandafter\def\csname LT5\endcsname{\color[rgb]{1,1,0}}%
+      \expandafter\def\csname LT6\endcsname{\color[rgb]{0,0,0}}%
+      \expandafter\def\csname LT7\endcsname{\color[rgb]{1,0.3,0}}%
+      \expandafter\def\csname LT8\endcsname{\color[rgb]{0.5,0.5,0.5}}%
+    \else
+      % gray
+      \def\colorrgb#1{\color{black}}%
+      \def\colorgray#1{\color[gray]{#1}}%
+      \expandafter\def\csname LTw\endcsname{\color{white}}%
+      \expandafter\def\csname LTb\endcsname{\color{black}}%
+      \expandafter\def\csname LTa\endcsname{\color{black}}%
+      \expandafter\def\csname LT0\endcsname{\color{black}}%
+      \expandafter\def\csname LT1\endcsname{\color{black}}%
+      \expandafter\def\csname LT2\endcsname{\color{black}}%
+      \expandafter\def\csname LT3\endcsname{\color{black}}%
+      \expandafter\def\csname LT4\endcsname{\color{black}}%
+      \expandafter\def\csname LT5\endcsname{\color{black}}%
+      \expandafter\def\csname LT6\endcsname{\color{black}}%
+      \expandafter\def\csname LT7\endcsname{\color{black}}%
+      \expandafter\def\csname LT8\endcsname{\color{black}}%
+    \fi
+  \fi
+  \setlength{\unitlength}{0.0500bp}%
+  \begin{picture}(9070.00,9070.00)%
+    \gplgaddtomacro\gplbacktext{%
+      \csname LTb\endcsname%
+      \put(206,8511){\makebox(0,0)[l]{\strut{}$\log t$\quad(KL--UCB)}}%
+    }%
+    \gplgaddtomacro\gplfronttext{%
+      \csname LTb\endcsname%
+      \put(-132,6698){\makebox(0,0)[r]{\strut{} 0}}%
+      \put(-132,7119){\makebox(0,0)[r]{\strut{} 100}}%
+      \put(-132,7541){\makebox(0,0)[r]{\strut{} 200}}%
+      \put(-132,7963){\makebox(0,0)[r]{\strut{} 300}}%
+      \put(-132,8384){\makebox(0,0)[r]{\strut{} 400}}%
+      \put(-132,8806){\makebox(0,0)[r]{\strut{} 500}}%
+      \put(0,6267){\makebox(0,0){\strut{}$10^{2}$}}%
+      \put(1170,6267){\makebox(0,0){\strut{}$10^{3}$}}%
+      \put(2341,6267){\makebox(0,0){\strut{}$10^{4}$}}%
+    }%
+    \gplgaddtomacro\gplbacktext{%
+      \put(3229,8511){\makebox(0,0)[l]{\strut{}Omez. Bayes}}%
+    }%
+    \gplgaddtomacro\gplfronttext{%
+      \csname LTb\endcsname%
+      \put(2891,6698){\makebox(0,0)[r]{\strut{}}}%
+      \put(2891,7119){\makebox(0,0)[r]{\strut{}}}%
+      \put(2891,7541){\makebox(0,0)[r]{\strut{}}}%
+      \put(2891,7963){\makebox(0,0)[r]{\strut{}}}%
+      \put(2891,8384){\makebox(0,0)[r]{\strut{}}}%
+      \put(2891,8806){\makebox(0,0)[r]{\strut{}}}%
+      \put(3023,6267){\makebox(0,0){\strut{}$10^{2}$}}%
+      \put(4193,6267){\makebox(0,0){\strut{}$10^{3}$}}%
+      \put(5364,6267){\makebox(0,0){\strut{}$10^{4}$}}%
+    }%
+    \gplgaddtomacro\gplbacktext{%
+      \put(6252,8511){\makebox(0,0)[l]{\strut{}Omez. KL--UCB+}}%
+    }%
+    \gplgaddtomacro\gplfronttext{%
+      \csname LTb\endcsname%
+      \put(5914,6698){\makebox(0,0)[r]{\strut{}}}%
+      \put(5914,7119){\makebox(0,0)[r]{\strut{}}}%
+      \put(5914,7541){\makebox(0,0)[r]{\strut{}}}%
+      \put(5914,7963){\makebox(0,0)[r]{\strut{}}}%
+      \put(5914,8384){\makebox(0,0)[r]{\strut{}}}%
+      \put(5914,8806){\makebox(0,0)[r]{\strut{}}}%
+      \put(6046,6267){\makebox(0,0){\strut{}$10^{2}$}}%
+      \put(7217,6267){\makebox(0,0){\strut{}$10^{3}$}}%
+      \put(8388,6267){\makebox(0,0){\strut{}$10^{4}$}}%
+    }%
+    \gplgaddtomacro\gplbacktext{%
+      \put(206,5488){\makebox(0,0)[l]{\strut{}$\log\frac{t}{N_a}$\quad(KL--UCB+)}}%
+    }%
+    \gplgaddtomacro\gplfronttext{%
+      \csname LTb\endcsname%
+      \put(-132,3674){\makebox(0,0)[r]{\strut{}0}}%
+      \put(-132,4096){\makebox(0,0)[r]{\strut{}100}}%
+      \put(-132,4518){\makebox(0,0)[r]{\strut{}200}}%
+      \put(-132,4939){\makebox(0,0)[r]{\strut{}300}}%
+      \put(-132,5361){\makebox(0,0)[r]{\strut{}400}}%
+      \put(-132,5783){\makebox(0,0)[r]{\strut{}500}}%
+      \put(0,3243){\makebox(0,0){\strut{}$10^{2}$}}%
+      \put(1170,3243){\makebox(0,0){\strut{}$10^{3}$}}%
+      \put(2341,3243){\makebox(0,0){\strut{}$10^{4}$}}%
+    }%
+    \gplgaddtomacro\gplbacktext{%
+      \put(3229,5488){\makebox(0,0)[l]{\strut{}$0.5 \log\frac{t}{N_a}$}}%
+    }%
+    \gplgaddtomacro\gplfronttext{%
+      \csname LTb\endcsname%
+      \put(2891,3674){\makebox(0,0)[r]{\strut{}}}%
+      \put(2891,4096){\makebox(0,0)[r]{\strut{}}}%
+      \put(2891,4518){\makebox(0,0)[r]{\strut{}}}%
+      \put(2891,4939){\makebox(0,0)[r]{\strut{}}}%
+      \put(2891,5361){\makebox(0,0)[r]{\strut{}}}%
+      \put(2891,5783){\makebox(0,0)[r]{\strut{}}}%
+      \put(3023,3243){\makebox(0,0){\strut{}$10^{2}$}}%
+      \put(4193,3243){\makebox(0,0){\strut{}$10^{3}$}}%
+      \put(5364,3243){\makebox(0,0){\strut{}$10^{4}$}}%
+    }%
+    \gplgaddtomacro\gplbacktext{%
+      \put(6252,5488){\makebox(0,0)[l]{\strut{}$0.25 \log\frac{t}{N_a}$}}%
+    }%
+    \gplgaddtomacro\gplfronttext{%
+      \csname LTb\endcsname%
+      \put(5914,3674){\makebox(0,0)[r]{\strut{}}}%
+      \put(5914,4096){\makebox(0,0)[r]{\strut{}}}%
+      \put(5914,4518){\makebox(0,0)[r]{\strut{}}}%
+      \put(5914,4939){\makebox(0,0)[r]{\strut{}}}%
+      \put(5914,5361){\makebox(0,0)[r]{\strut{}}}%
+      \put(5914,5783){\makebox(0,0)[r]{\strut{}}}%
+      \put(6046,3243){\makebox(0,0){\strut{}$10^{2}$}}%
+      \put(7217,3243){\makebox(0,0){\strut{}$10^{3}$}}%
+      \put(8388,3243){\makebox(0,0){\strut{}$10^{4}$}}%
+    }%
+    \gplgaddtomacro\gplbacktext{%
+      \put(206,2464){\makebox(0,0)[l]{\strut{}$c=10 \quad d=400$}}%
+    }%
+    \gplgaddtomacro\gplfronttext{%
+      \csname LTb\endcsname%
+      \put(-132,651){\makebox(0,0)[r]{\strut{}0}}%
+      \put(-132,1072){\makebox(0,0)[r]{\strut{}100}}%
+      \put(-132,1494){\makebox(0,0)[r]{\strut{}200}}%
+      \put(-132,1916){\makebox(0,0)[r]{\strut{}300}}%
+      \put(-132,2337){\makebox(0,0)[r]{\strut{}400}}%
+      \put(-132,2759){\makebox(0,0)[r]{\strut{}500}}%
+      \put(0,220){\makebox(0,0){\strut{}$10^{2}$}}%
+      \put(1170,220){\makebox(0,0){\strut{}$10^{3}$}}%
+      \put(2341,220){\makebox(0,0){\strut{}$10^{4}$}}%
+    }%
+    \gplgaddtomacro\gplbacktext{%
+      \put(3229,2464){\makebox(0,0)[l]{\strut{}$c=20 \quad d=800$}}%
+    }%
+    \gplgaddtomacro\gplfronttext{%
+      \csname LTb\endcsname%
+      \put(2891,651){\makebox(0,0)[r]{\strut{}}}%
+      \put(2891,1072){\makebox(0,0)[r]{\strut{}}}%
+      \put(2891,1494){\makebox(0,0)[r]{\strut{}}}%
+      \put(2891,1916){\makebox(0,0)[r]{\strut{}}}%
+      \put(2891,2337){\makebox(0,0)[r]{\strut{}}}%
+      \put(2891,2759){\makebox(0,0)[r]{\strut{}}}%
+      \put(3023,220){\makebox(0,0){\strut{}$10^{2}$}}%
+      \put(4193,220){\makebox(0,0){\strut{}$10^{3}$}}%
+      \put(5364,220){\makebox(0,0){\strut{}$10^{4}$}}%
+    }%
+    \gplgaddtomacro\gplbacktext{%
+    }%
+    \gplgaddtomacro\gplfronttext{%
+      \csname LTb\endcsname%
+      \put(7885,1969){\makebox(0,0)[r]{\strut{}Horní 0.05\% kvantil}}%
+      \csname LTb\endcsname%
+      \put(7885,1749){\makebox(0,0)[r]{\strut{}Prostředních 99\%}}%
+      \csname LTb\endcsname%
+      \put(7885,1529){\makebox(0,0)[r]{\strut{}Prostředních 50\%}}%
+      \csname LTb\endcsname%
+      \put(7885,1309){\makebox(0,0)[r]{\strut{}Střední hodnota}}%
+      \csname LTb\endcsname%
+      \put(7885,1089){\makebox(0,0)[r]{\strut{}Asymptotická mez}}%
+    }%
+    \gplbacktext
+    \put(0,0){\includegraphics{plots/srovnani/all}}%
+    \gplfronttext
+  \end{picture}%
+\endgroup

@@ -1,0 +1,68 @@
+\newpage
+\section{Výsledky testování metod} \label{sec:testy}
+
+Ve článku \cite{bib:kl-ucb} je sice dokázána asymptotická optimalita KL--UCB pro Bernoulliho automaty, o chování na konečném horizontu se však dozvíme pouze z experimentu. Program přiložený na CD je napsán v jazyce C++, krátký návod je sepsán v souboru {\tt README}. Program využívá jako generátor náhodných čísel Mersenne twister představený a blíže popsaný v \cite{bib:mt}. V textu budu též používat snadno čitelný formát {\tt yaml}, používaný programem pro nastavení automatů.
+
+\subsection{Krátký horizont} \label{sec:kratky}
+
+Pro otestování optimální strategie jsem musel použít velmi omezený horizont kvůli její exponenciální složitosti\footnote{Snadnou úvahou lze stejný výsledek dostat i v polynomiálním čase -- stačí, aby se nic nepočítalo dvakrát. Avšak stupeň polynomu je roven počtu rukou, v původním zadání 10, čímž dostáváme pro reálný výpočet jen nepatrné zlepšení (délka horizontu je velmi malá, asymptotika se příliš neprojeví).}. Dále bylo potřeba snížit počet rukou a zvýšit pravděpodobnosti zisku. Počet opakování jsem pro optimální strategii též nastavil nízko, na 3000.
+
+Vedle optimální strategie jsem pro porovnání pustil KL--UCB+ a obě strategie s omezeným výhedem popsané v sekci \ref{sec:ltd}. Konkrétně jsem nastavil výhledy $l=1$ a $l=4$, přičemž výsledky ukázaly zlepšení oproti KL--UCB+ již pro výhled 1. Další zlepšení s výhledem 4 bylo zanedbatelné, navíc se výrazně zvýšila výpočetní náročnost.
+
+\begin{verbatim}
+- type: bernoulli
+  horizon: 13
+  repeat: 3000(0)
+  bandits: [optimal, ltd_bay, ltd_kl, KL-UCB+]
+  p: [0.55, 0.5, 0.25]
+  ltd_depth: 1 (4)
+\end{verbatim}
+\begin{figure}[h]
+	\input{plots/opt-vs-kl/all}
+	\caption{Histogram $R_n$ na konci horizontu.}
+\end{figure}
+Strategie s omezeným výhledem dle výsledků na takto krátkém horizontu předčí KL--UCB+ a i pro výhled 1 se dostane blízko optimální. Navíc je jen přibližně $2K$-krát náročnější než KL--UCB+, kde $K$ značí počet rukou. Bude ji tedy možné pustit i na dlouhém horizontu narozdíl od optimální.
+
+\subsection{Dlouhý horizont}\label{sec:dl_hor}
+
+Své experimenty jsem pro porovnání nastavil stejně jako v \cite{bib:kl-ucb}: 
+\begin{verbatim}
+- type: bernoulli
+  horizon: 20000
+  repeat: 50000
+  bandits: [KL-UCB, KL-UCB+, ltd_bay, ltd_kl]
+  p: [0.1, 0.05, 0.02, 0.01, 0.05, 0.02, 0.01, 0.05, 0.02, 0.01]
+  ltd_depth: 1
+\end{verbatim}
+Výsledky shrnuje obrázek \ref{pic:multi}, grafy zobrazují časový vývoj různých kvantilů $R_n$ a jeho střední hodnoty (viz popisek).
+
+Při použití nastavení ze článku \cite{bib:kl-ucb} ({\tt KL-UCB} a {\tt KL-UCB+}) jsem dosáhl téměř shodných grafů jako autoři. Popis banditů {\tt ltd\_bay} (Omez. Bayes) a {\tt ltd\_kl} (Omez. KL--UCB+) je dán v sekci \ref{sec:kratky}, popis strategií ke spodním dvěma grafům s parametry $c$, $d$ v sekci \ref{sec:moje}.
+
+\begin{pozn}
+Pro spuštění banditů s upravenou mezí KL--UCB+ (týká se 5. až 8. grafu) je potřeba zásah přímo do zdrojového kódu.
+\end{pozn}
+
+\begin{figure}[h]
+	\input{plots/srovnani/all}
+	\caption{Vývoj kvantilů $R_n$ v logaritmickém čase při použití různých strategií.}\label{pic:multi}
+\end{figure}
+
+\subsection{Diskuze výsledků} \label{sec:diskuze}
+
+Na krátkém horizontu není oproti dlouhému horizontu čas se parametry správným způsobem učit, proto jsou primitivnější metody (např. {\tt ltd\_bay}) úspěšnější. KL--UCB+ oproti nim častěji prověřuje méně výhodné ruce, a to za cenu vyšší ztráty. Jev vsugerování špatné ruky, jak bude okomentováno dále, se nestihne projevit.
+
+Na dlouhém horizontu jsem provedl testy pro osm nastavení, viz obr. \ref{pic:multi}. Před jakoukoliv interpretací je třeba připomenout chybu numerického středování, která plyne z konečného počtu iterací a nedokonalosti pseudogenerátorů. Nejvíce výsledky zkreslují málo prav\-dě\-po\-dob\-né jevy dávající vzdálené hodnoty. Aby takový jev nastal, je potřeba dostat od pseudogenerátoru konkrétní posloupnost čísel. Ta může mít při velké délce pro daný pseudogenerátor dokonce i nulovou pravděpodobnost (pseudogenerátor je pouze dlouhá, ale konečná posloupnost), přičemž teoretická pravděpodobnost nulová není.
+
+Některé závěry z grafů patrné jsou:
+\begin{enumerate}
+	\item KL--UCB se v naprosté většině případů \uv{naučí} správnou ruku, což plyne z logaritmického\footnote{Grafy jsou v logaritmickém měřítku.} nárůstu i v těch nejhorších případech (jinak by byl nárůst lineární),
+	\item KL--UCB+ předčí KL--UCB ve střední hodnotě, optimální ruku však v nejhorších pří\-pa\-dech odhalí později než KL--UCB, lepší učení je tedy za cenu vyšších ztrát,
+	\item {\tt ltd\_bay} jako jediná metoda naprosto bez použití KL--UCB ve velkém množství případů selže, ztráta začne lineárně narůstat, což odpovídá vsugerování suboptimální ruky, která může s jistou pravděpodobností dávat ze začátku lepší výsledky než optimální; učení zde tedy nefunguje,
+	\item zpřísnění hranice v KL--UCB+ zapříčiní opožděné zastavení lineárního nárůstu nej\-hor\-ších případů, střední hodnota ale klesá, opět dostáváme lepší učení pouze za cenu vyšších ztrát,
+	\item navržená empirická změna (dle sekce \ref{sec:moje}) v případě nastavení $c = 20$, $d = 800$ velmi dobře kombinuje přednosti KL--UCB a KL--UCB+, a sice má lepší střední hodnotu než KL--UCB (vlastnost KL--UCB+), vedle toho velmi brzy předejde lineárnímu nárůstu nejhorších případů -- odhalí optimmální ruku (vlastnost KL--UCB), a to dokonce lépe než původní KL--UCB.
+\end{enumerate}
+Pro aplikaci bych dle požadavků doporučil
+\begin{itemize}
+	\item pozměněnou KL--UCB+ s $b(t, N_a) = 0.25 \log \frac{t}{N_a}$ pro požadavek nízké střední hodnoty i za cenu pozdějšího zjištění optimální ruky, neboli vyšších ztrát v nejhorších případech (konstantu 0.25 je možné ladit, zmenšení vede do jisté doby na nižší střední hodnotu, ale horší chování v nejhorších případech, zvětšení má opačný efekt),
+	\item empirickou změnu $b^{(c,d)}$ dle sekce \ref{sec:moje} pro požadavek vysoké pravděpodobnosti zjištění optimální ruky (vysoké stability), ovšem za cenu vyš\-ší, ale stále dobré střední hodnoty (zůstává logaritmická, pouze s vyšší konstantou), podobné vlastnosti má původní KL--UCB, tato má lepší střední hodnotu i chování v nejhorších případech.
+\end{itemize}

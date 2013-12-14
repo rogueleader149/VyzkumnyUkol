@@ -1,0 +1,236 @@
+\documentclass[a4paper, 11pt]{report}
+
+\usepackage{a4wide,cite}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amsthm, amssymb, units, dsfont, algorithmicx, algpseudocode}   % dsfont pro indikátor jevu
+\usepackage[pdftex,
+						pdfauthor={Jakub Klemsa},
+						pdftitle={Models of self-assembling DNA nanostructures, Jakub Klemsa},
+						pdfsubject={},
+						pdfkeywords={Wang tiles, aTAM, Turing universality},
+						pdfproducer={Jakub Klemsa},
+						pdfcreator=dvipdf]{hyperref}
+
+\usepackage{graphicx,color,tabularx,float}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\slshape \rightmark} % \leftmark .. kapitola
+\fancyhead[R]{\thepage}
+\oddsidemargin=10mm   % jednostranný tisk !!!
+
+\let\tmpitem\item
+\renewcommand{\item}{\setlength{\itemsep}{2pt}\tmpitem}   % míň roztahovačný seznamy
+\renewcommand{\labelitemi}{$\circ$}
+%~ \def\refname{Li­teratura}   % záhadně nefunguje ???
+%~ \frenchspacing   % údajně česká typografická pravidla
+
+\theoremstyle{definition}
+\newtheorem{example}{Example}[chapter]
+%~ \newtheorem{definition}{Definice}[section]
+%~ \newtheorem{predpoklad}{Předpoklad}[section]
+%~ \newtheorem{tvrzeni}{Tvrzení}[section]
+%~ \newtheorem{pozorovani}[tvrzeni]{Pozorování}
+%~ \newtheorem{lemma}[tvrzeni]{Lemma}
+%~ \newtheorem{dusledek}[tvrzeni]{Důsledek}
+%~ \newtheorem{algoritmus}{Algoritmus}[chapter]
+
+%~ \theoremstyle{remark} 
+%~ \newtheorem{pozn}{Poznámka}[chapter]
+
+\DeclareMathOperator*{\E}{E\,}   % operátor* bude umět používat \limit :)
+\DeclareMathOperator{\de}{d\!}   % v integrálech
+\renewcommand{\P}{\mathbb{P\,}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\indicator}{\mathds{1}}
+\newcommand{\powerset}[1]{\mathcal{P} ( #1 )}
+\newcommand{\adob}[2]{#1 , \ldots , #2}
+
+%%% VYHLEDAT A OPRAVIT !!! %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\let\haluz\relax
+\haluz % program vlna nakonec!
+% vlna !!
+% taky opravit N-1 na N\!-\!1
+% zkontrolovat \min \; ...
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%% k vyplnění ZAČÁTEK -------------------------------------------------
+\newcommand{\cvut}{ČESKÉ VYSOKÉ UČENÍ TECHNICKÉ V~PRAZE}
+\newcommand{\fjfi}{Fakulta jaderná a fyzikálně inženýrská}
+\newcommand{\km}{Katedra matematiky}
+\newcommand{\obor}{Inženýrská informatika}
+\newcommand{\minf}{Matematická informatika}
+\newcommand{\TYPPRACE}{VÝZKUMNÝ ÚKOL}
+\newcommand{\TypPrace}{Výzkumný úkol}
+\newcommand{\mePrace}{mého výzkumného úkolu}
+\newcommand{\rodPrace}{ho}
+
+\newcommand{\nazevcz}{Modely sebeskládajících DNA nanostruktur}
+\newcommand{\nazeven}{Models of self-assembling DNA nanostructures}
+\newcommand{\autor}{Jakub Klemsa}
+\newcommand{\vedouci}{Ing. Štěpán Starosta, Ph.D.}
+\newcommand{\vedoucimu}{Ing. Štěpánu Starostovi, Ph.D.}
+\newcommand{\pracovisteVed}{}
+\newcommand{\konzultant}{---}
+\newcommand{\rok}{2014}
+\newcommand{\akadRok}{2013/2014}
+\newcommand{\misto}{Praha}
+\newcommand{\vMiste}{Praze}
+
+\newcommand{\klicova}{}
+\newcommand{\keyword}{}
+\newcommand{\abstrCZ}{Bla bla abstrakt CZ.}
+\newcommand{\abstrEN}{Bla bla abstrakt EN.}
+%%% k vyplnění KONEC ---------------------------------------------------
+
+
+\begin{document}
+
+
+\pagenumbering{roman}
+\begin{titlepage}
+
+%%% 1. úvodní strana
+\thispagestyle{empty}
+\begin{center}
+	{\Large \cvut \\[12pt] \fjfi \\[260pt]}
+	{\Huge \TYPPRACE}
+\end{center}
+\vfill
+{
+	\Large \misto, \rok \hfill \autor
+}
+\newpage
+
+
+%%% 2. úvodní strana
+\thispagestyle{empty}
+\begin{center}
+	{\Large \cvut \\[10pt] \fjfi \\[10pt] \km \\[40pt]}
+	\includegraphics[height=75pt]{lev.eps} \\[100pt]
+	
+	{\LARGE \TYPPRACE \\[60pt]}
+	
+	{\Large\bf \nazevcz \\[30pt]}
+	
+	{\Large\bf \nazeven}
+\end{center}
+\vfill
+{
+	\Large
+	\begin{tabular}{ll}
+	Vypracoval: & \autor\\[3pt]
+	Školitel: & \vedouci\\[3pt]
+	Akademický rok: & \akadRok
+	\end{tabular}
+}
+\newpage
+
+
+%%% sem přijde ofic. zadání
+\thispagestyle{empty}
+\Large
+Na toto místo přijde svázat \textbf{zadání \mePrace}!
+
+\vspace{4mm}
+V~jednom z~výtisků musí být \textbf{originál} zadání, v~ostatních kopie.
+\normalsize
+\newpage
+
+
+%%% prohlášení
+\thispagestyle{empty}
+~
+\vfill
+\noindent\textbf{Čestné prohlášení}
+\vspace{0.5cm}
+
+\noindent
+Prohlašuji na tomto místě, že jsem předloženou práci vypracoval samostatně a že jsem uvedl veškerou použitou literaturu.
+\vspace{1.5cm}
+
+\noindent
+\vspace{5mm}V \vMiste dne \today\hfill
+	\begin{tabular}{c}
+	. . . . . . . . . . . . . . . . . . . . . . .\\
+	\autor
+	\end{tabular}
+\newpage
+
+
+%%% poděkování
+\thispagestyle{empty}
+~
+\vfill
+\noindent\textbf{Poděkování}
+\vspace{0.5cm}
+
+\noindent
+Děkuji \vedoucimu, za vedení \mePrace a za podnětné návrhy, které \rodPrace ~obohatily.
+
+\begin{flushright}
+\autor
+\end{flushright}
+\newpage
+
+
+%%% abstrakt atp.
+\thispagestyle{empty}
+
+\begin{tabularx}{\textwidth}{lX}
+  {\em Název práce:} & \bf \nazevcz \\[4mm]
+  {\em Autor:} & \autor \\[4mm]
+  {\em Obor:} & \obor \\[4mm]
+  {\em Zaměření:} & \minf \\[4mm]
+  {\em Druh práce:} & \TypPrace \\[4mm]
+  {\em Vedoucí práce:} & \vedouci, \pracovisteVed \\[4mm]
+  {\em Konzultant:} & \konzultant \\[4mm]
+  {\em Abstrakt:} & \abstrCZ \\[4mm]
+  {\em Klíčová slova:} & \klicova \\[20mm]
+
+  {\em Title:} & \bf \nazeven \\[4mm]
+  {\em Author:} & \autor \\[4mm]
+  {\em Abstract:} & \abstrEN \\[4mm]
+  {\em Key words:} & \keyword
+\end{tabularx}
+\newpage
+
+
+%%% obsah
+\tableofcontents
+\thispagestyle{empty}
+
+\end{titlepage}
+\pagenumbering{arabic}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     Z A Č Á T E K   P R Á C E                                        %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%% ÚVODEM
+\input{./include/0-prolog.tex}
+
+%%% KAPITOLA 1 -- Úvod
+\input{./include/1-overview.tex}
+
+%%% KAPITOLA 2 -- Testy
+\input{./include/2-comp_power.tex}
+
+%%% ZÁVĚREM
+\input{./include/n-1-epilog.tex}
+
+%%% LITERATURA
+% \renewcommand\bibname{Literatura}
+\input{./include/n-biblio.tex}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     K O N E C   P R Á C E                                            %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\end{document}

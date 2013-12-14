@@ -1,0 +1,14 @@
+\section{Optimální strategie}
+
+Pro srovnání jsem odvodil optimální strategii pro systém s neznámými parametry dle sekce \ref{sec:nezn_par} za použití triviální apriorní informace. Výsledná rekurze vychází
+\begin{align*}
+	J_k\Bigl(S_{1:K}^{(k)}, N_{1:K}^{(k)}\Bigr) &= \max\limits_{u_k \in \hat K} \Biggl[ \biggl( 1 + J_{k+1}\Bigl(S_{1:K}^{(k+1)}(u_k), N_{1:K}^{(k+1)}(u_k)\Bigr) \biggr) \frac{S_{u_k}^{(k)} + 1}{N_{u_k}^{(k)} + 2} + \\
+	&+ J_{k+1}\Bigl(S_{1:K}^{(k+1)}, N_{1:K}^{(k+1)}(u_k)\Bigr) \frac{N_{u_k}^{(k)} - S_{u_k}^{(k)} + 1}{N_{u_k}^{(k)} + 2} \Biggr] , \\
+	J_{N-1}\Bigl(S_{1:K}^{(N-1)}, N_{1:K}^{(N-1)}\Bigr) &= \max\limits_{u_{N-1} \in \hat K} \Biggl[ \frac{S_{u_{N-1}}^{(N-1)} + 1}{N_{u_{N-1}}^{(N-1)} + 2} \Biggr] ,
+\end{align*}
+kde
+\begin{itemize}
+	\item $S_{1:K}^{(k)}, N_{1:K}^{(k)}$ jsou zisky resp. počty zvolení jednotlivých rukou $\adob{1}{K}$ v $k$-tém kroku,
+	\item $S_{1:K}^{(k+1)}(u_k) = S_{1:K}^{(k)}$ všude až na pozici $u_k$, kde $S_{u_k}^{(k+1)} = S_{u_k}^{(k)} + 1$, analogicky $N$.
+\end{itemize}
+V případě rovnosti očekávaného zisku od více rukou je nutné použít náhodný výběr, aby nebyla některá ruka zvýhodněná.

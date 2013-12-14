@@ -1,0 +1,42 @@
+#!/usr/bin/gnuplot
+
+reset
+
+set xrange [-6.1:7.1]
+
+set lmargin 0
+set tmargin 0
+set bmargin 0
+set tics front
+unset ytics
+set xtics scale 0
+
+set term epslatex size 16cm, 5cm color colortext
+set out 'plots/opt-vs-kl/all.tex'
+
+set multiplot layout 1,2
+
+set boxwidth 0.2
+set style fill solid noborder
+
+bin_width = 1
+bin_number(x) = floor(x/bin_width)
+rounded(x) = bin_width * (bin_number(x))
+
+set size 0.7, 1
+set yrange [0:8000]
+
+plot \
+'./plots/opt-vs-kl/opt_3000.dat' u (rounded($1)+0.2):(10) smooth frequency w boxes t 'optimal' lc rgb "#8B008B",\
+'./plots/opt-vs-kl/ltd1_bay_30000.dat' u (rounded($1)+0.4):(1) smooth frequency w boxes t 'ltd\_bay(1)' lc rgb "#20C040",\
+'./plots/opt-vs-kl/ltd1_kl_30000.dat' u (rounded($1)+0.6):(1) smooth frequency w boxes t 'ltd\_kl(1)' lc rgb "#FFAB00",\
+'./plots/opt-vs-kl/kl+_30000.dat' u (rounded($1)+0.8):(1) smooth frequency w boxes t 'KL--UCB+' lc rgb "#1E90FF"
+
+
+set origin 0.7, 0
+unset tics
+unset label
+unset key
+unset border
+set label '\begin{tabular}{ | l | r | }\hline Strategie & $\E\{R_n\}$ \\ \hline {\tt optimal} & 0.28 \\ {\tt ltd\_bay} (1) & 0.38 \\ {\tt ltd\_kl} (1) & 0.41 \\ {\tt ltd\_kl} (4) & 0.39 \\ {\tt KL-UCB+} & 0.72 \\ \hline\end{tabular}' at -6.1, 4000
+plot 15000

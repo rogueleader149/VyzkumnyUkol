@@ -1,0 +1,13 @@
+\cleardoublepage\phantomsection   % cleardoublepage a phantomsection udělají že odkaz z obsahu vede NAD nadpis, jinak vede POD
+\addcontentsline{toc}{chapter}{Úvodem}
+\chapter*{Úvodem}
+
+Problémy dynamického rozhodování lze nalézt v mnoha oblastech, od matematické teorie her přes optimalizaci algoritmů až po ryze praktické záležitosti, jakou je například logistika. Základní teorie dynamického rozhodování je převzata z knihy {\em Dynamic Programming and Optimal Control}, \cite{bib:bert1}.
+
+Pro tuto třídu problémů si nadefinujeme jednotný, ale přitom jednoduchý matematický rámec. Jednoduchou úvahou nahlédneme algoritmus, který najde optimální řešení ve smyslu nejnižší střední hodnoty očekávané ztráty.
+
+Do nadefinovaného rámce však nebudou některé problémy na první pohled zapadat. Ukážeme si několik obecnějších případů, které bude možné přeformulovat. Na stranu druhou nás budou zajímat i případy konkrétnější, u kterých využijeme jejich vlastnosti ke zrychlení resp. zjednodušení řešení.
+
+Stěžejní reformulací této práce bude případ s nepřesnou znalostí stavu, kterému se v konkrétním zadání věnuje i druhá kapitola. V příslušné sekci se snažím zkompletovat všechny myšlenky i kroky důkazů potřebné k odvození důležitých filtračních hustot pravděpodobnosti tak, aby pokud možno každý závěr byl podložen.
+
+Zmíněná druhá kapitola se zabývá problémem bandity, což je archetypální problém tzv. {\em reinforcecment learning}, \cite{bib:reinf_survey}, a je využívaný též jako benchmarkový problém. Rozebírám zde článek autorů Garivier, Cappé \cite{bib:kl-ucb}, ve kterém je představen algoritmus KL--UCB. Z důkazu jeho chování přináším pouze vybranou část, kde se pracuje s použitou omezující funkcí.

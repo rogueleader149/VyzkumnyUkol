@@ -1,0 +1,37 @@
+\section{Algoritmus KL--UCB}
+
+Problém bandity je velmi elegantně a přitom účinně řešen ve článku \cite{bib:kl-ucb}. Algoritmus KL--UCB zde popsaný a analyzovaný spadá do rodiny UCB (Upper Confidence Bound), tedy hledá pro každou ruku horní přípustnou hranici střední odměny. To vyústí ve strategii, kdy čas od času vybere málo vybíranou ruku s horším průměrným ziskem před často vybíranou rukou s vyšším průměrným ziskem.
+
+Předpokládejme problém $K$-rukého bandity, kde $\forall a \in \hat K$ jsou odměny $(X_{a,t})_{t \geq 1}$ nezávislé, odměňují v omezeném intervalu $[0,1]$ a jež mají pro každé $a$ v čase neměnnou střední odměnu $\mu_a$. V každém časovém kroku $t$ vybere bandita na základě jeho dosavadních pozorování ruku $A_t$ a obdrží odměnu $X_{A_t, N_{A_t}(t)}$, kde $N_a(t) = \sum_{i=1}^t \indicator\{A_i = a\}$ značí počet vybrání ruky $a$ v čase $t$. Součet obdrživších odměn od ruky $a$ v čase $t$ označíme $S_a(t) = \sum_{i=1}^{N_a(t)} X_{a,i}$. Dále pro $(p,q) \in [0,1]^2$ napočteme Kullback-Leiblerovu divergenci Bernoulliho veličin
+\begin{equation}
+	d(p,q) = p \log\frac{p}{q} + (1-p)\log\frac{1-p}{1-q} ,
+\end{equation}
+s konvencí $0\log 0 = 0\log\frac{0}{0} = 0$ a $x\log\frac{x}{0} = \infty$ pro $x > 0$. Konečně, pro původní KL--UCB algoritmus položme
+\begin{equation}
+	b(t) = \log t + c \log(\log t) . \label{eqn:bound}
+\end{equation}
+
+\newpage
+\begin{algoritmus}\label{alg:KL-UCB}(KL--UCB)\\
+Označme: $n$ (časový horizont), $K$ (počet rukou), $R$ (odměňovací funkce, omezená v $[0,1]$)
+\begin{algorithmic}[1]
+	\For{$t = 1 \to K$}
+		\State $N[t] \gets 1$
+		\State $S[t] \gets R(\mathrm{ruka} = t)$
+	\EndFor
+	\For{$t = K+1 \to n$}
+		\State $a \gets \arg\max_{1 \leq a \leq K}\max_{q \in \Theta_a}\bigl\{ N[a] \; d\bigl(\frac{S[a]}{N[a]}, q\bigr) \leq b(t) \bigr\}$
+		\State $r \gets R(\mathrm{ruka} = a)$
+		\State $N[a] \gets N[a] + 1$
+		\State $S[a] \gets S[a] + r$
+	\EndFor
+\end{algorithmic}
+\end{algoritmus}
+
+\begin{pozn}
+V algoritmu \ref{alg:KL-UCB} se na 6. řádku ve funkci $b(t)$ \eqref{eqn:bound} vyskytuje parametr $c$, který musí být pro dosažení teoretických výsledků větší nebo roven 3 (kvůli odhadu \eqref{eqn:1}), nicméně autoři doporučují pro lepší výkon volit $c=0$. V experimentech tedy budeme pracovat už jen s volbou $c = 0$.
+\end{pozn}
+
+Pouhou empirickou modifikací omezovací funkce na $b^{(+)}(t, N_a) = \log t - \log N_a$ získáváme variantu KL--UCB, autory nazvanou KL--UCB+. Ta narozdíl od KL--UCB nemá žádné teoretické záruky, přesto testy v sekci \ref{sec:dl_hor} naznačují, že dává lepší výsledky.
+
+\input{./include/2-testy_2-KL-UCB_1-teorie.tex}

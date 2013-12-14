@@ -1,0 +1,10 @@
+\section{Teoretické vlastnosti problému bandity}
+
+Uvažujme automat, který pro libovolnou danou ruku $a$ odměňuje podle rozdělení náležícího dané jednoparametrické třídě rozdělení $\{ p_\theta \mid \theta \in \Theta_a \}$. Lai a Robins \cite{bib:lai} dokázali, později Burnetas a Katehakis \cite{bib:burnetas} zobecnili pro víceparametrické modely, teoretickou dolní hranici počtu tažení suboptimální ruky $a$ do času $n$, $N_a(n)$, pro libovolnou banditovu strategii
+\begin{equation}
+	N_a(n) \geq \left( \inf\limits_{\theta\in\Theta_a:\;\E(p_\theta) > \mu_{a^*}} \frac{1}{KL(p_{\theta_a}, p_\theta)} + o(1) \right) \log n , \label{eqn:lai}
+\end{equation}
+kde $KL(p_{\theta_a}, p_\theta)$ značí Kullback-Leiblerovu divergenci rozdělení ze zadané třídy s parametry $\theta_a$ a $\theta$, a $\E(p_\theta)$ střední odměnu při teoretickém parametru $\theta$. Odtud již plyne teoretická dolní mez pro
+\begin{equation}
+	\liminf\limits_{n\to\infty}\frac{\E\{R_n\}}{\log n} \geq \sum\limits_{a:\;\mu_a < \mu_{a^*}} \; \inf\limits_{\theta\in\Theta_a:\;\E(p_\theta^{(a)}) > \mu_{a^*}} \frac{\mu_{a^*} - \mu_a}{KL(p_{\theta_a}, p_\theta)} . \label{eqn:burnetas}
+\end{equation}

@@ -1,0 +1,103 @@
+\newpage
+\section{Aproximativní přístup}
+
+Dosud jsme se nezabývali výpočetní náročností DP -- ta může samotný výpočet znemožnit, nebo už samotnou minimalizaci není možné provést přesně. V této sekci se proto budeme zabývat metodami, které najdou alespoň přibližné řešení problému.
+
+\subsection{Certainty equivalent controller (CEC)} \label{sec:cec}
+
+První aproximativní přístup se inspiruje vlastností LQ modelu (sekce \ref{sec:lq}), sice nepotřeby znát rozdělení $w_k$, jen jejich střední hodnoty. Systém je tak vyhodnocován jako deterministický s poruchami fixovanými v určitých \uv{typických} hodnotách (ne nutně středních). Řešení deterministických systémů s sebou přináší markantní zjednodušení prostoru, přes který je optimalizováno -- hledáme pouze $N$-tici zásahů (viz sekce \ref{subsec:deter}). CEC aplikuje pouze první zásah, ostatní zahodí. V dalším kroku počítá vše znova, už na základě aktuálního stavu, který se zřejmě může lišit od předpokládaného.
+
+Pokud není z povahy problému vhodné v každém kroku přepočítávat strategii, můžeme předpočítat strategii $(\adob{\mu_0}{\mu_{N-1}})$ pro všechny možné stavy ve všech časech tohoto deterministického systému. Řešení dostáváme z principu stejné.
+
+\begin{priklad}\label{ex:cec_ol}
+	Je třeba též zmínit, že může nastat případ, kdy dává CEC horší výsledky než open-loop strategie, přestože má výhodu reagovat na stav systému. % příklad 6.2 (391)
+	
+	Uvažujme systém $x_{k+1} = x_k + u_k + w_k$ se stavy $x_k \in \Z$, $x_0 = 0$, zásahy $u_k \in \{0, 1\}$, stejně pravděpodobnými poruchami $w_k \in \{-1, 1\}$ a ztrátou $0$ pro $x_k$ sudé, $1$ pro $x_k$ liché. Uvažme, že CEC počítá typickou hodnotu jako střední hodnotu, tedy $\E \{w_k\} = 0$. V tomto případě se pro CEC jeví jako optimální zásah $0$, přitom je zřejmé, že i open-loop strategie dává jako optimální $1$. Zásah $u_k = 1$ zcela zřejmě optimální je.
+\end{priklad}
+
+Vraťme se k problému řízení systému s neznámými parametry ze sekce \ref{sec:nezn_par}. Tam jsme obdrželi rozdělení neznámého parametru $\theta$ podmíněného informačním vektorem. CEC z principu nahrazuje náhodné veličiny jejich typickými hodnotami, zde si však ukážeme příklad systému (původně z \cite{bib:borkar}), který \uv{zmate} CEC, a ze kterého se inspirujeme k empirickému návrhu dalšího možného přístupu.
+
+\begin{priklad}
+	Uvažujme systém se dvěma stavy $A$, $B$ a se dvěma možnými zásahy $u_1$, $u_2$. Přechodové pravděpodobnosti závisí na zásahu i na neznámém parametru, o kterém víme, že nabývá jedné z hodnot $\theta_1$ nebo $\theta_2$, přičemž $\theta_1$ budiž pravdivý. Ztráta při setrvání v počátečním stavu $A$ je nulová, při přechodu do a ze stavu $B$ je jednotková. Pro přechodové pravděpodobnosti předpokládejme
+	$$ P_{AA}(u_1, \theta_2) > P_{AA}(u_2, \theta_2), \quad P_{AA}(u_1, \theta_1) < P_{AA}(u_2, \theta_1), \quad P_{BB}(\cdot, \cdot) = 0 . $$
+	Optimální je zásah s vyšší pravděpodobností setrvání ve stavu 1, tedy $u_2$. Pro zmatení regulátoru předpokládejme navíc
+	$$ P_{AA}(u_1, \theta_2) = P_{AA}(u_1, \theta_1), \quad \textnormal{apriorní } P(\theta_2) > P(\theta_1) . $$
+	Pro regulátor se tedy zdá být optimální zásah $u_1$, ale protože při zásahu $u_1$ se chovají systémy identicky pro oba parametry, získaná data regulátor budou jen upevňovat ve víře, že správný je parametr $\theta_2$.
+	%~ To vyplyne z maximalizace výrazu
+	%~ $$ P(\theta \mid I_k) = \frac{P(I_k \mid \theta) \; P(\theta)}{P(I_k)} $$
+	%~ přes $\theta$.
+\end{priklad}
+
+\begin{pozn}\label{pozn:dilemma}
+	Hlavní problém CEC v předchozím příkladě je ten, že má tendenci volit pouze zásah $u_1$. Nám by se ale hodilo, aby regulátor používal i neoptimální zásahy za účelem získání nějaké dodatečné informace. Přímo se tak nabízí myšlenka rozdělit řízení na dvě podstrategie:
+	\begin{enumerate}
+		\item zkoumání (angl. exploration, probing),
+		\item získávání (angl. exploitation, caution).
+	\end{enumerate}
+	Tento přístup nejlépe vystihuje anglický termín {\em exploration vs. exploitation dilemma}. Jedná o dilema v tom smyslu, že ve fázi {\em exploration} děláme zásahy za účelem získání informací i za cenu vyšších ztrát, oproti tomu ve fázi {\em exploitation} se snažíme o nejnižší ztrátu, což nebývá informačně příliš přínosné. Kompromis mezi těmito přístupy se běžně nazývá {\em duální řízení}.
+\end{pozn}
+
+\subsection{Open-loop feedback control (OLFC)}
+
+Další aproximativní přístup se soustředí na problém s nepřesnou znalostí stavu za předpokladu \ref{predp:nezav_mer}. V takovém případě víme, že filtrační rozdělení $P_{x_k \mid I_k}$ je statistikou. Právě počítání těchto rozdělení pro všechny možné nastanuvší případy může výpočet prakticky znemožnit. Právě open-loop strategie budoucí informaci neuvažuje, na druhou stranu se nám vyplatí na změny systému reagovat. Výsledkem je tedy kompromis: budeme sice počítat open-loop strategii, zato v každém kroku na základě veškeré dostupné informace. Na první pohled je OLFC podobná CEC, která také vypočte v každém kroku celou strategii, použije jen první zásah a zbylé zahodí. Zásadní rozdíl je v tom, že OLFC počítá s poruchami \uv{poctivě}. Více následující tvrzení.
+
+\begin{tvrzeni}\label{tvr:olfc}
+	Ztráta $J_{\bar\pi}$ příslušící OLFC splňuje
+	$$ J_{\bar\pi} \leq J_0^* , $$
+	kde $J_0^*$ je optimální ztráta příslušná open-loop strategii.
+\end{tvrzeni}
+
+\begin{proof}
+	Důkaz zde nebudeme uvádět, je velmi zdlouhavý. Zvídavý čtenář může nahlédnout do \cite[sekce 6.2]{bib:bert1}.
+\end{proof}
+
+O strategii OLFC tak máme zaručenou horní hranici, koná alespoň tak dobře jako open-loop strategie. Nic takového o CEC neplatí, viz příklad \ref{ex:cec_ol}.
+
+Pokud výpočetní kapacity disponují rezervami, můžeme s potenciální budoucí informací částečně pracovat (např. omezeně kroků dopředu). Dokonce platí tvrzení analogické \ref{tvr:olfc} ještě s větší restrikcí, viz \cite{bib:bert76}.
+
+% Další aproximativní přístup využívá výpočetní zjednodušení vzniklé neuvažováním dostupnosti budoucí informace. Oproti open-loop však použije (podobně jako CEC) jen první zásah vypočtené strategie, v dalším kroku celou stretegii znovu přepočte.
+
+\subsection{Omezený výhled} \label{sec:ltd}
+
+Efektivní způsob omezení množství výpočtů je zkrácení hloubky rekurze, řekněme v čase $k$ na délku $l \geq 1$. K tomu ale potřebujeme pro $k+l < N$ nějaký odhad funkce $J_{k+l}$ (pro $k+l = N$ máme $g_N$), označme ho $\tilde J_{k+l}$. Pro obecné odhady zcela zřejmě nelze dokázat, že by nová strategie dávala lepší očekávanou ztrátu než jaký je odhad.
+
+Protože DP algoritmus v každém kroku opakujeme, nevyužijeme z vypočtené strategie jiný zásah než ten první na řadě. Nabízí se tak možnost využít metody nelineárního programování. Problémem je potom hlavně počítání integrálů (středních hodnot), čím hlubší rekurze, tím více jich je. Pro nejjednodušší případ $l = 1$ minimalizujeme
+\begin{equation}
+	\bar J_k(x_k) = \min\limits_{u_k \in U_k(x_k)} \; \E\limits_{w_k} \Bigl\{ g_k(x_k, u_k, w_k) + \tilde J_{k+1} \bigl( f_k(x_k, u_k, w_k) \bigr) \Bigr\} . \label{eqn:limited}
+\end{equation}
+
+Pro výběr vhodné aproximační funkce zřejmě není důležitá přímo její hodnota, nýbrž její rozdíly napříč stavy, předně by proto měla splňovat
+\begin{equation*}
+	\tilde J_{k+l}(x) - \tilde J_{k+l}(x') \approx J_{k+l}(x) - J_{k+l}(x')
+\end{equation*}
+pro libovolné dva stavy $x$ a $x'$, které jsou přípustné $l$ kroků od současného stavu.
+
+Jednu možnou aproximaci očekávané ztráty můžeme provést aproximací problému (např. LQ systémem, viz sekci \ref{sec:lq}). Další možností je využít k aproximaci nějakou jinou suboptimální strategii (CEC, OLFC, heuristika, \ldots). Tento přístup se nazývá {\em rollout} a hodí se hlavně pro náročné kombinatorické problémy.
+
+\subsection{Rollout}
+
+Označme $\bar\mu_k$ rozhodovací funkci dosahující minima z rovnice \eqref{eqn:limited}, kde přeznačíme $H_{k+1} = \tilde J_{k+1}$, to nyní bude značit očekávanou ztrátu nějaké suboptimální strategie $\pi = (\adob{\mu_0}{\mu_{N-1}})$ zvané {\em základní strategie}. Odtud rovnost
+\begin{equation}
+	H_k(x_k) = \E\bigl\{g_k(x_k, \mu_k(x_k), w_k) + H_{k+1}\bigl(f_k(x_k, \mu_k(x_k), w_k)\bigr)\bigr\} . \label{eqn:zakl_strat}
+\end{equation}
+$\bar\pi$ tedy je speciálním případem strategie s výhledem omezeným na jeden krok\footnote{Je též možné odvodit rollout pro delší výhled.}.
+
+Rollout strategie má výbornou vlastnost, a sice že není horší než její základní strategie.
+
+\begin{tvrzeni}
+	Předpokládejme rollout strategii $\bar\pi$ se základní strategií $\pi$. Očekávané ztráty označme $\bar J_k$ resp. $H_k$. Potom pro každé $k \in \hat N_0$ a pro každé $x_k \in S_k$ platí
+	\begin{equation}
+		\bar J_k(x_k) \leq H_k(x_k) .
+	\end{equation}
+\end{tvrzeni}
+\begin{proof}
+	Provedeme zpětnou indukci. Pro všechna $x_N \in S_N$ platí $\bar J_N(x_N) = H_N(x_N) = g_N(x_N)$. Předpokládejme $\bar J_{k+1}(x_{k+1}) \leq H_{k+1}(x_{k+1})$ pro každé $x_{k+1} \in S_{k+1}$, potom
+	\begin{align*}
+		\bar J_k(x_k) &= \E\bigl\{g_k(x_k, \bar\mu_k(x_k), w_k) + \bar J_{k+1}\bigl(f_k(x_k, \bar\mu_k(x_k), w_k)\bigr)\bigr\} \leq \\
+		&\leq \E\bigl\{g_k(x_k, \bar\mu_k(x_k), w_k) + H_{k+1}\bigl(f_k(x_k, \bar\mu_k(x_k), w_k)\bigr)\bigr\} \leq \\
+		&\leq \E\bigl\{g_k(x_k, \mu_k(x_k), w_k) + H_{k+1}\bigl(f_k(x_k, \mu_k(x_k), w_k)\bigr)\bigr\} = \\
+		&= H_k(x_k) ,
+	\end{align*}
+	kde první nerovnost plyne z indukčního předpokladu a druhá využívá minimality výrazu pro rollout algoritmus.
+\end{proof}
+Empiricky bylo vypozorováno, že rollout dává významně lepší ztrátu, než jeho základní strategie.

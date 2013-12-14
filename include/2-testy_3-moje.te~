@@ -1,0 +1,20 @@
+\newpage
+\section{Empirická změna hranice} \label{sec:moje}
+
+Vedle empirického vylepšení KL--UCB $\rightarrow$ KL--UCB+ (odp. změně $\log t \rightarrow \log t - \log N_a$) jsem provedl vlastní úpravu meze, která oproti KL--UCB+ zvýhodňuje málo vybrané ruce a je přísnější na ty často vybírané. Předpoklad je takový, že by měla lépe provádět zkoumání (být opatrnější), přitom neztrácet tolik jako KL--UCB.
+
+Nová omezovací funkce má navíc tu vlastnost, že její graf závislosti na počtu vybrání ruky $a$, $N_a$, vypadá stejně v každém čase $t$. Vyskytují se v ní dva parametry $c$, $d$, přičemž $c$ \uv{posouvá} vlevo/vpravo, $d$ zvyšuje \uv{prohnutí}. Funkce má tvar
+
+\begin{equation}
+	b^{(c,d)}(t, N_a) = \log t \cdot \frac{(1+c) (d-d^{\frac{\log N_a}{\log t}})}{
+	(c-1)(c^{\frac{\log N_a}{\log t}}+c)} . \label{eqn:my_bound}
+\end{equation}
+
+\begin{figure}[h]
+\begin{centering}
+	\input{plots/moje_funkce/all}
+	\caption{Mez \eqref{eqn:my_bound} pro libovolný čas $t$.}
+\end{centering}
+\end{figure}
+
+Vzhledem k časové náročnosti jednoho středování horizontu 20 000 pomocí 50 000 iterací (cca 40 hodin na jednom vlákně při 2.27 GHz) nebylo myslitelné intenzivní testování různých dvojic parametrů $c$, $d$. Vyzkoušel jsem pouze několik nastavení s malým počtem iterací, z nich jsem pak vybral dva kandidáty na důkladný test, a to pro hodnoty $(c,d) = (10,400)$ a $(c,d) = (20,800)$. Výsledky jsou spolu s dalšími v sekci \ref{sec:testy}.

@@ -1,0 +1,29 @@
+\section{Základní problém}
+
+\begin{definice}[Dynamický systém]\label{def:dyn_sys}
+	Buď $N \in \N$. Pro $k \in \{\adob{0}{N\!-\!1}\}$ buďte:
+	\begin{itemize}
+		\item $S_k$, $S_N$ neprázdné množiny (stavové prostory),
+		\item $C_k$ neprázdné množiny (množiny zásahů),
+		\item $U_k : S_k \rightarrow \powerset{C_k} \setminus \{\emptyset\}$ zobrazení omezující množinu zásahů pro dané $x_k \in S_k$,
+		\item $\bigl(D_k, P_k(\,\cdot\, \mid x_k, u_k)\bigr)$ pravděpodobnostní prostory náhodných poruch,
+		\item $f_k : \bigl(S_k, U_k(x_k), D_k\bigr) \rightarrow S_{k+1}$ zobrazení určující vývoj systému pro dané $x_k \in S_k$.
+	\end{itemize}
+	Systém takových množin a zobrazení nazveme {\em dynamický systém\footnote{V různých oblasteh matematiky je definice dynamického systému různá.}}.
+\end{definice}
+
+\begin{definice}[Základní problém]\label{def:zakl_prob}
+	Mějme dynamický systém dle definice \ref{def:dyn_sys}. Dále u\-va\-žuj\-me množinu $\Pi$ strategií $\pi = (\adob{\mu_0}{\mu_{N-1}})$ sestávajících se z $N$-tice funkcí $\mu_k : S_k \rightarrow U_k(x_k)$ zobrazujících z množiny stavů do příslušně omezené množiny zásahů. Dále mějme tzv. ztrátové funkce $g_k : (S_k, U_k(x_k), D_k) \rightarrow \R$ pro $k \in \{\adob{0}{N-1}\}$ a $g_N : S_N \rightarrow \R$. Definujme očekávanou ztrátu strategie $\pi$ jako střední hodnotu
+	$$ J_\pi(x_0) = \E\limits_{w_i} \Biggl\{g_N(x_N) + \sum\limits_{j=0}^{N-1} g_j\bigl(x_j, \mu_j(x_j), w_j\bigr)\Biggr\}. $$
+	Hledání $\pi^*$ takového, že pro dané $x_0$ platí $J_{\pi^*}(x_0) = \inf\limits_{\pi \in \Pi} J_\pi(x_0)$, nazveme základním pro\-blé\-mem dynamického programování.
+\end{definice}
+
+\begin{pozn}
+	Takové $\pi^*$ zřejmě existovat nemusí. Pokud ano, nazveme ho {\em optimální strategií}. Pro takové $\pi^*$ dále označíme $J^*(x_0) = J_{\pi^*}(x_0)$.
+\end{pozn}
+
+\subsection{Role a hodnota informace} \label{sec:info}
+
+Pokud bychom v předchozí definici \ref{def:zakl_prob} neprováděli minimalizaci přes strategie (tzv. {\em closed-loop}), ale jen přes zásahy (tzv. {\em open-loop}), získali bychom neostře horší ztrátu. To plyne z faktu, že minimalizujeme přes neostře menší množinu -- místo všech strategií bereme de facto jen strategie s konstantními funkcemi. Výhodou open-loop je významné zjednodušení optimalizační úlohy, hledáme totiž pouze vektor $(\adob{u_0}{u_{N-1}})$, který minimalizuje ztrátovou funkci. Převedli jsme tím problém dynamického programování na problém (ne)lineárního programování.
+
+%~ Rozdíl ztrát open- a closed-loop strategií nazveme {\em hodnota informace}. Má význam zlepšení střední ztráty v případě, kdy reagujeme na stav systému, oproti případu, kdy máme předem danou strategii bez ohledu na stav systému.

@@ -1,0 +1,33 @@
+\begin{thebibliography}{1}
+
+\bibitem{square_ub}
+Leonard Adleman, Qi~Cheng, Ashish Goel, and Ming-Deh Huang.
+\newblock Running time and program size for self-assembled squares.
+\newblock In {\em Proceedings of the thirty-third annual ACM symposium on
+  Theory of computing}, pages 740--748. ACM, 2001.
+
+\bibitem{stage_assembly}
+Bahar Behsaz, J{\'a}n Ma{\v{n}}uch, and Ladislav Stacho.
+\newblock Turing universality of step-wise and stage assembly at temperature 1.
+\newblock In {\em DNA Computing and Molecular Programming}, pages 1--11.
+  Springer, 2012.
+
+\bibitem{cook_temp1}
+Matthew Cook, Yunhui Fu, and Robert Schweller.
+\newblock Temperature 1 self-assembly: Deterministic assembly in 3d and
+  probabilistic assembly in 2d.
+\newblock In {\em Proceedings of the Twenty-Second Annual ACM-SIAM Symposium on
+  Discrete Algorithms}, pages 570--589. SIAM, 2011.
+
+\bibitem{square_lb}
+Paul~WK Rothemund and Erik Winfree.
+\newblock The program-size complexity of self-assembled squares.
+\newblock In {\em Proceedings of the thirty-second annual ACM symposium on
+  Theory of computing}, pages 459--468. ACM, 2000.
+
+\bibitem{winfree_phd}
+Erik Winfree.
+\newblock {\em Algorithmic self-assembly of DNA}.
+\newblock PhD thesis, California Institute of Technology, 1998.
+
+\end{thebibliography}

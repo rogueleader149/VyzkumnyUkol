@@ -1,0 +1,47 @@
+\chapter{Úvod do dynamického programování}
+	
+	\input{./include/1-uvod_1-zaklad.tex}
+	
+	\input{./include/1-uvod_2-DP_alg.tex}
+	
+	\input{./include/1-uvod_3-LQ.tex}
+	
+	\input{./include/1-uvod_4-imperfect.tex}
+	
+	\input{./include/1-uvod_5-approx.tex}
+	
+
+%~ \newpage
+%~ \section*{Příklady}
+	%~ 
+	%~ \begin{priklad}[Optimalizace šachové strategie]
+		%~ Hráč hraje dvoukolový turnaj v šachu tak, že každé kolo může dopadnout
+		%~ \begin{itemize}
+			%~ \item výhrou jednoho z hráčů (1 bod pro vítěze, 0 pro loosera),
+			%~ \item remízou (\nicefrac{1}{2} bodu pro oba).
+		%~ \end{itemize}
+		%~ Pokud turnaj dopadne 1:1, přichází na řadu náhlá smrt (hráči pokračují, dokud jeden z nich nevyhraje).
+		%~ 
+		%~ Hráč disponuje dvěma herními styly, z nichž si před každou hrou vybírá:
+		%~ \begin{itemize}
+			%~ \item bojácný -- remíza s pravděpodobností $p_r$, prohra s $(1-p_r)$,
+			%~ \item troufalý -- výhra s pravděpodobností $p_v$, prohra s $(1-p_v)$.
+		%~ \end{itemize}
+		%~ Pokud tedy dojde na náhlou smrt, nemá smysl hrát bojácně -- není možnost vyhrát a jen hráč riskuje prohru. Má proto smysl optimalizovat pouze první dvě rozhodnutí. Předpokládejme nyní strategii%\footnote{Později bude ukázáno, že tato strategie je optimální za předpokladu $p_r > p_v$.}   % kdy a kde?
+		%~ , kdy hráč bude hrát bojácně právě tehdy když bude vést.
+		%~ 
+		%~ První hru tedy hraje troufale, skóre tak bude 1:0 s pravděpodobností $p_v$ a 0:1 s pravděpodobností $(1-p_v)$. Ve druhém kole hraje bojácně v prvním případě, troufale v případě druhém, pravděpodobnost výhry turnaje tak bude $p_v p_r$, prohry $(1-p_v)^2$ a remízy $p_v (1-p_r) + (1-p_v) p_v$. V případě remízy hraje vždy troufale, pravděpodobnost výhry pak bude $p_v$, prohry $(1-p_v)$. Ve výsledku je pravděpodobnost výhry turnaje
+		%~ $$ p_v p_r + p_v (p_v (1-p_r) + (1-p_v) p_v) . $$
+		%~ 
+		%~ Zde stojí za povšimnutí fakt, že i při pravděpodobnosti výhry $p_v < \nicefrac{1}{2}$ vychází při dostatečně velké pravděpodobnosti remízy pravděpodobnost výhry turnaje větší než \nicefrac{1}{2}! Stačí dosadit $p_v = 0.45$ a $p_r = 0.9$, výsledek je přibližně 0.53.
+		%~ 
+		%~ % přidat hodnotu informace (16)
+		%~ % aplikovat DP algoritmus (32)
+	%~ \end{priklad}
+	
+	% 1.3 (52) -- machine running X broken down (jednoduchej na DP tabulku)
+	% 1.25 (60) -- pokoje (DP odvodí pěknou rekurzi)
+	% 1.1.1 (3) -- inventory control (motivační, bez řešení)
+	% 4.5.1 (186) -- kvíz (potřebuje extra přístup -- jako ve většině aplikací, varianty 4.27-29)
+	% 1.3.1 (25) -- dvě pece (motivační lin. s kvadr. ztrátou)
+	% 4.13 (208) -- pochopit a udělat

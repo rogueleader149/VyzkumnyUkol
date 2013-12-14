@@ -1,0 +1,43 @@
+\newpage
+\section{Lineární systémy s kvadratickou ztrátou} \label{sec:lq}
+
+Než se dostaneme k aproximativnímu přístupu, ukážeme si, jak řešit lineární systém s kvadratickou ztrátou. Lze totiž řešit analyticky a jeho použití je nasnadě -- jako první aproximace složitějších systémů.
+
+Uvažujme lineární systém
+$$ x_{k+1} = A_k x_k + B_k u_k + w_k , \quad k \in \{\adob{0}{N-1}\} $$
+s kvadratickou ztrátou
+$$ x_N^T Q_N x_N + \sum\limits_{j=0}^{N-1} \bigl( x_j^T Q_j x_j + u_j^T R_j u_j \bigr) , $$
+kde $x_k$ a $u_k$ jsou vektory dimenze $n$ respektive $m$, matice $A_k$, $B_k$, $Q_k$ a $R_k$ mají odpovídající rozměry, dále $Q_k$ a $R_k$ jsou symetrické pozitivně semidefinitní (PSD) respektive pozitivně definitní (PD) a zásahy $u_k$ nejsou omezené. Náhodné poruchy $w_k$ jsou nezávislé vektory s daným rozdělením, jež {\em nezávisí} na $x_k$ a $u_k$. Pro jednoduchost předpokládejme, že mají nulovou střední hodnotu a konečné druhé momenty. Případy s pozměněnými předpoklady jsou dále diskutovány v \cite[sekce 4.1]{bib:bert1}.
+
+Použitím DP algoritmu dostáváme
+\begin{align*}
+	J_N(x_n) &= x_N^T Q_N x_N , \\
+	J_k(x_k) &= \min\limits_{u_k} \; \E \bigl\{ x_k^T Q_k x_k + u_k^T R_k u_k + J_{k+1} (A_k x_k + B_k u_k + w_k) \bigr\} .
+\end{align*}
+Jedná se o rekurzi, tudíž musíme začít řešit pro $k = N-1$. Nakonec jen ukážeme, že stejný postup můžeme aplikovat postupně na všechna menší $k$. Ve výrazu jsme rovnou vše roznásobili a eliminovali člen $\E \{ w_{N-1}^T Q_N (A_{N-1} x_{N-1} + B_{N-1} u_{N-1}) \}$, tak získáváme
+\begin{align*}
+	J_{N-1}(x_{N-1}) = &~ x_{N-1}^T Q_{N-1} x_{N-1} + \min\limits_{u_{N-1}} \bigl[ u_{N-1}^T R_{N-1} u_{N-1} + u_{N-1}^T B_{N-1}^T Q_N B_{N-1} u_{N-1} + \\
+	&+ \; 2 x_{N-1}^T A_{N-1}^T Q_N B_{N-1} u_{N-1} \bigr] + x_{N-1}^T A_{N-1}^T Q_N A_{N-1} x_{N-1} + \\
+	&+ \; \E \bigl\{ w_{N-1}^T Q_N w_{N-1} \bigr\} .
+\end{align*}
+Výraz zderivujeme podle $u_{N-1}$ a derivaci položíme rovnu nule, dostáváme
+$$ \bigl( R_{N-1} + B_{N-1}^T Q_N B_{N-1} \bigr) u_{N-1} = - B_{N-1}^T Q_N A_{N-1} x_{N-1} . $$
+Matice vedle $u_{N-1}$ je PD, protože $B_{N-1}^T Q_N B_{N-1}$ je PSD a $R_{N-1}$ je PD, tudíž invertibilní, a dostáváme
+$$ u_{N-1}^* = - \bigl( R_{N-1} + B_{N-1}^T Q_N B_{N-1} \bigr)^{-1} B_{N-1}^T Q_N A_{N-1} x_{N-1} . $$
+Substituujme-li
+$$ K_{N-1} = A_{N-1}^T \bigl( Q_N - Q_N B_{N-1} ( R_{N-1} + B_{N-1}^T Q_N B_{N-1} )^{-1} B_{N-1}^T Q_N \bigr) A_{N-1} + Q_{N-1} , $$
+pak můžeme přepsat $J_{N-1}(x_{N-1})$ do tvaru
+$$ J_{N-1}(x_{N-1}) = x_{N-1}^T K_{N-1} x_{N-1} + \E \bigl\{ w_{N-1}^T Q_N w_{N-1} \bigr\} . $$
+Je zřejmé, že $K_{N-1}$ je symetrická PSD, tudíž $J_{N-1}$ je opět PSD kvadratická forma (plus konstanta), a my můžeme celý proces zopakovat. Dostaneme tak optimální strategii ve tvaru
+$$ \mu_k^* (x_k) = L_k x_k , $$
+kde
+$$ L_k = - \bigl( R_k + B_k^T K_{k+1} B_k \bigr)^{-1} B_k^T K_{k+1} A_k , $$
+kde PSD matice $K_k$ jsou dány rekurzivně
+\begin{align*}
+	K_N &= Q_N , \\
+	K_k &= A_k^T \bigl( K_{k+1} - K_{k+1} B_k (R_k + B_k^T K_{k+1} B_k)^{-1} B_k^T K_{k+1} \bigr) A_k + Q_k .
+\end{align*}
+Optimální ztráta pak činí
+$$ J_0(x_0) = x_0^T K_0 x_0 + \sum\limits_{j=1}^{N} \E\bigl\{ w_{j-1}^T K_j w_{j-1} \bigr\} . $$
+
+Za povšimnutí stojí, že jsme k řešení nepotřebovali znát konkrétní rozdělení $w_k$. Dokonce ani v případě $\E\{w_k\} \neq 0$, stačí znalost středních hodnot. Z této vlastnosti vychází aproximační metoda CEC popsaná v sekci \ref{sec:cec}.
