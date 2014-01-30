@@ -1,10 +1,15 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
 \bibitem{square_ub}
 Leonard Adleman, Qi~Cheng, Ashish Goel, and Ming-Deh Huang.
 \newblock Running time and program size for self-assembled squares.
 \newblock In {\em Proceedings of the thirty-third annual ACM symposium on
   Theory of computing}, pages 740--748. ACM, 2001.
+
+\bibitem{adleman94}
+Leonard~M Adleman.
+\newblock Molecular computation of solutions to combinatorial problems.
+\newblock {\em Science - New York then Washington}, pages 1021--1024, 1994.
 
 \bibitem{stage_assembly}
 Bahar Behsaz, J{\'a}n Ma{\v{n}}uch, and Ladislav Stacho.
@@ -18,6 +23,31 @@ Matthew Cook, Yunhui Fu, and Robert Schweller.
   probabilistic assembly in 2d.
 \newblock In {\em Proceedings of the Twenty-Second Annual ACM-SIAM Symposium on
   Discrete Algorithms}, pages 570--589. SIAM, 2011.
+
+\bibitem{feynman}
+Richard~P Feynman.
+\newblock There's plenty of room at the bottom.
+\newblock {\em Engineering and Science}, 23(5):22--36, 1960.
+
+\bibitem{seeman93}
+Tsu~Ju Fu and Nadrian~C Seeman.
+\newblock Dna double-crossover molecules.
+\newblock {\em Biochemistry}, 32(13):3211--3220, 1993.
+
+\bibitem{kozen06}
+Dexter Kozen.
+\newblock {\em Theory of computation}.
+\newblock Springer, 2006.
+
+\bibitem{lipton96speedup}
+Richard~J Lipton.
+\newblock Speeding up computations via molecular biology.
+\newblock {\em DNA Based Computers}, 27:67--74, 1996.
+
+\bibitem{lipton95}
+Richard~J Lipton et~al.
+\newblock Dna solution of hard computational problems.
+\newblock {\em Science}, 268(5210):542--545, 1995.
 
 \bibitem{square_lb}
 Paul~WK Rothemund and Erik Winfree.

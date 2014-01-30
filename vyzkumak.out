@@ -1,5 +1,19 @@
 \BOOKMARK [0][-]{section*.2}{Prolog}{}
-\BOOKMARK [0][-]{chapter.1}{Overview}{}
-\BOOKMARK [0][-]{chapter.2}{Computational power}{}
-\BOOKMARK [0][-]{section*.4}{Epilog}{}
-\BOOKMARK [0][-]{section*.6}{References}{}
+\BOOKMARK [0][-]{chapter.1}{Introduction to DNA computation}{}
+\BOOKMARK [1][-]{section.1.1}{Basic DNA principles}{chapter.1}
+\BOOKMARK [1][-]{section.1.2}{Complexity, languages}{chapter.1}
+\BOOKMARK [0][-]{chapter.2}{Strand models}{}
+\BOOKMARK [1][-]{section.2.1}{Adleman's experiment}{chapter.2}
+\BOOKMARK [1][-]{section.2.2}{Single-stranded molecules}{chapter.2}
+\BOOKMARK [1][-]{section.2.3}{Double-stranded molecules}{chapter.2}
+\BOOKMARK [2][-]{subsection.2.3.1}{Linear strands}{section.2.3}
+\BOOKMARK [2][-]{subsection.2.3.2}{Dendrimer structures}{section.2.3}
+\BOOKMARK [1][-]{section.2.4}{Double crossover molecules}{chapter.2}
+\BOOKMARK [0][-]{chapter.3}{Wang tile models}{}
+\BOOKMARK [1][-]{section.3.1}{Definition}{chapter.3}
+\BOOKMARK [1][-]{section.3.2}{Computational power}{chapter.3}
+\BOOKMARK [2][-]{subsection.3.2.1}{Turing universality of 2D tiles at T=2}{section.3.2}
+\BOOKMARK [0][-]{chapter.4}{Results}{}
+\BOOKMARK [1][-]{section.4.1}{Graph 3-coloring}{chapter.4}
+\BOOKMARK [0][-]{section*.5}{Epilog}{}
+\BOOKMARK [0][-]{section*.7}{References}{}

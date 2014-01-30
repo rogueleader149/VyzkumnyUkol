@@ -2,7 +2,7 @@
 
 \usepackage{a4wide,cite}
 \usepackage[utf8]{inputenc}
-\usepackage{amsmath, amsthm, amssymb, units, dsfont, algorithmicx, algpseudocode}   % dsfont pro indikátor jevu
+\usepackage{amsmath, amsthm, amssymb, units, dsfont, algorithmicx, algpseudocode, nomencl}   % dsfont pro indikátor jevu
 \usepackage[pdftex,
 						pdfauthor={Jakub Klemsa},
 						pdftitle={Models of self-assembling DNA nanostructures, Jakub Klemsa},
@@ -10,7 +10,6 @@
 						pdfkeywords={Wang tiles, aTAM, Turing universality},
 						pdfproducer={Jakub Klemsa},
 						pdfcreator=dvipdf]{hyperref}
-
 \usepackage{graphicx,color,tabularx,float}
 \usepackage{fancyhdr}
 \pagestyle{fancy}
@@ -18,6 +17,7 @@
 \fancyhead[L]{\slshape \rightmark} % \leftmark .. kapitola
 \fancyhead[R]{\thepage}
 \oddsidemargin=10mm   % jednostranný tisk !!!
+\makenomenclature   % vyrobí nomenklaturu
 
 \let\tmpitem\item
 \renewcommand{\item}{\setlength{\itemsep}{2pt}\tmpitem}   % míň roztahovačný seznamy
@@ -50,8 +50,9 @@
 
 %%% VYHLEDAT A OPRAVIT !!! %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \let\haluz\relax
+\let\hobza\relax
 \haluz % program vlna nakonec!
-% vlna !!
+% naučit se psát jednoduchý konsekventy! viz Adleman str. 3 nahoře: "Note that the labeling ..."
 % taky opravit N-1 na N\!-\!1
 % zkontrolovat \min \; ...
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -79,10 +80,10 @@
 \newcommand{\misto}{Praha}
 \newcommand{\vMiste}{Praze}
 
-\newcommand{\klicova}{}
-\newcommand{\keyword}{}
-\newcommand{\abstrCZ}{Bla bla abstrakt CZ.}
-\newcommand{\abstrEN}{Bla bla abstrakt EN.}
+\newcommand{\klicova}{Klíčová.}
+\newcommand{\keyword}{Keywords.}
+\newcommand{\abstrCZ}{Abstrakt CZ.}
+\newcommand{\abstrEN}{Abstrakt EN.}
 %%% k vyplnění KONEC ---------------------------------------------------
 
 
@@ -109,7 +110,7 @@
 \thispagestyle{empty}
 \begin{center}
 	{\Large \cvut \\[10pt] \fjfi \\[10pt] \km \\[40pt]}
-	\includegraphics[height=75pt]{lev.eps} \\[100pt]
+	\includegraphics[height=75pt]{lev.pdf} \\[100pt]
 	
 	{\LARGE \TYPPRACE \\[60pt]}
 	
@@ -152,7 +153,7 @@ Prohlašuji na tomto místě, že jsem předloženou práci vypracoval samostatn
 \vspace{1.5cm}
 
 \noindent
-\vspace{5mm}V \vMiste dne \today\hfill
+\vspace{5mm}V \vMiste ~dne \today\hfill
 	\begin{tabular}{c}
 	. . . . . . . . . . . . . . . . . . . . . . .\\
 	\autor
@@ -168,7 +169,7 @@ Prohlašuji na tomto místě, že jsem předloženou práci vypracoval samostatn
 \vspace{0.5cm}
 
 \noindent
-Děkuji \vedoucimu, za vedení \mePrace a za podnětné návrhy, které \rodPrace ~obohatily.
+Děkuji \vedoucimu, za vedení \mePrace ~a za podnětné návrhy, které \rodPrace ~obohatily.
 
 \begin{flushright}
 \autor
@@ -198,6 +199,12 @@ Děkuji \vedoucimu, za vedení \mePrace a za podnětné návrhy, které \rodPrac
 \newpage
 
 
+%%% nomenklatura \haluz nefunguje
+\thispagestyle{empty}
+\printnomenclature
+\newpage
+
+
 %%% obsah
 \tableofcontents
 \thispagestyle{empty}
@@ -214,11 +221,17 @@ Děkuji \vedoucimu, za vedení \mePrace a za podnětné návrhy, které \rodPrac
 %%% ÚVODEM
 \input{./include/0-prolog.tex}
 
-%%% KAPITOLA 1 -- Úvod
-\input{./include/1-overview.tex}
+%%% KAPITOLA 1
+\input{./include/1-intro.tex}
 
-%%% KAPITOLA 2 -- Testy
-\input{./include/2-comp_power.tex}
+%%% KAPITOLA 2
+\input{./include/2-strand_models.tex}
+
+%%% KAPITOLA 3
+\input{./include/3-wang-tile_models.tex}
+
+%%% KAPITOLA 4
+\input{./include/4-results.tex}
 
 %%% ZÁVĚREM
 \input{./include/n-1-epilog.tex}
