@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2013.11.18)  30 JAN 2014 21:53
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2013.11.18)  31 JAN 2014 22:37
 entering extended mode
  %&-line parsing enabled.
 **vyzkumak.tex
@@ -360,7 +360,13 @@ Package: nomencl 2005/09/22 v4.2 Nomenclature package (LN)
 \nomlabelwidth=\dimen112
 \nom@tempdim=\dimen113
 \nomitemsep=\skip52
-) (/usr/share/texmf-texlive/tex/latex/hyperref/hyperref.sty
+) (./nicefrac.sty
+Package: nicefrac 1998/08/04 v0.9b Nice fractions
+\L@UnitsRaiseDisplaystyle=\skip53
+\L@UnitsRaiseTextstyle=\skip54
+\L@UnitsRaiseScriptstyle=\skip55
+)
+(/usr/share/texmf-texlive/tex/latex/hyperref/hyperref.sty
 Package: hyperref 2009/10/09 v6.79a Hypertext links for LaTeX
 
 (/usr/share/texmf-texlive/tex/latex/graphics/keyval.sty
@@ -515,8 +521,8 @@ Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
 \col@sep=\dimen119
 \extrarowheight=\dimen120
 \NC@list=\toks29
-\extratabsurround=\skip53
-\backup@length=\skip54
+\extratabsurround=\skip56
+\backup@length=\skip57
 )
 \TX@col@width=\dimen121
 \TX@old@table=\dimen122
@@ -535,15 +541,15 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \@floatcapt=\box29
 )
 (/usr/share/texmf-texlive/tex/latex/fancyhdr/fancyhdr.sty
-\fancy@headwidth=\skip55
-\f@ncyO@elh=\skip56
-\f@ncyO@erh=\skip57
-\f@ncyO@olh=\skip58
-\f@ncyO@orh=\skip59
-\f@ncyO@elf=\skip60
-\f@ncyO@erf=\skip61
-\f@ncyO@olf=\skip62
-\f@ncyO@orf=\skip63
+\fancy@headwidth=\skip58
+\f@ncyO@elh=\skip59
+\f@ncyO@erh=\skip60
+\f@ncyO@olh=\skip61
+\f@ncyO@orh=\skip62
+\f@ncyO@elf=\skip63
+\f@ncyO@erf=\skip64
+\f@ncyO@olf=\skip65
+\f@ncyO@orf=\skip66
 )
 \@nomenclaturefile=\write3
 \openout3 = `vyzkumak.nlo'.
@@ -600,7 +606,7 @@ LaTeX Info: Redefining \pageref on input line 90.
 ) [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-<lev.pdf, id=86, 91.34125pt x 69.25874pt>
+<lev.pdf, id=94, 91.34125pt x 69.25874pt>
 File: lev.pdf Graphic file (type pdf)
  <use lev.pdf>
 LaTeX Font Info:    Try loading font information for U+msa on input line 124.
@@ -634,7 +640,7 @@ Chapter 1.
 
 ]
 Chapter 2.
-<./figures/adleman_graph.pdf, id=165, 307.1475pt x 191.71625pt>
+<./figures/adleman_graph.pdf, id=175, 307.1475pt x 191.71625pt>
 File: ./figures/adleman_graph.pdf Graphic file (type pdf)
 
 <use ./figures/adleman_graph.pdf> [3
@@ -646,7 +652,7 @@ has been already used, duplicate ignored
                                                   \fi \fi 
 l.24 
       <./figures/adleman_graph.pdf>]
-<./figures/adleman_strands.pdf, id=187, 305.14pt x 56.21pt>
+<./figures/adleman_strands.pdf, id=197, 305.14pt x 56.21pt>
 File: ./figures/adleman_strands.pdf Graphic file (type pdf)
 
 <use ./figures/adleman_strands.pdf>
@@ -673,13 +679,13 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 13.
 
-<./figures/tiles1.pdf, id=240, 269.005pt x 466.74374pt>
+<./figures/tiles1.pdf, id=250, 269.005pt x 466.74374pt>
 File: ./figures/tiles1.pdf Graphic file (type pdf)
 
 <use ./figures/tiles1.pdf> [6
 
 ]
-<./figures/tiles2.pdf, id=250, 282.05376pt x 418.56375pt>
+<./figures/tiles2.pdf, id=260, 282.05376pt x 418.56375pt>
 File: ./figures/tiles2.pdf Graphic file (type pdf)
 
 <use ./figures/tiles2.pdf> [7pdfTeX warning (ext4): destination with the same i
@@ -701,49 +707,87 @@ ntifier (name{figure.3.2}) has been already used, duplicate ignored
 l.1 \chapter
             {Results} <./figures/tiles2.pdf>]
 Chapter 4.
-)
-Overfull \hbox (30.18535pt too wide) in paragraph at lines 5--235
-\OT1/cmr/m/n/10.95 Might be prob-lem with or-der-ing, see orig-i-nal Knuth's al
--go-rithm at []$\OT1/cmtt/m/n/10.95 http : / / www . iti . fh-[]flensburg .
+
+Overfull \hbox (13.21144pt too wide) in paragraph at lines 16--17
+\OT1/cmr/m/n/10.95 Remind orig-i-nal Knuth's al-go-rithm at []$\OT1/cmtt/m/n/10
+.95 http : / / www . iti . fh-[]flensburg . de / lang / algorithmen /
  []
 
-(./include/n-1-epilog.tex [9
+<./figures/3-color/3-color.pdf, id=318, 370.18298pt x 569.32701pt>
+File: ./figures/3-color/3-color.pdf Graphic file (type pdf)
 
-]) (./include/n-biblio.tex [10
+<use ./figures/3-color/3-color.pdf>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-] (./vyzkumak.bbl))
-[11
+LaTeX Warning: Citation `borec_z_wiki' on page 9 undefined on input line 31.
+
+[9
+
+] <./figures/isomorphism/isomorphism.pdf, id=328, 313.17pt x 725.91202pt>
+File: ./figures/isomorphism/isomorphism.pdf Graphic file (type pdf)
+
+<use ./figures/isomorphism/isomorphism.pdf>
+
+LaTeX Warning: Float too large for page by 18.15703pt on input line 47.
 
 
-] (./vyzkumak.aux) ) 
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+) (./include/n-1-epilog.tex [10] [11pdfTeX warning (ext4): destination with the
+ same identifier (name{figure.4.1}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1 \cleardoublepage
+                    \phantomsection   % cleardoublepage a phantomsection udÄ...
+ <./figures/3-color/3-color.pdf>] [12pdfTeX warning (ext4): destination with th
+e same identifier (name{figure.4.2}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1 \cleardoublepage
+                    \phantomsection   % cleardoublepage a phantomsection udÄ...
+ <./figures/isomorphism/isomorphism.pdf>]) (./include/n-biblio.tex [13
+
+
+]
+(./vyzkumak.bbl)) [14
+
+
+] (./vyzkumak.aux)
+
+LaTeX Warning: There were undefined references.
+
+ ) 
 Here is how much of TeX's memory you used:
- 6594 strings out of 495027
- 88961 string characters out of 1181418
- 162167 words of memory out of 3000000
- 9537 multiletter control sequences out of 15000+50000
+ 6639 strings out of 495027
+ 89735 string characters out of 1181418
+ 162783 words of memory out of 3000000
+ 9565 multiletter control sequences out of 15000+50000
  18267 words of font info for 70 fonts, out of 3000000 for 9000
  38 hyphenation exceptions out of 8191
  38i,11n,43p,840b,381s stack positions out of 5000i,500n,10000p,200000b,50000s
-</usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cm
-bx10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx12.pfb></
-usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/t
-exmf-texlive/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-texliv
-e/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-texlive/fonts/type
-1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-texlive/fonts/type1/public/ams
-fonts/cm/cmr12.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr
-17.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/
-share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-t
-exlive/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texmf-texlive/fonts/
-type1/public/amsfonts/cm/cmsl10.pfb></usr/share/texmf-texlive/fonts/type1/publi
-c/amsfonts/cm/cmsy10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/
-cm/cmsy8.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmti10.pf
-b></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/shar
-e/texmf-texlive/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texmf-tex
-live/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on vyzkumak.pdf (18 pages, 310862 bytes).
+</usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/sha
+re/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-te
+xlive/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-texlive/fonts
+/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-texlive/fonts/type1/publ
+ic/amsfonts/cm/cmmi8.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/
+cm/cmr10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr12.pfb
+></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share
+/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texmf-texliv
+e/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-texlive/fonts/type1
+/public/amsfonts/cm/cmr9.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfo
+nts/cm/cmsl10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy
+10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr
+/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texm
+f-texlive/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/share/texmf-texlive/fo
+nts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texmf-texlive/fonts/type1/p
+ublic/amsfonts/symbols/msbm10.pfb>
+Output written on vyzkumak.pdf (21 pages, 339832 bytes).
 PDF statistics:
- 396 PDF objects out of 1000 (max. 8388607)
- 62 named destinations out of 1000 (max. 500000)
- 178 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 446 PDF objects out of 1000 (max. 8388607)
+ 72 named destinations out of 1000 (max. 500000)
+ 204 words of extra memory for PDF output out of 10000 (max. 10000000)
 
