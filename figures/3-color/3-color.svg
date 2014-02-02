@@ -1111,11 +1111,11 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.70000001"
-     inkscape:cx="395.51986"
-     inkscape:cy="434.49293"
+     inkscape:zoom="1.979899"
+     inkscape:cx="230.85146"
+     inkscape:cy="59.960477"
      inkscape:document-units="mm"
-     inkscape:current-layer="g3735"
+     inkscape:current-layer="layer1"
      showgrid="true"
      units="mm"
      inkscape:window-width="1286"
@@ -3507,7 +3507,7 @@
          sodipodi:role="line"
          id="tspan7078"
          x="67.322838"
-         y="1024.0157">#'</tspan></text>
+         y="1024.0157">8</tspan></text>
     <path
        style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        d="m 88.582677,999.21258 35.433073,-35.43307 35.43307,35.43307 0,35.43302 -70.866143,0 0,-35.43302 z"
@@ -3551,7 +3551,7 @@
          sodipodi:role="line"
          id="tspan7078-89"
          x="95.669289"
-         y="1024.0157">#'</tspan></text>
+         y="1024.0157">8</tspan></text>
     <path
        style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        d="m 159.44882,999.21258 35.43307,-35.43307 35.43307,35.43307 0,35.43302 -70.86614,0 0,-35.43302 z"

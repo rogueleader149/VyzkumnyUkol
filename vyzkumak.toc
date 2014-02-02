@@ -14,8 +14,9 @@
 \contentsline {section}{\numberline {3.2}Computational power}{6}{section.3.2}
 \contentsline {subsection}{\numberline {3.2.1}Turing universality of 2D tiles at $T=2$}{7}{subsection.3.2.1}
 \contentsline {chapter}{\numberline {4}Results}{9}{chapter.4}
-\contentsline {section}{\numberline {4.1}Abstract model for DAO units}{9}{section.4.1}
+\contentsline {section}{\numberline {4.1}Abstract model for DAE units}{9}{section.4.1}
 \contentsline {section}{\numberline {4.2}Graph 3-coloring}{9}{section.4.2}
-\contentsline {section}{\numberline {4.3}Graph isomorphism}{9}{section.4.3}
-\contentsline {chapter}{Epilog}{13}{section*.5}
-\contentsline {chapter}{References}{14}{section*.7}
+\contentsline {section}{\numberline {4.3}Graph isomorphism}{13}{section.4.3}
+\contentsline {section}{\numberline {4.4}$k$-clique}{16}{section.4.4}
+\contentsline {chapter}{Epilog}{17}{section*.17}
+\contentsline {chapter}{References}{18}{section*.19}
