@@ -26,21 +26,23 @@
 %~ \frenchspacing   % údajně česká typografická pravidla
 
 \theoremstyle{definition}
+\newtheorem{defn}{Definition}[chapter]
+\newtheorem{thm}{Theorem}[chapter]
+\newtheorem{lemma}[thm]{Lemma}
+%~ \newtheorem{pozorovani}[thm]{Pozorování}
+%~ \newtheorem{cor}[thm]{Corollary}
+%~ \newtheorem{predpoklad}{Předpoklad}[chapter]
 \newtheorem{example}{Example}[chapter]
-%~ \newtheorem{definition}{Definice}[section]
-%~ \newtheorem{predpoklad}{Předpoklad}[section]
-%~ \newtheorem{tvrzeni}{Tvrzení}[section]
-%~ \newtheorem{pozorovani}[tvrzeni]{Pozorování}
-%~ \newtheorem{lemma}[tvrzeni]{Lemma}
-%~ \newtheorem{dusledek}[tvrzeni]{Důsledek}
-%~ \newtheorem{algoritmus}{Algoritmus}[chapter]
+\newtheorem{alg}{Algorithm}[chapter]
 
-%~ \theoremstyle{remark} 
-%~ \newtheorem{pozn}{Poznámka}[chapter]
+\theoremstyle{remark} 
+\newtheorem{remark}{Remark}[chapter]
+\newtheorem{note}[remark]{Note}
 
 \DeclareMathOperator*{\E}{E\,}   % operátor* bude umět používat \limit :)
 \DeclareMathOperator{\de}{d\!}   % v integrálech
 \renewcommand{\P}{\mathbb{P\,}}
+\renewcommand{\iff}{\Leftrightarrow}
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\Z}{\mathbb{Z}}
 \newcommand{\N}{\mathbb{N}}
@@ -216,31 +218,19 @@ Děkuji \vedoucimu, za vedení \mePrace ~a za podnětné návrhy, které \rodPra
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %     Z A Č Á T E K   P R Á C E                                        %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-%%% ÚVODEM
-\input{./include/0-prolog.tex}
-
-%%% KAPITOLA 1
-\input{./include/1-intro.tex}
-
-%%% KAPITOLA 2
-\input{./include/2-strand_models.tex}
-
-%%% KAPITOLA 3
-\input{./include/3-wang-tile_models.tex}
-
-%%% KAPITOLA 4
-\input{./include/4-results.tex}
-
-%%% ZÁVĚREM
-\input{./include/n-1-epilog.tex}
-
-%%% LITERATURA
-% \renewcommand\bibname{Literatura}
-\input{./include/n-biblio.tex}
-
-
+		
+		
+		%%% KAPITOLA 1
+		\input{./include/1-intro.tex}
+		
+		%%% KAPITOLA 2
+		\input{./include/2-results.tex}
+		
+		%%% LITERATURA
+		% \renewcommand\bibname{Literatura}
+		\input{./include/n-biblio.tex}
+		
+		
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %     K O N E C   P R Á C E                                            %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

@@ -1,0 +1,121 @@
+	
+	1959: Feynman's visionary talk, \cite{feynman}; pros: extreme paralelism, cons: reliability.
+	
+	The ground-breaking work was carried out by Adleman, \cite{adleman94}, who showed that DNA computation is practically feasible. In his experiment, Adleman used special DNA sequences for solving Hamiltonian Path Problem, one of the most typical NP-complete problems.
+	
+	... Extreme parallelism! But also possibility of errors.
+
+\section*{Work overview}
+	
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	
+	Chapter 1: Intro.\\
+	Chapter 2: First of all we will describe models which exploit specific DNA structure.\\
+	Chapter 3: Abstract Tile Assembly Model, temperature, 2D vs. 3D.\\
+	Positive integers $\N$. \nomenclature{$\N$}{Positive integers.}
+	
+	% zkusíme Ramseyovo číslo R(5,5) ? :)
+	% -> problém "Je R(n,n) větší než něco?" znamená pro odpověď ANO najít graf t.ž. neobsahuje K_n ani anti-K_n .. což je samo o sobě co-NP (neboli to je \exists \forall stroj .. \Sigma_2 jazyk, horní hranice pak je \Pi_2 jazyk)
+	% 
+	% NP vs co-NP .. co-NP přece nedává ne?
+
+\section{Basic DNA principles}
+	
+	DNA (deoxyribonucleic acid) is a large biomolecule carrying living organisms' genetic information. Its most common structure is well known double-helix which consists of two strands connected by hydrogen bonds. These strands are biopolymers built up by {\em polymerase chain reaction} (PCR) from small units -- nucleotides. Each nucleotide consists of two parts: nitrogenous base and backbone molecules.
+	\begin{description}
+		\item[Nitrogenous bases] There are $4$ nucleobases in DNA ($+1$ in RNA): Adenine ({\bf A}), Thymine ({\bf T}), Cytosine ({\bf C}), Guanine ({\bf G}) and Uracil ({\bf U}) in RNA instead of Thymine in DNA. These molecules are responsible for making hydrogen bonds between strands in a manner following Watson-Crick complementarity: only {\bf A} -- {\bf T} and {\bf C} -- {\bf G} pairs can be formed.
+		\item[Backbone molecules] Backbone of DNA strand is made of alternating deoxyriboses and phosphates. Phosphates only hold adjacent deoxyriboses, each deoxyribose moreover holds one nucleobase. Due to deoxyribose carbon numbering, DNA backbone has so called $5'$ and $3'$ ends, default reading order is $5'\rightarrow 3'$. DNA strands must be antiparallel so that nucleobases can connect.
+	\end{description}
+
+\section{Complexity, languages}
+	
+	\subsection{$O$ and other notations}
+		
+		Let us briefly remind $O$-, $o$-, $\Omega$-, $\omega$- and $\Theta$-notations for $f, g: \N \rightarrow \N$. We will denote $(\exists n_0 \in \N) (\forall n > n_0)$ shortly by $(\forall^* n)$ which can be read ``for almost all $n$''. Also $(\forall n_0 \in \N) (\exists n > n_0)$ will be denoted by $(\exists^\infty n)$ which can be read ``there exist infinitedly many $n$''.
+		\begin{defn}
+		\begin{align*}
+			g \in O(f) &\iff (\exists C > 0) (\forall^* n) \bigl(g(n) < C f(n)\bigr) \\[5pt]
+			g \in \omega^{(1)}(f) &\iff (\forall C > 0) (\exists^\infty n) \bigl(g(n) > C f(n)\bigr) \\[5pt]
+			g \in \omega^{(2)}(f) &\iff (\forall C > 0) (\forall^* n) \bigl(g(n) > C f(n)\bigr) \\[5pt]
+			g \in \Omega^{(1)}(f) &\iff (\exists C > 0) (\exists^\infty n) \bigl(g(n) > C f(n)\bigr) \\[5pt]
+			g \in \Omega^{(2)}(f) &\iff (\exists C > 0) (\forall^* n) \bigl(g(n) > C f(n)\bigr) \\[5pt]
+			g \in o(f) &\iff (\forall C > 0) (\forall^* n) \bigl(g(n) < C f(n)\bigr) \\[5pt]
+			g \in \Theta(f) &\iff (\exists C_1, C_2 > 0) (\forall^* n) \bigl(C_1 f(n) \leq g(n) \leq C_2 f(n)\bigr) \\[5pt]
+			g \sim f &\iff \lim\limits_{n\to\infty} \frac{g(n)}{f(n)} = 1
+		\end{align*}
+		\end{defn}
+		
+		\begin{remark}
+			Note that there are two different definitions for omegas. $\Omega^{(1)}$ is equivalent to the orgininal definition introduced by Hardy \cite{hardy1914} which states
+			\begin{equation}
+				f \in \Omega(g) \iff \limsup\limits_{n\to\infty}\frac{f(n)}{g(n)} > 0 .
+			\end{equation}
+			The other, $\Omega^{(2)}$, was introduced by Knuth from good reasons described in \cite{knuth76}. In similar manner there are two definitions for $\omega$.
+			
+			Note that there are also some relations: the condition for $\Omega^{(1)}$ is negation of the condition for $o$ so these sets are complementary for given function $f$, similarly for $\omega^{(1)}$ and $O$. For the second variant one can easily check that $f\in\Omega^{(2)}(g)\iff g\in O(f)$ and $f\in\omega^{(2)}(g)\iff g\in o(f)$. There is also an equivalent condition for $\Theta$:
+			\begin{equation}
+				g \in \Theta(f) \iff g \in O(f) \,\wedge\, f \in O(g) \iff g \in O(f) \,\wedge\, g \in \Omega^{(2)}(f) .
+			\end{equation}
+			
+			The condition for $g \sim f$ can be easily seen to be equivalent to $|f-g| \in o(g)$. In chapter~\ref{chap:problems} we will be mostly interested in this relation because it specifies the function better than $\Theta$. For example, $2n \in \Theta(n)$ but $2n \not\sim n$.
+		\end{remark}
+	
+	\subsection{Studied complexities}
+		
+		\begin{defn}
+			All the following complexities are considered as functions of input length:
+			{\em Biostep complexity} will refer to the number of laboratory steps needed to handle the computation. Winfree \cite{winfree_phd} describes formally few types of such lab procedures for operations with Boolean strings ({\em Separate[i], Merge, Detect, Amplify and Append}), Adleman \cite{adleman94} describes couple of them more practically.\\
+			{\em Tile complexity} will refer to the number of different DNA tiles needed.\\
+			{\em Glue complexity} will refer to the number of different sticky-end sequences needed (commonly referred to as {\em glues}). Each sequence with its Watson-Crick complement is considered as only one glue.
+		\end{defn}
+	
+	\subsection{Languages}
+		
+		\begin{defn}
+			Let $\Sigma$ be an nonempty finite set of {\em characters} which will be referred to as {\em alphabet}. Define set of {\em words} over alphabet $\Sigma$ as $\Sigma^* = \bigcup_{n\in\N_0}\Sigma^n$ and set of nonempty words as $\Sigma^+ = \bigcup_{n\in\N}\Sigma^n$. Empty word will be denoted by $\varepsilon$. {\em Language} ${\cal L}$ over alphabet $\Sigma$ is then just a set of words: ${\cal L} \subseteq \Sigma^*$.
+		\end{defn}
+		
+		What is a formal language? Regular, context-free and recursively enumerable languages.
+		% is equivalent to boolean functions over \N
+	
+	\subsection{P, NP and other classes}
+		
+		First two definitions are from \cite{book_comp}.
+		
+		\begin{defn}
+			${\cal L} \subseteq \Sigma^*$. ${\cal L} \in NP \iff \bigl(\exists p, q \in {\cal P}\bigr) \bigl(\exists \textnormal{ deterministic Turing machine } M\bigr)\\ \bigl(\forall x \in \Sigma^*\bigr) \Bigl(x \in {\cal L} \iff \bigl(\exists y \in \Sigma^{p(|x|)}\bigr) \bigl(M \textnormal{ accepts } (x,y) \textnormal{ in time } \leq q(|x|+|u|)\bigr)\Bigr)$.\\
+			Such $y$ will be referred to as {\em certificate} for $x$ (with respect to $\cal L$ and $M$).
+		\end{defn}
+		
+		\begin{defn}
+			${\cal L} \subseteq \Sigma^*$. ${\cal L} \in co\textnormal{-}NP \iff \bigl(\exists p, q \in {\cal P}\bigr) \bigl(\exists \textnormal{ deterministic Turing machine } M\bigr)\\ \bigl(\forall x \in \Sigma^*\bigr) \Bigl(x \in {\cal L} \iff \bigl(\forall y \in \Sigma^{p(|x|)}\bigr) \bigl(M \textnormal{ accepts } (x,y) \textnormal{ in time } \leq q(|x|+|u|)\bigr)\Bigr)$.
+		\end{defn}
+		
+		\begin{defn}
+			$DTime\bigl(f(n)\bigr) = \bigl\{ {\cal L}\textnormal{ language} \bigm| (\exists \textnormal{ deterministic Turing machine }M)\\ \bigl(x\in{\cal L} \iff M\textnormal{ accepts }x\textnormal{ in time }\leq f(|x|)\bigr) \bigr\}$.\\
+			Other classes are defined in a very similar manner (time $\leftrightarrow$ space, deterministic $\leftrightarrow$ non-deterministic).
+		\end{defn}
+		\noindent
+		Now we can easily define well-known classes $P$ and $NP$.
+		\begin{defn}
+			$P = \bigcup\limits_{k\in\N} DTime(n^k)$ and $NP = \bigcup\limits_{k\in\N} NTime(n^k)$.
+		\end{defn}
+		
+		
+		
+	\begin{center}\line(1,0){400}\end{center}
+	Biostep complexity, tile complexity, glue complexity.
+	
+	P, NP, co-NP, PP, \#P, PSpace. Enough? Maybe also polynomial hierarchy: $\Sigma_k P$ and $\Pi_k P$ languages (alternating Turing machine with bounded alternation, \cite{kozen06}).
+	
+	% $ \textnormal{NP} = \bigl\{ L \subseteq \Sigma^* \bigm| \exists p_{1,2} \in \mathcal{P} \; \forall x \in L \; \exists y \in L \bigl( |y| \leq p_1(|x|) \,\wedge\, R(x,y) \textnormal{ s.t. R is enumerable in time } \leq p_2(|x|+|y|) \bigr) \bigr\} $
+	
+	Regular languages, context-free languages, recursively enumerable languages.
+	
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	
+	HPP: Adleman uses $O(n)$ biosteps, Winfree one.
+	SAT: Lipton's contribution using $m$ biosteps ($m = \#clauses$), \cite{lipton95}, Lipton's set of speedup problems, \cite{lipton96speedup}.
+	Lipton 95 describes basic DNA operations.
+	Energy efficiency (Adleman).
+	NP definition?

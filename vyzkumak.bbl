@@ -11,6 +11,11 @@ Leonard~M Adleman.
 \newblock Molecular computation of solutions to combinatorial problems.
 \newblock {\em Science - New York then Washington}, pages 1021--1024, 1994.
 
+\bibitem{book_comp}
+Sanjeev Arora and Boaz Barak.
+\newblock {\em Computational complexity: a modern approach}.
+\newblock Cambridge University Press, 2009.
+
 \bibitem{stage_assembly}
 Bahar Behsaz, J{\'a}n Ma{\v{n}}uch, and Ladislav Stacho.
 \newblock Turing universality of step-wise and stage assembly at temperature 1.
@@ -33,6 +38,16 @@ Richard~P Feynman.
 Tsu~Ju Fu and Nadrian~C Seeman.
 \newblock Dna double-crossover molecules.
 \newblock {\em Biochemistry}, 32(13):3211--3220, 1993.
+
+\bibitem{hardy1914}
+Godfrey~Harold Hardy and John~Edensor Littlewood.
+\newblock Some problems of diophantine approximation.
+\newblock {\em Acta mathematica}, 37(1):155--191, 1914.
+
+\bibitem{knuth76}
+Donald~E Knuth.
+\newblock Big omicron and big omega and big theta.
+\newblock {\em ACM Sigact News}, 8(2):18--24, 1976.
 
 \bibitem{kozen06}
 Dexter Kozen.

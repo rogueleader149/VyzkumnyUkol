@@ -1,22 +1,22 @@
-\BOOKMARK [0][-]{section*.2}{Prolog}{}
 \BOOKMARK [0][-]{chapter.1}{Introduction to DNA computation}{}
 \BOOKMARK [1][-]{section.1.1}{Basic DNA principles}{chapter.1}
 \BOOKMARK [1][-]{section.1.2}{Complexity, languages}{chapter.1}
-\BOOKMARK [0][-]{chapter.2}{Strand models}{}
-\BOOKMARK [1][-]{section.2.1}{Adleman's experiment}{chapter.2}
-\BOOKMARK [1][-]{section.2.2}{Single-stranded molecules}{chapter.2}
-\BOOKMARK [1][-]{section.2.3}{Double-stranded molecules}{chapter.2}
-\BOOKMARK [2][-]{subsection.2.3.1}{Linear strands}{section.2.3}
-\BOOKMARK [2][-]{subsection.2.3.2}{Dendrimer structures}{section.2.3}
-\BOOKMARK [1][-]{section.2.4}{Double crossover molecules}{chapter.2}
-\BOOKMARK [0][-]{chapter.3}{Wang tile models}{}
-\BOOKMARK [1][-]{section.3.1}{Definition}{chapter.3}
-\BOOKMARK [1][-]{section.3.2}{Computational power}{chapter.3}
-\BOOKMARK [2][-]{subsection.3.2.1}{Turing universality of 2D tiles at T=2}{section.3.2}
-\BOOKMARK [0][-]{chapter.4}{Results}{}
-\BOOKMARK [1][-]{section.4.1}{Abstract model for DAE units}{chapter.4}
-\BOOKMARK [1][-]{section.4.2}{Graph 3-coloring}{chapter.4}
-\BOOKMARK [1][-]{section.4.3}{Graph isomorphism}{chapter.4}
-\BOOKMARK [1][-]{section.4.4}{k-clique}{chapter.4}
-\BOOKMARK [0][-]{section*.17}{Epilog}{}
-\BOOKMARK [0][-]{section*.19}{References}{}
+\BOOKMARK [2][-]{subsection.1.2.1}{O and other notations}{section.1.2}
+\BOOKMARK [2][-]{subsection.1.2.2}{Studied complexities}{section.1.2}
+\BOOKMARK [2][-]{subsection.1.2.3}{Languages}{section.1.2}
+\BOOKMARK [2][-]{subsection.1.2.4}{P, NP and other classes}{section.1.2}
+\BOOKMARK [1][-]{section.1.3}{Strand models}{chapter.1}
+\BOOKMARK [2][-]{subsection.1.3.1}{Adleman's experiment}{section.1.3}
+\BOOKMARK [2][-]{subsection.1.3.2}{Single-stranded molecules}{section.1.3}
+\BOOKMARK [2][-]{subsection.1.3.3}{Double-stranded molecules}{section.1.3}
+\BOOKMARK [2][-]{subsection.1.3.4}{Double crossover molecules}{section.1.3}
+\BOOKMARK [1][-]{section.1.4}{Wang-tile models}{chapter.1}
+\BOOKMARK [2][-]{subsection.1.4.1}{Definition}{section.1.4}
+\BOOKMARK [2][-]{subsection.1.4.2}{Computational power}{section.1.4}
+\BOOKMARK [0][-]{chapter.2}{Solutions to NP problems}{}
+\BOOKMARK [1][-]{section.2.1}{Abstract model for DAE units}{chapter.2}
+\BOOKMARK [1][-]{section.2.2}{Graph 3-coloring}{chapter.2}
+\BOOKMARK [1][-]{section.2.3}{Graph isomorphism}{chapter.2}
+\BOOKMARK [1][-]{section.2.4}{k-clique}{chapter.2}
+\BOOKMARK [1][-]{section.2.5}{DNA computation feasibility}{chapter.2}
+\BOOKMARK [0][-]{section*.18}{References}{}

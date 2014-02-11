@@ -1,21 +1,7 @@
 \chapter{Introduction to DNA computation}
 
-\section{Basic DNA principles}
-	
-	Backbone: deoxyribose + phosphate; $5'\rightarrow 3'$ ends (due to deoxyribose atoms numbering); bases: adenine, thymine, cytosine, guanine; Watson-Crick complementarity; Polymerase chain reaction; Gel electrophoresis; biostep; hairpin; 
+\input{./include/1-intro_1-basics.tex}
 
-\section{Complexity, languages}
-	
-	P, NP, co-NP, PP, \#P, PSpace. Enough? Maybe also polynomial hierarchy: $\Sigma_k P$ and $\Pi_k P$ languages (alternating Turing machine with bounded alternation, \cite{kozen06}).
-	
-	% $ \textnormal{NP} = \bigl\{ L \subseteq \Sigma^* \bigm| \exists p_{1,2} \in \mathcal{P} \; \forall x \in L \; \exists y \in L \bigl( |y| \leq p_1(|x|) \,\wedge\, R(x,y) \textnormal{ s.t. R is enumerable in time } \leq p_2(|x|+|y|) \bigr) \bigr\} $
-	
-	Regular languages, context-free languages, recursively enumerable languages.
-	
-	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-	
-	HPP: Adleman uses $O(n)$ biosteps, Winfree one.
-	SAT: Lipton's contribution using $m$ biosteps ($m = \#clauses$), \cite{lipton95}, Lipton's set of speedup problems, \cite{lipton96speedup}.
-	Lipton 95 describes basic DNA operations.
-	Energy efficiency (Adleman).
-	NP definition?
+\input{./include/1-intro_2-strand_models.tex}
+
+\input{./include/1-intro_3-wang-tile_models.tex}
