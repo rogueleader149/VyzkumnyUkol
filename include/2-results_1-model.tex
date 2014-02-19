@@ -1,19 +1,13 @@
 \section{Abstract model for DAE units}
 
-It is better to draw easier-to-understand pictures. Explanation: \ldots Call those DNA sequences ``glues''. Binding, tile and glue complexity.
+It is better to draw easier-to-understand pictures. Explanation: \ldots Call those DNA sequences ``glues''. Binding, tile and glue complexity. Note those twice longer sticky ends on the bottom line.
 
-In following examples this model will be set up to act similarly like NP: $\exists y \; R(x,y)$. Although existence is not sure, it is very likely. Predicate $R$ will be ``enumerable in polynomial time'' for $x \in L$. In this context, {\em enumerable in polynomial time} will mean number of bindings, not number of biosteps. This can be assumed due to Turing universality of this model in $O(1)$ biosteps -- biostep complexity is not restrictive\footnote{From Turing's thesis, Turing machine is the most universal model.} and will be required to be $O(1)$ due to its lab complexity. On the other hand the binding complexity will be very important, we will be interested even in constants. This is because the less binding complexity, the less probability of error.
+In following examples this model will be set up to act similarly like $\NP$: $\exists y \; R(x,y)$. Although existence is not sure, it is very likely. Predicate $R$ will be ``enumerable in polynomial time'' for $x \in L$. In this context, {\em enumerable in polynomial time} will mean number of bindings, not number of biosteps. This can be assumed due to Turing universality of this model in $O(1)$ biosteps -- biostep complexity is not restrictive\footnote{From Turing's thesis, Turing machine is the most universal model.} and will be required to be $O(1)$ due to its lab complexity. On the other hand the binding complexity will be very important, we will be interested even in constants. This is because the less binding complexity, the less probability of error.
 
-Describe complexities:
-\begin{description}
-	\item[Binding complexity] ... total number of bindings. The higher binding complexity the higher probability of error.
-	\item[Tile complexity] ... total number of different tile types. The higher tile complexity the more demanding it is to prepare the tiles.
-	\item[Glue complexity] ... total number of used glue types. The higher glue complexity the higher number of DNA letters in the sticky end sequence. % něco citovat co zminuje závislost P_chyby na dýlce sekvence
-\end{description}
+Note that the word on the bottom line can be restricted to belong to arbitrary regular language.
 
-% odhady se dají zmenšit pomocí #E místo #V^2
-
-Define (slightly more correctly) binding complexity of this model as the number of bindings. Only the biggest term will be considered but even with constant.
+%!% odhady se dají zmenšit pomocí #E místo #V^2
+%!% spodní řádek má 2x tak dlouhý lepidla !! vysvětlit proč
 
 \begin{figure}[h]
 \begin{center}

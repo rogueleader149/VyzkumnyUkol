@@ -3,10 +3,11 @@ The top-level auxiliary file: vyzkumak.aux
 The style file: plain.bst
 Database file #1: biblio.bib
 Warning--I didn't find a database entry for "borec_z_wiki"
+Warning--empty journal in adleman95biostep
 You've used 14 entries,
             2118 wiz_defined-function locations,
-            593 strings with 5987 characters,
-and the built_in function-call counts, 4877 in all, are:
+            593 strings with 6021 characters,
+and the built_in function-call counts, 4865 in all, are:
 = -- 515
 > -- 166
 < -- 5
@@ -16,32 +17,32 @@ and the built_in function-call counts, 4877 in all, are:
 := -- 775
 add.period$ -- 46
 call.type$ -- 14
-change.case$ -- 64
+change.case$ -- 65
 chr.to.int$ -- 0
-cite$ -- 14
-duplicate$ -- 210
-empty$ -- 410
+cite$ -- 15
+duplicate$ -- 208
+empty$ -- 405
 format.name$ -- 52
-if$ -- 1062
+if$ -- 1056
 int.to.chr$ -- 0
 int.to.str$ -- 14
-missing$ -- 15
+missing$ -- 14
 newline$ -- 73
 num.names$ -- 28
-pop$ -- 74
+pop$ -- 72
 preamble$ -- 1
 purify$ -- 53
 quote$ -- 0
-skip$ -- 153
+skip$ -- 154
 stack$ -- 0
 substring$ -- 364
-swap$ -- 60
+swap$ -- 59
 text.length$ -- 5
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 52
-warning$ -- 0
+type$ -- 54
+warning$ -- 1
 while$ -- 55
 width$ -- 16
-write$ -- 158
-(There was 1 warning)
+write$ -- 157
+(There were 2 warnings)

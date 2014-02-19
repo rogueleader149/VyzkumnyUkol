@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2013.11.18)  12 FEB 2014 00:16
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2013.11.18)  19 FEB 2014 17:06
 entering extended mode
  %&-line parsing enabled.
 **vyzkumak.tex
@@ -589,21 +589,21 @@ LaTeX Warning: Label `fig:graph_iso' multiply defined.
 )
 \openout1 = `vyzkumak.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 92.
-LaTeX Font Info:    ... okay on input line 92.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 92.
-LaTeX Font Info:    ... okay on input line 92.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 92.
-LaTeX Font Info:    ... okay on input line 92.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 92.
-LaTeX Font Info:    ... okay on input line 92.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 92.
-LaTeX Font Info:    ... okay on input line 92.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 92.
-LaTeX Font Info:    ... okay on input line 92.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 92.
-LaTeX Font Info:    ... okay on input line 92.
-Package hyperref Info: Link coloring OFF on input line 92.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 98.
+LaTeX Font Info:    ... okay on input line 98.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 98.
+LaTeX Font Info:    ... okay on input line 98.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 98.
+LaTeX Font Info:    ... okay on input line 98.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 98.
+LaTeX Font Info:    ... okay on input line 98.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 98.
+LaTeX Font Info:    ... okay on input line 98.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 98.
+LaTeX Font Info:    ... okay on input line 98.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 98.
+LaTeX Font Info:    ... okay on input line 98.
+Package hyperref Info: Link coloring OFF on input line 98.
  (/usr/share/texmf-texlive/tex/latex/hyperref/nameref.sty
 Package: nameref 2007/05/29 v2.31 Cross-referencing by name of section
 
@@ -612,8 +612,8 @@ Package: refcount 2008/08/11 v3.1 Data extraction from references (HO)
 )
 \c@section@level=\count125
 )
-LaTeX Info: Redefining \ref on input line 92.
-LaTeX Info: Redefining \pageref on input line 92.
+LaTeX Info: Redefining \ref on input line 98.
+LaTeX Info: Redefining \pageref on input line 98.
  (./vyzkumak.out)
 (./vyzkumak.out)
 \@outlinefile=\write4
@@ -641,18 +641,18 @@ Package caption Info: End \AtBeginDocument code.
 <lev.pdf, id=98, 91.34125pt x 69.25874pt>
 File: lev.pdf Graphic file (type pdf)
  <use lev.pdf>
-LaTeX Font Info:    Try loading font information for U+msa on input line 126.
+LaTeX Font Info:    Try loading font information for U+msa on input line 132.
 
 (/usr/share/texmf-texlive/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2009/06/22 v3.00 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 126.
+LaTeX Font Info:    Try loading font information for U+msb on input line 132.
 
 (/usr/share/texmf-texlive/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 ) [2 <./lev.pdf>] [3]
 [4] [5]
-Overfull \hbox (17.0pt too wide) in paragraph at lines 200--201
+Overfull \hbox (17.0pt too wide) in paragraph at lines 206--207
 [][] 
  []
 
@@ -682,47 +682,69 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[2]) (./include/1-intro_2-strand_models.tex [3]
-<./figures/adleman_graph.pdf, id=208, 307.1475pt x 191.71625pt>
+[2]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 109.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 109.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 109.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 109.
+
+[3]) (./include/1-intro_2-strand_models.tex [4]
+<./figures/adleman_graph.pdf, id=228, 307.1475pt x 191.71625pt>
 File: ./figures/adleman_graph.pdf Graphic file (type pdf)
 
-<use ./figures/adleman_graph.pdf> [4 <./figures/adleman_graph.pdf>]
-<./figures/adleman_strands.pdf, id=232, 305.14pt x 56.21pt>
+<use ./figures/adleman_graph.pdf> [5 <./figures/adleman_graph.pdf>]
+<./figures/adleman_strands.pdf, id=254, 305.14pt x 56.21pt>
 File: ./figures/adleman_strands.pdf Graphic file (type pdf)
 
-<use ./figures/adleman_strands.pdf>) [5 <./figures/adleman_strands.pdf>]
-(./include/1-intro_3-wang-tile_models.tex
-<./figures/tiles1.pdf, id=274, 269.005pt x 466.74374pt>
+<use ./figures/adleman_strands.pdf>) (./include/1-intro_3-wang-tile_models.tex
+[6 <./figures/adleman_strands.pdf>]
+<./figures/tiles1.pdf, id=297, 269.005pt x 466.74374pt>
 File: ./figures/tiles1.pdf Graphic file (type pdf)
 
-<use ./figures/tiles1.pdf> [6]
-<./figures/tiles2.pdf, id=284, 282.05376pt x 418.56375pt>
+<use ./figures/tiles1.pdf>
+<./figures/tiles2.pdf, id=298, 282.05376pt x 418.56375pt>
 File: ./figures/tiles2.pdf Graphic file (type pdf)
 
 <use ./figures/tiles2.pdf> [7 <./figures/tiles1.pdf>]))
-Underfull \hbox (badness 10000) in paragraph at lines 33--225
+Underfull \hbox (badness 10000) in paragraph at lines 33--231
 
  []
 
 (./include/2-results.tex [8 <./figures/tiles2.pdf>]
 Chapter 2.
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 1.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 1.
+
 (./include/2-results_1-model.tex
-<./figures/tile_model/DNA_struct.pdf, id=342, 327.624pt x 114.026pt>
+<./figures/tile_model/DNA_struct.pdf, id=360, 327.624pt x 114.026pt>
 File: ./figures/tile_model/DNA_struct.pdf Graphic file (type pdf)
 
 <use ./figures/tile_model/DNA_struct.pdf>
-<./figures/tile_model/DNA_assembly.pdf, id=344, 498.663pt x 171.039pt>
+<./figures/tile_model/DNA_assembly.pdf, id=362, 498.663pt x 171.039pt>
 File: ./figures/tile_model/DNA_assembly.pdf Graphic file (type pdf)
 
 <use ./figures/tile_model/DNA_assembly.pdf>
-<./figures/tile_model/abstract_model.pdf, id=346, 199.94699pt x 199.94699pt>
+<./figures/tile_model/abstract_model.pdf, id=364, 199.94699pt x 199.94699pt>
 File: ./figures/tile_model/abstract_model.pdf Graphic file (type pdf)
 
-<use ./figures/tile_model/abstract_model.pdf>
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-) (./include/2-results_2-3-color.tex
+<use ./figures/tile_model/abstract_model.pdf>)
+(./include/2-results_2-3-color.tex
 Overfull \hbox (13.21144pt too wide) in paragraph at lines 3--4
 \OT1/cmr/m/n/10.95 Remind orig-i-nal Knuth's al-go-rithm at []$\OT1/cmtt/m/n/10
 .95 http : / / www . iti . fh-[]flensburg . de / lang / algorithmen /
@@ -730,13 +752,13 @@ Overfull \hbox (13.21144pt too wide) in paragraph at lines 3--4
 
 [9
 
-] [10 <./figures/tile_model/DNA_struct.pdf> <./figures/tile_model/DNA_assembly.
-pdf> <./figures/tile_model/abstract_model.pdf>]
-<./figures/3-color/bottom_tile.pdf, id=397, 554.87299pt x 142.93399pt>
+ <./figures/tile_model/DNA_struct.pdf> <./figures/tile_model/DNA_assembly.pdf> 
+<./figures/tile_model/abstract_model.pdf>]
+<./figures/3-color/bottom_tile.pdf, id=406, 554.87299pt x 142.93399pt>
 File: ./figures/3-color/bottom_tile.pdf Graphic file (type pdf)
 
-<use ./figures/3-color/bottom_tile.pdf>
-<./figures/3-color/3-color.pdf, id=399, 370.18298pt x 569.32701pt>
+<use ./figures/3-color/bottom_tile.pdf> [10]
+<./figures/3-color/3-color.pdf, id=418, 370.18298pt x 569.32701pt>
 File: ./figures/3-color/3-color.pdf Graphic file (type pdf)
 
 <use ./figures/3-color/3-color.pdf>) [11 <./figures/3-color/bottom_tile.pdf>]
@@ -744,7 +766,7 @@ File: ./figures/3-color/3-color.pdf Graphic file (type pdf)
 
 LaTeX Warning: Citation `borec_z_wiki' on page 13 undefined on input line 3.
 
-[13] <./figures/isomorphism/isomorphism.pdf, id=437, 313.17pt x 725.91202pt>
+[13] <./figures/isomorphism/isomorphism.pdf, id=456, 313.17pt x 725.91202pt>
 File: ./figures/isomorphism/isomorphism.pdf Graphic file (type pdf)
 
 <use ./figures/isomorphism/isomorphism.pdf>) [14] [15 <./figures/isomorphism/is
@@ -758,14 +780,14 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 1.
 
 
-Overfull \hbox (17.34561pt too wide) in paragraph at lines 15--16
+Overfull \hbox (17.34561pt too wide) in paragraph at lines 17--18
 \OT1/cmr/m/n/10.95 Summed up, this DNA al-go-rithm re-quires $\OML/cmm/m/it/10.
 95 k[]n[]$ \OT1/cmr/m/n/10.95 tile types. Bind-ing com-plex-ity is $1[]\OML/cmm
 /m/it/10.95 =[]  []\OMS/cmsy/m/n/10.95 f\OML/cmm/m/it/10.95 k[];  \OT1/cmr/m/n/
 10.95 (\OML/cmm/m/it/10.95 n \OMS/cmsy/m/n/10.95 ^^@
  []
 
-<./figures/k-clique/k-clique.pdf, id=457, 427.196pt x 285.065pt>
+<./figures/k-clique/k-clique.pdf, id=476, 427.196pt x 285.065pt>
 File: ./figures/k-clique/k-clique.pdf Graphic file (type pdf)
 
 <use ./figures/k-clique/k-clique.pdf> [16]) [17 <./figures/k-clique/k-clique.pd
@@ -782,11 +804,11 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 7712 strings out of 495027
- 109241 string characters out of 1181418
- 191411 words of memory out of 3000000
- 10581 multiletter control sequences out of 15000+50000
- 18267 words of font info for 70 fonts, out of 3000000 for 9000
+ 7764 strings out of 495027
+ 109902 string characters out of 1181418
+ 194411 words of memory out of 3000000
+ 10622 multiletter control sequences out of 15000+50000
+ 25656 words of font info for 97 fonts, out of 3000000 for 9000
  38 hyphenation exceptions out of 8191
  38i,12n,43p,979b,494s stack positions out of 5000i,500n,10000p,200000b,50000s
 </usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/sha
@@ -801,15 +823,18 @@ ive/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texmf-texlive/fonts/ty
 pe1/public/amsfonts/cm/cmr6.pfb></usr/share/texmf-texlive/fonts/type1/public/am
 sfonts/cm/cmr8.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr
 9.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr
-/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texm
-f-texlive/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-texlive/fo
-nts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texmf-texlive/fonts/type1/p
-ublic/amsfonts/cm/cmti9.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfon
-ts/cm/cmtt10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/symbols/
-msbm10.pfb>
-Output written on vyzkumak.pdf (27 pages, 433688 bytes).
+/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/share/texm
+f-texlive/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/share/texmf-texlive/f
+onts/type1/public/amsfonts/cm/cmss17.pfb></usr/share/texmf-texlive/fonts/type1/
+public/amsfonts/cm/cmss9.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfo
+nts/cm/cmsy10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy
+8.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr
+/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/share/texmf
+-texlive/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texmf-texlive/fo
+nts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on vyzkumak.pdf (27 pages, 473274 bytes).
 PDF statistics:
- 576 PDF objects out of 1000 (max. 8388607)
- 102 named destinations out of 1000 (max. 500000)
+ 608 PDF objects out of 1000 (max. 8388607)
+ 108 named destinations out of 1000 (max. 500000)
  237 words of extra memory for PDF output out of 10000 (max. 10000000)
 

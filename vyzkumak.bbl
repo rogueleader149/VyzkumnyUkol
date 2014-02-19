@@ -11,6 +11,11 @@ Leonard~M Adleman.
 \newblock Molecular computation of solutions to combinatorial problems.
 \newblock {\em Science - New York then Washington}, pages 1021--1024, 1994.
 
+\bibitem{adleman95biostep}
+Leonard~M Adlemany.
+\newblock On constructing a molecular computer.
+\newblock 1995.
+
 \bibitem{book_comp}
 Sanjeev Arora and Boaz Barak.
 \newblock {\em Computational complexity: a modern approach}.
@@ -48,11 +53,6 @@ Godfrey~Harold Hardy and John~Edensor Littlewood.
 Donald~E Knuth.
 \newblock Big omicron and big omega and big theta.
 \newblock {\em ACM Sigact News}, 8(2):18--24, 1976.
-
-\bibitem{kozen06}
-Dexter Kozen.
-\newblock {\em Theory of computation}.
-\newblock Springer, 2006.
 
 \bibitem{lipton96speedup}
 Richard~J Lipton.
