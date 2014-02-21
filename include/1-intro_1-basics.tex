@@ -97,7 +97,7 @@
 		\end{description}
 		
 		\begin{remark}
-			Note that given an alphabet $\Sigma$ the set of all words $\Sigma^*$ is countable. Moreover, one can sort $\Sigma^*$ lexicographically thus it is easy to define a bijection $f: \N \leftrightarrow \Sigma^* $.
+			Note that given an alphabet $\Sigma$ the set of all words $\Sigma^*$ is countable. Moreover, one can sort $\Sigma^*$ first by word length, then lexicographically thus it is easy to define desired bijection $f: \N \leftrightarrow \Sigma^* $.
 			
 			Formal language ${\cal L}$ can then be viewed as a boolean function $g: \N \rightarrow \{0,1\}$ defined as
 			$g(n) = 1 \iff f(n)\in {\cal L}$.
@@ -106,7 +106,7 @@
 		% přidat čim je co rozpoznávatelný?
 		% abeceda \Sigma -> {0, 1} ??
 	
-	\subsection{$\P$, $\NP$ and other classes}
+	\subsection{$\P$, $\NP$ and other}
 	\label{sec:PNP}
 		
 		This section describes some classes of languages from the resource-consumption point of view. Note that all of these sets are a subset of recursively enumerable languages.
@@ -126,11 +126,14 @@
 			${\cal L} \subseteq \Sigma^*$. ${\cal L} \in \coNP \iff \bigl(\exists p, q \in {\cal P}\bigr) \bigl(\exists \textnormal{ deterministic Turing machine } M\bigr)\\ \bigl(\forall x \in \Sigma^*\bigr) \Bigl(x \in {\cal L} \iff \bigl(\forall y \in \Sigma^{p(|x|)}\bigr) \bigl(M \textnormal{ accepts } (x,y) \textnormal{ in time } \leq q(|x|+|y|)\bigr)\Bigr)$.
 		\end{defn}
 		
-		The second possibility is to first define classes $\DTime$, $\NTime$, $\DSpace$ and $\NSpace$ and after that to use their special case.
+		The second possibility is to first define general classes $\DTime$, $\NTime$, $\DSpace$ and $\NSpace$ and after that to use their special case. Remind how Non-deterministic Turing machine (NTM) differs from Deterministic Turing machine (DTM):
+		\begin{itemize}
+			\item it is allowed to have ambiguous transition function,
+			\item it has two types of terminal states: accepting $q_{accept}$ and halting without accepting $q_{halt}$ (not rejecting!). We say it accepts input $x$ iff there {\em exists} a sequence of decisions ending in $q_{accept}$, it declines $x$ iff {\em for every} sequence of decisions reaches $q_{halt}$.
+		\end{itemize}
 		
-		%!% někde najít dobrej zdroj
-		% tady je problém s negací v D---- ptž polynom časově konstruovatelnej je ale co když f(n) neni že ...
-		\begin{defn}
+		%!% tady je problém s negací v D---- ptž polynom časově konstruovatelnej je ale co když f(n) neni že ... ale asi mi to neva ...
+		\begin{defn}\label{def:DTime}
 			$\DTime\bigl(f(n)\bigr) = \bigl\{ {\cal L}\textnormal{ language} \bigm| (\exists \textnormal{ deterministic Turing machine }M)\\ (\forall x\in\Sigma^*)\bigl(x\in{\cal L} \iff M\textnormal{ accepts }x\textnormal{ in time }\leq f(|x|)\bigr) \bigr\}$.\\
 			Other classes are defined in a very similar manner: time $\leftrightarrow$ space, deterministic $\leftrightarrow$ non-deterministic.
 		\end{defn}
@@ -148,15 +151,30 @@
 		\end{note}
 		
 		\begin{remark}
-			In case of $\P$ there is no ``co'' version. It leads from ${\cal L} \in \P \iff \overline{\cal L} \in \P$. This can be easily seen because deterministic Turing machine is capable of negation with the same time resources, non-deterministic is not known to. Note that Immerman--Szelepcsényi theorem states possibility of non-deterministic Turing machine negation in limited {\em space}: ${\cal L} \in \NSpace(s(n)) \iff \overline{\cal L} \in \NSpace(s(n))$ for $s(n) \geq \log(n)$.
+			In case of $\P$ there is no ``co'' version. It leads from ${\cal L} \in \P \iff \overline{\cal L} \in \P$. This can be easily seen because deterministic Turing machine is capable of negation with the same time resources, non-deterministic is not known to. Note that Immerman--Szelepcsényi theorem states possibility of non-deterministic Turing machine negation in limited {\em space}: ${\cal L} \in \NSpace(s(n)) \iff \overline{\cal L} \in \NSpace(s(n))$ for $s(n) \geq \log(n)$.   %!% problematickej: \footnote{Since $\P = \NP = \coNP$ is not known.}
 		\end{remark}
 		
 		\begin{thm}
 			All of the previous definitions of $\P$, $\NP$ and $\coNP$ are equivalent, see \cite{book_comp}.
 		\end{thm}
 		
-		%!% NP-complete !!!
-		% BPP, RP, ZPP ... ?
+		%!% NP-complete !!! book pg. 37
+		%!% poly-time hierarchy ... book pg. 93
+		%!% BPP, RP, ZPP ... book pg. 120-
+		
+		To define probabilistic classes of languages ($\BPP$, $\RP$, $\coRP$ and $\ZPP$) we will remind the concept of Probabilistic Turing machine (PTM). Like NTM it is allowed to have ambiguous transition function, moreover, in every state there is defined a transition probability. We say that PTM $M$ decides language $\cal L$ iff for every $x\in\Sigma^*$ the probability of halting in correct state (i.e. $q_{accept}$ for $x\in{\cal L}$ and $q_{reject}$ for $x\notin{\cal L}$) is higher than $\nicefrac{2}{3}$. Now we can define those classes, note that it would be possible to use again two types of definition like above.
+		
+		%!% popsat přijímání PTM v omezenym čase, to se liší že .. a pak upravit násl zakomentovanou definici, book pg 120, ještě prohlídnout pg 121, tam je zas ta alternativní
+		
+		\begin{defn}\label{def:BPTime}
+			$\BPTime\bigl(f(n)\bigr) = \bigl\{ {\cal L}\textnormal{ language} \bigm| (\exists \textnormal{ probabilistic Turing machine }M)\\ \bigl(M\textnormal{ decides }{\cal L}\textnormal{ in time }\leq f(|x|)\bigr) \bigr\}$.
+		\end{defn}
+		
+		\begin{defn}
+			$\BPP = \bigcup\limits_{k\in\N} \BPTime(n^k)$.
+		\end{defn}
+		
+		%!% třída RP .. book pg 124, ZPP .. book pg 125, tam jsou i theorémy
 		
 		% P, NP, co-NP, PP, \#P, PSpace. Enough? Maybe also polynomial hierarchy: $\Sigma_k P$ and $\Pi_k P$ languages (alternating Turing machine with bounded alternation, \cite{kozen06}). Might be nice to show what DNA computation is capable of.
 		
