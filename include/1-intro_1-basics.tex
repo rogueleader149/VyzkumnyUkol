@@ -143,7 +143,7 @@
 		\end{defn}
 		
 		\begin{defn}
-			$ {\cal L} \in \coNP \iff {\cal\overline L} \in \NP $
+			$ {\cal L} \in \coNP \iff {\cal\overline L} \in \NP $.
 		\end{defn}
 		
 		\begin{note}
@@ -159,12 +159,15 @@
 		\end{thm}
 		
 		%!% NP-complete !!! book pg. 37
-		%!% poly-time hierarchy ... book pg. 93
-		%!% BPP, RP, ZPP ... book pg. 120-
+		% poly-time hierarchy ... book pg. 93
 		
-		To define probabilistic classes of languages ($\BPP$, $\RP$, $\coRP$ and $\ZPP$) we will remind the concept of Probabilistic Turing machine (PTM). Like NTM it is allowed to have ambiguous transition function, moreover, in every state there is defined a transition probability. We say that PTM $M$ decides language $\cal L$ iff for every $x\in\Sigma^*$ the probability of halting in correct state (i.e. $q_{accept}$ for $x\in{\cal L}$ and $q_{reject}$ for $x\notin{\cal L}$) is higher than $\nicefrac{2}{3}$. Now we can define those classes, note that it would be possible to use again two types of definition like above.
+		To define probabilistic classes of languages ($\BPP$, $\RP$, $\coRP$ and $\ZPP$) we will remind the concept of Probabilistic Turing machine (PTM). Like NTM it is allowed to have ambiguous transition function, moreover, in every state there is defined a transition probability and it can have another terminal state $q_{reject}$.
 		
-		%!% popsat přijímání PTM v omezenym čase, to se liší že .. a pak upravit násl zakomentovanou definici, book pg 120, ještě prohlídnout pg 121, tam je zas ta alternativní
+		We say that PTM $M$ decides language $\cal L$ iff for every $x\in\Sigma^*$ the probability of halting in correct state (i.e. $q_{accept}$ for $x\in{\cal L}$ and $q_{reject}$ for $x\notin{\cal L}$) is higher than $\nicefrac{2}{3}$.
+		
+		We say that PTM $M$ decides language $\cal L$ in time $t(n)$ iff $M$ decides language $\cal L$ and for every $x\in\Sigma^*$ it halts in time $\leq t(|x|)$. Now we can define those classes, note that it would be possible to use again two types of definition like above.
+		
+		% příp. pg 121 .. tam je alternativní def
 		
 		\begin{defn}\label{def:BPTime}
 			$\BPTime\bigl(f(n)\bigr) = \bigl\{ {\cal L}\textnormal{ language} \bigm| (\exists \textnormal{ probabilistic Turing machine }M)\\ \bigl(M\textnormal{ decides }{\cal L}\textnormal{ in time }\leq f(|x|)\bigr) \bigr\}$.
@@ -174,7 +177,51 @@
 			$\BPP = \bigcup\limits_{k\in\N} \BPTime(n^k)$.
 		\end{defn}
 		
-		%!% třída RP .. book pg 124, ZPP .. book pg 125, tam jsou i theorémy
+		\begin{defn}
+			$\RTime\bigl(f(n)\bigr) = \bigl\{ {\cal L}\textnormal{ language} \bigm| (\exists \textnormal{ probabilistic Turing machine }M)\\ (\forall x\in\Sigma^*)\bigl(M \textnormal{ halts in time } \leq f(|x|) \;\wedge\; x\in{\cal L} \then \prob(M\textnormal{ accepts }x) \geq \nicefrac{2}{3} \;\wedge\\ x\notin{\cal L} \then \prob(M\textnormal{ accepts }x) = 0 \bigr) \bigr\}$.
+		\end{defn}
+		
+		\begin{defn}
+			$\RP = \bigcup\limits_{k\in\N} \RTime(n^k)$.
+		\end{defn}
+		
+		\begin{defn}
+			$ {\cal L} \in \coRP \iff {\cal\overline L} \in \RP $.
+		\end{defn}
+		
+		\begin{remark}
+			$\BPP$ allows PTM to make both wrong decisions (for $x\in\cal L$ as well as for $x\notin\cal L$), on the other hand $\RP$ does not allow error for $x\notin\cal L$ and $\coRP$ does not allow error for $x\in\cal L$.
+		\end{remark}
+		
+		%!% proč mam pocit že to maj v book blbě definovaný? takle by to znamenalo P=ZPP. líp u majerecha!
+		
+		\begin{defn}
+			$\ZPTime\bigl(f(n)\bigr) = \Bigl\{ {\cal L}\textnormal{ language} \Bigm| \bigl(\exists \textnormal{ probabilistic Turing machine }M\bigr)\\ \bigl(\forall x\in\Sigma^*\bigr)\Bigl(M \textnormal{ halts in time } \leq f(|x|) \;\wedge\\ \bigl(x\in{\cal L} \then \prob(M\textnormal{ accepts }x) \geq \nicefrac{2}{3} \,\wedge\, \prob(M\textnormal{ rejects }x) = 0 \bigr) \;\wedge\\ \bigl(x\notin{\cal L} \then \prob(M\textnormal{ rejects }x) \geq \nicefrac{2}{3} \,\wedge\, \prob(M\textnormal{ accepts }x) = 0 \bigl) \Bigr) \Bigr\}$.
+		\end{defn}
+		
+		\begin{defn}
+			$\ZPP = \bigcup\limits_{k\in\N} \ZPTime(n^k)$.
+		\end{defn}
+		
+		\begin{remark}
+			$\ZPP$ does not allow PTM to make any error, still it can halt without accepting nor rejecting.
+		\end{remark}
+		
+		\begin{thm}
+			\begin{equation}
+				{\cal L}_{1,2}\in\ZPP\then{\cal\overline L}_1,\,{\cal L}_1\cap{\cal L}_2,\,{\cal L}_1\cup{\cal L}_2\in\ZPP .
+			\end{equation}
+		\end{thm}
+		
+		\begin{thm}
+			\begin{align*}
+				\ZPP &= \RP \cap \coRP \\
+				\RP &\subseteq \BPP \\
+				\coRP &\subseteq \BPP
+			\end{align*}
+		\end{thm}
+		
+		%!% ZPP .. book pg 125, tam jsou i theorémy
 		
 		% P, NP, co-NP, PP, \#P, PSpace. Enough? Maybe also polynomial hierarchy: $\Sigma_k P$ and $\Pi_k P$ languages (alternating Turing machine with bounded alternation, \cite{kozen06}). Might be nice to show what DNA computation is capable of.
 		
