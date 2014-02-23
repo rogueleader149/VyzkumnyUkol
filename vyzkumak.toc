@@ -7,17 +7,17 @@
 \contentsline {subsection}{\numberline {1.2.4}$\mathsf {P}$, $\mathsf {NP}$ and other}{4}{subsection.1.2.4}
 \contentsline {section}{\numberline {1.3}Strand models}{6}{section.1.3}
 \contentsline {subsection}{\numberline {1.3.1}Adleman's experiment}{6}{subsection.1.3.1}
-\contentsline {subsection}{\numberline {1.3.2}Linear strands}{7}{subsection.1.3.2}
-\contentsline {subsection}{\numberline {1.3.3}Dendrimer structures}{7}{subsection.1.3.3}
-\contentsline {subsection}{\numberline {1.3.4}Double crossover molecules}{7}{subsection.1.3.4}
+\contentsline {subsection}{\numberline {1.3.2}Linear strands}{8}{subsection.1.3.2}
+\contentsline {subsection}{\numberline {1.3.3}Dendrimer structures}{8}{subsection.1.3.3}
+\contentsline {subsection}{\numberline {1.3.4}Double crossover molecules}{8}{subsection.1.3.4}
 \contentsline {section}{\numberline {1.4}Wang-tile models}{8}{section.1.4}
 \contentsline {subsection}{\numberline {1.4.1}Definition}{8}{subsection.1.4.1}
 \contentsline {subsection}{\numberline {1.4.2}Computational power}{8}{subsection.1.4.2}
-\contentsline {subsubsection}{Turing universality of 2D tiles at $T=2$}{9}{section*.5}
+\contentsline {subsubsection}{Turing universality of 2D tiles at $T=2$}{9}{section*.6}
 \contentsline {chapter}{\numberline {2}Solutions to $\mathsf {NP}$ problems}{11}{chapter.2}
 \contentsline {section}{\numberline {2.1}Abstract model for DAE units}{11}{section.2.1}
 \contentsline {section}{\numberline {2.2}Graph 3-coloring}{11}{section.2.2}
 \contentsline {section}{\numberline {2.3}Graph isomorphism}{15}{section.2.3}
 \contentsline {section}{\numberline {2.4}$k$-clique}{18}{section.2.4}
 \contentsline {section}{\numberline {2.5}DNA computation feasibility}{20}{section.2.5}
-\contentsline {chapter}{References}{21}{section*.16}
+\contentsline {chapter}{References}{21}{section*.17}
