@@ -2,21 +2,28 @@
 
 \section{Strand models}
 	
-	There exist (can be synthesized) many types of molecules, well described by Winfree \cite{winfree_phd} even with their inception reaction. These can form linear strands (sections \ref{sec:adleman}, \ref{sec:lin_strands}), dendrimer structures (section \ref{sec:dendri}) or 2D tilings (section \ref{sec:double_cross}).
+	There exist (can be synthesized) many types of molecules, well described in Winfree \cite{winfree_phd} even with their inception reaction. The most important structures are linear strands (sections \ref{sec:lin_strands}, \ref{sec:adleman}, figure \ref{fig:linear}), dendrimer structures (section \ref{sec:dendrimer}, figure \ref{fig:dendrimer}) and 2D tilings (section \ref{sec:double_crossover}, figure \ref{fig:double_crossover}). Note that DNA naturally forms double-helices which could be confusing in figures so there will mostly appear schemes of ``untwisted'' molecules. % nebo snad unscrewed?
 	
-	\begin{figure}[H]
-	\begin{center}
-		\includegraphics{./figures/strand_types/linear.pdf}
-		\caption{Linear strands: Strand for initial symbol $I$ and strand for rule $A\rightarrow bB$.}
-	\end{center}
-	\end{figure}
+	%~ \subsection{Single-stranded molecules}
+		%~ 
+		%~ As we noted before, the only feasible methods are those computing in $O(1)$ biosteps.
+		%~ 
+		%~ SAT in $O(1)$ biosteps etc.
 	
-	\begin{figure}[H]
-	\begin{center}
-		\includegraphics{./figures/strand_types/double_crossover.pdf}
-		\caption{Double crossover molecule}
-	\end{center}
-	\end{figure}
+	%~ \subsection{Double-stranded molecules}
+	
+	\subsection{Linear strands}
+	\label{sec:lin_strands}
+		
+		\begin{figure}[H]
+		\begin{center}
+			\includegraphics[width=0.502\textwidth]{./figures/strand_types/linear.pdf} % {šířka v mm}/370 je to původně
+			\caption{Linear strands: Strand for initial symbol $I$ and strand for rule $A\rightarrow bB$.}
+			\label{fig:linear}
+		\end{center}
+		\end{figure}
+		
+		Equivalent to regular languages: Winfree pg 53.
 	
 	\subsection{Adleman's experiment}
 	\label{sec:adleman}
@@ -56,28 +63,31 @@
 		
 		It can be easily seen that all correctly bonded double-strands correspond with a valid walk through $G_n$. Moreover, all complete double-strands represent a valid walk from $v_{begin}$ to $v_{end}$ through $G_n$.
 		
-		All the other steps are fully described in \cite{adleman94}. The most important thing is that the most time-demanding step is Step 4. In this step one has to purify the product of Step 3 with a {\em biotin-avidin magnetic beads system}. This process extracts consequently for every vertex $i$ only those DNA strands which contain a substring representing vertex $i$. Thus this algorithm has biostep complexity $O(n)$ which we considered unfeasible. Better solution with biostep complexity $O(1)$ was brought by Winfree \cite{winfree_phd}, see section \ref{sec:double_cross}.
-	
-	%~ \subsection{Single-stranded molecules}
-		%~ 
-		%~ As we noted before, the only feasible methods are those computing in $O(1)$ biosteps.
-		%~ 
-		%~ SAT in $O(1)$ biosteps etc.
-	
-	%~ \subsection{Double-stranded molecules}
-	
-	\subsection{Linear strands}
-	\label{sec:lin_strands}
-		
-		Equivalent to regular languages: Winfree pg 53.
+		All the other steps are fully described in \cite{adleman94}. The most important thing is that the most time-demanding step is Step 4. In this step one has to purify the product of Step 3 with a {\em biotin-avidin magnetic beads system}. This process extracts consequently for every vertex $i$ only those DNA strands which contain a substring representing vertex $i$. Thus this algorithm has biostep complexity $O(n)$ which we considered unfeasible. Better solution with biostep complexity $O(1)$ was brought by Winfree \cite{winfree_phd}, see section \ref{sec:double_crossover}.
 	
 	\subsection{Dendrimer structures}
-	\label{sec:dendri}
+	\label{sec:dendrimer}
+		
+		\begin{figure}[H]
+		\begin{center}
+			\includegraphics[width=0.568\textwidth]{./figures/strand_types/dendrimer.pdf}
+			\caption{Dendrimer structure for rule $A\rightarrow aBbC$.}
+			\label{fig:dendrimer}
+		\end{center}
+		\end{figure}
 		
 		Equivalent to context-free languages: Winfree pg 54.
 	
 	\subsection{Double crossover molecules}
-	\label{sec:double_cross}
+	\label{sec:double_crossover}
+		
+		\begin{figure}[H]
+		\begin{center}
+			\includegraphics[width=0.492\textwidth]{./figures/strand_types/double_crossover.pdf}
+			\caption{Double crossover molecule}
+			\label{fig:double_crossover}
+		\end{center}
+		\end{figure}
 		
 		Capable of universal computation: Winfree pg 57.
 		
