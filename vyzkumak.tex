@@ -22,15 +22,14 @@
 \let\tmpitem\item
 \renewcommand{\item}{\setlength{\itemsep}{2pt}\tmpitem}   % míň roztahovačný seznamy
 \renewcommand{\labelitemi}{$\circ$}
-%~ \def\refname{Li­teratura}   % záhadně nefunguje ???
-%~ \frenchspacing   % údajně česká typografická pravidla
+%~ \def\refname{References}   % záhadně nefunguje ???
 
 \theoremstyle{definition}
 \newtheorem{defn}{Definition}[chapter]
 \newtheorem{thm}{Theorem}[chapter]
 \newtheorem{lemma}[thm]{Lemma}
-%~ \newtheorem{pozorovani}[thm]{Pozorování}
-%~ \newtheorem{cor}[thm]{Corollary}
+\newtheorem{conj}[thm]{Conjecture}
+\newtheorem{cor}[thm]{Corollary}
 %~ \newtheorem{predpoklad}{Předpoklad}[chapter]
 \newtheorem{example}{Example}[chapter]
 \newtheorem{alg}{Algorithm}[chapter]
@@ -57,6 +56,8 @@
 \newcommand{\BPTime}{\mathsf{BPTime}}
 \newcommand{\RTime}{\mathsf{RTime}}
 \newcommand{\ZPTime}{\mathsf{ZPTime}}
+\newcommand{\atam}{\mathsf{aTAM}}
+\newcommand{\myatam}{\mathsf{aaTAM}}
 \renewcommand{\iff}{\Leftrightarrow}
 \newcommand{\then}{\Rightarrow}
 \newcommand{\R}{\mathbb{R}}
