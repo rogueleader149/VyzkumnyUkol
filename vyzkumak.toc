@@ -16,7 +16,7 @@
 \contentsline {subsubsection}{Turing universality of 2D tiles at $T=2$}{11}{section*.9}
 \contentsline {chapter}{\numberline {2}Solutions to $\mathsf {NP}$ problems}{13}{chapter.2}
 \contentsline {section}{\numberline {2.1}Abstract model for DAE units}{13}{section.2.1}
-\contentsline {subsection}{\numberline {2.1.1}Feasibility of the class $\mathsf {BPP}$}{13}{subsection.2.1.1}
+\contentsline {subsection}{\numberline {2.1.1}Feasibility of the class $\mathsf {BPP}$}{14}{subsection.2.1.1}
 \contentsline {section}{\numberline {2.2}Graph 3-coloring}{14}{section.2.2}
 \contentsline {section}{\numberline {2.3}Graph isomorphism}{17}{section.2.3}
 \contentsline {section}{\numberline {2.4}$k$-clique}{20}{section.2.4}

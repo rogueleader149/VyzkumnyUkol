@@ -29,7 +29,7 @@ Note that the word on the bottom line can be restricted to belong to arbitrary r
 %!% odhady se dají zmenšit pomocí #E místo #V^2
 %!% spodní řádek má 2x tak dlouhý lepidla !! vysvětlit proč
 
-\begin{figure}[h]
+\begin{figure}[H]
 \begin{center}
 	\begin{subfigure}[b]{0.31\textwidth}
 		\includegraphics[width=\textwidth]{./figures/tile_model/DNA_struct.pdf} % 115mm
@@ -56,7 +56,7 @@ Note that the word on the bottom line can be restricted to belong to arbitrary r
 	As it is often conjectured that the class $\P$ is the class of somehow practically feasible problems, here we introduce similar conjecture for feasible DNA algorithms. The corresponding debate can be found in \cite{book_comp}. %!% najít a citovat delší filozofickou rozpravu
 	
 	\begin{conj}   %!% conjecture nebo lépe?
-		Feasible DNA algorithms comply $Bs(n)\in O(1)$; $Bnd(n),\,Ti(n),\,Gl(n)\in \P$.   %!% možná postačí pro poly algoritmus mín jak \P tile a glue !!!
+		Feasible DNA algorithms comply $Bs(n)\in O(1)$; $Bnd(n),\,Ti(n),\,Gl(n)\in \P$.   %!% možná postačí pro poly algoritmus mín jak \P tile a glue !!! ale spíš ne
 	\end{conj}
 	
 	\begin{thm}   %!% tohle je potřeba někde najít a citovat
@@ -67,8 +67,8 @@ Note that the word on the bottom line can be restricted to belong to arbitrary r
 		Can be found in \ldots
 	\end{proof}
 	
-	\begin{thm}   %!% nějak pojmenovat model (cca ?aTAM ptž z aTAM vychází ale zužuje), deterministic version by Winfree
-		``Abstract model for DAE units'' can simulate probabilistic cellular automaton.
+	\begin{thm}   %!% nějak pojmenovat model, deterministic version by Winfree
+		$\myatam$ can simulate probabilistic cellular automaton.
 	\end{thm}
 	
 	\begin{proof}
@@ -76,8 +76,8 @@ Note that the word on the bottom line can be restricted to belong to arbitrary r
 	\end{proof}
 	
 	\begin{cor}
-		$\BPP$ is decidable by abstract model.   %!% pojmenovat model
+		$\BPP$ is decidable by $\myatam$.
 	\end{cor}
 	
-	%!% pojmenovat model a nák rozumně vysvětlit že \NP se dá na PTM docela dobře spočítat
+	%!% nák rozumně vysvětlit že \NP se dá na PTM docela dobře spočítat
 	% The model can practically handle also $\NP$ languages (not theoretically, of course) because 

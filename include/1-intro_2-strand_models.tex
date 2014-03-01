@@ -85,6 +85,8 @@
 	\subsection{Double crossover molecules}
 	\label{sec:double_crossover}
 		
+		Double crossover molecules are the most important ones. Though they are more complicated they are still very rigid \cite{seeman93}. Moreover they are theoretically capable of universal computation because they can form 2D tilings\footnote{See figure \ref{fig:DNA_assembly} and note how this type of molecules form tilings.} and thus they can simulate blocked cellular automaton \cite{winfree_phd}. As we mentioned in note \ref{note:untwist} we will also describe their inner structure. % universal computation: Winfree pg 57
+		
 		\begin{figure}[H]
 		\begin{center}
 			\includegraphics[width=0.492\textwidth]{./figures/strand_types/double_crossover.pdf}
@@ -93,11 +95,11 @@
 		\end{center}
 		\end{figure}
 		
-		Double crossover molecules are the most important ones. Though they are more complicated they are still very rigid \cite{seeman93}. Moreover they are theoretically capable of universal computation because they form 2D tilings and thus they can simulate blocked cellular automaton \cite{winfree_phd}. As we mentioned in note \ref{note:untwist} we will describe also their inner structure. % universal computation: Winfree pg 57
+		There are many possibilities how those strands can be twisted and connected. The most common ones are DAE and DAO molecules (Double-crossover, Antiparallel helical strands, Even or Odd, respectively, number of half-turns between crossovers), see figure \ref{fig:dao-dae}. It can be seen that DAO molecules form tilings with strands jumping from one stage to another, on the other hand DAE molecules form tilings with a strand leading through entire stage in a row.
 		
-		There are many possibilities how those strands can be twisted and connected. The most common ones are DAE and DAO molecules (Double-crossover, Antiparallel helical strands, Even or Odd, respectively, number of half-turns between crossovers), see figure \ref{fig:dao-dae}. It can be seen that DAO molecules form tilings with strands consisting of small parst from all stages in the tiling, on the other hand DAE molecules form tilings with a strand leading through entire stage in a row. Later we will need to read the bottom line's sequence thus it is practically reasonable to use DAE molecules. Moreover we will require even number of half-turns between crossovers in adjacent molecules so that the bottom line can be read as is, with no Watson-Crick complementarities.
+		Later we will need to read the bottom line's sequence thus it is practically reasonable to use DAE molecules. Moreover we will require even number of half-turns between crossovers in adjacent molecules. This is well explained in \cite[pg. 37]{winfree_phd} with a large figure.
 		
-		\begin{figure}[h]
+		\begin{figure}[H]
 		\begin{center}
 			\begin{subfigure}[b]{0.351\textwidth}
 				\includegraphics[width=\textwidth]{./figures/dao-dae/dae.pdf}
@@ -117,7 +119,7 @@
 		
 		
 		DAE molecules seem to be the most promising % citovat tunu praktickejch článků
-		thus in following text we will be interested only in these molecules.
+		thus chapter \ref{chap:problems} will be dedicated spacially to these molecules.
 		
 		% Biostep complexity $O(1)$ in particular cases.
 		
