@@ -4,20 +4,20 @@
 \contentsline {subsection}{\numberline {1.2.1}$O$ and other notations}{2}{subsection.1.2.1}
 \contentsline {subsection}{\numberline {1.2.2}Studied complexities}{2}{subsection.1.2.2}
 \contentsline {subsection}{\numberline {1.2.3}Languages}{3}{subsection.1.2.3}
-\contentsline {subsection}{\numberline {1.2.4}$\mathsf {P}$, $\mathsf {NP}$ and other}{4}{subsection.1.2.4}
+\contentsline {subsection}{\numberline {1.2.4}$\mathsf {P}$, $\mathsf {NP}$ and other classes}{4}{subsection.1.2.4}
 \contentsline {section}{\numberline {1.3}Strand models}{6}{section.1.3}
 \contentsline {subsection}{\numberline {1.3.1}Linear strands}{6}{subsection.1.3.1}
-\contentsline {subsection}{\numberline {1.3.2}Adleman's experiment}{6}{subsection.1.3.2}
-\contentsline {subsection}{\numberline {1.3.3}Dendrimer structures}{8}{subsection.1.3.3}
+\contentsline {subsection}{\numberline {1.3.2}Adleman's experiment}{7}{subsection.1.3.2}
+\contentsline {subsection}{\numberline {1.3.3}Dendrimer structures}{9}{subsection.1.3.3}
 \contentsline {subsection}{\numberline {1.3.4}Double crossover molecules}{9}{subsection.1.3.4}
-\contentsline {section}{\numberline {1.4}Wang-tile models}{9}{section.1.4}
-\contentsline {subsection}{\numberline {1.4.1}Definition}{9}{subsection.1.4.1}
-\contentsline {subsection}{\numberline {1.4.2}Computational power}{9}{subsection.1.4.2}
-\contentsline {subsubsection}{Turing universality of 2D tiles at $T=2$}{10}{section*.8}
-\contentsline {chapter}{\numberline {2}Solutions to $\mathsf {NP}$ problems}{12}{chapter.2}
-\contentsline {section}{\numberline {2.1}Abstract model for DAE units}{12}{section.2.1}
-\contentsline {subsection}{\numberline {2.1.1}Feasibility of the class $\mathsf {BPP}$}{12}{subsection.2.1.1}
-\contentsline {section}{\numberline {2.2}Graph 3-coloring}{13}{section.2.2}
-\contentsline {section}{\numberline {2.3}Graph isomorphism}{16}{section.2.3}
-\contentsline {section}{\numberline {2.4}$k$-clique}{19}{section.2.4}
-\contentsline {chapter}{References}{21}{section*.19}
+\contentsline {section}{\numberline {1.4}Wang-tile models}{10}{section.1.4}
+\contentsline {subsection}{\numberline {1.4.1}Definition}{10}{subsection.1.4.1}
+\contentsline {subsection}{\numberline {1.4.2}Computational power}{10}{subsection.1.4.2}
+\contentsline {subsubsection}{Turing universality of 2D tiles at $T=2$}{11}{section*.9}
+\contentsline {chapter}{\numberline {2}Solutions to $\mathsf {NP}$ problems}{13}{chapter.2}
+\contentsline {section}{\numberline {2.1}Abstract model for DAE units}{13}{section.2.1}
+\contentsline {subsection}{\numberline {2.1.1}Feasibility of the class $\mathsf {BPP}$}{13}{subsection.2.1.1}
+\contentsline {section}{\numberline {2.2}Graph 3-coloring}{14}{section.2.2}
+\contentsline {section}{\numberline {2.3}Graph isomorphism}{17}{section.2.3}
+\contentsline {section}{\numberline {2.4}$k$-clique}{20}{section.2.4}
+\contentsline {chapter}{References}{22}{section*.20}

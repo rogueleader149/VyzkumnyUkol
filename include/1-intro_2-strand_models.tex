@@ -2,7 +2,11 @@
 
 \section{Strand models}
 	
-	There exist (can be synthesized) many types of molecules, well described in Winfree \cite{winfree_phd} even with their inception reaction. The most important structures are linear strands (sections \ref{sec:lin_strands}, \ref{sec:adleman}, figure \ref{fig:linear}), dendrimer structures (section \ref{sec:dendrimer}, figure \ref{fig:dendrimer}) and 2D tilings (section \ref{sec:double_crossover}, figure \ref{fig:double_crossover}). Note that DNA naturally forms double-helices which could be confusing in figures so there will mostly appear schemes of ``untwisted'' molecules. % nebo snad unscrewed?
+	There exist (can be synthesized) many types of molecules, well described in Winfree \cite{winfree_phd} even with their inception reaction. The most important structures are linear strands (sections \ref{sec:lin_strands}, \ref{sec:adleman}, figure \ref{fig:linear}), dendrimer structures (section \ref{sec:dendrimer}, figure \ref{fig:dendrimer}) and double crossover molecules (section \ref{sec:double_crossover}, figure \ref{fig:double_crossover}).
+	\begin{note}\label{note:untwist}
+		DNA naturally forms double-helices which would be confusing in figures so there will mostly appear schemes of ``untwisted'' molecules, double crossover molecules will be described more precisely. % nebo snad unscrewed?
+	\end{note}
+	
 	
 	%~ \subsection{Single-stranded molecules}
 		%~ 
@@ -84,15 +88,41 @@
 		\begin{figure}[H]
 		\begin{center}
 			\includegraphics[width=0.492\textwidth]{./figures/strand_types/double_crossover.pdf}
-			\caption{Double crossover molecule}
+			\caption{Double crossover molecule scheme.}
 			\label{fig:double_crossover}
 		\end{center}
 		\end{figure}
 		
-		Capable of universal computation: Winfree pg 57.
+		Double crossover molecules are the most important ones. Though they are more complicated they are still very rigid \cite{seeman93}. Moreover they are theoretically capable of universal computation because they form 2D tilings and thus they can simulate blocked cellular automaton \cite{winfree_phd}. As we mentioned in note \ref{note:untwist} we will describe also their inner structure. % universal computation: Winfree pg 57
 		
-		DAO vs. DAE units. Winfree pg 36 -- sizes of DAE and a better picture, pg 37 -- comparison of DAO/DAE in a lattice, explanation pg 43.
+		There are many possibilities how those strands can be twisted and connected. The most common ones are DAE and DAO molecules (Double-crossover, Antiparallel helical strands, Even or Odd, respectively, number of half-turns between crossovers), see figure \ref{fig:dao-dae}. It can be seen that DAO molecules form tilings with strands consisting of small parst from all stages in the tiling, on the other hand DAE molecules form tilings with a strand leading through entire stage in a row. Later we will need to read the bottom line's sequence thus it is practically reasonable to use DAE molecules. Moreover we will require even number of half-turns between crossovers in adjacent molecules so that the bottom line can be read as is, with no Watson-Crick complementarities.
 		
-		Seeman, Fu and their DAO/DAE in \cite{seeman93}, is the picture of DAO strange?
+		\begin{figure}[h]
+		\begin{center}
+			\begin{subfigure}[b]{0.351\textwidth}
+				\includegraphics[width=\textwidth]{./figures/dao-dae/dae.pdf}
+				\caption{DAE.}
+				\label{fig:dao}
+			\end{subfigure}
+			\begin{subfigure}[b]{0.405\textwidth}
+				\includegraphics[width=\textwidth]{./figures/dao-dae/dao.pdf}
+				\caption{DAO.}
+				\label{fig:dae}
+			\end{subfigure}
+			\caption{DAO vs. DAE.}
+			\label{fig:dao-dae}
+		\end{center}
+		\end{figure}
 		
-		Important notes in 3.2.5 Winfree -- single side hybridization -- how to avoid. Tricky solution to the Hamiltonian Path Problem.
+		
+		
+		DAE molecules seem to be the most promising % citovat tunu praktickejch článků
+		thus in following text we will be interested only in these molecules.
+		
+		% Biostep complexity $O(1)$ in particular cases.
+		
+		% DAO vs. DAE units. Winfree pg 36 -- sizes of DAE and a better picture, pg 37 -- comparison of DAO/DAE in a lattice, explanation pg 43.
+		
+		% Seeman, Fu \cite{seeman93}, is the picture of DAO strange?
+		
+		% Important notes in 3.2.5 Winfree -- single side hybridization -- how to avoid.

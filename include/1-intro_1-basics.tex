@@ -106,7 +106,7 @@
 		% přidat čim je co rozpoznávatelný?
 		% abeceda \Sigma -> {0, 1} ??
 	
-	\subsection{$\P$, $\NP$ and other}
+	\subsection{$\P$, $\NP$ and other classes}
 	\label{sec:PNP}
 		
 		This section describes few classes of languages from the resource-consumption point of view. There exist many equivalent definitions, these are taken from \cite{book_comp}. % The first set of definitions is very straightforward and thus can be used for propositions.
@@ -127,7 +127,8 @@
 		The second possibility is to first define general classes $\DTime$, $\NTime$, $\DSpace$ and $\NSpace$ and after that to use their special case. Remind how Non-deterministic Turing machine (NTM) differs from Deterministic Turing machine (DTM):
 		\begin{itemize}
 			\item it is allowed to have ambiguous transition function,
-			\item it has two types of terminal states: accepting $q_{accept}$ and halting without accepting $q_{halt}$ (not rejecting!). We say it accepts input $x$ iff there {\em exists} a sequence of decisions ending in $q_{accept}$, it declines $x$ iff {\em for every} sequence of decisions reaches $q_{halt}$.
+			\item it has two types of terminal states: accepting $q_{accept}$ and halting without accepting $q_{halt}$ (not rejecting!),
+			\item we say that it accepts input $x$ iff there {\em exists} a sequence of decisions ending in $q_{accept}$, as consequence it declines $x$ iff {\em for every} sequence of decisions reaches $q_{halt}$,
 		\end{itemize}
 		
 		%!% tady je problém s negací v D---- ptž polynom časově konstruovatelnej je ale co když f(n) neni že ... ale asi mi to neva ...
