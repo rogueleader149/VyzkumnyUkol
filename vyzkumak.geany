@@ -14,13 +14,13 @@ description=
 run_cmd=
 
 [files]
-current_page=7
+current_page=5
 FILE_NAME_0=0;Make;0;16;1;1;1;/home/fakub/dokumenty/fjfi/vyzkumak/tex/Makefile;0
 FILE_NAME_1=2229;LaTeX;0;16;1;1;1;/home/fakub/dokumenty/fjfi/vyzkumak/tex/vyzkumak.tex;0
 FILE_NAME_2=162;LaTeX;0;16;1;1;1;/home/fakub/dokumenty/fjfi/vyzkumak/tex/include/1-intro.tex;0
-FILE_NAME_3=9403;LaTeX;0;16;1;1;1;/home/fakub/dokumenty/fjfi/vyzkumak/tex/include/1-intro_1-basics.tex;0
-FILE_NAME_4=7884;LaTeX;0;16;1;1;1;/home/fakub/dokumenty/fjfi/vyzkumak/tex/include/1-intro_2-strand_models.tex;0
-FILE_NAME_5=436;LaTeX;0;16;1;1;1;/home/fakub/dokumenty/fjfi/vyzkumak/tex/include/1-intro_3-wang-tile_models.tex;0
+FILE_NAME_3=5595;LaTeX;0;16;1;1;1;/home/fakub/dokumenty/fjfi/vyzkumak/tex/include/1-intro_1-basics.tex;0
+FILE_NAME_4=9196;LaTeX;0;16;1;1;1;/home/fakub/dokumenty/fjfi/vyzkumak/tex/include/1-intro_2-strand_models.tex;0
+FILE_NAME_5=834;LaTeX;0;16;1;1;1;/home/fakub/dokumenty/fjfi/vyzkumak/tex/include/1-intro_3-wang-tile_models.tex;0
 FILE_NAME_6=250;LaTeX;0;16;1;1;1;/home/fakub/dokumenty/fjfi/vyzkumak/tex/include/2-results.tex;0
 FILE_NAME_7=3923;LaTeX;0;16;1;1;1;/home/fakub/dokumenty/fjfi/vyzkumak/tex/include/2-results_1-model.tex;0
 FILE_NAME_8=218;LaTeX;0;16;1;1;1;/home/fakub/dokumenty/fjfi/vyzkumak/tex/include/2-results_2-3-color.tex;0
