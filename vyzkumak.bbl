@@ -49,26 +49,26 @@ Godfrey~Harold Hardy and John~Edensor Littlewood.
 \newblock Some problems of diophantine approximation.
 \newblock {\em Acta mathematica}, 37(1):155--191, 1914.
 
+\bibitem{active_tiles}
+Natasha Jonoska and Daria Karpenko.
+\newblock Active tile self-assembly, self-similar structures and recursion.
+\newblock {\em arXiv preprint arXiv:1211.3085}, 2012.
+
 \bibitem{knuth76}
 Donald~E Knuth.
 \newblock Big omicron and big omega and big theta.
 \newblock {\em ACM Sigact News}, 8(2):18--24, 1976.
-
-\bibitem{lipton96speedup}
-Richard~J Lipton.
-\newblock Speeding up computations via molecular biology.
-\newblock {\em DNA Based Computers}, 27:67--74, 1996.
-
-\bibitem{lipton95}
-Richard~J Lipton et~al.
-\newblock Dna solution of hard computational problems.
-\newblock {\em Science}, 268(5210):542--545, 1995.
 
 \bibitem{square_lb}
 Paul~WK Rothemund and Erik Winfree.
 \newblock The program-size complexity of self-assembled squares.
 \newblock In {\em Proceedings of the thirty-second annual ACM symposium on
   Theory of computing}, pages 459--468. ACM, 2000.
+
+\bibitem{winfree_comp}
+Erik Winfree.
+\newblock On the computational power of dna annealing and ligation.
+\newblock 1996.
 
 \bibitem{winfree_phd}
 Erik Winfree.

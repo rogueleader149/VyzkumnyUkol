@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2013.11.18)  3 MAR 2014 00:28
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2013.11.18)  12 MAR 2014 22:37
 entering extended mode
  %&-line parsing enabled.
 **vyzkumak.tex
@@ -589,21 +589,21 @@ LaTeX Warning: Label `fig:graph_iso' multiply defined.
 )
 \openout1 = `vyzkumak.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 110.
-LaTeX Font Info:    ... okay on input line 110.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 110.
-LaTeX Font Info:    ... okay on input line 110.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 110.
-LaTeX Font Info:    ... okay on input line 110.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 110.
-LaTeX Font Info:    ... okay on input line 110.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 110.
-LaTeX Font Info:    ... okay on input line 110.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 110.
-LaTeX Font Info:    ... okay on input line 110.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 110.
-LaTeX Font Info:    ... okay on input line 110.
-Package hyperref Info: Link coloring OFF on input line 110.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 112.
+LaTeX Font Info:    ... okay on input line 112.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 112.
+LaTeX Font Info:    ... okay on input line 112.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 112.
+LaTeX Font Info:    ... okay on input line 112.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 112.
+LaTeX Font Info:    ... okay on input line 112.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 112.
+LaTeX Font Info:    ... okay on input line 112.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 112.
+LaTeX Font Info:    ... okay on input line 112.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 112.
+LaTeX Font Info:    ... okay on input line 112.
+Package hyperref Info: Link coloring OFF on input line 112.
  (/usr/share/texmf-texlive/tex/latex/hyperref/nameref.sty
 Package: nameref 2007/05/29 v2.31 Cross-referencing by name of section
 
@@ -612,8 +612,8 @@ Package: refcount 2008/08/11 v3.1 Data extraction from references (HO)
 )
 \c@section@level=\count125
 )
-LaTeX Info: Redefining \ref on input line 110.
-LaTeX Info: Redefining \pageref on input line 110.
+LaTeX Info: Redefining \ref on input line 112.
+LaTeX Info: Redefining \pageref on input line 112.
  (./vyzkumak.out)
 (./vyzkumak.out)
 \@outlinefile=\write4
@@ -641,18 +641,18 @@ Package caption Info: End \AtBeginDocument code.
 <lev.pdf, id=98, 91.34125pt x 69.25874pt>
 File: lev.pdf Graphic file (type pdf)
  <use lev.pdf>
-LaTeX Font Info:    Try loading font information for U+msa on input line 144.
+LaTeX Font Info:    Try loading font information for U+msa on input line 146.
 
 (/usr/share/texmf-texlive/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2009/06/22 v3.00 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 144.
+LaTeX Font Info:    Try loading font information for U+msb on input line 146.
 
 (/usr/share/texmf-texlive/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 ) [2 <./lev.pdf>] [3]
 [4] [5]
-Overfull \hbox (17.0pt too wide) in paragraph at lines 218--219
+Overfull \hbox (17.0pt too wide) in paragraph at lines 220--221
 [][] 
  []
 
@@ -704,40 +704,53 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 File: ./figures/strand_types/linear.pdf Graphic file (type pdf)
 
 <use ./figures/strand_types/linear.pdf> [6 <./figures/strand_types/linear.pdf>]
-<./figures/adleman_graph.pdf, id=265, 307.1475pt x 191.71625pt>
+<./figures/adleman_graph.pdf, id=266, 307.1475pt x 191.71625pt>
 File: ./figures/adleman_graph.pdf Graphic file (type pdf)
 
 <use ./figures/adleman_graph.pdf> [7 <./figures/adleman_graph.pdf>]
-<./figures/adleman_strands.pdf, id=288, 305.14pt x 56.21pt>
+<./figures/adleman_strands.pdf, id=289, 305.14pt x 56.21pt>
 File: ./figures/adleman_strands.pdf Graphic file (type pdf)
 
 <use ./figures/adleman_strands.pdf>
-<./figures/strand_types/dendrimer.pdf, id=297, 299.519pt x 336.45702pt>
+<./figures/strand_types/dendrimer.pdf, id=298, 299.519pt x 336.45702pt>
 File: ./figures/strand_types/dendrimer.pdf Graphic file (type pdf)
 
 <use ./figures/strand_types/dendrimer.pdf> [8 <./figures/adleman_strands.pdf>]
-<./figures/strand_types/double_crossover.pdf, id=340, 259.36899pt x 114.026pt>
+<./figures/strand_types/double_crossover.pdf, id=341, 259.36899pt x 114.026pt>
 File: ./figures/strand_types/double_crossover.pdf Graphic file (type pdf)
 
 <use ./figures/strand_types/double_crossover.pdf> [9 <./figures/strand_types/de
 ndrimer.pdf> <./figures/strand_types/double_crossover.pdf>]
-<./figures/dao-dae/dae.pdf, id=368, 370.18298pt x 108.405pt>
+<./figures/dao-dae/dae.pdf, id=369, 370.18298pt x 108.405pt>
 File: ./figures/dao-dae/dae.pdf Graphic file (type pdf)
 
 <use ./figures/dao-dae/dae.pdf>
-<./figures/dao-dae/dao.pdf, id=370, 427.196pt x 108.405pt>
+<./figures/dao-dae/dao.pdf, id=371, 427.196pt x 108.405pt>
 File: ./figures/dao-dae/dao.pdf Graphic file (type pdf)
 
 <use ./figures/dao-dae/dao.pdf>) (./include/1-intro_3-wang-tile_models.tex
-<./figures/tiles1.pdf, id=379, 269.005pt x 466.74374pt>
+[10 <./figures/dao-dae/dae.pdf> <./figures/dao-dae/dao.pdf>]
+
+Package amsmath Warning: Foreign command \atop;
+(amsmath)                \frac or \genfrac should be used instead
+(amsmath)                 on input line 40.
+
+<./figures/tiles1.pdf, id=397, 269.005pt x 466.74374pt>
 File: ./figures/tiles1.pdf Graphic file (type pdf)
 
-<use ./figures/tiles1.pdf> [10 <./figures/dao-dae/dae.pdf> <./figures/dao-dae/d
-ao.pdf>] <./figures/tiles2.pdf, id=390, 282.05376pt x 418.56375pt>
+<use ./figures/tiles1.pdf>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<./figures/tiles2.pdf, id=398, 282.05376pt x 418.56375pt>
 File: ./figures/tiles2.pdf Graphic file (type pdf)
 
-<use ./figures/tiles2.pdf> [11 <./figures/tiles1.pdf>]))
-(./include/2-results.tex [12 <./figures/tiles2.pdf>]
+<use ./figures/tiles2.pdf>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+)) (./include/2-results.tex [11] [12 <./figures/tiles1.pdf>] [13 <./figures/til
+es2.pdf>]
 Chapter 2.
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
@@ -748,18 +761,18 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 1.
 
 (./include/2-results_1-model.tex
-<./figures/tile_model/DNA_struct.pdf, id=449, 327.624pt x 114.026pt>
+<./figures/tile_model/DNA_struct.pdf, id=468, 327.624pt x 114.026pt>
 File: ./figures/tile_model/DNA_struct.pdf Graphic file (type pdf)
 
 <use ./figures/tile_model/DNA_struct.pdf>
-<./figures/tile_model/DNA_assembly.pdf, id=451, 498.663pt x 171.039pt>
+<./figures/tile_model/DNA_assembly.pdf, id=470, 498.663pt x 171.039pt>
 File: ./figures/tile_model/DNA_assembly.pdf Graphic file (type pdf)
 
 <use ./figures/tile_model/DNA_assembly.pdf>
-<./figures/tile_model/abstract_model.pdf, id=453, 199.94699pt x 199.94699pt>
+<./figures/tile_model/abstract_model.pdf, id=472, 199.94699pt x 199.94699pt>
 File: ./figures/tile_model/abstract_model.pdf Graphic file (type pdf)
 
-<use ./figures/tile_model/abstract_model.pdf> [13
+<use ./figures/tile_model/abstract_model.pdf> [14
 
 ]
 
@@ -776,21 +789,21 @@ Overfull \hbox (13.21144pt too wide) in paragraph at lines 3--4
 .95 http : / / www . iti . fh-[]flensburg . de / lang / algorithmen /
  []
 
-[14 <./figures/tile_model/DNA_struct.pdf> <./figures/tile_model/DNA_assembly.pd
+[15 <./figures/tile_model/DNA_struct.pdf> <./figures/tile_model/DNA_assembly.pd
 f> <./figures/tile_model/abstract_model.pdf>]
-<./figures/3-color/bottom_tile.pdf, id=510, 554.87299pt x 142.93399pt>
+<./figures/3-color/bottom_tile.pdf, id=529, 554.87299pt x 142.93399pt>
 File: ./figures/3-color/bottom_tile.pdf Graphic file (type pdf)
 
 <use ./figures/3-color/bottom_tile.pdf>
-<./figures/3-color/3-color.pdf, id=512, 370.18298pt x 569.32701pt>
+<./figures/3-color/3-color.pdf, id=531, 370.18298pt x 569.32701pt>
 File: ./figures/3-color/3-color.pdf Graphic file (type pdf)
 
-<use ./figures/3-color/3-color.pdf>) [15 <./figures/3-color/bottom_tile.pdf>]
-[16 <./figures/3-color/3-color.pdf>] (./include/2-results_3-isomorph.tex
-[17] <./figures/isomorphism/isomorphism.pdf, id=550, 313.17pt x 725.91202pt>
+<use ./figures/3-color/3-color.pdf>) [16 <./figures/3-color/bottom_tile.pdf>]
+[17 <./figures/3-color/3-color.pdf>] (./include/2-results_3-isomorph.tex
+[18] <./figures/isomorphism/isomorphism.pdf, id=570, 313.17pt x 725.91202pt>
 File: ./figures/isomorphism/isomorphism.pdf Graphic file (type pdf)
 
-<use ./figures/isomorphism/isomorphism.pdf>) [18] [19 <./figures/isomorphism/is
+<use ./figures/isomorphism/isomorphism.pdf>) [19] [20 <./figures/isomorphism/is
 omorphism.pdf>] (./include/2-results_4-k-clique.tex
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
@@ -808,23 +821,23 @@ Overfull \hbox (17.34561pt too wide) in paragraph at lines 17--18
 10.95 (\OML/cmm/m/it/10.95 n \OMS/cmsy/m/n/10.95 ^^@
  []
 
-<./figures/k-clique/k-clique.pdf, id=571, 427.196pt x 285.065pt>
+<./figures/k-clique/k-clique.pdf, id=590, 427.196pt x 285.065pt>
 File: ./figures/k-clique/k-clique.pdf Graphic file (type pdf)
 
-<use ./figures/k-clique/k-clique.pdf> [20])) (./include/n-biblio.tex [21 <./fig
-ures/k-clique/k-clique.pdf>] (./vyzkumak.bbl [22
+<use ./figures/k-clique/k-clique.pdf> [21])) (./include/n-biblio.tex [22 <./fig
+ures/k-clique/k-clique.pdf>] (./vyzkumak.bbl [23
 
 
-])) [23] (./vyzkumak.aux)
+])) [24] (./vyzkumak.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 7848 strings out of 495027
- 111157 string characters out of 1181418
- 194750 words of memory out of 3000000
- 10672 multiletter control sequences out of 15000+50000
+ 7855 strings out of 495027
+ 111246 string characters out of 1181418
+ 194844 words of memory out of 3000000
+ 10674 multiletter control sequences out of 15000+50000
  25656 words of font info for 97 fonts, out of 3000000 for 9000
  38 hyphenation exceptions out of 8191
  38i,12n,43p,979b,493s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -850,9 +863,9 @@ share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texmf
 -texlive/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/share/texmf-texlive/fon
 ts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texmf-texlive/fonts/type1/pu
 blic/amsfonts/symbols/msbm10.pfb>
-Output written on vyzkumak.pdf (30 pages, 521995 bytes).
+Output written on vyzkumak.pdf (31 pages, 540658 bytes).
 PDF statistics:
- 709 PDF objects out of 1000 (max. 8388607)
- 138 named destinations out of 1000 (max. 500000)
+ 728 PDF objects out of 1000 (max. 8388607)
+ 143 named destinations out of 1000 (max. 500000)
  262 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -12,12 +12,12 @@
 \contentsline {subsection}{\numberline {1.3.4}Double crossover molecules}{9}{subsection.1.3.4}
 \contentsline {section}{\numberline {1.4}Wang-tile models}{10}{section.1.4}
 \contentsline {subsection}{\numberline {1.4.1}Definition}{10}{subsection.1.4.1}
-\contentsline {subsection}{\numberline {1.4.2}Computational power}{10}{subsection.1.4.2}
+\contentsline {subsection}{\numberline {1.4.2}Computational power}{11}{subsection.1.4.2}
 \contentsline {subsubsection}{Turing universality of 2D tiles at $T=2$}{11}{section*.9}
-\contentsline {chapter}{\numberline {2}Solutions to $\mathsf {NP}$ problems}{13}{chapter.2}
-\contentsline {section}{\numberline {2.1}Abstract model for DAE units}{13}{section.2.1}
-\contentsline {subsection}{\numberline {2.1.1}Feasibility of the class $\mathsf {BPP}$}{14}{subsection.2.1.1}
-\contentsline {section}{\numberline {2.2}Graph 3-coloring}{14}{section.2.2}
-\contentsline {section}{\numberline {2.3}Graph isomorphism}{17}{section.2.3}
-\contentsline {section}{\numberline {2.4}$k$-clique}{20}{section.2.4}
-\contentsline {chapter}{References}{22}{section*.20}
+\contentsline {chapter}{\numberline {2}Solutions to $\mathsf {NP}$ problems}{14}{chapter.2}
+\contentsline {section}{\numberline {2.1}Abstract model for DAE units}{14}{section.2.1}
+\contentsline {subsection}{\numberline {2.1.1}Feasibility of the class $\mathsf {BPP}$}{15}{subsection.2.1.1}
+\contentsline {section}{\numberline {2.2}Graph 3-coloring}{15}{section.2.2}
+\contentsline {section}{\numberline {2.3}Graph isomorphism}{18}{section.2.3}
+\contentsline {section}{\numberline {2.4}$k$-clique}{21}{section.2.4}
+\contentsline {chapter}{References}{23}{section*.20}
