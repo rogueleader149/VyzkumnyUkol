@@ -14,16 +14,16 @@ description=
 run_cmd=
 
 [files]
-current_page=7
+current_page=6
 FILE_NAME_0=0;Make;0;16;1;1;1;/home/fakub/dokumenty/fjfi/vyzkumak/tex/Makefile;0
-FILE_NAME_1=2581;LaTeX;0;16;1;1;1;/home/fakub/dokumenty/fjfi/vyzkumak/tex/vyzkumak.tex;0
+FILE_NAME_1=1151;LaTeX;0;16;1;1;1;/home/fakub/dokumenty/fjfi/vyzkumak/tex/vyzkumak.tex;0
 FILE_NAME_2=162;LaTeX;0;16;1;1;1;/home/fakub/dokumenty/fjfi/vyzkumak/tex/include/1-intro.tex;0
-FILE_NAME_3=16349;LaTeX;0;16;1;1;1;/home/fakub/dokumenty/fjfi/vyzkumak/tex/include/1-intro_1-basics.tex;0
-FILE_NAME_4=4014;LaTeX;0;16;1;1;1;/home/fakub/dokumenty/fjfi/vyzkumak/tex/include/1-intro_2-strand_models.tex;0
-FILE_NAME_5=5378;LaTeX;0;16;1;1;1;/home/fakub/dokumenty/fjfi/vyzkumak/tex/include/1-intro_3-wang-tile_models.tex;0
-FILE_NAME_6=0;LaTeX;0;16;1;1;1;/home/fakub/dokumenty/fjfi/vyzkumak/tex/include/2-results.tex;0
-FILE_NAME_7=968;LaTeX;0;16;1;1;1;/home/fakub/dokumenty/fjfi/vyzkumak/tex/include/2-results_1-model.tex;0
-FILE_NAME_8=218;LaTeX;0;16;1;1;1;/home/fakub/dokumenty/fjfi/vyzkumak/tex/include/2-results_2-3-color.tex;0
-FILE_NAME_9=394;LaTeX;0;16;1;1;1;/home/fakub/dokumenty/fjfi/vyzkumak/tex/include/2-results_3-isomorph.tex;0
-FILE_NAME_10=48;LaTeX;0;16;1;1;1;/home/fakub/dokumenty/fjfi/vyzkumak/tex/include/2-results_4-k-clique.tex;0
-FILE_NAME_11=1118;Žádné;0;16;1;1;1;/home/fakub/dokumenty/fjfi/vyzkumak/tex/biblio.bib;0
+FILE_NAME_3=6910;LaTeX;0;16;1;1;1;/home/fakub/dokumenty/fjfi/vyzkumak/tex/include/1-intro_1-basics.tex;0
+FILE_NAME_4=3235;LaTeX;0;16;1;1;1;/home/fakub/dokumenty/fjfi/vyzkumak/tex/include/1-intro_2-strand_models.tex;0
+FILE_NAME_5=7628;LaTeX;0;16;1;1;1;/home/fakub/dokumenty/fjfi/vyzkumak/tex/include/1-intro_3-wang-tile_models.tex;0
+FILE_NAME_6=582;LaTeX;0;16;1;1;1;/home/fakub/dokumenty/fjfi/vyzkumak/tex/include/2-results.tex;0
+FILE_NAME_7=132;LaTeX;0;16;1;1;1;/home/fakub/dokumenty/fjfi/vyzkumak/tex/include/2-results_1-model.tex;0
+FILE_NAME_8=961;LaTeX;0;16;1;1;1;/home/fakub/dokumenty/fjfi/vyzkumak/tex/include/2-results_2-3-color.tex;0
+FILE_NAME_9=1394;LaTeX;0;16;1;1;1;/home/fakub/dokumenty/fjfi/vyzkumak/tex/include/2-results_3-isomorph.tex;0
+FILE_NAME_10=577;LaTeX;0;16;1;1;1;/home/fakub/dokumenty/fjfi/vyzkumak/tex/include/2-results_4-k-clique.tex;0
+FILE_NAME_11=4190;Žádné;0;16;1;1;1;/home/fakub/dokumenty/fjfi/vyzkumak/tex/biblio.bib;0

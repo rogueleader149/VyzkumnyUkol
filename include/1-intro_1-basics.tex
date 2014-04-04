@@ -73,6 +73,7 @@
 		\end{defn}
 		
 		\begin{remark}
+		\label{rem:stud_compl}
 			Note some properties of proposed complexities.
 			\begin{description}
 				\item[Ad biostep complexity] Adleman \cite{adleman95biostep} describes formally in his {\em unrestricted model} few types of such lab procedures -- {\em Separate, Merge, Detect} and {\em Amplify}, Winfree \cite{winfree_phd} adds another -- {\em Append}. And both of them remind that one biostep takes tens of minutes. Thus the only practically feasible DNA algorithms are those with $O(1)$ biostep complexity.
@@ -81,6 +82,22 @@
 				\item[Ad glue complexity] Higher glue complexity will require longer DNA sequences in the sticky ends. % which leads to higher probability of erroneous binding $p_e$. %!% něco citovat co zminuje závislost p_e na dýlce sekvence, to přece musí rost ...
 			\end{description}
 		\end{remark}
+		
+		\begin{lemma}
+		\label{lem:ti_gl}
+			~
+			\begin{enumerate}
+				\item $Ti(n) \leq Gl^4(n)$,
+				\item $Gl(n) \leq 4Ti(n)$.
+			\end{enumerate}
+		\end{lemma}
+		\begin{proof}
+			~
+			\begin{enumerate}
+				\item Having $Gl(n)$ glues, I cannot make more than $Gl^4(n)$ different tiles,
+				\item having $Ti(n)$ tiles, there appear maximally $4Ti(n)$ glues.
+			\end{enumerate}
+		\end{proof}
 	
 	\subsection{Languages}
 		
