@@ -57,7 +57,7 @@
 				g \in \Theta(f) \iff g \in O(f) \,\wedge\, f \in O(g) \iff g \in O(f) \,\wedge\, g \in \Omega^{(2)}(f) .
 			\end{equation*}
 			
-			The condition for $g \sim f$ can be easily seen to be equivalent to $|f-g| \in o(g)$. In chapter~\ref{chap:problems} we will be mostly interested in this relation because it specifies the function better than $\Theta$. For example, $2n \in \Theta(n)$ but $2n \not\sim n$.
+			The condition for $g \sim f$ can be easily seen to be equivalent to $|f-g| \in o(g)$. In Chapter~\ref{chap:problems} we will be mostly interested in this relation because it specifies the function better than $\Theta$. For example, $2n \in \Theta(n)$ but $2n \not\sim n$.
 		\end{remark}
 	
 	\subsection{Studied complexities}
@@ -78,7 +78,7 @@
 				\item[Ad biostep complexity] Adleman \cite{adleman95biostep} describes formally in his {\em unrestricted model} few types of such lab procedures -- {\em Separate, Merge, Detect} and {\em Amplify}, Winfree \cite{winfree_phd} adds another -- {\em Append}. And both of them remind that one biostep takes tens of minutes. Thus the only practically feasible DNA algorithms are those with $O(1)$ biostep complexity.
 				\item[Ad binding complexity] Too high binding complexity leads to lower probability of correct computation $P_c$ because it holds $P_c(n) = (1-p_e)^{Bnd(n)} \approx\footnote{If reasonable.} \; 1-p_e \cdot Bnd(n)$ where $p_e$ denotes probability of erroneous binding.
 				\item[Ad tile complexity] The higher tile complexity the more demanding it is to prepare required tiles.
-				\item[Ad glue complexity] Higher glue complexity will require longer DNA sequences in the sticky ends. % which leads to hogher probability of erroneous binding $p_e$. %!% něco citovat co zminuje závislost p_e na dýlce sekvence, to přece musí rost ...
+				\item[Ad glue complexity] Higher glue complexity will require longer DNA sequences in the sticky ends. % which leads to higher probability of erroneous binding $p_e$. %!% něco citovat co zminuje závislost p_e na dýlce sekvence, to přece musí rost ...
 			\end{description}
 		\end{remark}
 	
@@ -109,7 +109,7 @@
 	\subsection{$\P$, $\NP$ and other classes}
 	\label{sec:PNP}
 		
-		This section describes few classes of languages from the resource-consumption point of view. There exist many equivalent definitions, these are taken from \cite{book_comp}.   %!% přidat filozofickou vložku, tu chci pak využít
+		This section describes few classes of languages from the resource-consumption point of view. There exist many equivalent definitions, these are taken from \cite{book_comp}. See also \cite[Chapter 1.5.1]{book_comp} for a discussion reasoning the importance of class $\P$.
 		
 		\begin{defn}\label{def:P}
 			${\cal L} \subseteq \Sigma^*$. ${\cal L} \in \P \iff \bigl(\exists p \in {\cal P}\bigr) \bigl(\exists \textnormal{ deterministic Turing machine } M\bigr)\\ \bigl(\forall x \in \Sigma^*\bigr) \bigl(x \in {\cal L} \iff M \textnormal{ accepts } x \textnormal{ in time } \leq p(|x|)\bigr)$.
@@ -127,11 +127,10 @@
 		The second possibility is to first define general classes $\DTime$, $\NTime$, $\DSpace$ and $\NSpace$ and after that to use their special case. Remind how Non-deterministic Turing machine (NTM) differs from Deterministic Turing machine (DTM):
 		\begin{itemize}
 			\item it is allowed to have ambiguous transition function,
-			\item it has two types of terminal states: accepting $q_{accept}$ and halting without accepting $q_{halt}$ (not rejecting!),
-			\item we say that it accepts input $x$ iff there {\em exists} a sequence of decisions ending in $q_{accept}$, as consequence it declines $x$ iff {\em for every} sequence of decisions reaches $q_{halt}$,
+			\item it has two types of terminal states: accepting $q_{accept}$ and halting without accepting $q_{halt}$ (without rejecting!),
+			\item we say that it accepts input $x$ iff there {\em exists} a sequence of decisions ending in $q_{accept}$, as a consequence it declines $x$ iff {\em for every} sequence of decisions it reaches $q_{halt}$,
 		\end{itemize}
 		
-		%!% tady je problém s negací v D---- ptž polynom časově konstruovatelnej je ale co když f(n) neni že ... ale asi mi to neva ...
 		\begin{defn}\label{def:DTime}
 			$\DTime\bigl(f(n)\bigr) = \bigl\{ {\cal L}\textnormal{ language} \bigm| (\exists \textnormal{ deterministic Turing machine }M)\\ (\forall x\in\Sigma^*)\bigl(x\in{\cal L} \iff M\textnormal{ accepts }x\textnormal{ in time }\leq f(|x|)\bigr) \bigr\}$.\\
 			Other classes are defined in a very similar manner: time $\leftrightarrow$ space, deterministic $\leftrightarrow$ non-deterministic.
@@ -150,7 +149,7 @@
 		\end{note}
 		
 		\begin{remark}
-			In case of $\P$ there is no ``co'' version. It follows from ${\cal L} \in \P \iff \overline{\cal L} \in \P$. This can be easily seen because deterministic Turing machine is capable of negation with the same time resources, non-deterministic is not known to. Note that Immerman--Szelepcsényi theorem states possibility of non-deterministic Turing machine negation in limited {\em space}: ${\cal L} \in \NSpace(s(n)) \iff \overline{\cal L} \in \NSpace(s(n))$ for $s(n) \geq \log(n)$.   %!% problematickej: \footnote{Since $\P = \NP = \coNP$ is not known.}
+			In case of $\P$ there is no ``co'' version. It follows from ${\cal L} \in \P \iff \overline{\cal L} \in \P$. This can be easily seen because deterministic Turing machine is capable of negation with same time resources $\geq n$, non-deterministic is not known to. Note that Immerman--Szelepcsényi theorem states possibility of non-deterministic Turing machine negation in limited {\em space}: ${\cal L} \in \NSpace(s(n)) \iff \overline{\cal L} \in \NSpace(s(n))$ for $s(n) \geq \log(n)$.
 		\end{remark}
 		
 		\begin{thm}
@@ -158,7 +157,7 @@
 		\end{thm}
 		
 		\begin{defn}
-			We say that language ${\cal L}_1$ is {\em polynomial-time Karp reducible} to ${\cal L}_2$ and denote ${\cal L}_1\propto{\cal L}_2 \iff \exists$ polynomial-time computable function $f:\Sigma^*\rightarrow\Sigma^*$ such that $(\forall x\in\Sigma^*)(x\in{\cal L}_1\iff x\in{\cal L}_2)$.
+			We say that language ${\cal L}_1$ is {\em polynomial-time Karp reducible} to ${\cal L}_2$ and denote ${\cal L}_1\propto{\cal L}_2 \iff \exists$ polynomial-time computable function $f:\Sigma^*\rightarrow\Sigma^*$ such that $(\forall x\in\Sigma^*)(x\in{\cal L}_1\iff f(x)\in{\cal L}_2)$.
 		\end{defn}
 		
 		\begin{defn}
@@ -176,7 +175,7 @@
 		\begin{example}\label{exm:npc}
 			Remind some popular $\NPC$ problems: boolean formula satisfability ($\mathsf{SAT}$), Hamiltonian path problem ($\mathsf{HPP}$), graph $3$-coloring, graph $k$-independent set, graph $k$-clique, graph $k$-vertex cover, subset sum and many others.
 			
-			On the other hand there are few interesting problems which are not known to belong either to $\P$ nor to $\NPC$, one of them is graph isomorphism problem.
+			On the other hand there are few interesting problems which are not known to belong either to $\P$ nor to $\NPC$, one of them is {\em graph isomorphism problem}.
 		\end{example}
 		
 		% poly-time hierarchy ... book pg. 93
@@ -215,8 +214,6 @@
 		\begin{remark}
 			$\BPP$ allows PTM to make both wrong decisions (for $x\in\cal L$ as well as for $x\notin\cal L$), on the other hand $\RP$ does not allow error for $x\notin\cal L$ and $\coRP$ does not allow error for $x\in\cal L$. Following class $\ZPP$ (from {\em zero error}) does not allow any error, it only allows halting neither with accepting nor with rejecting.
 		\end{remark}
-		
-		%!% proč mam pocit že to maj v book blbě definovaný? takle by to znamenalo P=ZPP. líp u majerecha!
 		
 		\begin{defn}
 			$\ZPTime\bigl(f(n)\bigr) = \Bigl\{ {\cal L}\textnormal{ language} \Bigm| \bigl(\exists \textnormal{ probabilistic Turing machine }M\bigr)\\ \bigl(\forall x\in\Sigma^*\bigr)\Bigl(M \textnormal{ halts in time } \leq f(|x|) \;\wedge\\ \bigl(x\in{\cal L} \then \prob(M\textnormal{ accepts }x) \geq \nicefrac{2}{3} \,\wedge\, \prob(M\textnormal{ rejects }x) = 0 \bigr) \;\wedge\\ \bigl(x\notin{\cal L} \then \prob(M\textnormal{ rejects }x) \geq \nicefrac{2}{3} \,\wedge\, \prob(M\textnormal{ accepts }x) = 0 \bigl) \Bigr) \Bigr\}$.

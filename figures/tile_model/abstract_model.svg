@@ -1440,15 +1440,15 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.98994949"
-     inkscape:cx="461.68404"
-     inkscape:cy="216.33969"
+     inkscape:zoom="2.8"
+     inkscape:cx="181.5477"
+     inkscape:cy="96.066352"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="true"
      units="mm"
      inkscape:window-width="1286"
-     inkscape:window-height="711"
+     inkscape:window-height="657"
      inkscape:window-x="80"
      inkscape:window-y="0"
      inkscape:window-maximized="1">
@@ -1519,7 +1519,7 @@
          y="924.80304">N</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:19px;font-style:normal;font-weight:normal;fill:#ff0000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       style="font-size:19px;font-style:italic;font-weight:normal;fill:#ff0000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans;-inkscape-font-specification:Bitstream Charter Italic"
        x="180.70866"
        y="946.06293"
        id="text5111-9"><tspan
@@ -1533,7 +1533,7 @@
        id="path2825" />
     <text
        xml:space="preserve"
-       style="font-size:19px;font-style:normal;font-weight:normal;fill:#ffcc00;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       style="font-size:19px;font-style:italic;font-weight:normal;fill:#ffcc00;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans;-inkscape-font-specification:Bitstream Charter Italic"
        x="56.692913"
        y="946.06299"
        id="text5111-3"><tspan
@@ -1567,7 +1567,7 @@
          y="981.49603">C</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:19px;font-style:normal;font-weight:normal;fill:#ff0000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       style="font-size:19px;font-style:italic;font-weight:normal;fill:#ff0000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans;-inkscape-font-specification:Bitstream Charter Italic"
        x="74.409447"
        y="960.23621"
        id="text3295-8-7-5"><tspan
@@ -1681,7 +1681,7 @@
          y="995.66925">C</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:19px;font-style:normal;font-weight:normal;fill:#00d400;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       style="font-size:19px;font-style:italic;font-weight:normal;fill:#00d400;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans;-inkscape-font-specification:Bitstream Charter Italic"
        x="67.322838"
        y="1024.0157"
        id="text7076"><tspan
@@ -1715,7 +1715,7 @@
          y="995.66931">E</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:19px;font-style:normal;font-weight:normal;fill:#0000ff;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       style="font-size:19px;font-style:italic;font-weight:normal;fill:#0000ff;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans;-inkscape-font-specification:Bitstream Charter Italic"
        x="138.18898"
        y="1024.0157"
        id="text7076-9"><tspan
@@ -1725,7 +1725,7 @@
          y="1024.0157">B</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:19px;font-style:normal;font-weight:normal;fill:#0000ff;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       style="font-size:19px;font-style:italic;font-weight:normal;fill:#0000ff;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans;-inkscape-font-specification:Bitstream Charter Italic"
        x="95.669289"
        y="1024.0157"
        id="text7076-5"><tspan
@@ -1749,7 +1749,7 @@
          y="995.66931">F</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:19px;font-style:normal;font-weight:normal;fill:#00d400;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       style="font-size:19px;font-style:italic;font-weight:normal;fill:#00d400;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans;-inkscape-font-specification:Bitstream Charter Italic"
        x="166.53548"
        y="1024.0157"
        id="text7076-4"><tspan
@@ -1818,7 +1818,7 @@
          y="960.23621">I</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:19px;font-style:normal;font-weight:normal;fill:#ffcc00;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       style="font-size:19px;font-style:italic;font-weight:normal;fill:#ffcc00;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans;-inkscape-font-specification:Bitstream Charter Italic"
        x="162.99214"
        y="960.23621"
        id="text3295-4-5-4-8"><tspan

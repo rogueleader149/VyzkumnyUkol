@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2013.11.18)  12 MAR 2014 22:37
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2013.11.18)  3 APR 2014 21:52
 entering extended mode
  %&-line parsing enabled.
 **vyzkumak.tex
@@ -700,32 +700,32 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 109.
 
 [4] [5]) (./include/1-intro_2-strand_models.tex
-<./figures/strand_types/linear.pdf, id=239, 264.99pt x 137.313pt>
+<./figures/strand_types/linear.pdf, id=240, 264.99pt x 137.313pt>
 File: ./figures/strand_types/linear.pdf Graphic file (type pdf)
 
 <use ./figures/strand_types/linear.pdf> [6 <./figures/strand_types/linear.pdf>]
-<./figures/adleman_graph.pdf, id=266, 307.1475pt x 191.71625pt>
+<./figures/adleman_graph.pdf, id=267, 307.1475pt x 191.71625pt>
 File: ./figures/adleman_graph.pdf Graphic file (type pdf)
 
 <use ./figures/adleman_graph.pdf> [7 <./figures/adleman_graph.pdf>]
-<./figures/adleman_strands.pdf, id=289, 305.14pt x 56.21pt>
+<./figures/adleman_strands.pdf, id=290, 305.14pt x 56.21pt>
 File: ./figures/adleman_strands.pdf Graphic file (type pdf)
 
 <use ./figures/adleman_strands.pdf>
-<./figures/strand_types/dendrimer.pdf, id=298, 299.519pt x 336.45702pt>
+<./figures/strand_types/dendrimer.pdf, id=299, 299.519pt x 336.45702pt>
 File: ./figures/strand_types/dendrimer.pdf Graphic file (type pdf)
 
 <use ./figures/strand_types/dendrimer.pdf> [8 <./figures/adleman_strands.pdf>]
-<./figures/strand_types/double_crossover.pdf, id=341, 259.36899pt x 114.026pt>
+<./figures/strand_types/double_crossover.pdf, id=342, 259.36899pt x 114.026pt>
 File: ./figures/strand_types/double_crossover.pdf Graphic file (type pdf)
 
 <use ./figures/strand_types/double_crossover.pdf> [9 <./figures/strand_types/de
 ndrimer.pdf> <./figures/strand_types/double_crossover.pdf>]
-<./figures/dao-dae/dae.pdf, id=369, 370.18298pt x 108.405pt>
+<./figures/dao-dae/dae.pdf, id=370, 370.18298pt x 108.405pt>
 File: ./figures/dao-dae/dae.pdf Graphic file (type pdf)
 
 <use ./figures/dao-dae/dae.pdf>
-<./figures/dao-dae/dao.pdf, id=371, 427.196pt x 108.405pt>
+<./figures/dao-dae/dao.pdf, id=372, 427.196pt x 108.405pt>
 File: ./figures/dao-dae/dao.pdf Graphic file (type pdf)
 
 <use ./figures/dao-dae/dao.pdf>) (./include/1-intro_3-wang-tile_models.tex
@@ -735,14 +735,14 @@ Package amsmath Warning: Foreign command \atop;
 (amsmath)                \frac or \genfrac should be used instead
 (amsmath)                 on input line 40.
 
-<./figures/tiles1.pdf, id=397, 269.005pt x 466.74374pt>
+<./figures/tiles1.pdf, id=400, 269.005pt x 466.74374pt>
 File: ./figures/tiles1.pdf Graphic file (type pdf)
 
 <use ./figures/tiles1.pdf>
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<./figures/tiles2.pdf, id=398, 282.05376pt x 418.56375pt>
+<./figures/tiles2.pdf, id=401, 282.05376pt x 418.56375pt>
 File: ./figures/tiles2.pdf Graphic file (type pdf)
 
 <use ./figures/tiles2.pdf>
@@ -761,15 +761,15 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 1.
 
 (./include/2-results_1-model.tex
-<./figures/tile_model/DNA_struct.pdf, id=468, 327.624pt x 114.026pt>
+<./figures/tile_model/DNA_struct.pdf, id=474, 327.624pt x 114.026pt>
 File: ./figures/tile_model/DNA_struct.pdf Graphic file (type pdf)
 
 <use ./figures/tile_model/DNA_struct.pdf>
-<./figures/tile_model/DNA_assembly.pdf, id=470, 498.663pt x 171.039pt>
+<./figures/tile_model/DNA_assembly.pdf, id=476, 498.663pt x 171.039pt>
 File: ./figures/tile_model/DNA_assembly.pdf Graphic file (type pdf)
 
 <use ./figures/tile_model/DNA_assembly.pdf>
-<./figures/tile_model/abstract_model.pdf, id=472, 199.94699pt x 199.94699pt>
+<./figures/tile_model/abstract_model.pdf, id=478, 199.94699pt x 199.94699pt>
 File: ./figures/tile_model/abstract_model.pdf Graphic file (type pdf)
 
 <use ./figures/tile_model/abstract_model.pdf> [14
@@ -777,11 +777,11 @@ File: ./figures/tile_model/abstract_model.pdf Graphic file (type pdf)
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 54.
+(hyperref)                removing `math shift' on input line 61.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 54.
+(hyperref)                removing `math shift' on input line 61.
 
 ) (./include/2-results_2-3-color.tex
 Overfull \hbox (13.21144pt too wide) in paragraph at lines 3--4
@@ -791,16 +791,16 @@ Overfull \hbox (13.21144pt too wide) in paragraph at lines 3--4
 
 [15 <./figures/tile_model/DNA_struct.pdf> <./figures/tile_model/DNA_assembly.pd
 f> <./figures/tile_model/abstract_model.pdf>]
-<./figures/3-color/bottom_tile.pdf, id=529, 554.87299pt x 142.93399pt>
+<./figures/3-color/bottom_tile.pdf, id=558, 554.87299pt x 142.93399pt>
 File: ./figures/3-color/bottom_tile.pdf Graphic file (type pdf)
 
 <use ./figures/3-color/bottom_tile.pdf>
-<./figures/3-color/3-color.pdf, id=531, 370.18298pt x 569.32701pt>
+<./figures/3-color/3-color.pdf, id=560, 370.18298pt x 569.32701pt>
 File: ./figures/3-color/3-color.pdf Graphic file (type pdf)
 
 <use ./figures/3-color/3-color.pdf>) [16 <./figures/3-color/bottom_tile.pdf>]
 [17 <./figures/3-color/3-color.pdf>] (./include/2-results_3-isomorph.tex
-[18] <./figures/isomorphism/isomorphism.pdf, id=570, 313.17pt x 725.91202pt>
+[18] <./figures/isomorphism/isomorphism.pdf, id=599, 313.17pt x 725.91202pt>
 File: ./figures/isomorphism/isomorphism.pdf Graphic file (type pdf)
 
 <use ./figures/isomorphism/isomorphism.pdf>) [19] [20 <./figures/isomorphism/is
@@ -821,7 +821,7 @@ Overfull \hbox (17.34561pt too wide) in paragraph at lines 17--18
 10.95 (\OML/cmm/m/it/10.95 n \OMS/cmsy/m/n/10.95 ^^@
  []
 
-<./figures/k-clique/k-clique.pdf, id=590, 427.196pt x 285.065pt>
+<./figures/k-clique/k-clique.pdf, id=619, 427.196pt x 285.065pt>
 File: ./figures/k-clique/k-clique.pdf Graphic file (type pdf)
 
 <use ./figures/k-clique/k-clique.pdf> [21])) (./include/n-biblio.tex [22 <./fig
@@ -834,10 +834,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 7855 strings out of 495027
- 111246 string characters out of 1181418
- 194844 words of memory out of 3000000
- 10674 multiletter control sequences out of 15000+50000
+ 7859 strings out of 495027
+ 111296 string characters out of 1181418
+ 195959 words of memory out of 3000000
+ 10676 multiletter control sequences out of 15000+50000
  25656 words of font info for 97 fonts, out of 3000000 for 9000
  38 hyphenation exceptions out of 8191
  38i,12n,43p,979b,493s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -863,9 +863,9 @@ share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texmf
 -texlive/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/share/texmf-texlive/fon
 ts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texmf-texlive/fonts/type1/pu
 blic/amsfonts/symbols/msbm10.pfb>
-Output written on vyzkumak.pdf (31 pages, 540658 bytes).
+Output written on vyzkumak.pdf (31 pages, 551860 bytes).
 PDF statistics:
- 728 PDF objects out of 1000 (max. 8388607)
- 143 named destinations out of 1000 (max. 500000)
+ 759 PDF objects out of 1000 (max. 8388607)
+ 145 named destinations out of 1000 (max. 500000)
  262 words of extra memory for PDF output out of 10000 (max. 10000000)
 

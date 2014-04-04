@@ -1440,16 +1440,16 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.979899"
-     inkscape:cx="311.38328"
-     inkscape:cy="155.06023"
+     inkscape:zoom="1.4"
+     inkscape:cx="320.7518"
+     inkscape:cy="71.176612"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="true"
      units="mm"
-     inkscape:window-width="1600"
-     inkscape:window-height="1175"
-     inkscape:window-x="1366"
+     inkscape:window-width="1286"
+     inkscape:window-height="657"
+     inkscape:window-x="80"
      inkscape:window-y="0"
      inkscape:window-maximized="1">
     <inkscape:grid
@@ -1550,7 +1550,7 @@
       <path
          transform="translate(0,-10.629948)"
          id="path3831"
-         d="m 365.18489,988.17897 27.98764,0 0,-10.76448 -27.98764,0"
+         d="m 365.18489,988.17897 27.98764,0 0,-10.76448 -34.44633,-3e-5"
          style="fill:none;stroke:#ff0000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
          sodipodi:nodetypes="cccc" />
       <path
@@ -1562,7 +1562,7 @@
       <path
          transform="translate(0,-10.629948)"
          id="path3835"
-         d="m 382.40805,966.65001 53.82239,0"
+         d="m 388.86674,966.64998 47.3637,3e-5"
          style="fill:none;stroke:#ff0000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
          sodipodi:nodetypes="cc" />
       <path
@@ -1618,7 +1618,7 @@
       <path
          transform="translate(0,-10.629948)"
          id="path3957"
-         d="m 360.8791,977.41449 -53.82239,0 0,-10.76448 10.76448,0 0,-10.76448 -10.76448,0 0,-10.76447 53.82239,0"
+         d="m 354.42041,977.41446 -47.3637,3e-5 0,-10.76448 10.76448,0 0,-10.76448 -10.76448,0 0,-10.76447 53.82239,0"
          style="fill:none;stroke:#ffcc00;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
          sodipodi:nodetypes="cccccccc" />
       <path
@@ -1630,7 +1630,7 @@
       <path
          transform="translate(0,-10.629948)"
          id="path3963"
-         d="m 378.10226,955.88553 -27.98764,0 0,10.76448 27.98764,0"
+         d="m 378.10226,955.88553 -27.98764,0 0,10.76448 34.44633,-3e-5"
          style="fill:none;stroke:#ffcc00;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
          sodipodi:nodetypes="cccc" />
     </g>
@@ -1728,13 +1728,13 @@
       <path
          transform="translate(0,-10.629948)"
          id="path3835-0"
-         d="m 382.40805,966.65001 53.82239,0"
+         d="m 382.40805,966.65001 47.3637,-2e-5"
          style="fill:none;stroke:#ffd400;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
          sodipodi:nodetypes="cc" />
       <path
          transform="translate(0,-10.629948)"
          id="path3837-5"
-         d="m 453.45361,977.41449 -27.98765,0 0,10.76448 27.98765,0"
+         d="m 459.91229,977.41447 -34.44633,2e-5 0,10.76448 27.98765,0"
          style="fill:none;stroke:#ffd400;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
          sodipodi:nodetypes="cccc" />
     </g>
@@ -1745,7 +1745,7 @@
       <path
          transform="translate(0,-10.629948)"
          id="path3957-8"
-         d="m 360.8791,977.41449 -53.82239,0 0,-10.76448 10.76448,0 0,-10.76448 -10.76448,0 0,-10.76447 53.82239,0"
+         d="m 354.42043,977.41446 -47.36372,3e-5 0,-10.76448 10.76448,0 0,-10.76448 -10.76448,0 0,-10.76447 53.82239,0"
          style="fill:none;stroke:#ff0000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
          sodipodi:nodetypes="cccccccc" />
       <path
@@ -1757,7 +1757,7 @@
       <path
          transform="translate(0,-10.629948)"
          id="path3963-6"
-         d="m 378.10226,955.88553 -27.98764,0 0,10.76448 27.98764,0"
+         d="m 378.10226,955.88553 -27.98764,0 0,10.76448 34.44635,-3e-5"
          style="fill:none;stroke:#ff0000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
          sodipodi:nodetypes="cccc" />
     </g>
@@ -1827,7 +1827,7 @@
     </g>
     <text
        xml:space="preserve"
-       style="font-size:16px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       style="font-size:16px;font-style:italic;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans;-inkscape-font-specification:Bitstream Charter Italic"
        x="180.70865"
        y="1031.1023"
        id="text7076-42"><tspan
@@ -1847,7 +1847,7 @@
          y="995.66919">C</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:16px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       style="font-size:16px;font-style:italic;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans;-inkscape-font-specification:Bitstream Charter Italic"
        x="116.92914"
        y="960.23615"
        id="text7076-42-7"><tspan
@@ -1867,7 +1867,7 @@
          y="924.80304">K</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:16px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       style="font-size:16px;font-style:italic;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans;-inkscape-font-specification:Bitstream Charter Italic"
        x="428.74017"
        y="1031.1023"
        id="text7076-42-11"><tspan
@@ -1887,7 +1887,7 @@
          y="995.66919">F</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:16px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       style="font-size:16px;font-style:italic;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans;-inkscape-font-specification:Bitstream Charter Italic"
        x="492.51971"
        y="960.23615"
        id="text7076-42-2"><tspan
