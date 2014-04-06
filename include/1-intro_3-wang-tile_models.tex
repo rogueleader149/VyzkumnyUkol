@@ -65,54 +65,54 @@
 		\hline\hline
 	\end{tabular}
 	\end{center}
+
+\subsection{Turing universality of 2D tiles at $\tau=2$}
 	
-	\subsubsection{Turing universality of 2D tiles at $\tau=2$}
-		
-		Here we propose an alternative and more straightforward 2D tilesystem denoted by ${\cal T}_{TM}$ which directly simulates Turing machine at $\tau=2$ proving Turing universality of this model, see Figures \ref{fig:tileset1} and \ref{fig:tileset2}. All tiles are described within figures.
-		\begin{remark}
-			This tilesystem can simulate deterministic Turing machine as well as non-deter\-ministic or probabilistic if we consider probabilistic tilesystem, all in $O(1)$ biosteps.
-		\end{remark}
-		The worst case occurs when the head is changing its step direction because all the rest of the tape must be copied. Following lemma gives upper bound for binding complexity as well as for the other studied complexities.
-		\begin{lemma}
-		\label{lem:TM_bound}
-			Studied complexities in tilesystem ${\cal T}_{TM}$ are bounded:
-			\begin{description}
-				\item[Biostep] $Bs(n) \in O(1)$.
-				\item[Binding] $Bnd(n) \in O(t^2(n))$ where $t(n)$ denotes time of the simulated Turing machine.
-				\item[Tile] $Ti(n) \in O(n)$.
-				\item[Glue] $Gl(n) \in O(n)$.
-			\end{description}
-		\end{lemma}
-		\begin{proof}
-			~
-			\begin{description}
-				\item[Biostep] all tiles are designed to operate altogether thus only constant number of biosteps is needed.
-				\item[Binding] all Turing machine steps are simulated one-to-one or one-to-constant number of bindings with only one exception which is tape-copying as soon as head changes its direction. The length of %!% popsaný
-				used tape is $\leq t(n)$. Every copied length is thus bounded by $t(n) + C$ where $C$ is a constant, copying process is thus bounded by $2(t(n)+C)$ bindings. Copying occurs maximally once per simulated step thus number of copying is bounded by $t(n)$. Altogether number of bindings is bounded by $2(t(n)+C)\cdot t(n) \in O(t^2(n))$.
-				\item[Tile] number of non-input tiles is constant, it is proportional to Turing machine size which is constant. There must only be prepared $n$ special input tiles thus $Ti(n) \in O(n)$.
-				\item[Glue] from Lemma \ref{lem:ti_gl} follows that $Gl(n) \leq 4Ti(n)$ and I really need $n$ glues to connect input tiles uniquely, $Gl(n)\in O(n)$.
-			\end{description}
-		\end{proof}
-		\begin{cor}
-		\label{cor:poly_resist}
-			All classes resistant to polynomial slowdown ($\P$, $\ZPP$, $\RP$, $\BPP$, $\NP$, \ldots) remain preserved for all studied complexities.
-		\end{cor}
-		
-		\begin{figure}[h]
-		\begin{center}
-			\includegraphics{./figures/tiles1.pdf}
-			\caption{Tileset 1/2. Symmetric tiles are considered.}
-			\label{fig:tileset1}
-		\end{center}
-		\end{figure}
-		
-		\begin{figure}[h]
-		\begin{center}
-			\includegraphics{./figures/tiles2.pdf}
-			\caption{Tileset 2/2. Symmetric tiles are considered.}
-			\label{fig:tileset2}
-		\end{center}
-		\end{figure}
+	Here we propose an alternative and more straightforward 2D tilesystem denoted by ${\cal T}_{TM}$ which directly simulates Turing machine at $\tau=2$ proving Turing universality of this model, see Figures \ref{fig:tileset1} and \ref{fig:tileset2}. All tiles are described within figures.
+	\begin{remark}
+		This tilesystem can simulate deterministic Turing machine as well as non-deter\-ministic or probabilistic if we consider probabilistic tilesystem, all in $O(1)$ biosteps.
+	\end{remark}
+	The worst case occurs when the head is changing its step direction because all the rest of the tape must be copied. Following lemma gives upper bound for binding complexity as well as for the other studied complexities.
+	\begin{lemma}
+	\label{lem:TM_bound}
+		Studied complexities in tilesystem ${\cal T}_{TM}$ are bounded:
+		\begin{description}
+			\item[Biostep] $Bs(n) \in O(1)$.
+			\item[Binding] $Bnd(n) \in O(t^2(n))$ where $t(n)$ denotes time of the simulated Turing machine.
+			\item[Tile] $Ti(n) \in O(n)$.
+			\item[Glue] $Gl(n) \in O(n)$.
+		\end{description}
+	\end{lemma}
+	\begin{proof}
+		~
+		\begin{description}
+			\item[Biostep] all tiles are designed to operate altogether thus only constant number of biosteps is needed.
+			\item[Binding] all Turing machine steps are simulated one-to-one or one-to-constant number of bindings with only one exception which is tape-copying as soon as head changes its direction. The length of %!% popsaný
+			used tape is $\leq t(n)$. Every copied length is thus bounded by $t(n) + C$ where $C$ is a constant, copying process is thus bounded by $2(t(n)+C)$ bindings. Copying occurs maximally once per simulated step thus number of copying is bounded by $t(n)$. Altogether number of bindings is bounded by $2(t(n)+C)\cdot t(n) \in O(t^2(n))$.
+			\item[Tile] number of non-input tiles is constant, it is proportional to Turing machine size which is constant. There must only be prepared $n$ special input tiles thus $Ti(n) \in O(n)$.
+			\item[Glue] from Lemma \ref{lem:ti_gl} follows that $Gl(n) \leq 4Ti(n)$ and I really need $n$ glues to connect input tiles uniquely, $Gl(n)\in O(n)$.
+		\end{description}
+	\end{proof}
+	\begin{cor}
+	\label{cor:poly_resist}
+		All classes resistant to polynomial slowdown ($\P$, $\ZPP$, $\RP$, $\BPP$, $\NP$, \ldots) remain preserved for all studied complexities.
+	\end{cor}
+	
+	\begin{figure}[h]
+	\begin{center}
+		\includegraphics{./figures/tiles1.pdf}
+		\caption{Tileset 1/2. Symmetric tiles are considered.}
+		\label{fig:tileset1}
+	\end{center}
+	\end{figure}
+	
+	\begin{figure}[h]
+	\begin{center}
+		\includegraphics{./figures/tiles2.pdf}
+		\caption{Tileset 2/2. Symmetric tiles are considered.}
+		\label{fig:tileset2}
+	\end{center}
+	\end{figure}
 
 \subsection{Feasibility of the class $\BPP$}
 	

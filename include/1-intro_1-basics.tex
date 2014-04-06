@@ -88,14 +88,14 @@
 			~
 			\begin{enumerate}
 				\item $Ti(n) \leq Gl^4(n)$,
-				\item $Gl(n) \leq 4Ti(n)$.
+				\item $Gl(n) \leq 4\,Ti(n)$.
 			\end{enumerate}
 		\end{lemma}
 		\begin{proof}
-			~
+			From combinatoric reasons,
 			\begin{enumerate}
-				\item Having $Gl(n)$ glues, I cannot make more than $Gl^4(n)$ different tiles,
-				\item having $Ti(n)$ tiles, there appear maximally $4Ti(n)$ glues.
+				\item having $Gl(n)$ glues, I cannot make more than $Gl^4(n)$ different tiles,
+				\item having $Ti(n)$ tiles, there can appear maximally $4\,Ti(n)$ glues.
 			\end{enumerate}
 		\end{proof}
 	
@@ -131,6 +131,7 @@
 		\begin{defn}\label{def:P}
 			${\cal L} \subseteq \Sigma^*$. ${\cal L} \in \P \iff \bigl(\exists p \in {\cal P}\bigr) \bigl(\exists \textnormal{ deterministic Turing machine } M\bigr)\\ \bigl(\forall x \in \Sigma^*\bigr) \bigl(x \in {\cal L} \iff M \textnormal{ accepts } x \textnormal{ in time } \leq p(|x|)\bigr)$.
 		\end{defn}
+		\nomenclature{$\cal P$}{Set of polynomials.}
 		
 		\begin{defn}\label{def:NP}
 			${\cal L} \subseteq \Sigma^*$. ${\cal L} \in \NP \iff \bigl(\exists p, q \in {\cal P}\bigr) \bigl(\exists \textnormal{ deterministic Turing machine } M\bigr)\\ \bigl(\forall x \in \Sigma^*\bigr) \Bigl(x \in {\cal L} \iff \bigl(\exists y \in \Sigma^{p(|x|)}\bigr) \bigl(M \textnormal{ accepts } (x,y) \textnormal{ in time } \leq q(|x|+|y|)\bigr)\Bigr)$.\\
@@ -144,7 +145,7 @@
 		The second possibility is to first define general classes $\DTime$, $\NTime$, $\DSpace$ and $\NSpace$ and after that to use their special case. Remind how Non-deterministic Turing machine (NTM) differs from Deterministic Turing machine (DTM):
 		\begin{itemize}
 			\item it is allowed to have ambiguous transition function,
-			\item it has two types of terminal states: accepting $q_{accept}$ and halting without accepting $q_{halt}$ (without rejecting!),
+			\item it has two types of terminal states: accepting $q_{accept}$ and halting without accepting nor rejecting $q_{halt}$,
 			\item we say that it accepts input $x$ iff there {\em exists} a sequence of decisions ending in $q_{accept}$, as a consequence it declines $x$ iff {\em for every} sequence of decisions it reaches $q_{halt}$,
 		\end{itemize}
 		
@@ -186,7 +187,7 @@
 		\end{defn}
 		
 		\begin{note}
-			If we found a polynomial-time algorithm for {\em any} $\NPC$ language, it would hold $\P=\NP$ which is not believed to be true. Thus supposed that $\P\neq\NP$ there does not exist a polynomial algorithm for any $\NPC$ language.
+			If we found a polynomial-time algorithm for {\em any} $\NPC$ language, it would hold $\P=\NP$ which is not believed to be true. Thus assumed that $\P\neq\NP$ there does not exist a deterministic polynomial algorithm for any $\NPC$ language.
 		\end{note}
 		
 		\begin{example}\label{exm:npc}

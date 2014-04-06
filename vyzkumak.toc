@@ -13,11 +13,11 @@
 \contentsline {section}{\numberline {1.4}Wang-tile models}{10}{section.1.4}
 \contentsline {subsection}{\numberline {1.4.1}Definition}{10}{subsection.1.4.1}
 \contentsline {subsection}{\numberline {1.4.2}Computational power}{11}{subsection.1.4.2}
-\contentsline {subsubsection}{Turing universality of 2D tiles at $\tau =2$}{12}{section*.9}
-\contentsline {subsection}{\numberline {1.4.3}Feasibility of the class $\mathsf {BPP}$}{12}{subsection.1.4.3}
+\contentsline {subsection}{\numberline {1.4.3}Turing universality of 2D tiles at $\tau =2$}{12}{subsection.1.4.3}
+\contentsline {subsection}{\numberline {1.4.4}Feasibility of the class $\mathsf {BPP}$}{12}{subsection.1.4.4}
 \contentsline {chapter}{\numberline {2}Solutions to $\mathsf {NP}$ problems}{16}{chapter.2}
 \contentsline {section}{\numberline {2.1}Abstract model for DAE units}{16}{section.2.1}
 \contentsline {section}{\numberline {2.2}Graph 3-coloring}{17}{section.2.2}
 \contentsline {section}{\numberline {2.3}Graph isomorphism}{20}{section.2.3}
 \contentsline {section}{\numberline {2.4}$k$-clique}{23}{section.2.4}
-\contentsline {chapter}{References}{25}{section*.20}
+\contentsline {chapter}{References}{25}{section*.19}
