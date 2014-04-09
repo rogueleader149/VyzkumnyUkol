@@ -6,18 +6,18 @@
 \contentsline {subsection}{\numberline {1.2.3}Languages}{3}{subsection.1.2.3}
 \contentsline {subsection}{\numberline {1.2.4}$\mathsf {P}$, $\mathsf {NP}$ and other classes}{4}{subsection.1.2.4}
 \contentsline {section}{\numberline {1.3}Strand models}{6}{section.1.3}
-\contentsline {subsection}{\numberline {1.3.1}Linear strands}{6}{subsection.1.3.1}
+\contentsline {subsection}{\numberline {1.3.1}Linear strands}{7}{subsection.1.3.1}
 \contentsline {subsection}{\numberline {1.3.2}Adleman's experiment}{7}{subsection.1.3.2}
-\contentsline {subsection}{\numberline {1.3.3}Dendrimer structures}{8}{subsection.1.3.3}
-\contentsline {subsection}{\numberline {1.3.4}Double crossover molecules}{9}{subsection.1.3.4}
-\contentsline {section}{\numberline {1.4}Wang-tile models}{10}{section.1.4}
-\contentsline {subsection}{\numberline {1.4.1}Definition}{10}{subsection.1.4.1}
-\contentsline {subsection}{\numberline {1.4.2}Computational power}{11}{subsection.1.4.2}
-\contentsline {subsection}{\numberline {1.4.3}Turing universality of 2D tiles at $\tau =2$}{12}{subsection.1.4.3}
-\contentsline {subsection}{\numberline {1.4.4}Feasibility of the class $\mathsf {BPP}$}{12}{subsection.1.4.4}
-\contentsline {chapter}{\numberline {2}Solutions to $\mathsf {NP}$ problems}{16}{chapter.2}
-\contentsline {section}{\numberline {2.1}Abstract model for DAE units}{16}{section.2.1}
-\contentsline {section}{\numberline {2.2}Graph 3-coloring}{17}{section.2.2}
-\contentsline {section}{\numberline {2.3}Graph isomorphism}{20}{section.2.3}
-\contentsline {section}{\numberline {2.4}$k$-clique}{23}{section.2.4}
-\contentsline {chapter}{References}{25}{section*.19}
+\contentsline {subsection}{\numberline {1.3.3}Dendrimer structures}{9}{subsection.1.3.3}
+\contentsline {subsection}{\numberline {1.3.4}Double crossover molecules}{10}{subsection.1.3.4}
+\contentsline {section}{\numberline {1.4}Wang-tile models}{11}{section.1.4}
+\contentsline {subsection}{\numberline {1.4.1}Definition}{11}{subsection.1.4.1}
+\contentsline {subsection}{\numberline {1.4.2}Computational power}{12}{subsection.1.4.2}
+\contentsline {subsection}{\numberline {1.4.3}Turing universality of 2D tiles at $\tau =2$}{13}{subsection.1.4.3}
+\contentsline {subsection}{\numberline {1.4.4}Feasibility of the class $\mathsf {BPP}$}{13}{subsection.1.4.4}
+\contentsline {chapter}{\numberline {2}Solutions to $\mathsf {NP}$ problems}{17}{chapter.2}
+\contentsline {section}{\numberline {2.1}Abstract model for DAE units}{17}{section.2.1}
+\contentsline {section}{\numberline {2.2}Graph 3-coloring}{18}{section.2.2}
+\contentsline {section}{\numberline {2.3}Graph isomorphism}{21}{section.2.3}
+\contentsline {section}{\numberline {2.4}$k$-clique}{24}{section.2.4}
+\contentsline {chapter}{References}{26}{section*.19}

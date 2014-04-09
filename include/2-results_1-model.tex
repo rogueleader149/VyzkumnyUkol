@@ -1,13 +1,7 @@
 \section{Abstract model for DAE units}
 
-In this section we will introduce a simplifying model for Winfree's solution to the $\sf HPP$. We have two reasons:
-\begin{enumerate}   %!% opravdu to jsou ty důvody?? s rezervou ...
-	\item the model will be based on the $\atam$ model,
-	\item pictures will be easier-to-read.
-\end{enumerate}
-
 \begin{defn}
-	Let us define $\myatam$ (augmented $\atam$) as $\atam$ where:
+	Let us define $\myatam$ (DAE $\atam$) as $\atam$ where
 	\begin{itemize}
 		\item temperature is set to $\tau = 2$,
 		\item there are another $5$ tile shapes\footnote{Even with their vertical reflections.}, see Figure \ref{fig:abstract_model} (tiles {\sf ADEB}, {\sf CA}, {\sf KG}, {\sf KLO} and {\sf OP DONE}),
@@ -17,22 +11,12 @@ In this section we will introduce a simplifying model for Winfree's solution to 
 \end{defn}
 
 \begin{note}
-	Those bottom tiles have side glue strengths $2$ thus they can form a linear sequence. These will be later used for generating random words. Note that these words can be restricted by arbitrary regular grammar rule.
+	$\myatam$ can be easily simulated by classical $\atam$ at temperature $2$.
 \end{note}
 
-\begin{note}
-	$\myatam$ can be easily simulated by classical $\atam$.
-\end{note}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%!% něco s tim udělat (dát tomu smysl => přepsat od základu)
-
-In following examples this model will be set up to act similarly like $\NP$: $\exists y \; R(x,y)$. Although existence is not sure, it is very likely. Predicate $R$ will be ``enumerable in polynomial time'' for $x \in L$. In this context, {\em enumerable in polynomial time} will mean number of bindings, not number of biosteps. This can be assumed due to Turing universality of this model in $O(1)$ biosteps -- biostep complexity is not restrictive\footnote{From Turing's thesis, Turing machine is the most universal model.} and will be required to be $O(1)$ due to its lab complexity. On the other hand the binding complexity will be very important, we will be interested even in constants. This is because the less binding complexity, the less probability of error.
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Those bottom tiles have side glue strengths $2$ thus they can form a linear sequence\footnote{Note that the word can be restricted by arbitrary regular grammar rule.}. This sequence plays the role of the seeked certificate from Definition \ref{def:NP}. Then the other tiles ``check'' correctness of this certificate with polynomial complexity. Note that binding complexity is related to probability of error thus we will be interested even in constants, see example in Remark \ref{rem:tilde}.
 
 %!% odhady se dají zmenšit pomocí #E místo #V^2
-%!% spodní řádek má 2x tak dlouhý lepidla !! vysvětlit proč
 
 \begin{figure}[H]
 \begin{center}

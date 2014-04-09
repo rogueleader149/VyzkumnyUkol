@@ -51,12 +51,15 @@
 				f \in \Omega(g) \iff \limsup\limits_{n\to\infty}\frac{f(n)}{g(n)} > 0 .
 			\end{equation*}
 			The other, $\Omega^{(2)}$, was introduced by Knuth from good reasons described in \cite{knuth76}. In similar manner there are two definitions for $\omega$.
-			
+		\end{remark}
+		\begin{remark}
 			Note that there are also some relations: the condition for $\Omega^{(1)}$ is negation of the condition for $o$ so these sets are complementary for given function $f$, similarly for $\omega^{(1)}$ and $O$. For the second variant one can easily check that $f\in\Omega^{(2)}(g)\iff g\in O(f)$ and $f\in\omega^{(2)}(g)\iff g\in o(f)$. There is also an equivalent condition for $\Theta$:
 			\begin{equation*}
 				g \in \Theta(f) \iff g \in O(f) \,\wedge\, f \in O(g) \iff g \in O(f) \,\wedge\, g \in \Omega^{(2)}(f) .
 			\end{equation*}
-			
+		\end{remark}
+		\begin{remark}
+		\label{rem:tilde}
 			The condition for $g \sim f$ can be easily seen to be equivalent to $|f-g| \in o(g)$. In Chapter~\ref{chap:problems} we will be mostly interested in this relation because it specifies the function better than $\Theta$. For example, $2n \in \Theta(n)$ but $2n \not\sim n$.
 		\end{remark}
 	
@@ -254,6 +257,14 @@
 				\coRP &\subseteq \coNP\cap\BPP .
 			\end{align*}
 		\end{thm}
+		
+		\begin{conj}
+			It commonly assumed that these unproven relations hold.
+			\begin{align*}
+				\P &\subsetneq \NP, \\
+				\P &= \BPP.
+			\end{align*}
+		\end{conj}
 		
 		% PP, \#P, PSpace ..? Maybe also polynomial hierarchy: $\Sigma_k P$ and $\Pi_k P$ languages (alternating Turing machine with bounded alternation, \cite{kozen06}). Might be nice to show what DNA computation is capable of.
 		
