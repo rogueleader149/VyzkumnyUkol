@@ -1,8 +1,14 @@
 \section{$k$-clique}
 
-%!% rozmyslet a překopat:
+%!% rozmyslet a překopat nach einem Muster:
 
-$k$-clique problem belongs to $\NP$-complete problems. Note that $k$-clique problem in $G$ is equivalent to $k$-independent set in $\overline{G}$ and that is equivalent to $n-k$-vertex cover of $\overline{G}$ so we can assume $k \leq \frac{n}{2}$. Like before we add an unchecked vertex if $k$ is odd so we will assume $k$ to be even. % možná: and there exists a DNA system with very low complexity: $\min\bigl\{ 1\nicefrac{1}{4}\;\bigl( \frac{n}{2} \bigr) ^2 ,\; 1\nicefrac{1}{4}\;k^2 \bigr\}$.
+$k$-clique Problem belongs to $\NPC$ problems, its task is to find complete subgraph in given graph $G$. Note that $k$-clique problem in $G$ is equivalent to $k$-independent set in $\overline{G}$ which is equivalent to $(n-k)$-vertex cover of $\overline{G}$. Thus we can assume $k \leq \frac{n}{2}$ because those algorithms would be very similar.
+
+If $k$ were odd we would add an imaginary vertex connected to every original vertex resulting in $G'$. Then discovery of $(k+1)$-clique in $G'$ implies existence of $k$-clique in $G$. Thus we can assume $k$ to be even number.
+
+% reduction from SAT (wiki)
+
+% vocad
 
 \subsection*{Set of tiles}
 
@@ -14,7 +20,7 @@ $k$-clique problem belongs to $\NP$-complete problems. Note that $k$-clique prob
 	\item[Checking tiles] As soon as the most left color reaches sharp and the most right color reaches asterisk, checking is triggered in similar manner to 3-coloring. $kn$ tile types were required.
 	\item[DONE tile] This is exactly the same like 3-coloring. $1$ tile type was required.
 \end{description}
-Summed up, this DNA algorithm requires $k^2 n^2$ tile types. Binding complexity is $1\nicefrac{1}{4}\;\min\{k^2,\,(n-k)^2\}$ Glue complexity is ... % $k^2 \cdot 2#E $
+Summed up, this DNA algorithm requires $k^2 n^2$ tile types. Binding complexity is $1\nicefrac{1}{4}\,k^2$. Glue complexity is ... % $k^2 \cdot 2#E $
 
 \begin{figure}[H]
 \begin{center}
