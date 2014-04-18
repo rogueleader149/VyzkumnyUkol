@@ -4,8 +4,8 @@
 	Let us define $\myatam$ (DAE $\atam$) as $\atam$ where
 	\begin{itemize}
 		\item temperature is set to $\tau = 2$,
-		\item there are another $5$ tile shapes\footnote{Even with their vertical reflections.}, see Figure \ref{fig:abstract_model} (tiles {\sf ADEB}, {\sf CA}, {\sf KG}, {\sf KLO} and {\sf OP DONE}),
-		\item initial tile $t_0$ is set to the left bottom tile (in Figure \ref{fig:abstract_model} tile {\sf CA}),
+		\item there are another $5$ tile shapes\footnote{Even with their vertical reflections.} denoted Bottom tile, Bottom corner tile, Border tile, Verification tile and DONE tile, see Figure \ref{fig:abstract_model} -- tiles {\sf ADEB}, {\sf CA}, {\sf KG}, {\sf KLO} and {\sf OP DONE}, respectively,
+		\item initial tile $t_0$ is set to the left bottom tile (tile {\sf CA} in Figure \ref{fig:abstract_model}),
 		\item glue strengths are restricted to corresponding tile type, all of which appear in Figure \ref{fig:abstract_model}.
 	\end{itemize}
 \end{defn}
@@ -14,7 +14,9 @@
 	$\myatam$ can be easily simulated by classical $\atam$ at temperature $2$.
 \end{note}
 
-Those bottom tiles have side glue strengths $2$ thus they can form a linear sequence\footnote{Note that the word can be restricted by arbitrary regular grammar rule.}. This sequence plays the role of the seeked certificate from Definition \ref{def:NP}. Then the other tiles ``check'' correctness of this certificate with polynomial complexity. Note that binding complexity is related to probability of error thus we will be interested even in leading coefficients, see example in Remark \ref{rem:tilde}.
+Those bottom tiles have side glue strengths $2$ thus they can form a linear sequence\footnote{Note that the word can be restricted by arbitrary regular grammar rule.}. This sequence plays the role of the seeked certificate from Definition \ref{def:NP}. Then the other tiles ``verify'' correctness of this certificate with polynomial complexity. Note that binding complexity is related to probability of error thus we will be interested even in leading coefficients, see example in Remark \ref{rem:tilde}.
+
+From practical decoding reasons (see Winfree \cite{winfree_phd}) the sequences on the top of the bottom tiles must be physically present also wherever on the bottom DNA strand, see Figure \ref{fig:bottom_tile}.
 
 %!% odhady se dají zmenšit pomocí #E místo #V^2
 
@@ -37,5 +39,13 @@ Those bottom tiles have side glue strengths $2$ thus they can form a linear sequ
 	\end{subfigure}
 	\caption{Evolution of $\myatam$ model from DAE units to tiles. Here italic glues {\sf A}, {\sf B}, {\sf G} and {\sf J} are of strength $2$.} %!% okomentovat že se nic neposere těma lepidlama = 2 na krajích
 	\label{fig:evolution}
+\end{center}
+\end{figure}
+
+\begin{figure}[H]
+\begin{center}
+	\includegraphics[scale=0.75]{./figures/3-color/bottom_tile.pdf}
+	\caption{Bottom tile with desired sequences in the bottom strand.}
+	\label{fig:bottom_tile}
 \end{center}
 \end{figure}
