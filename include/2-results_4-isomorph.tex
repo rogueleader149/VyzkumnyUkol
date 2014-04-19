@@ -10,14 +10,11 @@ Following approach is very similar to 3-coloring if we consider $n$ colors inste
 
 If $k$ is odd, we add a separated vertex to both graphs resulting in $G'$ and $H'$. Then $G'$ is isomorphic with $H'$ iff $G$ is isomorphic with $H$. See example in Figure \ref{fig:graph_iso}.
 
-% vocad
-
 \subsection*{Set of tiles}
 
-Like before, the graph needs to have even number of vertices, thus one separated self-bijective vertex has to be added if applicable. An example is given, see Figure \ref{fig:graph_iso}.
 \begin{description}
-	\item[Bottom tiles] These tiles have almost exactly the same rules as in graph 3-coloring, the difference is that {\em all} of the same-colored combinations are omitted. $\frac{n^3}{2}$ tile types were required.
-	\item[Bottom corner tiles] Are exactly the same as before. $2$ tile types were required.
+	\item[Bottom tiles] These tiles have almost the same rules as in graph 3-coloring, the difference is that same-color combinations are omitted. $\frac{n^3}{2}$ tile types were required.
+	\item[Bottom corner tiles] These tiles are exactly the same like for $k$-clique. $2$ tile types were required.
 	\item[Inner tiles] There are three types of inner tiles:
 	\begin{description}
 		\item[Number-ordering tiles] These are similar to previous ones, the difference is which do exist and which do not. Let us assume a tile with numbers $k$ and $l$ with colors $a$ and $b$, respectively. Note that numbers $k$ and $l$ correspond with vertices in graph $G$ and colors $a$ and $b$ correspond with vertices in graph $H$. This tile must verify the isomorphism property -- existence or non-existence of edge between appropriate vertices. Thus the tile exists if and only if
@@ -27,13 +24,11 @@ Like before, the graph needs to have even number of vertices, thus one separated
 		\item[Color-ordering tiles] These are similar to those with numbers. Similarly there do not exist tiles with one color. $n^2$ tile types were required.
 		% there is some redundancy .. but no idea how to do it faster .. it can be done easier, one can only verify without colors, same colors are killed during ordering!
 	\end{description}
-	\item[Border tiles] These tiles are exactly the same like for 3-coloring.
+	\item[Border tiles] These tiles are exactly the same like for $k$-clique. $2$ tile types were required.
 	\item[Verification tiles] As soon as there appears a combination of sharp and most-left-colored asterisk, a verification tile comes having ``C'' of the second color on the right top. After this initialization there are tiles with colored ``C'' and same-colored asterisk on the bottom and next-colored ``C'' on the right top. This ensures that every color was used exactly once. The last color is followed by non-colored ``C''. $n$ tile types were required.
 	\item[DONE tile] Finally if non-colored ``C'' meets non-colored asterisk, a ``DONE'' tile is connected signalizing correct solution. $1$ tile type was required.
 \end{description}
-Summed up, this DNA algorithm requires $n^4$ tile types and its binding complexity is $2\nicefrac{1}{2}\;n^2$. Glue complexity is ...
-
-% .. místo na trik
+Summed up, this DNA algorithm requires $n^4$ tile types. Binding complexity is $2\nicefrac{1}{2}\,n^2$, glue complexity is $n^2$.
 
 \begin{figure}[H]
 \begin{center}

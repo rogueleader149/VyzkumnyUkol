@@ -18,6 +18,6 @@
 \contentsline {chapter}{\numberline {2}Solutions to $\mathsf {NP}$ problems}{17}{chapter.2}
 \contentsline {section}{\numberline {2.1}Abstract model for DAE units}{17}{section.2.1}
 \contentsline {section}{\numberline {2.2}$k$-clique Problem}{18}{section.2.2}
-\contentsline {section}{\numberline {2.3}Graph 3-coloring Problem}{19}{section.2.3}
+\contentsline {section}{\numberline {2.3}Graph 3-coloring Problem}{20}{section.2.3}
 \contentsline {section}{\numberline {2.4}Graph Isomorphism Problem}{21}{section.2.4}
-\contentsline {chapter}{References}{24}{section*.19}
+\contentsline {chapter}{References}{25}{section*.19}
