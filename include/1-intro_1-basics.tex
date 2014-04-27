@@ -21,42 +21,43 @@
 
 \section{Basic DNA principles}
 	
-	DNA (deoxyribonucleic acid) is a large biomolecule carrying living organisms' genetic information. Its most common structure is well known double-helix which consists of two strands connected by hydrogen bonds. These strands are biopolymers built up by {\em polymerase chain reaction} (PCR) from small units -- nucleotides. Each nucleotide consists of two parts: nitrogenous base and backbone molecules.
+	DNA (deoxyribonucleic acid) is a large biomolecule carrying genetic information of living organisms. Its most common structure is well-known double-helix which consists of two strands connected by hydrogen bonds. These strands are biopolymers built up by {\em polymerase chain reaction} (PCR) from small units -- nucleotides. Each nucleotide consists of two parts: nitrogenous base and backbone molecules.
 	\begin{description}
-		\item[Nitrogenous bases] There are $4$ nucleobases in DNA ($+1$ in RNA): Adenine ({\bf A}), Thymine ({\bf T}), Cytosine ({\bf C}), Guanine ({\bf G}) and Uracil ({\bf U}) in RNA instead of Thymine in DNA. These molecules are responsible for making hydrogen bonds between strands in a manner following Watson-Crick complementarity: only {\bf A} -- {\bf T} and {\bf C} -- {\bf G} pairs can be formed.
-		\item[Backbone molecules] Backbone of DNA strand is made of alternating deoxyriboses and phosphates. Phosphates only hold adjacent deoxyriboses, each deoxyribose moreover holds one nucleobase. Due to deoxyribose carbon numbering, DNA backbone has so called $5'$ and $3'$ ends, default reading order is $5'\rightarrow 3'$. DNA strands must be antiparallel so that nucleobases can connect.
+		\item[Nitrogenous bases.] There are $4$ nucleobases in DNA ($+1$ in RNA): Adenine ({\bf A}), Thymine ({\bf T}), Cytosine ({\bf C}), Guanine ({\bf G}) and Uracil ({\bf U}) in RNA instead of Thymine in DNA. These molecules are responsible for making hydrogen bonds between strands in a manner following Watson-Crick complementarity: only {\bf A} -- {\bf T} and {\bf C} -- {\bf G} pairs can be formed.
+		\item[Backbone molecules.] Backbone of DNA strand is made of alternating deoxyriboses and phosphates. Phosphates only hold adjacent deoxyriboses, each deoxyribose moreover holds one nucleobase. Due to deoxyribose carbon numbering, DNA backbone has so-called $5'$ and $3'$ ends, default reading order is $5'\rightarrow 3'$. DNA strands must be antiparallel so that nucleobases can connect.
 	\end{description}
 
-\section{Complexity, languages}
+\section{Complexity and languages}
 	
-	\subsection{$O$ and other notations}
+	\subsection{Big $O$ and other notations}
 		
-		Let us briefly remind $O$-, $o$-, $\Omega$-, $\omega$- and $\Theta$-notations for $f, g: \N \rightarrow \N$. We will denote $(\exists n_0 \in \N) (\forall n > n_0)$ shortly by $(\forall^* n)$ which can be read ``for almost all $n$''. Also $(\forall n_0 \in \N) (\exists n > n_0)$ will be denoted by $(\exists^\infty n)$ which can be read ``there exist infinitedly many $n$''.
+		Let us briefly remind $O$-, $o$-, $\Omega$-, $\omega$- and $\Theta$-notations for functions on positive integers. We will denote $(\exists n_0 \in \N) (\forall n > n_0)$ shortly by $(\forall^* n)$ which can be read ``for almost all $n$''. Also $(\forall n_0 \in \N) (\exists n > n_0)$ will be denoted by $(\exists^\infty n)$ which can be read ``there exist infinitely many~$n$''.
 		\begin{defn}
 		\label{def:O}
+		Let $f, g: \N \rightarrow \N$.
 		\begin{align*}
-			g \in O(f) &\iff (\exists C > 0) (\forall^* n) \bigl(g(n) < C f(n)\bigr) \\[5pt]
-			g \in \omega^{(1)}(f) &\iff (\forall C > 0) (\exists^\infty n) \bigl(g(n) > C f(n)\bigr) \\[5pt]
-			g \in \omega^{(2)}(f) &\iff (\forall C > 0) (\forall^* n) \bigl(g(n) > C f(n)\bigr) \\[5pt]
-			g \in \Omega^{(1)}(f) &\iff (\exists C > 0) (\exists^\infty n) \bigl(g(n) > C f(n)\bigr) \\[5pt]
-			g \in \Omega^{(2)}(f) &\iff (\exists C > 0) (\forall^* n) \bigl(g(n) > C f(n)\bigr) \\[5pt]
-			g \in o(f) &\iff (\forall C > 0) (\forall^* n) \bigl(g(n) < C f(n)\bigr) \\[5pt]
-			g \in \Theta(f) &\iff (\exists C_1, C_2 > 0) (\forall^* n) \bigl(C_1 f(n) \leq g(n) \leq C_2 f(n)\bigr) \\[5pt]
+			O(f) &= \bigl\{\, g \bigm| (\exists C > 0) (\forall^* n) \bigl(g(n) < C f(n)\bigr)\bigr\} \\[5pt]
+			\omega^{(1)}(f) &= \bigl\{\, g \bigm| (\forall C > 0) (\exists^\infty n) \bigl(g(n) > C f(n)\bigr)\bigr\} \\[5pt]
+			\omega^{(2)}(f) &= \bigl\{\, g \bigm| (\forall C > 0) (\forall^* n) \bigl(g(n) > C f(n)\bigr)\bigr\} \\[5pt]
+			\Omega^{(1)}(f) &= \bigl\{\, g \bigm| (\exists C > 0) (\exists^\infty n) \bigl(g(n) > C f(n)\bigr)\bigr\} \\[5pt]
+			\Omega^{(2)}(f) &= \bigl\{\, g \bigm| (\exists C > 0) (\forall^* n) \bigl(g(n) > C f(n)\bigr)\bigr\} \\[5pt]
+			o(f) &= \bigl\{\, g \bigm| (\forall C > 0) (\forall^* n) \bigl(g(n) < C f(n)\bigr)\bigr\} \\[5pt]
+			\Theta(f) &= \bigl\{\, g \bigm| (\exists C_1, C_2 > 0) (\forall^* n) \bigl(C_1 f(n) \leq g(n) \leq C_2 f(n)\bigr)\bigr\} \\[5pt]
 			g \sim f &\iff \lim\limits_{n\to\infty} \frac{g(n)}{f(n)} = 1
 		\end{align*}
 		\end{defn}
 		
 		\begin{remark}
-			Note that there are two different definitions for omegas. $\Omega^{(1)}$ is equivalent to the orgininal definition introduced by Hardy \cite{hardy1914} which states
+			Note that there are two distinct definitions for omegas. The class $\Omega^{(1)}$ is equivalent to the orgininal definition introduced by Hardy \cite{hardy1914} which states
 			\begin{equation*}
 				f \in \Omega(g) \iff \limsup\limits_{n\to\infty}\frac{f(n)}{g(n)} > 0 .
 			\end{equation*}
-			The other, $\Omega^{(2)}$, was introduced by Knuth from good reasons described in \cite{knuth76}. In similar manner there are two definitions for $\omega$.
+			The second class $\Omega^{(2)}$, was introduced by Knuth for good reasons described in \cite{knuth76}. In similar manner there are two definitions for $\omega$.
 		\end{remark}
 		\begin{remark}
-			Note that there are also some relations: the condition for $\Omega^{(1)}$ is negation of the condition for $o$ so these sets are complementary for given function $f$, similarly for $\omega^{(1)}$ and $O$. For the second variant one can easily check that $f\in\Omega^{(2)}(g)\iff g\in O(f)$ and $f\in\omega^{(2)}(g)\iff g\in o(f)$. There is also an equivalent condition for $\Theta$:
+			Note that there are also some relations: the condition for $\Omega^{(1)}$ is negation of the condition for $o$ so the sets $\Omega^{(1)}(f)$ and $o(f)$ are complementary for given function $f$, similarly for $\omega^{(1)}$ and $O$. For the second variant one can easily check that $f\in\Omega^{(2)}(g)\iff g\in O(f)$ and $f\in\omega^{(2)}(g)\iff g\in o(f)$. There is also an equivalent condition for $\Theta$:
 			\begin{equation*}
-				g \in \Theta(f) \iff g \in O(f) \,\wedge\, f \in O(g) \iff g \in O(f) \,\wedge\, g \in \Omega^{(2)}(f) .
+				g \in \Theta(f) \iff \bigl(g \in O(f) \,\wedge\, f \in O(g)\bigr) \iff \bigl(g \in O(f) \,\wedge\, g \in \Omega^{(2)}(f)\bigr) .
 			\end{equation*}
 		\end{remark}
 		\begin{remark}
@@ -64,57 +65,18 @@
 			The condition for $g \sim f$ can be easily seen to be equivalent to $|f-g| \in o(g)$. In Chapter~\ref{chap:problems} we will be mostly interested in this relation because it specifies the function better than $\Theta$. For example, $2n \in \Theta(n)$ but $2n \not\sim n$.
 		\end{remark}
 	
-	\subsection{Studied complexities}
-		
-		\begin{defn}
-			All the following complexities are considered as functions of problem size $n$:
-			\begin{description}
-				\item[Biostep complexity] will refer to the number of laboratory steps required to handle the computation, denoted by $Bs(n)$.
-				\item[Binding complexity] will refer to the number of bindings in given computation, denoted by $Bnd(n)$.
-				\item[Tile complexity] will refer to the number of different DNA tiles, denoted by $Ti(n)$.
-				\item[Glue complexity] will refer to the number of different sticky-end sequences (commonly referred to as {\em glues}), denoted by $Gl(n)$. Each sequence with its Watson-Crick complement is considered as one glue.
-			\end{description}
-		\end{defn}
-		
-		\begin{remark}
-		\label{rem:stud_compl}
-			Note some properties of proposed complexities.
-			\begin{description}
-				\item[Ad biostep complexity] Adleman \cite{adleman95biostep} describes formally in his {\em unrestricted model} few types of such lab procedures -- {\em Separate, Merge, Detect} and {\em Amplify}, Winfree \cite{winfree_phd} adds another -- {\em Append}. And both of them remind that one biostep takes tens of minutes. Thus the only practically feasible DNA algorithms are those with $O(1)$ biostep complexity.
-				\item[Ad binding complexity] Too high binding complexity leads to lower probability of correct computation $P_c$ because it holds $P_c(n) = (1-p_e)^{Bnd(n)} \approx\footnote{If reasonable.} \; 1-p_e \cdot Bnd(n)$ where $p_e$ denotes probability of erroneous binding.
-				\item[Ad tile complexity] The higher tile complexity the more demanding it is to prepare required tiles.
-				\item[Ad glue complexity] Higher glue complexity will require longer DNA sequences in the sticky ends. % which leads to higher probability of erroneous binding $p_e$. %!% něco citovat co zminuje závislost p_e na dýlce sekvence, to přece musí rost ...
-			\end{description}
-		\end{remark}
-		
-		\begin{lemma}
-		\label{lem:ti_gl}
-			~
-			\begin{enumerate}
-				\item $Ti(n) \leq Gl^4(n)$,
-				\item $Gl(n) \leq 4\,Ti(n)$.
-			\end{enumerate}
-		\end{lemma}
-		\begin{proof}
-			From combinatoric reasons,
-			\begin{enumerate}
-				\item having $Gl(n)$ glues, I cannot make more than $Gl^4(n)$ different tiles,
-				\item having $Ti(n)$ tiles, there can appear maximally $4\,Ti(n)$ glues.
-			\end{enumerate}
-		\end{proof}
-	
 	\subsection{Languages}
 		
 		\begin{defn}
-			Let $\Sigma$ be an nonempty and finite set of {\em characters} which will be referred to as {\em alphabet}. Define set of {\em words} over alphabet $\Sigma$ as $\Sigma^* = \bigcup_{n\in\N_0}\Sigma^n$ and set of nonempty words as $\Sigma^+ = \bigcup_{n\in\N}\Sigma^n$. Empty word will be denoted by $\epsilon$. {\em Language} ${\cal L}$ over alphabet $\Sigma$ is then just a set of words: ${\cal L} \subseteq \Sigma^*$. {\em Complement} of language $\cal L$ will be denoted by ${\cal\overline L} = \Sigma^* \setminus {\cal L}$.
+			Let $\Sigma$ be a nonempty and finite set of {\em characters} which will be referred to as {\em alphabet}. Define set of {\em words} over alphabet $\Sigma$ as $\Sigma^* = \bigcup_{n\in\N_0}\Sigma^n$ and set of nonempty words as $\Sigma^+ = \bigcup_{n\in\N}\Sigma^n$. Empty word will be denoted by $\epsilon$. {\em Language} ${\cal L}$ over alphabet $\Sigma$ is a set of words: ${\cal L} \subseteq \Sigma^*$. {\em Complement} of language $\cal L$ will be denoted by ${\cal\overline L} = \Sigma^* \setminus {\cal L}$.
 		\end{defn}
 		
-		Let us briefly remind Chomsky hierarchy of languages generated by generative grammars. Denote alphabet of non-terminals by $N$, alphabet of terminals by $\Sigma$ and initial symbol by $I$.
+		Let us briefly remind Chomsky hierarchy of languages generated by generative grammars. Denote {\em alphabet of non-terminals} by $N$, {\em alphabet of terminals} by $\Sigma$ and {\em initial symbol} by $I$.
 		\begin{description}
-			\item[Recursively enumerable (type 0)] Generated by unrestricted grammar rules.
-			\item[Context-sensitive (type 1)] Grammar rules are either all of the form $\alpha A \beta \rightarrow \alpha \eta \beta$ where $\alpha,\,\beta\in (N\cup\Sigma)^*$, $A\in N$ and $\eta\in (N\cup\Sigma)^+$. Note that $\eta$ cannot be empty. Or, if we assume these rules without those having $I$ on the right hand side, then there is allowed also the rule $I\rightarrow \epsilon$.
-			\item[Context-free (type 2)] All grammar rules are of the form $A\rightarrow\eta$ where $A\in N$ and $\eta\in (N\cup\Sigma)^*$. Note that $\eta$ can be empty.
-			\item[Regular (type 3)] Grammar rules are either all of the forms $A\rightarrow bB$ and $A\rightarrow b$ where $A,\,B\in N$ and $b\in\Sigma$. Or, if we assume these rules without those having $I$ on the right hand side, then there is allowed also the rule $I\rightarrow \epsilon$.
+			\item[Recursively enumerable (type 0).] Generated by unrestricted grammar rules.
+			\item[Context-sensitive (type 1).] Grammar rules are either all of the form $\alpha A \beta \rightarrow \alpha \eta \beta$ where $\alpha,\,\beta\in (N\cup\Sigma)^*$, $A\in N$ and $\eta\in (N\cup\Sigma)^+$. Note that $\eta$ cannot be empty. Or, if we assume these rules without those having $I$ on the right side, then the rule $I\rightarrow \epsilon$ is also allowed.
+			\item[Context-free (type 2).] All grammar rules are of the form $A\rightarrow\eta$ where $A\in N$ and $\eta\in (N\cup\Sigma)^*$. Note that $\eta$ can be empty.
+			\item[Regular (type 3).] Grammar rules are either all of the form $A\rightarrow bB$ or $A\rightarrow b$ where $A,\,B\in N$ and $b\in\Sigma$. Or, if we assume these rules without those having $I$ on the right side, then the rule $I\rightarrow \epsilon$ is also allowed.
 		\end{description}
 		
 		\begin{remark}
@@ -207,7 +169,7 @@
 		We say that PTM $M$
 		\begin{itemize}
 			\item decides language $\cal L$ iff for every $x\in\Sigma^*$ the probability of halting in correct state (i.e. $q_{accept}$ for $x\in{\cal L}$ and $q_{reject}$ for $x\notin{\cal L}$) is higher than $\nicefrac{2}{3}$.
-			\item decides language $\cal L$ in time $t(n)$ iff $M$ decides language $\cal L$ and for every $x\in\Sigma^*$ it halts in time $\leq t(|x|)$.
+			\item decides language $\cal L$ in time $t(n)$ iff $M$ decides language $\cal L$ and for every $x\in\Sigma^*$ it halts in time $\leq t(|x|)$ regardless its randomness.
 		\end{itemize}
 		Now we can define those classes, note that it would be possible to use again two types of definition like above.
 		

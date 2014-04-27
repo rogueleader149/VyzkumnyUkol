@@ -25,9 +25,9 @@
 	
 	Similarly to Turing machines, tilesystem $T$ will be called:
 	\begin{description}
-		\item[Deterministic] iff there exists unique terminal tiling in $T$. % (in other words, reachability relation has one minimal/maximal member).
-		\item[Non-deterministic] iff it has no other restrictions. % no ...
-		\item[Probabilistic] iff every possible step in every stage has defined probability. See Note \ref{note:tilesystems} for a proposal how the probability could be defined.
+		\item[Deterministic.] Iff there exists unique terminal tiling in $T$. % (in other words, reachability relation has one minimal/maximal member).
+		\item[Non-deterministic.] Iff it has no other restrictions. % no ...
+		\item[Probabilistic.] Iff every possible step in every stage has defined probability. See Note \ref{note:tilesystems} for a proposal how the probability could be defined.
 	\end{description}
 	
 	\begin{note}\label{note:tilesystems}
@@ -40,6 +40,35 @@
 			\prob_C(t,i) = \frac{G(t,i)\cdot\prob_0(t)}{\sum\limits_{j\textnormal{ possible place}}\quad\sum\limits_{u\textnormal{ possible tile}\atop\textnormal{on place }j}G(u,j)\cdot\prob_0(u)}
 		\end{equation*}
 	\end{note}
+
+\subsection{Studied complexities}
+	
+	\begin{defn}
+		\label{def:stud_compl}
+		All the following complexities are considered as functions of problem-size $n$:
+		\begin{description}
+			\item[Biostep complexity.] Refers to the number of laboratory steps required to handle the computation, denoted by $Bs(n)$. Adleman \cite{adleman95biostep} describes formally in his {\em unrestricted model} few types of such lab procedures -- {\em Separate, Merge, Detect} and {\em Amplify}, Winfree \cite{winfree_phd} adds another -- {\em Append}. Both of them remind that one biostep takes tens of minutes. Thus the only practically feasible DNA algorithms are those with $O(1)$ biostep complexity.
+			\item[Binding complexity.] Refers to the number of bindings in terminal tiling\footnote{In deterministic computation the value is unique, in non-deterministic computation we consider the value for the smallest accepting terminal tile, in probabilistic computation we consider largest value due to the randomness.}, denoted by $Bnd(n)$. Too high binding complexity leads to lower probability of correct computation $P_c$ because it holds $P_c(n) = (1-p_e)^{Bnd(n)} \approx\footnote{If reasonable.} \; 1-p_e \cdot Bnd(n)$ where $p_e$ denotes probability of erroneous binding.
+			\item[Tile complexity.] Refers to the number of different DNA tiles, denoted by $Ti(n)$. The higher tile complexity the more demanding it is to prepare required tiles.
+			\item[Glue complexity.] Refers to the number of different sticky-end sequences (commonly referred to as {\em glues}), denoted by $Gl(n)$. Each sequence with its Watson-Crick complement is considered as one glue. Higher glue complexity will require longer DNA sequences in the sticky ends. % which leads to higher probability of erroneous binding $p_e$. %!% něco citovat co zminuje závislost p_e na dýlce sekvence, to přece musí rost ...
+		\end{description}
+	\end{defn}
+	
+	\begin{lemma}
+	\label{lem:ti_gl}
+		~
+		\begin{enumerate}
+			\item $Ti(n) \leq Gl^4(n)$,
+			\item $Gl(n) \leq 4\,Ti(n)$.
+		\end{enumerate}
+	\end{lemma}
+	\begin{proof}
+		From combinatoric reasons,
+		\begin{enumerate}
+			\item having $Gl(n)$ glues, we cannot make more than $Gl^4(n)$ different tiles,
+			\item having $Ti(n)$ tiles, there can appear maximally $4\,Ti(n)$ glues.
+		\end{enumerate}
+	\end{proof}
 
 \subsection{Computational power}\label{sec:wang_power}
 	
@@ -77,20 +106,20 @@
 	\label{lem:TM_bound}
 		Studied complexities in tilesystem ${\cal T}_{TM}$ are bounded:
 		\begin{description}
-			\item[Biostep] $Bs(n) \in O(1)$.
-			\item[Binding] $Bnd(n) \in O(t^2(n))$ where $t(n)$ denotes time of the simulated Turing machine.
-			\item[Tile] $Ti(n) \in O(n)$.
-			\item[Glue] $Gl(n) \in O(n)$.
+			\item[Biostep.] $Bs(n) \in O(1)$.
+			\item[Binding.] $Bnd(n) \in O(t^2(n))$ where $t(n)$ denotes time of the simulated Turing machine.
+			\item[Tile.] $Ti(n) \in O(n)$.
+			\item[Glue.] $Gl(n) \in O(n)$.
 		\end{description}
 	\end{lemma}
 	\begin{proof}
 		~
 		\begin{description}
-			\item[Biostep] all tiles are designed to operate altogether thus only constant number of biosteps is needed.
-			\item[Binding] all Turing machine steps are simulated one-to-one or one-to-constant number of bindings with only one exception which is tape-copying as soon as head changes its direction. The length of %!% popsaný
+			\item[Biostep.] All tiles are designed to operate altogether thus only constant number of biosteps is needed.
+			\item[Binding.] All Turing machine steps are simulated one-to-one or one-to-constant number of bindings with only one exception which is tape-copying as soon as head changes its direction. The length of %!% popsaný
 			used tape is $\leq t(n)$. Every copied length is thus bounded by $t(n) + C$ where $C$ is a constant, copying process is thus bounded by $2(t(n)+C)$ bindings. Copying occurs maximally once per simulated step thus number of copying is bounded by $t(n)$. Altogether number of bindings is bounded by $2(t(n)+C)\cdot t(n) \in O(t^2(n))$.
-			\item[Tile] number of non-input tiles is constant, it is proportional to Turing machine size which is constant. There must only be prepared $n$ special input tiles thus $Ti(n) \in O(n)$.
-			\item[Glue] from Lemma \ref{lem:ti_gl} follows that $Gl(n) \leq 4Ti(n)$ and I really need $n$ glues to connect input tiles uniquely, $Gl(n)\in O(n)$.
+			\item[Tile.] Number of non-input tiles is constant, it is proportional to Turing machine size which is constant. There must only be prepared $n$ special input tiles thus $Ti(n) \in O(n)$.
+			\item[Glue.] From Lemma \ref{lem:ti_gl} follows that $Gl(n) \leq 4Ti(n)$ and I really need $n$ glues to connect input tiles uniquely, $Gl(n)\in O(n)$.
 		\end{description}
 	\end{proof}
 	\begin{cor}
@@ -118,7 +147,7 @@
 	
 	Remind that every language from $\BPP$ is dedidable on a PTM in polynomial time which means that probability of correct result is $> \nicefrac{2}{3}$. Note that one can reach probability of correct result higher than arbitrary constant $<1$ by constant number of iterations. Thus it is reasonable to consider $\BPP$ as practically feasible\footnote{Considering even Quantum Turing machine to be practically feasible, $\BQP$ (a superset of $\BPP$) would be practically feasible. Note that due to Shor's algorithm \cite{shor94}, Integer Factorization Problem belongs to $\BQP$ but it is assumed that it does not belong to $\BPP$. Thus $\BPP$ is assumed to be proper subset of $\BQP$.}.
 	
-	Here we introduce a similar proposal for feasibility of DNA algorithms. In Remark \ref{rem:stud_compl} we proposed that feasible algorithms' biostep complexity must comply $Bs(n)\in O(1)$ which is proved in Lemma \ref{lem:TM_bound} for tilesystem ${\cal T}_{TM}$. There are also practical reasons for limitation of the other complexities, not yet so sharp, so we will require them to be polynomial. Corollary \ref{cor:poly_resist} states preserving of classes $\P$, $\ZPP$, $\RP$, $\BPP$, $\NP$, \ldots in tilesystem ${\cal T}_{TM}$ which justifies Corollary \ref{cor:bpp_feas}.
+	Here we introduce a similar proposal for feasibility of DNA algorithms. In Definition \ref{def:stud_compl} we proposed that feasible algorithms' biostep complexity must comply $Bs(n)\in O(1)$ which is proved in Lemma \ref{lem:TM_bound} for tilesystem ${\cal T}_{TM}$. There are also practical reasons for limitation of the other complexities, not yet so sharp, so we will require them to be polynomial. Corollary \ref{cor:poly_resist} states preserving of classes $\P$, $\ZPP$, $\RP$, $\BPP$, $\NP$, \ldots in tilesystem ${\cal T}_{TM}$ which justifies Corollary \ref{cor:bpp_feas}.
 	
 	\begin{thesis}   %!% conjecture nebo lépe?
 		Feasible DNA algorithms comply $Bs(n)\in O(1)$; $Bnd(n),\,Ti(n),\,Gl(n)\in \P$.   %!% možná postačí pro poly algoritmus mín jak \P tile a glue !!! ale spíš ne

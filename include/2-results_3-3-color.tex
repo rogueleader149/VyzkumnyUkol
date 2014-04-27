@@ -15,12 +15,12 @@ If $k$ is odd, we add a separated vertex thus resulting graph $G'$ is 3-colorabl
 \subsection*{Set of tiles}
 
 \begin{description}
-	\item[Bottom tiles] There are tiles with $2l$ and $2l-2$ $(0 < l \leq \frac{n}{2})$ in this order on the bottom sides and with all possible\footnote{If $(2l-1,\,2l-2)$ are connected, same-colored numbers are omitted.} color combinations of $(2l-1,\,2l-2)$ on the top. $\frac{9n}{2}$ tile types were required.
-	\item[Bottom corner tiles] These tiles are exactly the same like for $k$-clique. $2$ tile types were required.
-	\item[Inner tiles] These tiles are responsible for numerical ordering, they are very similar to those in previous problem. There exist all color combinations for all different numbers, again with two exceptions: there do not exist tiles with numbers of connected vertices of the same color and those combinations triggering verification. Thus as soon as there meet vertices which are connected and have the same color, the assembly stops. $9\cdot\binom{n}{2}\cdot 2 \sim 9n^2$ tile types were required.
-	\item[Border tiles] These tiles are exactly the same like for $k$-clique. $2$ tile types were required.
-	\item[Verification tiles] These tiles are almost the same like for $k$-clique, the only difference is that they are triggered by smallest (highest) number instead of lowest (highest) color. $3n$ tile types were required.
-	\item[DONE tile] The tile is exactly the same like for $k$-clique. $1$ tile type was required.
+	\item[Bottom tiles.] There are tiles with $2l$ and $2l-2$ $(0 < l \leq \frac{n}{2})$ in this order on the bottom sides and with all possible\footnote{If $(2l-1,\,2l-2)$ are connected, same-colored numbers are omitted.} color combinations of $(2l-1,\,2l-2)$ on the top. $\frac{9n}{2}$ tile types were required.
+	\item[Bottom corner tiles.] These tiles are exactly the same like for $k$-clique. $2$ tile types were required.
+	\item[Inner tiles.] These tiles are responsible for numerical ordering, they are very similar to those in previous problem. There exist all color combinations for all different numbers, again with two exceptions: there do not exist tiles with numbers of connected vertices of the same color and those combinations triggering verification. Thus as soon as there meet vertices which are connected and have the same color, the assembly stops. $9\cdot\binom{n}{2}\cdot 2 \sim 9n^2$ tile types were required.
+	\item[Border tiles.] These tiles are exactly the same like for $k$-clique. $2$ tile types were required.
+	\item[Verification tiles.] These tiles are almost the same like for $k$-clique, the only difference is that they are triggered by smallest (highest) number instead of lowest (highest) color. $3n$ tile types were required.
+	\item[DONE tile.] The tile is exactly the same like for $k$-clique. $1$ tile type was required.
 \end{description}
 Summed up, this DNA algorithm requires $9n^2$ tile types. Binding complexity is $1\nicefrac{1}{4}\,n^2$, glue complexity is $3\nicefrac{1}{2}\,n$.
 
