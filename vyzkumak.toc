@@ -19,5 +19,5 @@
 \contentsline {section}{\numberline {2.1}Abstract model for DAE units}{16}{section.2.1}
 \contentsline {section}{\numberline {2.2}$k$-clique Problem}{17}{section.2.2}
 \contentsline {section}{\numberline {2.3}Graph 3-coloring Problem}{19}{section.2.3}
-\contentsline {section}{\numberline {2.4}Graph Isomorphism Problem}{20}{section.2.4}
+\contentsline {section}{\numberline {2.4}Graph Isomorphism Problem}{21}{section.2.4}
 \contentsline {chapter}{References}{24}{section*.19}
