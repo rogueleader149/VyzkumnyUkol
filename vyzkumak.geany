@@ -14,16 +14,16 @@ description=
 run_cmd=
 
 [files]
-current_page=6
+current_page=7
 FILE_NAME_0=0;Make;0;16;1;1;1;/home/fakub/dokumenty/fjfi/vyzkumak/tex/Makefile;0
 FILE_NAME_1=3860;LaTeX;0;16;1;1;1;/home/fakub/dokumenty/fjfi/vyzkumak/tex/vyzkumak.tex;0
 FILE_NAME_2=162;LaTeX;0;16;1;1;1;/home/fakub/dokumenty/fjfi/vyzkumak/tex/include/1-intro.tex;0
-FILE_NAME_3=13298;LaTeX;0;16;1;1;1;/home/fakub/dokumenty/fjfi/vyzkumak/tex/include/1-intro_1-basics.tex;0
-FILE_NAME_4=3227;LaTeX;0;16;1;1;1;/home/fakub/dokumenty/fjfi/vyzkumak/tex/include/1-intro_2-strand_models.tex;0
-FILE_NAME_5=4065;LaTeX;0;16;1;1;1;/home/fakub/dokumenty/fjfi/vyzkumak/tex/include/1-intro_3-wang-tile_models.tex;0
-FILE_NAME_6=1222;LaTeX;0;16;1;1;1;/home/fakub/dokumenty/fjfi/vyzkumak/tex/include/2-results.tex;0
-FILE_NAME_7=1329;LaTeX;0;16;1;1;1;/home/fakub/dokumenty/fjfi/vyzkumak/tex/include/2-results_1-model.tex;0
-FILE_NAME_8=4767;LaTeX;0;16;1;1;1;/home/fakub/dokumenty/fjfi/vyzkumak/tex/include/2-results_2-k-clique.tex;0
+FILE_NAME_3=16085;LaTeX;0;16;1;1;1;/home/fakub/dokumenty/fjfi/vyzkumak/tex/include/1-intro_1-basics.tex;0
+FILE_NAME_4=8821;LaTeX;0;16;1;1;1;/home/fakub/dokumenty/fjfi/vyzkumak/tex/include/1-intro_2-strand_models.tex;0
+FILE_NAME_5=11176;LaTeX;0;16;1;1;1;/home/fakub/dokumenty/fjfi/vyzkumak/tex/include/1-intro_3-wang-tile_models.tex;0
+FILE_NAME_6=879;LaTeX;0;16;1;1;1;/home/fakub/dokumenty/fjfi/vyzkumak/tex/include/2-results.tex;0
+FILE_NAME_7=2233;LaTeX;0;16;1;1;1;/home/fakub/dokumenty/fjfi/vyzkumak/tex/include/2-results_1-model.tex;0
+FILE_NAME_8=2093;LaTeX;0;16;1;1;1;/home/fakub/dokumenty/fjfi/vyzkumak/tex/include/2-results_2-k-clique.tex;0
 FILE_NAME_9=2945;LaTeX;0;16;1;1;1;/home/fakub/dokumenty/fjfi/vyzkumak/tex/include/2-results_3-3-color.tex;0
 FILE_NAME_10=4115;LaTeX;0;16;1;1;1;/home/fakub/dokumenty/fjfi/vyzkumak/tex/include/2-results_4-isomorph.tex;0
 FILE_NAME_11=0;Žádné;0;16;1;1;1;/home/fakub/dokumenty/fjfi/vyzkumak/tex/biblio.bib;0

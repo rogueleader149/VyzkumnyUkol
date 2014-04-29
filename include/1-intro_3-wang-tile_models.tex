@@ -8,7 +8,7 @@
 	
 	We will rather define Wang tile models less formally because it will be clear what they mean and excessive formality could cause confusions.
 	
-	Wang tile is a square tile with one color (also index, glue) from a finite nonempty set $I$ on each its edge\footnote{Tiles keep orientation, they are {\em not} allowed to rotate nor reflect.}, let us denote (nonempty) set of all available tiles $T$. Wang tiling is a mapping ${\cal T}: (\Z^2) \rightarrow T$ with restrictions: neighboring tiles must have the same color on the adjacent edge and its domain is required to be (topologically) connected. Wang tiling ${\cal T}_2$ is called {\em reachable} from Wang tiling ${\cal T}_1$ iff ${\cal T}_1 \subseteq {\cal T}_2$. A tiling $\cal T$ is called {\em terminal} iff there does not exist any sharply bigger tiling reachable from $\cal T$. %!% říct jaký to uspořádání je, že má minimální prvek
+	Wang tile is a square tile with one color (also index, glue) from a finite nonempty set $I$ on each its edge\footnote{Tiles keep orientation, they are {\em not} allowed to rotate nor reflect.}, let us denote (nonempty) set of all available tiles $T$. Wang tiling is a mapping ${\cal T}: (\Z^2) \rightarrow T$ with restrictions: neighboring tiles must have the same color on the adjacent edge and its domain is required to be (topologically) connected. Wang tiling ${\cal T}_2$ is called {\em reachable} from Wang tiling ${\cal T}_1$ iff ${\cal T}_1 \subseteq {\cal T}_2$. A tiling $\cal T$ is called {\em terminal} iff there does not exist any strictly larger tiling reachable from $\cal T$. %!% říct jaký to uspořádání je, že má minimální prvek
 	
 	Winfree extends this definition for DNA tile assembly purposes and introduces Abstract Tile Assembly Model ($\atam$). Additionally
 	\begin{itemize}
@@ -18,7 +18,7 @@
 		\begin{itemize}
 			\item from a special initial tile denoted by $t_0$ from $(0,0)$ ({\em initial configuration}),
 			\item one tile per step,
-			\item the sum of just connected glues must be greater or equal to given integer treshold\footnote{Interesting to study are small numbers like $1$, $2$; there are different results in Section \ref{sec:wang_power}}, so called {\em temperature}, denoted by $\tau$.
+			\item the sum of glues connected in one step must be greater than or equal to given integer treshold\footnote{Interesting to study are small numbers like $1$, $2$; there are different results in Section \ref{sec:wang_power}}, so called {\em temperature}, denoted by $\tau$.
 		\end{itemize}
 	\end{itemize}
 	Reachability relation will be restricted accordingly to these rules, {\em reachable in (tilesystem) $T$} will mean reachable from initial configuration, same for {\em terminal tiling in (tilesystem) $T$}.
@@ -31,7 +31,7 @@
 	\end{description}
 	
 	\begin{note}\label{note:tilesystems}
-		If there is a unique place and a unique tile the probability is clearly $1$. If there is a unique place but there are more candidate tiles, the probability $\prob_C(t)$ of connecting tile $t$ should be distributed to these tiles somehow according to their concentration ratio (denoted by $\prob_0(t)$) and their total connectible glue strength (denoted by $G(t)$). Most straightforward is weighted average:
+		If there is a unique place and a unique tile the probability is $1$. If there is a unique place but there are more candidate tiles, the probability $\prob_C(t)$ of connecting tile $t$ should be distributed to these tiles somehow according to their ratio of concentration (denoted by $\prob_0(t)$) and their total connectible glue strength (denoted by $G(t)$). Most straightforward is weighted average:
 		\begin{equation*}
 			\prob_C(t) = \frac{G(t)\cdot\prob_0(t)}{\sum\limits_{u\textnormal{ possible tile}}G(u)\cdot\prob_0(u)}
 		\end{equation*}
@@ -45,7 +45,7 @@
 	
 	\begin{defn}
 		\label{def:stud_compl}
-		All the following complexities are considered as functions of problem-size $n$:
+		All the following complexities are considered as functions of size of the problem, which will be denoted by $n$:
 		\begin{description}
 			\item[Biostep complexity.] Refers to the number of laboratory steps required to handle the computation, denoted by $Bs(n)$. Adleman \cite{adleman95biostep} describes formally in his {\em unrestricted model} few types of such lab procedures -- {\em Separate, Merge, Detect} and {\em Amplify}, Winfree \cite{winfree_phd} adds another -- {\em Append}. Both of them remind that one biostep takes tens of minutes. Thus the only practically feasible DNA algorithms are those with $O(1)$ biostep complexity.
 			\item[Binding complexity.] Refers to the number of bindings in terminal tiling\footnote{In deterministic computation the value is unique, in non-deterministic computation we consider the value for the smallest accepting terminal tile, in probabilistic computation we consider largest value due to the randomness.}, denoted by $Bnd(n)$. Too high binding complexity leads to lower probability of correct computation $P_c$ because it holds $P_c(n) = (1-p_e)^{Bnd(n)} \approx\footnote{If reasonable.} \; 1-p_e \cdot Bnd(n)$ where $p_e$ denotes probability of erroneous binding.
@@ -63,7 +63,7 @@
 		\end{enumerate}
 	\end{lemma}
 	\begin{proof}
-		From combinatoric reasons,
+		For combinatoric reasons,
 		\begin{enumerate}
 			\item having $Gl(n)$ glues, we cannot make more than $Gl^4(n)$ different tiles,
 			\item having $Ti(n)$ tiles, there can appear maximally $4\,Ti(n)$ glues.
@@ -78,7 +78,7 @@
 		\item also at temperature $1$ in 3D,
 		\item but it is not known to be universal or not at temperature $1$ in 2D\footnote{Universality has been reached only with modifications to the original model, see \cite{stage_assembly}, \cite{active_tiles}.}.
 	\end{itemize}
-	Let us show known results in a table.
+	Let us show known results in the following table.
 	
 	\begin{center}
 	\begin{tabular}{|| c || c | c | c ||}
@@ -104,10 +104,10 @@
 	The worst case occurs when the head is changing its step direction because all the rest of the tape must be copied. Following lemma gives upper bound for binding complexity as well as for the other studied complexities.
 	\begin{lemma}
 	\label{lem:TM_bound}
-		Studied complexities in tilesystem ${\cal T}_{TM}$ are bounded:
+		Studied complexities in tilesystem ${\cal T}_{TM}$ are bounded as follows:
 		\begin{description}
 			\item[Biostep.] $Bs(n) \in O(1)$.
-			\item[Binding.] $Bnd(n) \in O(t^2(n))$ where $t(n)$ denotes time of the simulated Turing machine.
+			\item[Binding.] $Bnd(n) \in O(t^2(n))$ where $t(n)$ denotes running time of the simulated Turing machine.
 			\item[Tile.] $Ti(n) \in O(n)$.
 			\item[Glue.] $Gl(n) \in O(n)$.
 		\end{description}
@@ -117,7 +117,7 @@
 		\begin{description}
 			\item[Biostep.] All tiles are designed to operate altogether thus only constant number of biosteps is needed.
 			\item[Binding.] All Turing machine steps are simulated one-to-one or one-to-constant number of bindings with only one exception which is tape-copying as soon as head changes its direction. The length of %!% popsaný
-			used tape is $\leq t(n)$. Every copied length is thus bounded by $t(n) + C$ where $C$ is a constant, copying process is thus bounded by $2(t(n)+C)$ bindings. Copying occurs maximally once per simulated step thus number of copying is bounded by $t(n)$. Altogether number of bindings is bounded by $2(t(n)+C)\cdot t(n) \in O(t^2(n))$.
+			used tape is less than or equal to $t(n)$. Every copied length is thus bounded by $t(n) + C$ where $C$ is a constant, copying process is thus bounded by $2(t(n)+C)$ bindings. Copying occurs maximally once per simulated step thus number of copying is bounded by $t(n)$. Altogether number of bindings is bounded by $2(t(n)+C)\cdot t(n) \in O(t^2(n))$.
 			\item[Tile.] Number of non-input tiles is constant, it is proportional to Turing machine size which is constant. There must only be prepared $n$ special input tiles thus $Ti(n) \in O(n)$.
 			\item[Glue.] From Lemma \ref{lem:ti_gl} follows that $Gl(n) \leq 4Ti(n)$ and I really need $n$ glues to connect input tiles uniquely, $Gl(n)\in O(n)$.
 		\end{description}
@@ -145,9 +145,9 @@
 
 \subsection{Feasibility of the class $\BPP$}
 	
-	Remind that every language from $\BPP$ is dedidable on a PTM in polynomial time which means that probability of correct result is $> \nicefrac{2}{3}$. Note that one can reach probability of correct result higher than arbitrary constant $<1$ by constant number of iterations. Thus it is reasonable to consider $\BPP$ as practically feasible\footnote{Considering even Quantum Turing machine to be practically feasible, $\BQP$ (a superset of $\BPP$) would be practically feasible. Note that due to Shor's algorithm \cite{shor94}, Integer Factorization Problem belongs to $\BQP$ but it is assumed that it does not belong to $\BPP$. Thus $\BPP$ is assumed to be proper subset of $\BQP$.}.
+	Remind that every language from $\BPP$ is decidable on a PTM in polynomial time which means that probability of correct result is greater than $\nicefrac{2}{3}$. Note that one can reach probability of correct result higher than arbitrary constant smaller than $1$ by constant number of iterations. Thus it is reasonable to consider $\BPP$ as practically feasible\footnote{Considering even Quantum Turing machine to be practically feasible, $\BQP$ (a superset of $\BPP$) would be practically feasible. Note that due to Shor's algorithm \cite{shor94}, Integer Factorization Problem belongs to $\BQP$ but it is assumed that it does not belong to $\BPP$. Thus $\BPP$ is assumed to be proper subset of $\BQP$.}.
 	
-	Here we introduce a similar proposal for feasibility of DNA algorithms. In Definition \ref{def:stud_compl} we proposed that feasible algorithms' biostep complexity must comply $Bs(n)\in O(1)$ which is proved in Lemma \ref{lem:TM_bound} for tilesystem ${\cal T}_{TM}$. There are also practical reasons for limitation of the other complexities, not yet so sharp, so we will require them to be polynomial. Corollary \ref{cor:poly_resist} states preserving of classes $\P$, $\ZPP$, $\RP$, $\BPP$, $\NP$, \ldots in tilesystem ${\cal T}_{TM}$ which justifies Corollary \ref{cor:bpp_feas}.
+	Here we introduce a similar proposal for feasibility of DNA algorithms. In Definition \ref{def:stud_compl} we proposed that biostep complexity of feasible algorithms must comply $Bs(n)\in O(1)$ which is proved in Lemma \ref{lem:TM_bound} for tilesystem ${\cal T}_{TM}$. There are also practical reasons for limitation of the other complexities, not yet so strict, so we will require them to be polynomial. Corollary \ref{cor:poly_resist} states preserving of classes $\P$, $\ZPP$, $\RP$, $\BPP$, $\NP$, \ldots in tilesystem ${\cal T}_{TM}$ which justifies Corollary \ref{cor:bpp_feas}.
 	
 	\begin{thesis}   %!% conjecture nebo lépe?
 		Feasible DNA algorithms comply $Bs(n)\in O(1)$; $Bnd(n),\,Ti(n),\,Gl(n)\in \P$.   %!% možná postačí pro poly algoritmus mín jak \P tile a glue !!! ale spíš ne
