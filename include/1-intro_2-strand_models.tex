@@ -51,7 +51,7 @@
 			\item[Step 5.] If any path remains, say ``Yes''; otherwise, say ``No.''\footnote{This is the original version, I would rectify the fifth step: If any paths remain, say ``Yes''; otherwise say ``{\em I do not know}''. That is because it may happen that there exists a valid path but unfortunately it did not assemble or got lost. Note the similarity to $\NP$ versus $\coNP$, see Section \ref{sec:PNP}.} %!% citaci, někdo to už taky kritizoval
 		\end{description}
 		To see % sloveso od insight ?
-		how DNA can compute, let us describe this example more precisely. The computation itself (meaning the inception of the final solution) is hidden in Step 1. Each vertex $i$ is associated with a random\footnote{We will expect those sequences to be different enough.} $20$-mer sequence of DNA, let us denote its $5'\rightarrow 3'$ orientation by $O_i$, its 10-mer prefix by $p_i$ and its 10-mer suffix by $q_i$. Each edge $i\rightarrow j$ is then associated with $\overline{q_i p_j}$ sequence with reverse backbone orientation ($3'\rightarrow 5'$) where $\overline{q_i}$ stands for Watson-Crick complementary word. There is an exception for $i=begin$ and $j=end$: instead of $\overline{q_{begin} p_j}$ there is $\overline{O_{begin} p_j}$ and in a similar way for $j=end$.
+		how DNA can compute, let us describe this example more precisely. The computation itself (meaning the inception of the final solution) is hidden in Step 1. Each vertex $i$ is associated with a random\footnote{We will expect those sequences to be different enough.} $20$-mer sequence of DNA, let us denote its $5'\rightarrow 3'$ orientation by $O_i$, its 10-mer prefix by $p_i$ and its 10-mer suffix by $q_i$. Each edge $i\rightarrow j$ is then associated with $O_{i\rightarrow j} = \overline{q_i p_j}$ sequence with reverse backbone orientation where $\overline{a}$ stands for Watson-Crick complementary word to the word $a$. There is an exception for $i=v_{begin}$, $j=v_{end}$ and every $k$: instead of $\overline{q_i p_k}$ there is $\overline{O_i p_k}$ and in a similar way for $j=v_{end}$.
 		
 		\begin{figure}[H]
 		\begin{center}
@@ -61,14 +61,14 @@
 		\end{center}
 		\end{figure}
 		
-		It can be easily seen that all correctly bonded double-strands correspond with a valid walk through $G_n$. Moreover, all complete double-strands represent a valid walk from $v_{begin}$ to $v_{end}$ through $G_n$.
+		It can be easily seen that all correctly bonded double-strands correspond with a valid walk through $G_n$. Moreover, all double-strands without sticky ends represent a valid walk from $v_{begin}$ to $v_{end}$ through $G_n$.
 		
-		All the other steps are fully described in \cite{adleman94}. The most important thing is that the most time-demanding step is Step 4. In this step one has to purify the product of Step 3 with a {\em biotin-avidin magnetic beads system}. This process extracts consequently for every vertex $i$ only those DNA strands which contain a substring representing vertex $i$. Thus this algorithm has biostep complexity $O(n)$ which we considered unfeasible. Better solution with biostep complexity $O(1)$ was introduced by Winfree \cite{winfree_phd}, see Section \ref{sec:double_crossover} for similar examples.
+		All the other steps are fully described in \cite{adleman94}. The most important thing is that the most time-demanding step is Step 4. In this step one has to purify the product of Step 3 with a {\em biotin-avidin magnetic beads system}. This process consequently extracts for every vertex $i$ only those DNA strands which contain a substring representing vertex $i$. Thus this algorithm has biostep complexity $O(n)$ which we considered unfeasible. Better solution with biostep complexity $O(1)$ was introduced by Winfree \cite{winfree_phd}, see Section \ref{sec:double_crossover} for similar examples.
 	
 	\subsection{Dendrimer structures}
 	\label{sec:dendrimer}
 		
-		Dendrimer structures are multi-strand molecules which form such trees, see Figure \ref{fig:dendrimer}. There can be arbitrary\footnote{At this moment the model is theoretical though practically it has limitations. Note that even with limited number of leafs the size of the whole system must be limited: having $O(2^n)$ molecules, they must fit in space $O(n^3)$ thus $n$ must be limited.} number of leafs and every leaf can end in both ways, see Section \ref{sec:lin_strands}. Winfree \cite{winfree_phd} proved similar property as for linear strands: dendrimer structures are equivalent to context-free languages. Figure \ref{fig:dendrimer} shows an example of a context-free rule.
+		Dendrimer structures are multi-strand molecules which form such trees, see Figure \ref{fig:dendrimer}. There can be arbitrary\footnote{At this moment the model is theoretical though practically it has limitations. Note that even with limited number of branches the size of the whole system must be limited: having $O(2^n)$ molecules, they must fit in space $O(n^3)$ thus $n$ must be limited.} number of ends of both types, see Figure \ref{fig:linear}. Winfree \cite{winfree_phd} proved similar property as for linear strands: dendrimer structures are equivalent to context-free languages. Figure \ref{fig:dendrimer} shows an example of a context-free rule.
 		
 		\begin{figure}[H]
 		\begin{center}

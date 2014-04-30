@@ -1,13 +1,17 @@
-	
-	1959: Feynman's visionary talk, \cite{feynman}; pros: extreme paralelism, cons: reliability.
-	
-	The ground-breaking work was carried out by Adleman, \cite{adleman94}, who showed that DNA computation is practically feasible. In his experiment, Adleman used special DNA sequences for solving Hamiltonian Path Problem, one of the most typical $\NPC$ problems.
-	
-	... Extreme parallelism! But also possibility of errors.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 
+%   B e g i n n i n g
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+In 1959 Feynman gave a visionary talk {\em There's plenty of room at the bottom} \cite{feynman} where he anticipates that future computers will work in molecular scales. Many years later in 1994 Adleman conducted a real experiment \cite{adleman94} where he used DNA molecules to solve an $\NPC$ problem -- Hamiltonian Path Problem. DNA computation became popular because of promising advantage in solving hard computational problems which is extreme parallelism.
+
+Unlike initial excitement it showed to be very hard to use for practical problems, DNA computations still do too many errors %!% citovat ten článek z Nature
+Many researchers are trying hard to decrease the amount of errors, many others are studying DNA computations from mathematical informatics point of view.
+
+This work is dedicated especially to the mathematical informatics aspects arising from models of DNA computation.
 
 \section*{Work overview}
-	
-	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	
 	Chapter 1: Intro.\\
 	Chapter 2: First of all we will describe models which exploit specific DNA structure.\\
@@ -23,10 +27,9 @@
 	
 	DNA (deoxyribonucleic acid) is a large biomolecule carrying genetic information of living organisms. Its most common structure is well-known double-helix which consists of two strands connected by hydrogen bonds. These strands are biopolymers built up by {\em polymerase chain reaction} (PCR) from small units -- nucleotides. Each nucleotide consists of two parts: nitrogenous base and backbone molecules.
 	\begin{description}
-		\item[Nitrogenous bases.] There are $4$ nucleobases in DNA ($+1$ in RNA): Adenine ({\bf A}), Thymine ({\bf T}), Cytosine ({\bf C}), Guanine ({\bf G}) and Uracil ({\bf U}) in RNA instead of Thymine in DNA. These molecules are responsible for making hydrogen bonds between strands in a manner following Watson-Crick complementarity: only {\bf A} -- {\bf T} and {\bf C} -- {\bf G} pairs can be formed.
+		\item[Nitrogenous bases.] There are $4$ nucleobases in DNA: Adenine ({\bf A}), Thymine ({\bf T}), Cytosine ({\bf C}), Guanine ({\bf G}). These molecules are responsible for making hydrogen bonds between strands in a manner following Watson-Crick complementarity: only {\bf A} -- {\bf T} and {\bf C} -- {\bf G} pairs can be formed.
 		\item[Backbone molecules.] Backbone of DNA strand is made of alternating deoxyriboses and phosphates. Phosphates only hold adjacent deoxyriboses, each deoxyribose moreover holds one nucleobase. Due to deoxyribose carbon numbering, DNA backbone has so-called $5'$ and $3'$ ends, default reading order is $5'\rightarrow 3'$. DNA strands must be antiparallel so that nucleobases can connect.
 	\end{description}
-	%!% definovat Watson-Crick complementarity
 
 \section{Complexity and languages}
 	
@@ -49,7 +52,7 @@
 		\end{defn}
 		
 		\begin{remark}
-			Note that there are two distinct definitions for omegas. The class $\Omega^{(1)}$ is equivalent to the orgininal definition introduced by Hardy \cite{hardy1914} which states
+			Note that there are two distinct definitions for omegas. The class $\Omega^{(1)}$ is equivalent to the original definition introduced by Hardy \cite{hardy1914} which states
 			\begin{equation*}
 				f \in \Omega(g) \iff \limsup\limits_{n\to\infty}\frac{f(n)}{g(n)} > 0 .
 			\end{equation*}
