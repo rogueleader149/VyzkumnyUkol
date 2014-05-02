@@ -5,7 +5,6 @@ indent_type=1
 indent_hard_tab_width=2
 detect_indent=false
 indent_mode=2
-detect_indent_width=false
 
 [project]
 name=vyzkumak
@@ -15,17 +14,18 @@ description=
 run_cmd=
 
 [files]
-current_page=0
-
-[file_prefs]
-final_new_line=false
-ensure_convert_new_lines=false
-strip_trailing_spaces=false
-replace_tabs=false
-
-[long line marker]
-long_line_behaviour=1
-long_line_column=72
-
-[VTE]
-last_dir=/media/data/dokumenty/fjfi/vyzkumak/tex
+current_page=11
+FILE_NAME_0=225;Make;0;16;1;1;1;/home/fakub/dokumenty/fjfi/vyzkumak/tex/Makefile;0
+FILE_NAME_1=7051;LaTeX;0;16;1;1;1;/home/fakub/dokumenty/fjfi/vyzkumak/tex/vyzkumak.tex;0
+FILE_NAME_2=612;LaTeX;0;16;1;1;1;/home/fakub/dokumenty/fjfi/vyzkumak/tex/include/0-preface.tex;0
+FILE_NAME_3=61;LaTeX;0;16;1;1;1;/home/fakub/dokumenty/fjfi/vyzkumak/tex/include/1-intro.tex;0
+FILE_NAME_4=1679;LaTeX;0;16;1;1;1;/home/fakub/dokumenty/fjfi/vyzkumak/tex/include/1-intro_1-basics.tex;0
+FILE_NAME_5=0;LaTeX;0;16;1;1;1;/home/fakub/dokumenty/fjfi/vyzkumak/tex/include/1-intro_2-strand_models.tex;0
+FILE_NAME_6=0;LaTeX;0;16;1;1;1;/home/fakub/dokumenty/fjfi/vyzkumak/tex/include/1-intro_3-wang-tile_models.tex;0
+FILE_NAME_7=879;LaTeX;0;16;1;1;1;/home/fakub/dokumenty/fjfi/vyzkumak/tex/include/2-results.tex;0
+FILE_NAME_8=2434;LaTeX;0;16;1;1;1;/home/fakub/dokumenty/fjfi/vyzkumak/tex/include/2-results_1-model.tex;0
+FILE_NAME_9=4848;LaTeX;0;16;1;1;1;/home/fakub/dokumenty/fjfi/vyzkumak/tex/include/2-results_2-k-clique.tex;0
+FILE_NAME_10=3114;LaTeX;0;16;1;1;1;/home/fakub/dokumenty/fjfi/vyzkumak/tex/include/2-results_3-3-color.tex;0
+FILE_NAME_11=1043;LaTeX;0;16;1;1;1;/home/fakub/dokumenty/fjfi/vyzkumak/tex/include/2-results_4-isomorph.tex;0
+FILE_NAME_12=196;LaTeX;0;16;1;1;1;/home/fakub/dokumenty/fjfi/vyzkumak/tex/include/n-1.tex;0
+FILE_NAME_13=0;Žádné;0;16;1;1;1;/home/fakub/dokumenty/fjfi/vyzkumak/tex/biblio.bib;0

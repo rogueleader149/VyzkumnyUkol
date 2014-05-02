@@ -1,5 +1,3 @@
-% úvod o kapitole, přehled
-
 \section{Strand models}
 	
 	There exist or can be synthesized many types of molecules, well described in Winfree \cite{winfree_comp} even with their inception reaction. The most important structures are linear strands (Sections \ref{sec:lin_strands}, \ref{sec:adleman}, Figure \ref{fig:linear}), dendrimer structures (Section \ref{sec:dendrimer}, Figure \ref{fig:dendrimer}) and double crossover molecules (Section \ref{sec:double_crossover}, Figure \ref{fig:double_crossover}).
@@ -11,7 +9,7 @@
 	\label{sec:lin_strands}
 		
 		Linear strands are just a piece of double-helix with two types of ends: either with one strand longer than the other (sticky end) or with both strands connected to each other. The top molecule in Figure \ref{fig:linear} is called {\em hairpin}.
-		\begin{figure}[H]
+		\begin{figure}[h]
 		\begin{center}
 			\includegraphics[width=0.502\textwidth]{./figures/strand_types/linear.pdf} % {šířka v mm}/370 je to původně
 			\caption{Linear strands: a strand for initial symbol $I$ and a strand for rule $A\rightarrow bB$.}
@@ -32,7 +30,7 @@
 		
 		Let us remind this type of HPP. Given a directed graph $G_n$ with $n$ vertices and two designated vertices $v_{begin}$ and $v_{end}$, the problem is to answer whether there exists an oriented path from $v_{begin}$ to $v_{end}$ through the graph such that the path visits every vertex. Note that {\em path} cannot visit any vertex more than once from definition.
 		
-		\begin{figure}[H]
+		\begin{figure}[h]
 		\begin{center}
 			\includegraphics{./figures/adleman_graph.pdf}
 			\caption{Adleman's original graph.}
@@ -53,7 +51,7 @@
 		To see % sloveso od insight ?
 		how DNA can compute, let us describe this example more precisely. The computation itself (meaning the inception of the final solution) is hidden in Step 1. Each vertex $i$ is associated with a random\footnote{We will expect those sequences to be different enough.} $20$-mer sequence of DNA, let us denote its $5'\rightarrow 3'$ orientation by $O_i$, its 10-mer prefix by $p_i$ and its 10-mer suffix by $q_i$. Each edge $i\rightarrow j$ is then associated with $O_{i\rightarrow j} = \overline{q_i p_j}$ sequence with reverse backbone orientation where $\overline{a}$ stands for Watson-Crick complementary word to the word $a$. There is an exception for $i=v_{begin}$, $j=v_{end}$ and every $k$: instead of $\overline{q_i p_k}$ there is $\overline{O_i p_k}$ and in a similar way for $j=v_{end}$.
 		
-		\begin{figure}[H]
+		\begin{figure}[h]
 		\begin{center}
 			\includegraphics{./figures/adleman_strands.pdf}
 			\caption{Example of assigned sequences.}
@@ -70,7 +68,7 @@
 		
 		Dendrimer structures are multi-strand molecules which form such trees, see Figure \ref{fig:dendrimer}. There can be arbitrary\footnote{At this moment the model is theoretical though practically it has limitations. Note that even with limited number of branches the size of the whole system must be limited: having $O(2^n)$ molecules, they must fit in space $O(n^3)$ thus $n$ must be limited.} number of ends of both types, see Figure \ref{fig:linear}. Winfree \cite{winfree_phd} proved similar property as for linear strands: dendrimer structures are equivalent to context-free languages. Figure \ref{fig:dendrimer} shows an example of a context-free rule.
 		
-		\begin{figure}[H]
+		\begin{figure}[h]
 		\begin{center}
 			\includegraphics[width=0.568\textwidth]{./figures/strand_types/dendrimer.pdf}
 			\caption{Dendrimer structure for rule $A\rightarrow aBbC$.}
@@ -83,7 +81,7 @@
 		
 		Double crossover molecules are the most important ones. Though they are more complicated they are still very rigid, see \cite{seeman93}. As we mentioned in Note \ref{note:untwist} we will also describe their inner structure. % universal computation: Winfree pg 57
 		
-		\begin{figure}[H]
+		\begin{figure}[h]
 		\begin{center}
 			\includegraphics[width=0.492\textwidth]{./figures/strand_types/double_crossover.pdf}
 			\caption{Double crossover molecule scheme.}
@@ -93,9 +91,7 @@
 		
 		There are many possibilities how those strands can be twisted and connected. The most common ones are DAE and DAO molecules (Double-crossover, Antiparallel helical strands, Even or Odd, respectively, number of half-turns between crossovers), see Figure \ref{fig:dao-dae}. It can be seen that DAO molecules form tilings with strands jumping from one stage to another, on the other hand DAE molecules form tilings with a strand leading through entire stage in a row.
 		
-		Later we will need to read the bottom line's sequence thus it is practically reasonable to use DAE molecules. Moreover we will require even number of half-turns between crossovers in adjacent molecules. This is well explained in \cite[p.37]{winfree_phd}.
-		
-		\begin{figure}[H]
+		\begin{figure}[h]
 		\begin{center}
 			\begin{subfigure}[b]{0.433\textwidth} % 130mm/300
 				\includegraphics[width=\textwidth]{./figures/dao-dae/dae.pdf}
@@ -112,11 +108,7 @@
 		\end{center}
 		\end{figure}
 		
-		
+		Later we will need to read the bottom line's sequence thus it is practically reasonable to use DAE molecules. Moreover we will require even number of half-turns between crossovers in adjacent molecules. This is well explained in \cite[p.37]{winfree_phd}.
 		
 		DAE molecules seem to be the most promising % citovat tunu praktickejch článků
 		thus Chapter \ref{chap:problems} will be dedicated espacially to models with these molecules.
-		
-		% Biostep complexity $O(1)$ in particular cases.
-		
-		% Important notes in 3.2.5 Winfree -- single side hybridization -- how to avoid.

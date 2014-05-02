@@ -1,12 +1,13 @@
-\contentsline {chapter}{\numberline {1}Introduction to DNA computation}{1}{chapter.1}
-\contentsline {section}{\numberline {1.1}Basic DNA principles}{1}{section.1.1}
+\contentsline {chapter}{Preface}{1}{section*.2}
+\contentsline {chapter}{\numberline {1}Introduction to DNA computation}{2}{chapter.1}
+\contentsline {section}{\numberline {1.1}Basic DNA principles}{2}{section.1.1}
 \contentsline {section}{\numberline {1.2}Complexity and languages}{2}{section.1.2}
 \contentsline {subsection}{\numberline {1.2.1}Big $O$ and other notations}{2}{subsection.1.2.1}
 \contentsline {subsection}{\numberline {1.2.2}Languages}{3}{subsection.1.2.2}
-\contentsline {subsection}{\numberline {1.2.3}$\mathsf {P}$, $\mathsf {NP}$ and other classes}{3}{subsection.1.2.3}
+\contentsline {subsection}{\numberline {1.2.3}$\mathsf {P}$, $\mathsf {NP}$ and other classes}{4}{subsection.1.2.3}
 \contentsline {section}{\numberline {1.3}Strand models}{6}{section.1.3}
 \contentsline {subsection}{\numberline {1.3.1}Linear strands}{6}{subsection.1.3.1}
-\contentsline {subsection}{\numberline {1.3.2}Adleman's experiment}{6}{subsection.1.3.2}
+\contentsline {subsection}{\numberline {1.3.2}Adleman's experiment}{7}{subsection.1.3.2}
 \contentsline {subsection}{\numberline {1.3.3}Dendrimer structures}{8}{subsection.1.3.3}
 \contentsline {subsection}{\numberline {1.3.4}Double crossover molecules}{9}{subsection.1.3.4}
 \contentsline {section}{\numberline {1.4}Wang-tile models}{10}{section.1.4}
@@ -20,4 +21,5 @@
 \contentsline {section}{\numberline {2.2}$k$-clique Problem}{17}{section.2.2}
 \contentsline {section}{\numberline {2.3}Graph 3-coloring Problem}{19}{section.2.3}
 \contentsline {section}{\numberline {2.4}Graph Isomorphism Problem}{21}{section.2.4}
-\contentsline {chapter}{References}{24}{section*.19}
+\contentsline {chapter}{Discussion}{22}{section*.22}
+\contentsline {chapter}{References}{23}{section*.24}

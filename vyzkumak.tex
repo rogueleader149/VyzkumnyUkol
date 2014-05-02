@@ -2,7 +2,8 @@
 
 \usepackage{a4wide,cite}
 \usepackage[utf8]{inputenc}
-\usepackage{amsmath, amsthm, amssymb, units, dsfont, algorithmicx, algpseudocode, nomencl, nicefrac}   % dsfont pro indikátor jevu
+\usepackage{amsmath, amsthm, amssymb, units, dsfont, algorithmicx, algpseudocode, nicefrac}   % dsfont pro indikátor jevu
+%~ \usepackage{nomencl}
 \usepackage[pdftex,
 						pdfauthor={Jakub Klemsa},
 						pdftitle={Models of self-assembling DNA nanostructures, Jakub Klemsa},
@@ -17,7 +18,8 @@
 \fancyhead[L]{\slshape \rightmark} % \leftmark .. kapitola
 \fancyhead[R]{\thepage}
 \oddsidemargin=10mm   % jednostranný tisk !!!
-\makenomenclature   % vyrobí nomenklaturu
+%~ \makenomenclature   % vyrobí nomenklaturu
+%~ \makeindex   % pomůže nomenklatuře
 
 \let\tmpitem\item
 \renewcommand{\item}{\setlength{\itemsep}{2pt}\tmpitem}   % míň roztahovačný seznamy
@@ -224,9 +226,9 @@ Děkuji \vedoucimu, za vedení \mePrace ~a za podnětné návrhy, které \rodPra
 
 
 %%% nomenklatura \haluz nefunguje
-\thispagestyle{empty}
-\printnomenclature
-\newpage
+%~ \thispagestyle{empty}
+%~ \printnomenclature
+%~ \newpage
 
 
 %%% obsah
@@ -242,11 +244,17 @@ Děkuji \vedoucimu, za vedení \mePrace ~a za podnětné návrhy, které \rodPra
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 		
 		
+		%%% ÚVODNÍ KECY
+		\input{./include/0-preface.tex}
+		
 		%%% KAPITOLA 1
 		\input{./include/1-intro.tex}
 		
 		%%% KAPITOLA 2
 		\input{./include/2-results.tex}
+		
+		%%% ZÁVĚR
+		\input{./include/n-1.tex}
 		
 		%%% LITERATURA
 		% \renewcommand\bibname{Literatura}
