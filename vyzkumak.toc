@@ -19,7 +19,8 @@
 \contentsline {chapter}{\numberline {2}Solutions to $\mathsf {NP}$ problems}{16}{chapter.2}
 \contentsline {section}{\numberline {2.1}Abstract model for DAE units}{16}{section.2.1}
 \contentsline {section}{\numberline {2.2}$k$-clique Problem}{17}{section.2.2}
-\contentsline {section}{\numberline {2.3}Graph 3-coloring Problem}{19}{section.2.3}
-\contentsline {section}{\numberline {2.4}Graph Isomorphism Problem}{21}{section.2.4}
-\contentsline {chapter}{Discussion}{22}{section*.22}
-\contentsline {chapter}{References}{23}{section*.24}
+\contentsline {subsection}{\numberline {2.2.1}Simulation in {\tt xgrow}}{19}{subsection.2.2.1}
+\contentsline {section}{\numberline {2.3}Graph 3-coloring Problem}{21}{section.2.3}
+\contentsline {section}{\numberline {2.4}Graph Isomorphism Problem}{22}{section.2.4}
+\contentsline {chapter}{Discussion}{25}{section*.24}
+\contentsline {chapter}{References}{26}{section*.26}

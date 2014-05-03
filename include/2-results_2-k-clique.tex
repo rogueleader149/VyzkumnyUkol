@@ -2,7 +2,7 @@
 
 $k$-clique Problem belongs to $\NPC$ problems, its task is to decide whether there exists a clique with $k$ vertices in given graph $G$ with $n$ vertices. Note that there exists a $k$-clique in $G$ iff there exists a $k$-independent set in $\overline{G}$ iff there exists an $(n-k)$-vertex cover of $\overline{G}$. Thus we can assume $k \leq \frac{n}{2}$ because those verification algorithms would be very similar.
 
-From technical reasons we need $k$ to be even in all following examples; reduction from odd numbers will be solved in every single example.
+For technical reasons we need $k$ to be even in all following examples; reduction from odd numbers will be solved in every single example.
 
 Here if $k$ is odd, we add another vertex connected to every original vertex resulting in $G'$. Then existence of $(k+1)$-clique in $G'$ is equivalent to existence of $k$-clique in $G$. In following example in Figure \ref{fig:k-clique} we take $k$ even.
 
@@ -42,3 +42,37 @@ Binding complexity is $1\nicefrac{1}{4} \cdot 4 \bigl(\frac{k}{2}\bigr)^2 = 1\ni
 \end{center}
 \end{figure}
 
+\subsection{Simulation in {\tt xgrow}}
+
+{\tt xgrow} is an open source DNA tile assembly simulator written by Erik Winfree, Rebecca Schulman and Constantine Evans. It is freely available at \url{www.dna.caltech.edu/Xgrow}. It is capable of both $\atam$ and $\ktam$ simulations.
+
+{\tt xgrow} takes some settings and a file with tiles on input, then it conducts a simulation. We used {\tt xgrow} to verify our algorithm for $k$-clique Problem so we wrote a script which generates input file with tiles for {\tt xgrow}. The script is called {\tt k-clique.rb}, it is written in Ruby language and it is provided on attached CD.
+
+\subsubsection*{Running a simulation}
+
+Though everything is cross-platform, this paragraph describes how to run a simulation under Linux systems. You need to download and compile {\tt xgrow} and install Ruby interpreter. Then you need to generate an input graph representation. Open Terminal in your directory with {\tt k-clique.rb} and run {\tt irb} which is an interactive Ruby shell. Then run following commands:
+\begin{verbatim}
+require "yaml"
+# replace by your graph's adjacency matrix written
+# as array of lines (upper triangle suffices):
+graph = [[0, 1, 0], [0, 0, 1], [0, 0, 0]]
+# define output file
+f = File.open("graph.yaml", "w")
+# dump graph into yaml, write to file
+f.write(YAML.dump(graph))
+f.close
+exit
+\end{verbatim}
+Your graph is now stored in {\tt graph.yaml}. Now run {\tt k-clique.rb} in your directory with two parameters: first parameter is $k$ -- size of clique, second parameter is filename with your graph, and redirect output to a new {\tt *.tiles} file, e.g. {\tt ./k-clique.rb 4 graph.yaml > 4-clique.tiles}. Then move {\tt 4-clique.tiles} file to {\tt xgrow-install-dir/tilesets/4-clique.tiles} and run an $\atam$ simulation by {\tt ./xgrow 4-clique T=2} or a $\ktam$ simulation by {\tt ./xgrow 4-clique}.
+
+Note that {\tt xgrow} performs a probabilistic simulation thus accepting tile\footnote{In our script the accepting tile is magenta.} can appear very unlikely even if there exists a $k$-clique in your graph. So if you want to see accepting computation you need to set probabilities of tiles which generate our clique to a reasonably high value. These probabilities can be set in your {\tt *.tiles} file in a block {\tt tile edges}, on every line there is a number in square brackets which represents relative concentration which is proportional to probability. A sample output for $\atam$ simulation can be seen in Figure \ref{fig:xgrow}.
+
+\begin{figure}[h]
+\begin{center}
+	\includegraphics[scale=0.55]{./figures/xgrow/xgrow.png}
+	\caption{$k$-clique computation simulated by {\tt xgrow} with $\atam$. Magenta tile represents DONE tile.}
+	\label{fig:xgrow}
+\end{center}
+\end{figure}
+
+Running a $\ktam$ simulation in {\tt xgrow} leads to very unstable evolution process with many errors, it is very hard (but not impossible) to reach DONE tile. The only possibility to get a flake without errors is slow annealing which can be regulated by {\tt cool heat} button.
