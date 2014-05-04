@@ -76,10 +76,7 @@
 \let\phi\varphi
 
 %%% VYHLEDAT A OPRAVIT !!! %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\let\haluz\relax
-\let\hobza\relax
-\haluz % program vlna nakonec!
-% naučit se psát jednoduchý konsekventy! viz Adleman str. 3 nahoře: "Note that the labeling ..."
+%!% program vlna nakonec!
 % taky opravit N-1 na N\!-\!1
 % zkontrolovat \min \; ...
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -93,7 +90,7 @@
 \newcommand{\TYPPRACE}{VÝZKUMNÝ ÚKOL}
 \newcommand{\TypPrace}{Výzkumný úkol}
 \newcommand{\mePrace}{mého výzkumného úkolu}
-\newcommand{\rodPrace}{ho}
+\newcommand{\kohoCoPraci}{ho}
 
 \newcommand{\nazevcz}{Modely sebeskládajících DNA nanostruktur}
 \newcommand{\nazeven}{Models of self-assembling DNA nanostructures}
@@ -107,10 +104,14 @@
 \newcommand{\misto}{Praha}
 \newcommand{\vMiste}{Praze}
 
-\newcommand{\klicova}{Klíčová.}
-\newcommand{\keyword}{Keywords.}
-\newcommand{\abstrCZ}{Abstrakt CZ.}
-\newcommand{\abstrEN}{Abstract EN}
+\newcommand{\klicova}{DNA výpočty, třídy složitosti, Turingův stroj, Wangovy dlaždice.}
+\newcommand{\keyword}{DNA computing, complexity classes, Turing machine, Wang tiles.}
+\newcommand{\abstrCZ}{DNA výpočty slibují nové možnosti pro řešení těžkých výpočetních problémů. Od prvního výpočetního experimentu s DNA, který provedl Adleman v roce 1994, bylo provedeno mnoho práce v popisu jak matematických tak fyzikálních vlastností těchto systémů. V této práci se zaměřuji na matematickou informatiku, speciálně na výpočetní proveditelnost. Představuji čtyři druhy zdrojů, které DNA algoritmy užívají, a dávám vztah ke ``klasickým'' zdrojům Turingova stroje jako jsou čas a prostor.
+
+Poté představuji nový model vhodný pro řešení $\NP$-úplných problémů. Dva $\NP$-úplné problémy a jeden $\NP$ problém následně řeším pomocí tohoto modelu, jeden z nich také simuluji s použitím simulátoru DNA sklánání.}
+\newcommand{\abstrEN}{DNA computing promises new possibilities in solving hard computational problems. Since first computational DNA experiment by Adleman in 1994 much work has been done to describe both mathematical and physical phenomenas. In this work we focus on mathematical informatics, especially on computational feasibility. We present four kinds of resources to be studied in case of DNA algorithms and give a relation to ``classical'' resources of Turing machine such as time and space.
+
+Then we present a new model suitable for solving $\NPC$ problems. Two $\NPC$ problems and one $\NP$ problem are then solved using this model, one of them is also simulated using DNA tile assembly simulator.}
 %%% k vyplnění KONEC ---------------------------------------------------
 
 
@@ -196,7 +197,7 @@ Prohlašuji na tomto místě, že jsem předloženou práci vypracoval samostatn
 \vspace{0.5cm}
 
 \noindent
-Děkuji \vedoucimu, za vedení \mePrace ~a za podnětné návrhy, které \rodPrace ~obohatily.
+Děkuji \vedoucimu, za vedení \mePrace ~a za podnětné návrhy, které \kohoCoPraci ~obohatily.
 
 \begin{flushright}
 \autor
@@ -221,12 +222,12 @@ Děkuji \vedoucimu, za vedení \mePrace ~a za podnětné návrhy, které \rodPra
   {\em Title:} & \bf \nazeven \\[4mm]
   {\em Author:} & \autor \\[4mm]
   {\em Abstract:} & \abstrEN \\[4mm]
-  {\em Key words:} & \keyword
+  {\em Keywords:} & \keyword
 \end{tabularx}
 \newpage
 
 
-%%% nomenklatura \haluz nefunguje
+%%% nomenklatura nefunguje
 %~ \thispagestyle{empty}
 %~ \printnomenclature
 %~ \newpage

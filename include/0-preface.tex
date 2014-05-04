@@ -5,20 +5,23 @@
 In 1959 Feynman gave a visionary talk {\em There's plenty of room at the bottom} \cite{feynman} where he anticipates that future computers will work in molecular scales. Many years later in 1994 Adleman conducted a real experiment \cite{adleman94} where he used DNA molecules to solve an $\NPC$ problem -- Hamiltonian Path Problem. DNA computation became popular because of promising advantage in solving hard computational problems which is extreme parallelism.
 
 Unlike initial excitement it showed to be very hard to use for practical problems, DNA computations still do too many errors %!% citovat ten článek z Nature
-Many researchers are trying hard to decrease the amount of errors, many others are studying DNA computations from mathematical informatics point of view.
-
-This work is dedicated especially to the mathematical informatics aspects arising from models of DNA computation.
+Many researchers are trying hard to decrease the amount of errors, many others are studying DNA computations from mathematical informatics point of view which is also the case of this thesis.
 
 \section*{Work overview}
 	
 	\begin{description}
-		\item[Chapter \ref{chap:intro}.]
-		%!% DNA, languages from resource comsumption point of view, strand and Wang tile models; we added studied complexities, straightforward simulation of TM => we can compare resource comsumption; BPP preserves
-		\item[Chapter \ref{chap:problems}.]
-		%!% based on Winfree's algorithm we present a simplified model based on Wang tiles and give solution to three hard computational problems
+		\item[Chapter \ref{chap:intro}.] In this chapter we describe basic DNA principles and some fundamental concepts of mathematical informatics focusing on classes of formal languages from resource consumption point of view. Then we describe some theoretical models for specific DNA molecules together with their computer science properties. Similarly to time and space resources of Turing machine we present four kinds resources of DNA computation and give a relation to resources of Turing machine.
+		\item[Chapter \ref{chap:problems}.] This chapter presents a new model suitable for solving $\NPC$ problems. The model is based on an existing formal model, on the other hand it handles with real molecules. Two $\NPC$ problems and one $\NP$ problem are then solved using this model, one of them is also simulated using DNA tile assembly simulator.
 	\end{description}
 
 \section*{Notation and used symbols}
+	
+	\begin{tabularx}{\textwidth}{p{3em} X}
+		$\N$ & Positive integers, i.e. $\{1, 2, \ldots\}$.\\
+		$\N_0$ & Non-negative integers, i.e. $\{0, 1, 2, \ldots\}$.\\
+		$\cal P(S)$ & Power set of a set $S$.\\
+		$\prob(E)$ & Probability of event $E$.
+	\end{tabularx}
 	
 	%!% bude vopruz
 	

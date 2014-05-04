@@ -12,7 +12,7 @@ Leonard~M Adleman.
 \newblock {\em Science - New York then Washington}, pages 1021--1024, 1994.
 
 \bibitem{adleman95biostep}
-Leonard~M Adlemany.
+Leonard~M Adleman.
 \newblock On constructing a molecular computer.
 \newblock 1995.
 
@@ -65,12 +65,10 @@ Paul~WK Rothemund and Erik Winfree.
 \newblock In {\em Proceedings of the thirty-second annual ACM symposium on
   Theory of computing}, pages 459--468. ACM, 2000.
 
-\bibitem{shor94}
-Peter~W Shor.
-\newblock Algorithms for quantum computation: discrete logarithms and
-  factoring.
-\newblock In {\em Foundations of Computer Science, 1994 Proceedings., 35th
-  Annual Symposium on}, pages 124--134. IEEE, 1994.
+\bibitem{wang_tiles}
+Hao Wang.
+\newblock Proving theorems by pattern recognition—ii.
+\newblock {\em Bell system technical journal}, 40(1):1--41, 1961.
 
 \bibitem{winfree_comp}
 Erik Winfree.

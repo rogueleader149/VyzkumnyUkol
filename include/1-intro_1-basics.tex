@@ -79,12 +79,12 @@
 		\end{defn}
 		
 		\begin{defn}\label{def:NP}
-			${\cal L} \subseteq \Sigma^*$. ${\cal L} \in \NP \iff \bigl(\exists p, q \in {\cal P}\bigr) \bigl(\exists \textnormal{ deterministic Turing machine } M\bigr)\\ \bigl(\forall x \in \Sigma^*\bigr) \Bigl(x \in {\cal L} \iff \bigl(\exists y \in \Sigma^{p(|x|)}\bigr) \bigl(M \textnormal{ accepts } (x,y) \textnormal{ at most in } q(|x|+|y|) \textnormal{ steps} \bigr)\Bigr)$.\\
+			${\cal L} \subseteq \Sigma^*$. ${\cal L} \in \NP \iff \bigl(\exists \textnormal{ polynomials } p, q \bigr) \bigl(\exists \textnormal{ deterministic Turing machine } M\bigr)\\ \bigl(\forall x \in \Sigma^*\bigr) \Bigl(x \in {\cal L} \iff \bigl(\exists y \in \Sigma^{p(|x|)}\bigr) \bigl(M \textnormal{ accepts } (x,y) \textnormal{ at most in } q(|x|+|y|) \textnormal{ steps} \bigr)\Bigr)$.\\
 			Such $y$ will be referred to as {\em certificate} for $x$ (with respect to $\cal L$ and $M$).
 		\end{defn}
 		
 		\begin{defn}\label{def:coNP}
-			${\cal L} \subseteq \Sigma^*$. ${\cal L} \in \coNP \iff \bigl(\exists p, q \in {\cal P}\bigr) \bigl(\exists \textnormal{ deterministic Turing machine } M\bigr)\\ \bigl(\forall x \in \Sigma^*\bigr) \Bigl(x \in {\cal L} \iff \bigl(\forall y \in \Sigma^{p(|x|)}\bigr) \bigl(M \textnormal{ accepts } (x,y) \textnormal{ at most in } q(|x|+|y|) \textnormal{ steps} \bigr)\Bigr)$.
+			${\cal L} \subseteq \Sigma^*$. ${\cal L} \in \coNP \iff \bigl(\exists \textnormal{ polynomials } p, q \bigr) \bigl(\exists \textnormal{ deterministic Turing machine } M\bigr)\\ \bigl(\forall x \in \Sigma^*\bigr) \Bigl(x \in {\cal L} \iff \bigl(\forall y \in \Sigma^{p(|x|)}\bigr) \bigl(M \textnormal{ accepts } (x,y) \textnormal{ at most in } q(|x|+|y|) \textnormal{ steps} \bigr)\Bigr)$.
 		\end{defn}
 		
 		The second possibility is to first define general classes $\DTime$, $\NTime$, $\DSpace$ and $\NSpace$ and after that to use their special case. Remind how Non-deterministic Turing machine (NTM) differs from Deterministic Turing machine (DTM):
@@ -146,7 +146,7 @@
 		% poly-time hierarchy ... book pg. 93
 		
 		%!% uvést
-		To define probabilistic classes of languages ($\BPP$, $\RP$, $\coRP$ and $\ZPP$) we will remind the concept of Probabilistic Turing machine (PTM). Like NTM it is allowed to have ambiguous transition function, moreover, in every state there is defined a transition probability and it can have another terminal state $q_{reject}$.
+		Before we define probabilistic classes of languages ($\BPP$, $\RP$, $\coRP$ and $\ZPP$) we will remind the concept of Probabilistic Turing machine (PTM). Like NTM it is allowed to have ambiguous transition function, moreover, in every state there is defined a transition probability and it can have another terminal state $q_{reject}$.
 		
 		Let $M$ be a PTM. We say that $M$
 		\begin{itemize}
@@ -166,7 +166,7 @@
 		\end{defn}
 		
 		\begin{defn}
-			$\RTime\bigl(f(n)\bigr) = \bigl\{ {\cal L}\textnormal{ language} \bigm| (\exists \textnormal{ probabilistic Turing machine }M)\\ (\forall x\in\Sigma^*)\bigl(M \textnormal{ halts in time } \leq f(|x|) \;\wedge\; x\in{\cal L} \then \prob(M\textnormal{ accepts }x) \geq \nicefrac{2}{3} \;\wedge\\ x\notin{\cal L} \then \prob(M\textnormal{ accepts }x) = 0 \bigr) \bigr\}$.
+			$\RTime\bigl(f(n)\bigr) = \Bigl\{ {\cal L}\textnormal{ language} \Bigm| (\exists \textnormal{ probabilistic Turing machine }M)\\ (\forall x\in\Sigma^*)\Bigl(M \textnormal{ halts in time } \leq f(|x|) \;\wedge\; \bigl( x\in{\cal L} \then \prob(M\textnormal{ accepts }x) \geq \nicefrac{2}{3} \bigr) \;\wedge\\ \bigl( x\notin{\cal L} \then \prob(M\textnormal{ accepts }x) = 0 \bigr) \Bigr) \Bigr\}$.
 		\end{defn}
 		
 		\begin{defn}
@@ -182,7 +182,7 @@
 		\end{remark}
 		
 		\begin{defn}
-			$\ZPTime\bigl(f(n)\bigr) = \Bigl\{ {\cal L}\textnormal{ language} \Bigm| \bigl(\exists \textnormal{ probabilistic Turing machine }M\bigr)\\ \bigl(\forall x\in\Sigma^*\bigr)\Bigl(M \textnormal{ halts in time } \leq f(|x|) \;\wedge\\ \bigl(x\in{\cal L} \then \prob(M\textnormal{ accepts }x) \geq \nicefrac{2}{3} \,\wedge\, \prob(M\textnormal{ rejects }x) = 0 \bigr) \;\wedge\\ \bigl(x\notin{\cal L} \then \prob(M\textnormal{ rejects }x) \geq \nicefrac{2}{3} \,\wedge\, \prob(M\textnormal{ accepts }x) = 0 \bigl) \Bigr) \Bigr\}$.
+			$\ZPTime\bigl(f(n)\bigr) = \biggl\{ {\cal L}\textnormal{ language} \biggm| \bigl(\exists \textnormal{ probabilistic Turing machine }M\bigr)\\ \bigl(\forall x\in\Sigma^*\bigr)\biggl(M \textnormal{ halts in time } \leq f(|x|) \;\wedge\\ \Bigl(x\in{\cal L} \then \bigl(\prob(M\textnormal{ accepts }x) \geq \nicefrac{2}{3} \,\wedge\, \prob(M\textnormal{ rejects }x) = 0 \bigr)\Bigr) \;\wedge\\ \Bigl(x\notin{\cal L} \then \bigl(\prob(M\textnormal{ rejects }x) \geq \nicefrac{2}{3} \,\wedge\, \prob(M\textnormal{ accepts }x) = 0 \bigr)\Bigr) \biggr) \biggr\}$.
 		\end{defn}
 		
 		\begin{defn}
