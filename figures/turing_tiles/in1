@@ -1,0 +1,44 @@
+Input:
+======
+
+multicomment Assembly of input tape. $E_L$ is left stop, $a_i^{(0)}$ is $i$-th symbol of input word.
+multicomment Simulated machine starts at place denoted by ``next tile'' reading $a_{n-1}^{(0)}$ and
+comment being in state $s_0$, the arrow over $s_0$ means ``comes from right''.
+tile		7 1 empty		w 2 I_0		w 1 E_L		7 1 empty
+dots ...
+tile		7 1 empty		w 2 I_{i+1}		w 1 a_i^{(0)}		w 2 I_i
+dots ...
+tile		7 1 empty		7 1 empty		w 2 I_n		w 2 I_n
+down
+tile		w 2 I_n		7 1 empty		w 1 E_R		w 1 \overleftarrow{s_0}
+toleft
+dashedtile		\textnormal{next}\;\textnormal{tile}
+emptytile
+hline --------------------------------------------
+
+Ab) L
+=====
+
+multicomment Coming from right, being in state $s_i$, reading tape symbol $a_j$.
+comment Transition function says: go left, switch to state $s_{k_{i,j}}$ and write $a_{l_{i,j}}$.
+tile		w 1 a_j		w 1 \overleftarrow{s_i}		w 1 a_{l_{i,j}}		w 1 \overleftarrow{s_{k_{i,j}}}
+hspace
+
+Aa) L
+=====
+
+multicomment Situation is like before with only difference: go right.
+multicomment Now the rest of the tape must be copied by special tiles which thus exist
+comment for all pairs $(a_m,s_{k_{i,j}})$ of tape symbol and state.
+tile		w 1 E_L		w 1 \overleftarrow{s_{k_{i,j}}^{(C)}}		w 2 \overrightarrow{s_{k_{i,j}}}		7 1 empty
+dots ...
+tile		w 1 a_{m}		w 1 \overleftarrow{s_{k_{i,j}}^{(C)}}		w 1 a_{m}		w 1 \overleftarrow{s_{k_{i,j}}^{(C)}}
+dots ...
+tile		w 1 a_j		w 1 \overleftarrow{s_i}		w 1 a_{l_{i,j}}^{(C)}		w 1 \overleftarrow{s_{k_{i,j}}^{(C)}}
+endl
+
+tile		w 2 \overrightarrow{s_{k_{i,j}}}		w 1 \overrightarrow{s_{k_{i,j}}^{(C)}}		w 1 E_L		7 1 empty
+dots ...
+tile		w 1 a_{m}		w 1 \overrightarrow{s_{k_{i,j}}^{(C)}}		w 1 a_{m}		w 1 \overrightarrow{s_{k_{i,j}}^{(C)}}
+dots ...
+tile		w 1 a_{l_{i,j}}^{(C)}		w 1 \overrightarrow{s_{k_{i,j}}}		w 1 a_{l_{i,j}}		w 1 \overrightarrow{s_{k_{i,j}}^{(C)}}

@@ -1,0 +1,165 @@
+verbatimtex
+%&latex
+\documentclass{minimal}
+\begin{document}
+etex
+prologues:=3;
+outputtemplate:="%j-%c.eps";
+
+beginfig(1)
+		label.rt(btex Coming from right, being in state $s_i$, reading left stop $E_L$ which  etex, (0cm, -0.4cm));
+		label.rt(btex stands for blank symbol in terms of tape alphabet.  etex, (0cm, -0.9cm));
+		label.rt(btex Transition function says: go left, switch to state $s_{k_{i,B}}$ and write $a_{l_{i,B}}$.  etex, (0cm, -1.4cm));
+		label.rt(btex Note that a glue of strength $2$ must have been used.  etex, (0cm, -1.9cm));
+
+		pair KKDnca[];
+		KKDnca[0]:=(0.4cm, -2.7cm);
+		KKDnca[1]:=(2.4cm, -2.7cm);
+		KKDnca[2]:=(2.4cm, -4.7cm);
+		KKDnca[3]:=(0.4cm, -4.7cm);
+		KKDnca[4]:=(1.4cm, -3.7cm);
+		
+label(btex $E_L$ etex, (1.4cm, -3.1cm));
+label(btex $\overleftarrow{s_i}$ etex, (2.0cm, -3.7cm));
+label(btex $a_{l_{i,B}}$ etex, (1.4cm, -4.3cm));
+pair KKDncaw[];
+KKDncaw[0]:=(0.4cm, -3.9cm);
+KKDncaw[1]:=(0.2cm, -3.9cm);
+KKDncaw[2]:=(0.4cm, -3.5cm);
+KKDncaw[3]:=(0.2cm, -3.5cm);
+draw KKDncaw[0]--KKDncaw[1];
+draw KKDncaw[2]--KKDncaw[3];
+label(btex $\overleftarrow{s_{k_{i,B}}}$ etex, (0.8cm, -3.7cm));
+
+		draw KKDnca[0]--KKDnca[1]--KKDnca[2]--KKDnca[3]--cycle;
+		draw KKDnca[0]--KKDnca[2];
+		draw KKDnca[1]--KKDnca[3];
+		label.rt(btex Situation is like before with only difference: go right.  etex, (0cm, -5.8cm));
+		label.rt(btex Note that tiles from previous figure are utilized to finish copying.  etex, (0cm, -6.3cm));
+
+		pair uHGnca[];
+		uHGnca[0]:=(0.4cm, -7.1cm);
+		uHGnca[1]:=(2.4cm, -7.1cm);
+		uHGnca[2]:=(2.4cm, -9.1cm);
+		uHGnca[3]:=(0.4cm, -9.1cm);
+		uHGnca[4]:=(1.4cm, -8.1cm);
+		
+		fill uHGnca[0]--uHGnca[1]--uHGnca[4]--cycle withcolor .7 white;
+pair uHGncae[];
+uHGncae[0]:=(2.4cm, -7.9cm);
+uHGncae[1]:=(2.6cm, -7.9cm);
+uHGncae[2]:=(2.4cm, -8.3cm);
+uHGncae[3]:=(2.6cm, -8.3cm);
+draw uHGncae[0]--uHGncae[1];
+draw uHGncae[2]--uHGncae[3];
+label(btex $\overleftarrow{s_{k_{i,B}}^{(C)}}$ etex, (2.0cm, -8.1cm));
+pair uHGncas[];
+uHGncas[0]:=(1.2cm, -9.1cm);
+uHGncas[1]:=(1.2cm, -9.3cm);
+uHGncas[2]:=(1.6cm, -9.1cm);
+uHGncas[3]:=(1.6cm, -9.3cm);
+draw uHGncas[0]--uHGncas[1];
+draw uHGncas[2]--uHGncas[3];
+label(btex $\overrightarrow{s_{k_{i,B}}^{(C)}}$ etex, (1.4cm, -8.7cm));
+		fill uHGnca[3]--uHGnca[0]--uHGnca[4]--cycle withcolor .7 white;
+
+		draw uHGnca[0]--uHGnca[1]--uHGnca[2]--uHGnca[3]--cycle;
+		draw uHGnca[0]--uHGnca[2];
+		draw uHGnca[1]--uHGnca[3];
+
+		pair GKEnca[];
+		GKEnca[0]:=(3.2cm, -7.1cm);
+		GKEnca[1]:=(5.2cm, -7.1cm);
+		GKEnca[2]:=(5.2cm, -9.1cm);
+		GKEnca[3]:=(3.2cm, -9.1cm);
+		GKEnca[4]:=(4.2cm, -8.1cm);
+		
+label(btex $E_L$ etex, (4.2cm, -7.5cm));
+label(btex $\overleftarrow{s_i}$ etex, (4.8cm, -8.1cm));
+label(btex $a_{l_{i,B}}^{(C)}$ etex, (4.2cm, -8.7cm));
+pair GKEncaw[];
+GKEncaw[0]:=(3.2cm, -8.3cm);
+GKEncaw[1]:=(3.0cm, -8.3cm);
+GKEncaw[2]:=(3.2cm, -7.9cm);
+GKEncaw[3]:=(3.0cm, -7.9cm);
+draw GKEncaw[0]--GKEncaw[1];
+draw GKEncaw[2]--GKEncaw[3];
+label(btex $\overleftarrow{s_{k_{i,B}}^{(C)}}$ etex, (3.6cm, -8.1cm));
+
+		draw GKEnca[0]--GKEnca[1]--GKEnca[2]--GKEnca[3]--cycle;
+		draw GKEnca[0]--GKEnca[2];
+		draw GKEnca[1]--GKEnca[3];
+
+		pair eDvocahl[];
+		eDvocahl[0] := (0cm, -9.65cm);
+		eDvocahl[1] := (5.6cm, -9.65cm);
+		draw eDvocahl[0]--eDvocahl[1] dashed evenly;
+		
+		label.rt(btex Coming from right, being in state $s_i$, reading blank symbol.  etex, (0cm, -10.2cm));
+		label.rt(btex Transition function says: go left, switch to state $s_{k_{i,B}}$ and write $a_{l_{i,B}}$.  etex, (0cm, -10.7cm));
+
+		pair GNtoca[];
+		GNtoca[0]:=(0.4cm, -11.5cm);
+		GNtoca[1]:=(2.4cm, -11.5cm);
+		GNtoca[2]:=(2.4cm, -13.5cm);
+		GNtoca[3]:=(0.4cm, -13.5cm);
+		GNtoca[4]:=(1.4cm, -12.5cm);
+		
+		fill GNtoca[0]--GNtoca[1]--GNtoca[4]--cycle withcolor .7 white;
+pair GNtocae[];
+GNtocae[0]:=(2.4cm, -12.3cm);
+GNtocae[1]:=(2.6cm, -12.3cm);
+GNtocae[2]:=(2.4cm, -12.7cm);
+GNtocae[3]:=(2.6cm, -12.7cm);
+draw GNtocae[0]--GNtocae[1];
+draw GNtocae[2]--GNtocae[3];
+label(btex $\overleftarrow{s_i}$ etex, (2.0cm, -12.5cm));
+label(btex $a_{l_{i,B}}$ etex, (1.4cm, -13.1cm));
+pair GNtocaw[];
+GNtocaw[0]:=(0.4cm, -12.7cm);
+GNtocaw[1]:=(0.2cm, -12.7cm);
+GNtocaw[2]:=(0.4cm, -12.3cm);
+GNtocaw[3]:=(0.2cm, -12.3cm);
+draw GNtocaw[0]--GNtocaw[1];
+draw GNtocaw[2]--GNtocaw[3];
+label(btex $\overleftarrow{s_{k_{i,B}}}$ etex, (0.8cm, -12.5cm));
+
+		draw GNtoca[0]--GNtoca[1]--GNtoca[2]--GNtoca[3]--cycle;
+		draw GNtoca[0]--GNtoca[2];
+		draw GNtoca[1]--GNtoca[3];
+		label.rt(btex Situation is like before with only difference: go right.  etex, (0cm, -14.6cm));
+		label.rt(btex Note that there already exist tiles which finish the turnaround.  etex, (0cm, -15.1cm));
+
+		pair qtCoca[];
+		qtCoca[0]:=(0.4cm, -15.9cm);
+		qtCoca[1]:=(2.4cm, -15.9cm);
+		qtCoca[2]:=(2.4cm, -17.9cm);
+		qtCoca[3]:=(0.4cm, -17.9cm);
+		qtCoca[4]:=(1.4cm, -16.9cm);
+		
+		fill qtCoca[0]--qtCoca[1]--qtCoca[4]--cycle withcolor .7 white;
+pair qtCocae[];
+qtCocae[0]:=(2.4cm, -16.7cm);
+qtCocae[1]:=(2.6cm, -16.7cm);
+qtCocae[2]:=(2.4cm, -17.1cm);
+qtCocae[3]:=(2.6cm, -17.1cm);
+draw qtCocae[0]--qtCocae[1];
+draw qtCocae[2]--qtCocae[3];
+label(btex $\overleftarrow{s_i}$ etex, (2.0cm, -16.9cm));
+label(btex $a_{l_{i,B}}^{(C)}$ etex, (1.4cm, -17.5cm));
+pair qtCocaw[];
+qtCocaw[0]:=(0.4cm, -17.1cm);
+qtCocaw[1]:=(0.2cm, -17.1cm);
+qtCocaw[2]:=(0.4cm, -16.7cm);
+qtCocaw[3]:=(0.2cm, -16.7cm);
+draw qtCocaw[0]--qtCocaw[1];
+draw qtCocaw[2]--qtCocaw[3];
+label(btex $\overleftarrow{s_{k_{i,B}}^{(C)}}$ etex, (0.8cm, -16.9cm));
+
+		draw qtCoca[0]--qtCoca[1]--qtCoca[2]--qtCoca[3]--cycle;
+		draw qtCoca[0]--qtCoca[2];
+		draw qtCoca[1]--qtCoca[3];
+
+endfig;
+
+end;

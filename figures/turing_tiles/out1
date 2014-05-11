@@ -1,0 +1,276 @@
+verbatimtex
+%&latex
+\documentclass{minimal}
+\begin{document}
+etex
+prologues:=3;
+outputtemplate:="%j-%c.eps";
+
+beginfig(1)
+		label.rt(btex Assembly of input tape. $E_L$ is left stop, $a_i^{(0)}$ is $i$-th symbol of input word.  etex, (0cm, -0.4cm));
+		label.rt(btex Simulated machine starts at place denoted by ``next tile'' reading $a_{n-1}^{(0)}$ and  etex, (0cm, -0.9cm));
+		label.rt(btex being in state $s_0$, the arrow over $s_0$ means ``comes from right''.  etex, (0cm, -1.4cm));
+
+		pair iXkNca[];
+		iXkNca[0]:=(0.4cm, -2.2cm);
+		iXkNca[1]:=(2.4cm, -2.2cm);
+		iXkNca[2]:=(2.4cm, -4.2cm);
+		iXkNca[3]:=(0.4cm, -4.2cm);
+		iXkNca[4]:=(1.4cm, -3.2cm);
+		
+		fill iXkNca[0]--iXkNca[1]--iXkNca[4]--cycle withcolor .7 white;
+pair iXkNcae[];
+iXkNcae[0]:=(2.4cm, -3.0cm);
+iXkNcae[1]:=(2.6cm, -3.0cm);
+iXkNcae[2]:=(2.4cm, -3.4cm);
+iXkNcae[3]:=(2.6cm, -3.4cm);
+draw iXkNcae[0]--iXkNcae[1];
+draw iXkNcae[2]--iXkNcae[3];
+label(btex $I_0$ etex, (2.0cm, -3.2cm));
+label(btex $E_L$ etex, (1.4cm, -3.8cm));
+		fill iXkNca[3]--iXkNca[0]--iXkNca[4]--cycle withcolor .7 white;
+
+		draw iXkNca[0]--iXkNca[1]--iXkNca[2]--iXkNca[3]--cycle;
+		draw iXkNca[0]--iXkNca[2];
+		draw iXkNca[1]--iXkNca[3];
+		label(btex $\ldots$ etex, (3.05cm, -3.2cm));
+
+		pair SazMca[];
+		SazMca[0]:=(3.7cm, -2.2cm);
+		SazMca[1]:=(5.7cm, -2.2cm);
+		SazMca[2]:=(5.7cm, -4.2cm);
+		SazMca[3]:=(3.7cm, -4.2cm);
+		SazMca[4]:=(4.7cm, -3.2cm);
+		
+		fill SazMca[0]--SazMca[1]--SazMca[4]--cycle withcolor .7 white;
+pair SazMcae[];
+SazMcae[0]:=(5.7cm, -3.0cm);
+SazMcae[1]:=(5.9cm, -3.0cm);
+SazMcae[2]:=(5.7cm, -3.4cm);
+SazMcae[3]:=(5.9cm, -3.4cm);
+draw SazMcae[0]--SazMcae[1];
+draw SazMcae[2]--SazMcae[3];
+label(btex $I_{i+1}$ etex, (5.3cm, -3.2cm));
+label(btex $a_i^{(0)}$ etex, (4.7cm, -3.8cm));
+pair SazMcaw[];
+SazMcaw[0]:=(3.7cm, -3.4cm);
+SazMcaw[1]:=(3.5cm, -3.4cm);
+SazMcaw[2]:=(3.7cm, -3.0cm);
+SazMcaw[3]:=(3.5cm, -3.0cm);
+draw SazMcaw[0]--SazMcaw[1];
+draw SazMcaw[2]--SazMcaw[3];
+label(btex $I_i$ etex, (4.1cm, -3.2cm));
+
+		draw SazMca[0]--SazMca[1]--SazMca[2]--SazMca[3]--cycle;
+		draw SazMca[0]--SazMca[2];
+		draw SazMca[1]--SazMca[3];
+		label(btex $\ldots$ etex, (6.35cm, -3.2cm));
+
+		pair eXCMca[];
+		eXCMca[0]:=(7.0cm, -2.2cm);
+		eXCMca[1]:=(9.0cm, -2.2cm);
+		eXCMca[2]:=(9.0cm, -4.2cm);
+		eXCMca[3]:=(7.0cm, -4.2cm);
+		eXCMca[4]:=(8.0cm, -3.2cm);
+		
+		fill eXCMca[0]--eXCMca[1]--eXCMca[4]--cycle withcolor .7 white;
+		fill eXCMca[1]--eXCMca[2]--eXCMca[4]--cycle withcolor .7 white;
+pair eXCMcas[];
+eXCMcas[0]:=(7.8cm, -4.2cm);
+eXCMcas[1]:=(7.8cm, -4.4cm);
+eXCMcas[2]:=(8.2cm, -4.2cm);
+eXCMcas[3]:=(8.2cm, -4.4cm);
+draw eXCMcas[0]--eXCMcas[1];
+draw eXCMcas[2]--eXCMcas[3];
+label(btex $I_n$ etex, (8.0cm, -3.8cm));
+pair eXCMcaw[];
+eXCMcaw[0]:=(7.0cm, -3.4cm);
+eXCMcaw[1]:=(6.8cm, -3.4cm);
+eXCMcaw[2]:=(7.0cm, -3.0cm);
+eXCMcaw[3]:=(6.8cm, -3.0cm);
+draw eXCMcaw[0]--eXCMcaw[1];
+draw eXCMcaw[2]--eXCMcaw[3];
+label(btex $I_n$ etex, (7.4cm, -3.2cm));
+
+		draw eXCMca[0]--eXCMca[1]--eXCMca[2]--eXCMca[3]--cycle;
+		draw eXCMca[0]--eXCMca[2];
+		draw eXCMca[1]--eXCMca[3];
+
+		pair qVAMca[];
+		qVAMca[0]:=(7.0cm, -5.0cm);
+		qVAMca[1]:=(9.0cm, -5.0cm);
+		qVAMca[2]:=(9.0cm, -7.0cm);
+		qVAMca[3]:=(7.0cm, -7.0cm);
+		qVAMca[4]:=(8.0cm, -6.0cm);
+		
+pair qVAMcan[];
+qVAMcan[0]:=(7.8cm, -5.0cm);
+qVAMcan[1]:=(7.8cm, -4.8cm);
+qVAMcan[2]:=(8.2cm, -5.0cm);
+qVAMcan[3]:=(8.2cm, -4.8cm);
+draw qVAMcan[0]--qVAMcan[1];
+draw qVAMcan[2]--qVAMcan[3];
+label(btex $I_n$ etex, (8.0cm, -5.4cm));
+		fill qVAMca[1]--qVAMca[2]--qVAMca[4]--cycle withcolor .7 white;
+label(btex $E_R$ etex, (8.0cm, -6.6cm));
+label(btex $\overleftarrow{s_0}$ etex, (7.4cm, -6.0cm));
+
+		draw qVAMca[0]--qVAMca[1]--qVAMca[2]--qVAMca[3]--cycle;
+		draw qVAMca[0]--qVAMca[2];
+		draw qVAMca[1]--qVAMca[3];
+
+		pair aIrNca[];
+		aIrNca[0]:=(4.2cm, -5.0cm);
+		aIrNca[1]:=(6.2cm, -5.0cm);
+		aIrNca[2]:=(6.2cm, -7.0cm);
+		aIrNca[3]:=(4.2cm, -7.0cm);
+		aIrNca[4]:=(5.2cm, -6.0cm);
+		
+
+		draw aIrNca[0]--aIrNca[1]--aIrNca[2]--aIrNca[3]--cycle dashed evenly;
+label(btex $\textnormal{next}\;\textnormal{tile}$ etex, (5.2cm, -5.4cm));
+
+		pair eXqNcahl[];
+		eXqNcahl[0] := (0cm, -7.55cm);
+		eXqNcahl[1] := (9.4cm, -7.55cm);
+		draw eXqNcahl[0]--eXqNcahl[1] dashed evenly;
+		
+		label.rt(btex Coming from right, being in state $s_i$, reading tape symbol $a_j$.  etex, (0cm, -8.1cm));
+		label.rt(btex Transition function says: go left, switch to state $s_{k_{i,j}}$ and write $a_{l_{i,j}}$.  etex, (0cm, -8.6cm));
+
+		pair ejvNca[];
+		ejvNca[0]:=(0.4cm, -9.4cm);
+		ejvNca[1]:=(2.4cm, -9.4cm);
+		ejvNca[2]:=(2.4cm, -11.4cm);
+		ejvNca[3]:=(0.4cm, -11.4cm);
+		ejvNca[4]:=(1.4cm, -10.4cm);
+		
+label(btex $a_j$ etex, (1.4cm, -9.8cm));
+label(btex $\overleftarrow{s_i}$ etex, (2.0cm, -10.4cm));
+label(btex $a_{l_{i,j}}$ etex, (1.4cm, -11.0cm));
+label(btex $\overleftarrow{s_{k_{i,j}}}$ etex, (0.8cm, -10.4cm));
+
+		draw ejvNca[0]--ejvNca[1]--ejvNca[2]--ejvNca[3]--cycle;
+		draw ejvNca[0]--ejvNca[2];
+		draw ejvNca[1]--ejvNca[3];
+		label.rt(btex Situation is like before with only difference: go right.  etex, (0cm, -12.5cm));
+		label.rt(btex Now the rest of the tape must be copied by special tiles which thus exist  etex, (0cm, -13.0cm));
+		label.rt(btex for all pairs $(a_m,s_{k_{i,j}})$ of tape symbol and state.  etex, (0cm, -13.5cm));
+
+		pair WWxNca[];
+		WWxNca[0]:=(0.4cm, -14.3cm);
+		WWxNca[1]:=(2.4cm, -14.3cm);
+		WWxNca[2]:=(2.4cm, -16.3cm);
+		WWxNca[3]:=(0.4cm, -16.3cm);
+		WWxNca[4]:=(1.4cm, -15.3cm);
+		
+label(btex $E_L$ etex, (1.4cm, -14.7cm));
+label(btex $\overleftarrow{s_{k_{i,j}}^{(C)}}$ etex, (2.0cm, -15.3cm));
+pair WWxNcas[];
+WWxNcas[0]:=(1.2cm, -16.3cm);
+WWxNcas[1]:=(1.2cm, -16.5cm);
+WWxNcas[2]:=(1.6cm, -16.3cm);
+WWxNcas[3]:=(1.6cm, -16.5cm);
+draw WWxNcas[0]--WWxNcas[1];
+draw WWxNcas[2]--WWxNcas[3];
+label(btex $\overrightarrow{s_{k_{i,j}}}$ etex, (1.4cm, -15.9cm));
+		fill WWxNca[3]--WWxNca[0]--WWxNca[4]--cycle withcolor .7 white;
+
+		draw WWxNca[0]--WWxNca[1]--WWxNca[2]--WWxNca[3]--cycle;
+		draw WWxNca[0]--WWxNca[2];
+		draw WWxNca[1]--WWxNca[3];
+		label(btex $\ldots$ etex, (3.05cm, -15.3cm));
+
+		pair WkwNca[];
+		WkwNca[0]:=(3.7cm, -14.3cm);
+		WkwNca[1]:=(5.7cm, -14.3cm);
+		WkwNca[2]:=(5.7cm, -16.3cm);
+		WkwNca[3]:=(3.7cm, -16.3cm);
+		WkwNca[4]:=(4.7cm, -15.3cm);
+		
+label(btex $a_{m}$ etex, (4.7cm, -14.7cm));
+label(btex $\overleftarrow{s_{k_{i,j}}^{(C)}}$ etex, (5.3cm, -15.3cm));
+label(btex $a_{m}$ etex, (4.7cm, -15.9cm));
+label(btex $\overleftarrow{s_{k_{i,j}}^{(C)}}$ etex, (4.1cm, -15.3cm));
+
+		draw WkwNca[0]--WkwNca[1]--WkwNca[2]--WkwNca[3]--cycle;
+		draw WkwNca[0]--WkwNca[2];
+		draw WkwNca[1]--WkwNca[3];
+		label(btex $\ldots$ etex, (6.35cm, -15.3cm));
+
+		pair yXANca[];
+		yXANca[0]:=(7.0cm, -14.3cm);
+		yXANca[1]:=(9.0cm, -14.3cm);
+		yXANca[2]:=(9.0cm, -16.3cm);
+		yXANca[3]:=(7.0cm, -16.3cm);
+		yXANca[4]:=(8.0cm, -15.3cm);
+		
+label(btex $a_j$ etex, (8.0cm, -14.7cm));
+label(btex $\overleftarrow{s_i}$ etex, (8.6cm, -15.3cm));
+label(btex $a_{l_{i,j}}^{(C)}$ etex, (8.0cm, -15.9cm));
+label(btex $\overleftarrow{s_{k_{i,j}}^{(C)}}$ etex, (7.4cm, -15.3cm));
+
+		draw yXANca[0]--yXANca[1]--yXANca[2]--yXANca[3]--cycle;
+		draw yXANca[0]--yXANca[2];
+		draw yXANca[1]--yXANca[3];
+
+		pair KEzNca[];
+		KEzNca[0]:=(0.4cm, -17.1cm);
+		KEzNca[1]:=(2.4cm, -17.1cm);
+		KEzNca[2]:=(2.4cm, -19.1cm);
+		KEzNca[3]:=(0.4cm, -19.1cm);
+		KEzNca[4]:=(1.4cm, -18.1cm);
+		
+pair KEzNcan[];
+KEzNcan[0]:=(1.2cm, -17.1cm);
+KEzNcan[1]:=(1.2cm, -16.9cm);
+KEzNcan[2]:=(1.6cm, -17.1cm);
+KEzNcan[3]:=(1.6cm, -16.9cm);
+draw KEzNcan[0]--KEzNcan[1];
+draw KEzNcan[2]--KEzNcan[3];
+label(btex $\overrightarrow{s_{k_{i,j}}}$ etex, (1.4cm, -17.5cm));
+label(btex $\overrightarrow{s_{k_{i,j}}^{(C)}}$ etex, (2.0cm, -18.1cm));
+label(btex $E_L$ etex, (1.4cm, -18.7cm));
+		fill KEzNca[3]--KEzNca[0]--KEzNca[4]--cycle withcolor .7 white;
+
+		draw KEzNca[0]--KEzNca[1]--KEzNca[2]--KEzNca[3]--cycle;
+		draw KEzNca[0]--KEzNca[2];
+		draw KEzNca[1]--KEzNca[3];
+		label(btex $\ldots$ etex, (3.05cm, -18.1cm));
+
+		pair CtENca[];
+		CtENca[0]:=(3.7cm, -17.1cm);
+		CtENca[1]:=(5.7cm, -17.1cm);
+		CtENca[2]:=(5.7cm, -19.1cm);
+		CtENca[3]:=(3.7cm, -19.1cm);
+		CtENca[4]:=(4.7cm, -18.1cm);
+		
+label(btex $a_{m}$ etex, (4.7cm, -17.5cm));
+label(btex $\overrightarrow{s_{k_{i,j}}^{(C)}}$ etex, (5.3cm, -18.1cm));
+label(btex $a_{m}$ etex, (4.7cm, -18.7cm));
+label(btex $\overrightarrow{s_{k_{i,j}}^{(C)}}$ etex, (4.1cm, -18.1cm));
+
+		draw CtENca[0]--CtENca[1]--CtENca[2]--CtENca[3]--cycle;
+		draw CtENca[0]--CtENca[2];
+		draw CtENca[1]--CtENca[3];
+		label(btex $\ldots$ etex, (6.35cm, -18.1cm));
+
+		pair edDNca[];
+		edDNca[0]:=(7.0cm, -17.1cm);
+		edDNca[1]:=(9.0cm, -17.1cm);
+		edDNca[2]:=(9.0cm, -19.1cm);
+		edDNca[3]:=(7.0cm, -19.1cm);
+		edDNca[4]:=(8.0cm, -18.1cm);
+		
+label(btex $a_{l_{i,j}}^{(C)}$ etex, (8.0cm, -17.5cm));
+label(btex $\overrightarrow{s_{k_{i,j}}}$ etex, (8.6cm, -18.1cm));
+label(btex $a_{l_{i,j}}$ etex, (8.0cm, -18.7cm));
+label(btex $\overrightarrow{s_{k_{i,j}}^{(C)}}$ etex, (7.4cm, -18.1cm));
+
+		draw edDNca[0]--edDNca[1]--edDNca[2]--edDNca[3]--cycle;
+		draw edDNca[0]--edDNca[2];
+		draw edDNca[1]--edDNca[3];
+
+endfig;
+
+end;

@@ -1,0 +1,12 @@
+Keywords:
+	kw tile: 4x3 parametry (barva: w pro bílou nebo číslo pro odstín šedi, #vazeb: 2 udělá dvojnou, popisek: bude se TeXat mezi dolarama, empty pro prázdný)
+	kw dashedtile: vykreslí obrys, 1 parametr -- komentář
+	kw emptytile: prostě placeholder
+	kw dots: ...
+	kw down: skočí dolů místo doprava, jedině za tile!
+	kw toleft: skočí doleva
+	kw endl: začne na novym řádku, jedině za tile!
+	kw hline: udělá vorodovnou čáru, jedině za tile!
+	kw hspace: udělá svislé odsazení, jedině za tile!
+	kw multicomment: text za nim je neposlední řádek komentáře, potřebuje před sebou hline nebo endl
+	kw comment: poslední řádek komentáře

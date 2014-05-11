@@ -1,0 +1,33 @@
+Bb) L
+=====
+
+multicomment Coming from right, being in state $s_i$, reading left stop $E_L$ which
+multicomment stands for blank symbol in terms of tape alphabet.
+multicomment Transition function says: go left, switch to state $s_{k_{i,B}}$ and write $a_{l_{i,B}}$.
+comment Note that a glue of strength $2$ must have been used.
+tile		w 1 E_L		w 1 \overleftarrow{s_i}		w 1 a_{l_{i,B}}		w 2 \overleftarrow{s_{k_{i,B}}}
+hspace
+
+Ba) L
+=====
+
+multicomment Situation is like before with only difference: go right.
+comment Note that tiles from previous figure are utilized to finish copying.
+tile		7 1 empty		w 2 \overleftarrow{s_{k_{i,B}}^{(C)}}		w 2 \overrightarrow{s_{k_{i,B}}^{(C)}}		7 1 empty
+tile		w 1 E_L		w 1 \overleftarrow{s_i}		w 1 a_{l_{i,B}}^{(C)}		w 2 \overleftarrow{s_{k_{i,B}}^{(C)}}
+hline --------------------------------------------
+
+Cb) L
+=====
+
+multicomment Coming from right, being in state $s_i$, reading blank symbol.
+comment Transition function says: go left, switch to state $s_{k_{i,B}}$ and write $a_{l_{i,B}}$.
+tile		7 1 empty		w 2 \overleftarrow{s_i}		w 1 a_{l_{i,B}}		w 2 \overleftarrow{s_{k_{i,B}}}
+hspace
+
+Ca) L
+=====
+
+multicomment Situation is like before with only difference: go right.
+comment Note that there already exist tiles which finish the turnaround.
+tile		7 1 empty		w 2 \overleftarrow{s_i}		w 1 a_{l_{i,B}}^{(C)}		w 2 \overleftarrow{s_{k_{i,B}}^{(C)}}
