@@ -1139,15 +1139,15 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.98994949"
-     inkscape:cx="482.84867"
-     inkscape:cy="207.72168"
+     inkscape:zoom="1.979899"
+     inkscape:cx="408.16426"
+     inkscape:cy="89.515653"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="true"
      units="mm"
      inkscape:window-width="1286"
-     inkscape:window-height="711"
+     inkscape:window-height="655"
      inkscape:window-x="80"
      inkscape:window-y="0"
      inkscape:window-maximized="1">
@@ -1817,7 +1817,7 @@
          sodipodi:role="line"
          id="tspan7078"
          x="279.92126"
-         y="1024.0159">0</tspan></text>
+         y="1024.0159">4</tspan></text>
     <path
        style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        d="m 301.1811,999.21268 35.43308,-35.43307 35.43307,35.43307 0,35.43302 -70.86615,0 0,-35.43302 z"
@@ -1861,7 +1861,7 @@
          sodipodi:role="line"
          id="tspan7078-89"
          x="308.2677"
-         y="1024.0159">0</tspan></text>
+         y="1024.0159">4</tspan></text>
     <path
        style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        d="m 372.04725,999.21268 35.43307,-35.43307 35.43307,35.43307 0,35.43302 -70.86614,0 0,-35.43302 z"
@@ -1895,7 +1895,7 @@
          sodipodi:role="line"
          id="tspan7078-3"
          x="421.65353"
-         y="1024.0159">4</tspan></text>
+         y="1024.0159">0</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:19px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
@@ -1929,7 +1929,7 @@
          sodipodi:role="line"
          id="tspan7078-4"
          x="450"
-         y="1024.0159">4</tspan></text>
+         y="1024.0159">0</tspan></text>
     <flowRoot
        xml:space="preserve"
        id="flowRoot3688"

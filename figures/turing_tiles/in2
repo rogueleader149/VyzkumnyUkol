@@ -1,10 +1,10 @@
 Bb) L
 =====
 
-multicomment Coming from right, being in state $s_i$, reading left stop $E_L$ which
-multicomment stands for blank symbol in terms of tape alphabet.
-multicomment Transition function says: go left, switch to state $s_{k_{i,B}}$ and write $a_{l_{i,B}}$.
-comment Note that a glue of strength $2$ must have been used.
+multicomment Coming from right, being in state $s_i$, reading left stop $E_L$ which stands for blank symbol in terms
+multicomment of tape alphabet.
+multicomment Transition function says: write $a_{l_{i,B}}$, switch to state $s_{k_{i,B}}$ and go left. Note that a glue of strength $2$
+comment must have been used.
 tile		w 1 E_L		w 1 \overleftarrow{s_i}		w 1 a_{l_{i,B}}		w 2 \overleftarrow{s_{k_{i,B}}}
 hspace
 
@@ -21,7 +21,7 @@ Cb) L
 =====
 
 multicomment Coming from right, being in state $s_i$, reading blank symbol.
-comment Transition function says: go left, switch to state $s_{k_{i,B}}$ and write $a_{l_{i,B}}$.
+comment Transition function says: write $a_{l_{i,B}}$, switch to state $s_{k_{i,B}}$ and go left.
 tile		7 1 empty		w 2 \overleftarrow{s_i}		w 1 a_{l_{i,B}}		w 2 \overleftarrow{s_{k_{i,B}}}
 hspace
 

@@ -92,7 +92,7 @@
 		\begin{itemize}
 			\item it is allowed to have ambiguous transition function,
 			\item it has two types of terminal states: accepting $q_{accept}$ and halting without accepting nor rejecting $q_{halt}$,
-			\item we say that it accepts input $x$ iff there {\em exists} a sequence of decisions ending in $q_{accept}$, as a consequence it declines $x$ iff {\em for every} sequence of decisions it reaches $q_{halt}$.
+			\item we say that it accepts input $x$ if and only if there {\em exists} a sequence of decisions ending in $q_{accept}$, as a consequence it declines $x$ if and only if {\em for every} sequence of decisions it reaches $q_{halt}$.
 		\end{itemize}
 		
 		\begin{defn}\label{def:DTime}
@@ -151,8 +151,8 @@
 		
 		Let $M$ be a PTM. We say that $M$
 		\begin{itemize}
-			\item decides language $\cal L$ iff for every $x\in\Sigma^*$ the probability of halting in correct state (i.e. $q_{accept}$ for $x\in{\cal L}$ and $q_{reject}$ for $x\notin{\cal L}$) is higher than $\nicefrac{2}{3}$,
-			\item decides language $\cal L$ in time $t(n)$ iff $M$ decides language $\cal L$ and for every $x\in\Sigma^*$ it halts in time $\leq t(|x|)$ regardless its randomness.
+			\item decides language $\cal L$ if and only if for every $x\in\Sigma^*$ the probability of halting in correct state (i.e. $q_{accept}$ for $x\in{\cal L}$ and $q_{reject}$ for $x\notin{\cal L}$) is higher than $\nicefrac{2}{3}$,
+			\item decides language $\cal L$ in time $t(n)$ if and only if $M$ decides language $\cal L$ and for every $x\in\Sigma^*$ it halts in time $\leq t(|x|)$ regardless its randomness.
 		\end{itemize}
 		Now we can define those classes, note that it would be possible to use again two types of definitions, like above.
 		
