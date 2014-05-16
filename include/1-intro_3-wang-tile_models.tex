@@ -48,7 +48,7 @@
 		All the following complexities are considered as functions of size of the problem, which will be denoted by $n$:
 		\begin{description}
 			\item[Biostep complexity.] Refers to the number of laboratory steps required to handle the computation, denoted by $Bs(n)$. Adleman \cite{adleman95biostep} describes formally in his {\em unrestricted model} few types of such lab procedures -- {\em Separate, Merge, Detect} and {\em Amplify}, Winfree \cite{winfree_phd} adds another -- {\em Append}. Both of them remind that one biostep takes tens of minutes. Thus the only practically feasible DNA algorithms are those with $O(1)$ biostep complexity.
-			\item[Binding complexity.] Refers to the number of bindings in terminal tiling\footnote{In deterministic computation the value is unique, in non-deterministic computation we consider the value for the smallest accepting terminal tile, in probabilistic computation we consider largest value due to the randomness.}, denoted by $Bnd(n)$. Too high binding complexity leads to lower probability of correct computation $P_c$ because it holds $P_c(n) = (1-p_e)^{Bnd(n)} \approx\footnote{If reasonable.} \; 1-p_e \cdot Bnd(n)$ where $p_e$ denotes probability of erroneous binding.
+			\item[Binding complexity.] Refers to the number of bindings in terminal tiling, denoted by $Bnd(n)$. In deterministic computation the value is unique, in non-deterministic computation we consider the value for the smallest accepting terminal tile, in probabilistic computation we consider the mean value. Too high binding complexity leads to lower probability of correct computation $P_c$ because it holds $P_c(n) = (1-p_e)^{Bnd(n)} \approx \; 1-p_e \cdot Bnd(n)$ where $p_e$ denotes probability of erroneous binding.
 			\item[Tile complexity.] Refers to the number of different DNA tiles, denoted by $Ti(n)$. The higher tile complexity the more demanding it is to prepare required tiles.
 			\item[Glue complexity.] Refers to the number of different sticky-end sequences (commonly referred to as {\em glues}), denoted by $Gl(n)$. Each sequence with its Watson-Crick complement is considered as one glue. Higher glue complexity will require longer DNA sequences in the sticky ends. % which leads to higher probability of erroneous binding $p_e$. %!% něco citovat co zminuje závislost p_e na dýlce sekvence, to přece musí rost ...
 		\end{description}
@@ -85,13 +85,13 @@
 		\item also at temperature $1$ in 3D,
 		\item but it is not known to be universal or not at temperature $1$ in 2D\footnote{Universality has been reached only with modifications to the original model, see \cite{stage_assembly}, \cite{active_tiles}.}.
 	\end{itemize}
-	Let us show known results in the following table.
+	Another interesting problem is ``How many tile types are required to self-assemble an $n\times n$ square?'' Let us show known results in the following table.
 	
 	\begin{center}
 	\begin{tabular}{|| c || c | c | c ||}
 		\hline\hline
 		~ & \multicolumn{2}{c|}{\bf $n\times n$ squares} & {\bf Computational} \\
-		~ & \multicolumn{1}{c}{LB} & \multicolumn{1}{c|}{UB} & {\bf Power}\\
+		~ & \multicolumn{1}{c}{Lower bound} & \multicolumn{1}{c|}{Upper bound} & {\bf Power}\\
 		\hline
 		$\tau=2$, 2D & \multicolumn{2}{c|}{See \cite{square_lb}, $\Theta(\frac{\log n}{\log\log n})$, see \cite{square_ub}} & Universal, see \cite{winfree_phd} \\
 		\hline

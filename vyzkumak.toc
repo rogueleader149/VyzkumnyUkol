@@ -22,5 +22,5 @@
 \contentsline {subsection}{\numberline {2.2.1}Simulation in {\tt xgrow}}{20}{subsection.2.2.1}
 \contentsline {section}{\numberline {2.3}Graph 3-coloring Problem}{22}{section.2.3}
 \contentsline {section}{\numberline {2.4}Graph Isomorphism Problem}{23}{section.2.4}
-\contentsline {chapter}{Discussion}{26}{section*.24}
+\contentsline {chapter}{Conclusion}{26}{section*.24}
 \contentsline {chapter}{References}{27}{section*.26}
