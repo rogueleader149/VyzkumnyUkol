@@ -16,26 +16,26 @@
 		\begin{itemize}
 			\item from a special initial tile denoted by $t_0$ from $(0,0)$ ({\em initial configuration}),
 			\item one tile per step,
-			\item the sum of glues connected in one step must be greater than or equal to given integer treshold\footnote{Interesting to study are small numbers like $1$, $2$; there are different results in Section \ref{sec:wang_power}}, so called {\em temperature}, denoted by $\tau$.
+			\item the sum of glues connected in one step must be greater than or equal to given integer treshold\footnote{Only small numbers ($1$ and $2$) are interesting to study; there are different results in Section \ref{sec:wang_power}}, so called {\em temperature}, denoted by $\tau$.
 		\end{itemize}
 	\end{itemize}
 	Reachability relation will be restricted accordingly to these rules, {\em reachable in (tilesystem) $T$} will mean reachable from initial configuration, same for {\em terminal tiling in (tilesystem) $T$}.
 	
 	Similarly to Turing machines, tilesystem $T$ will be called:
 	\begin{description}
-		\item[Deterministic.] if and only if there exists unique terminal tiling in $T$. % (in other words, reachability relation has one minimal/maximal member).
-		\item[Non-deterministic.] if and only if it has no other restrictions. % no ...
-		\item[Probabilistic.] if and only if every possible step in every stage has defined probability. See Note \ref{note:tilesystems} for our proposal how the probability could be defined.
+		\item[Deterministic.] If and only if there exists unique terminal tiling in $T$. % (in other words, reachability relation has one minimal/maximal member).
+		\item[Non-deterministic.] No other restrictions.
+		\item[Probabilistic.] If and only if every possible step in every stage has defined probability. See Note \ref{note:tilesystems} for our proposal how the probability could be defined.
 	\end{description}
 	
 	\begin{note}\label{note:tilesystems}
 		If there is a unique place and a unique tile the probability is $1$. If there is a unique place but there are more candidate tiles, the probability $\prob_C(t)$ of connecting tile $t$ should be distributed to these tiles somehow according to their ratio of concentration (denoted by $\prob_0(t)$) and their total connectible glue strength (denoted by $G(t)$). Most straightforward is weighted average:
 		\begin{equation*}
-			\prob_C(t) = \frac{G(t)\cdot\prob_0(t)}{\sum\limits_{u\textnormal{ possible tile}}G(u)\cdot\prob_0(u)}
+			\prob_C(t) = \frac{G(t)\cdot\prob_0(t)}{\sum\limits_{u\textnormal{ possible tile}}G(u)\cdot\prob_0(u)} .
 		\end{equation*}
 		In the most general case there are more places, each having several candidates. The probability $\prob_C(t,i)$ of connecting tile $t$ on place $i$ can be defined as weighted average again, now with one more sum over all possible places:
 		\begin{equation*}
-			\prob_C(t,i) = \frac{G(t,i)\cdot\prob_0(t)}{\sum\limits_{j\textnormal{ possible place}}\quad\sum\limits_{u\textnormal{ possible tile}\atop\textnormal{on place }j}G(u,j)\cdot\prob_0(u)}
+			\prob_C(t,i) = \frac{G(t,i)\cdot\prob_0(t)}{\sum\limits_{j\textnormal{ possible place}}\quad\sum\limits_{u\textnormal{ possible tile}\atop\textnormal{on place }j}G(u,j)\cdot\prob_0(u)} .
 		\end{equation*}
 	\end{note}
 
@@ -47,7 +47,7 @@
 		\label{def:stud_compl}
 		All the following complexities are considered as functions of size of the problem, which will be denoted by $n$:
 		\begin{description}
-			\item[Biostep complexity.] Refers to the number of laboratory steps required to handle the computation, denoted by $Bs(n)$. Adleman \cite{adleman95biostep} describes formally in his {\em unrestricted model} few types of such lab procedures -- {\em Separate, Merge, Detect} and {\em Amplify}, Winfree \cite{winfree_phd} adds another -- {\em Append}. Both of them remind that one biostep takes tens of minutes. Thus the only practically feasible DNA algorithms are those with $O(1)$ biostep complexity.
+			\item[Biostep complexity.] Refers to the number of laboratory steps required to handle the computation, denoted by $Bs(n)$. Adleman \cite{adleman95biostep} describes formally in his {\em unrestricted model} few types of such lab procedures -- {\em Separate, Merge, Detect} and {\em Amplify}, Winfree \cite{winfree_phd} adds another -- {\em Append}. Both of them remind that one biostep takes tens of mi\-nu\-tes. Thus the only practically feasible DNA algorithms are those with $O(1)$ biostep complexity.
 			\item[Binding complexity.] Refers to the number of bindings in terminal tiling, denoted by $Bnd(n)$. In deterministic computation the value is unique, in non-deterministic computation we consider the value for the smallest accepting terminal tile, in probabilistic computation we consider the mean value. Too high binding complexity leads to lower probability of correct computation $P_c$ because it holds $P_c(n) = (1-p_e)^{Bnd(n)} \approx \; 1-p_e \cdot Bnd(n)$ where $p_e$ denotes probability of erroneous binding.
 			\item[Tile complexity.] Refers to the number of different DNA tiles, denoted by $Ti(n)$. The higher tile complexity the more demanding it is to prepare required tiles.
 			\item[Glue complexity.] Refers to the number of different sticky-end sequences (commonly referred to as {\em glues}), denoted by $Gl(n)$. Each sequence with its Watson-Crick complement is considered as one glue. Higher glue complexity will require longer DNA sequences in the sticky ends. % which leads to higher probability of erroneous binding $p_e$. %!% něco citovat co zminuje závislost p_e na dýlce sekvence, to přece musí rost ...
@@ -66,7 +66,7 @@
 		For combinatoric reasons,
 		\begin{enumerate}
 			\item having $Gl(n)$ glues, we cannot make more than $Gl^4(n)$ different tiles,
-			\item having $Ti(n)$ tiles, there can appear maximally $4\,Ti(n)$ glues.
+			\item having $Ti(n)$ tiles, there can appear at most $4\,Ti(n)$ glues.
 		\end{enumerate}
 	\end{proof}
 	
@@ -110,13 +110,13 @@
 	\begin{remark}
 		This tilesystem can simulate deterministic Turing machine as well as non-deter\-ministic or probabilistic if we consider corresponding tilesystem, all in $O(1)$ biosteps.
 	\end{remark}
-	The worst case occurs when the head is changing its step direction because all the rest of the tape must be copied. Following lemma gives upper bound for binding complexity as well as for the other studied complexities.
+	Note that the worst case occurs when the head is changing its step direction because all the rest of the tape must be copied. Following lemma gives upper bound for binding complexity as well as for the other studied complexities.
 	\begin{lemma}
 	\label{lem:TM_bound}
 		Studied complexities in tilesystem ${\cal T}_{TM}$ are bounded as follows:
 		\begin{description}
 			\item[Biostep.] $Bs(n) \in O(1)$.
-			\item[Binding.] $Bnd(n) \in O(t^2(n))$ where $t(n)$ denotes running time of the simulated Turing machine.
+			\item[Binding.] $Bnd(n) \in O\bigl(s(n)\cdot t(n)\bigr)$ where $t(n)$ stands for time and $s(n)$ for space required by the simulated Turing machine.
 			\item[Tile.] $Ti(n) \in O(n)$.
 			\item[Glue.] $Gl(n) \in O(n)$.
 		\end{description}
@@ -126,7 +126,7 @@
 		\begin{description}
 			\item[Biostep.] All tiles are designed to operate altogether thus only constant number of biosteps is needed.
 			\item[Binding.] All Turing machine steps are simulated one-to-one or one-to-constant number of bindings with only one exception which is tape-copying as soon as head changes its direction. The length of %!% popsaný
-			used tape is less than or equal to $t(n)$. Every copied length is thus bounded by $t(n) + C$ where $C$ is a constant, copying process is thus bounded by $2(t(n)+C)$ bindings. Copying occurs maximally once per simulated step thus number of copying is bounded by $t(n)$. Altogether number of bindings is bounded by $2(t(n)+C)\cdot t(n) \in O(t^2(n))$.
+			used tape is less than or equal to $s(n)$. Every copied length is thus bounded by $s(n) + C$ where $C$ is a constant, copying process is thus bounded by $2(s(n)+C)$ bindings. Copying occurs maximally once per simulated step thus number of copying is bounded by $t(n)$. Altogether number of bindings is bounded by $2(s(n)+C)\cdot t(n) \in O\bigl(s(n)\cdot t(n)\bigr)$.
 			\item[Tile.] Number of non-input tiles is constant, it is proportional to Turing machine size which is constant. There must only be prepared $n$ special input tiles thus $Ti(n) \in O(n)$.
 			\item[Glue.] Follows from Lemma \ref{lem:ti_gl} which states that $Gl(n) \leq 4Ti(n)$.
 		\end{description}

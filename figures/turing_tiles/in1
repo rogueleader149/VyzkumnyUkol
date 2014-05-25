@@ -1,7 +1,7 @@
 Input:
 ======
 
-multicomment Assembly of input tape. $E_L$ is left stop, $a_i^{(0)}$ is $i$-th symbol of input word.
+multicomment Assembly of input tape. $E_L$ is left stop, $a_i^{(0)}$ is $i$-th symbol of input word $a_0^{(0)}\ldots a_{n-1}^{(0)}$.
 multicomment Following assembly starts at a place denoted ``next tile'' while simulating a Turing machine reading
 comment $a_{n-1}^{(0)}$ and being in state $s_0$. The arrow over $s_0$ means ``comes from right''.
 tile		7 1 empty		w 2 I_0		w 1 E_L		7 1 empty
