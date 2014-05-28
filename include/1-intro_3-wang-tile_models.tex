@@ -72,7 +72,7 @@
 	
 	\begin{thesis}
 	\label{ths:feasible}
-		Feasible DNA algorithms comply $Bs(n)\in O(1)$; $Bnd(n),\,Ti(n),\,Gl(n)\in \P$.
+		Feasible DNA algorithms comply $Bs(n)\in O(1)$; $Bnd(n),\,Ti(n),\,Gl(n)\in \bigcup\limits_{k=0}^{\infty}n^k$.
 	\end{thesis}
 
 % tahle subsection neni moje práce, zbytek už zase je
@@ -135,7 +135,7 @@
 	\label{cor:poly_resist}
 		% in corresponding type of the model, i.e. determ, non-determ, prob
 		
-		In 2D at temperature $\tau = 2$ using corresponding type of $\atam$ (i.e. deterministic, non-deterministic or probabilistic), all classes resistant to polynomial slowdown ($\P$, $\ZPP$, $\RP$, $\BPP$, $\NP$, \ldots) remain preserved for all studied complexities. Moreover, biostep complexity remains in $O(1)$.
+		In 2D at temperature $\tau = 2$ using corresponding type of $\atam$ (i.e. deterministic, non-deterministic or probabilistic), all classes resistant to polynomial slowdown ($\P$, $\ZPP$, $\RP$, $\BPP$, $\NP$, \ldots) remain preserved with respect to all studied complexities. Moreover, biostep complexity remains in $O(1)$.
 	\end{cor}
 	
 	\begin{figure}[h]
@@ -158,7 +158,7 @@
 	
 	Remind that every language from $\BPP$ is decidable on a PTM in polynomial time which means that probability of correct result is greater than $\nicefrac{2}{3}$. Note that one can reach probability of correct result higher than arbitrary constant smaller than $1$ by constant number of iterations. Thus it is reasonable to consider $\BPP$ as practically feasible.   % \footnote{Considering even Quantum Turing machine to be practically feasible, $\BQP$ (a superset of $\BPP$) would be practically feasible. Note that due to Shor's algorithm \cite{shor94}, Integer Factorization Problem belongs to $\BQP$ but it is assumed that it does not belong to $\BPP$. Thus $\BPP$ is assumed to be proper subset of $\BQP$.}
 	
-	Here we introduce a similar proposal for feasibility of DNA algorithms. In Definition \ref{def:stud_compl} we proposed that biostep complexity of feasible algorithms must comply $Bs(n)\in O(1)$ which is proved in Lemma \ref{lem:TM_bound} for Turing universal tilesystem ${\cal T}_{TM}$. In Thesis \ref{ths:feasible} we proposed that other studied complexities must be polynomial and Corollary \ref{cor:poly_resist} states preserving of classes $\P$, $\ZPP$, $\RP$, $\BPP$, $\NP$, \ldots ~in tilesystem ${\cal T}_{TM}$ at temperature $\tau=2$. Note \ref{note:tilesystems} proposes how a probabilistic $\atam$ could be practically simulated. These arguments altogether justify Corollary \ref{cor:bpp_feas}.   %!% přečíst po sobě
+	Here we introduce a similar proposal for feasibility of DNA algorithms. In Definition \ref{def:stud_compl} we proposed that biostep complexity of feasible algorithms must comply $Bs(n)\in O(1)$ which is proved in Lemma \ref{lem:TM_bound} for Turing universal tilesystem ${\cal T}_{TM}$. In Thesis \ref{ths:feasible} we proposed that other studied complexities must be polynomial and Corollary \ref{cor:poly_resist} states preserving of classes $\P$, $\ZPP$, $\RP$, $\BPP$, $\NP$, \ldots ~in tilesystem ${\cal T}_{TM}$ at temperature $\tau=2$. Note \ref{note:tilesystems} proposes how a probabilistic $\atam$ could be practically simulated. These arguments altogether justify Corollary \ref{cor:bpp_feas}.
 	
 	\begin{cor}
 	\label{cor:bpp_feas}
@@ -169,10 +169,3 @@
 		Remind that $\P$, $\ZPP$, $\RP$ and $\coRP \subseteq \BPP$.
 	\end{note}
 	
-	
-	
-	%!% popsat co znamená že je něco sestavitelný -- NP, že má něco pst sestavení -- BPP
-	
-	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-	
-	% error-tolerant rules -- Gacs and Reif, 1988\\
