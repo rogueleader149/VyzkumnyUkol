@@ -7,7 +7,7 @@
 	
 	Wang tiles are named after Hao Wang who introduced this concept in his work {\em Proving Theorems by Pattern Recognition}, \cite{wang_tiles}. His original definition was rather informal but there appeared also some very formal definitions, e.g. Rothemund, Winfree, \cite{square_lb}. We will rather define Wang tile models less formally because it will be clear what they mean and excessive formality could cause confusions.
 	
-	Wang tile is a square tile with one color (also index, glue) from a finite nonempty set $I$ on each its edge\footnote{Tiles keep orientation, they are {\em not} allowed to rotate nor reflect.}, let us denote (nonempty) set of all available tiles $T$. Wang tiling is a mapping ${\cal T}: (\Z^2) \rightarrow T$ with restrictions: neighboring tiles must have the same color on the adjacent edge and its domain is required to be (topologically) connected. Wang tiling ${\cal T}_2$ is called {\em reachable} from Wang tiling ${\cal T}_1$ if and only if ${\cal T}_1 \subseteq {\cal T}_2$. A tiling $\cal T$ is called {\em terminal} if and only if there does not exist any strictly larger tiling reachable from $\cal T$. %!% říct jaký to uspořádání je, že má minimální prvek
+	Wang tile is a square tile with one color (also index, glue) from a finite nonempty set $I$ on each its edge\footnote{Tiles keep orientation, they are {\em not} allowed to rotate nor reflect.}. Let us denote (nonempty) set of all available tiles $T$. Wang tiling is a mapping ${\cal T}: (\Z^2) \rightarrow T$ with restrictions: neighboring tiles must have the same color on the adjacent edge and its domain is required to be (topologically) connected. Wang tiling ${\cal T}_2$ is called {\em reachable} from Wang tiling ${\cal T}_1$ if and only if ${\cal T}_1 \subseteq {\cal T}_2$. A tiling $\cal T$ is called {\em terminal} if and only if there does not exist any strictly larger tiling reachable from $\cal T$. %!% říct jaký to uspořádání je, že má minimální prvek
 	
 	Rothemund and Winfree \cite{square_lb} extended this definition for DNA tile assembly purposes and introduced Abstract Tile Assembly Model\footnote{A modification to this model introduced by Winfree is Kinetic Tile Assembly Model ($\ktam$) which describes system dynamics.} ($\atam$). Additionally
 	\begin{itemize}
@@ -24,9 +24,9 @@
 	
 	Similarly to Turing machines, tilesystem $T$ will be called:
 	\begin{description}
-		\item[Deterministic.] If and only if there exists unique terminal tiling in $T$. % (in other words, reachability relation has one minimal/maximal member).
-		\item[Non-deterministic.] No other restrictions.
-		\item[Probabilistic.] If and only if every possible step in every stage has defined probability. See Note \ref{note:tilesystems} for our proposal how the probability could be defined.
+		\item[Deterministic] if and only if there exists unique terminal tiling in $T$; % (in other words, reachability relation has one minimal/maximal member).
+		\item[Non-deterministic] if there are no other restrictions;
+		\item[Probabilistic] if and only if every possible step in every stage has a defined probability. See the following note for our proposal how the probability could be defined.
 	\end{description}
 	
 	\begin{note}\label{note:tilesystems}

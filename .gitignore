@@ -1,7 +1,6 @@
 *.tar.gz
 *.git
 *.log
-*.pdf
 *.aux
 *.out
 
