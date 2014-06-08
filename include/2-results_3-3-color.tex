@@ -2,15 +2,11 @@
 
 % First idea: Generate all bonds with colored atoms and verify the entire system (haha, complexity like $O(n^4)$ because $|E| \in O(n^2) $). Second solution: Generate a reverse-order sequence of vertices and let it order in the correct order. All pairs should meet each other, the problem to solve is whether all pairs really meet each other. After that verify that the area is full like Winfree -- from one side to the other. Improvement: the verification can be triggered from both sides simultaneously.
 
-% Remind original Knuth's algorithm at \url{http://www.iti.fh-flensburg.de/lang/algorithmen/sortieren/networks/oetsen.htm}! And prove that everything goes fine! Robusticity? %!% citovat někde
+% Remind original Knuth's algorithm at \url{http://www.iti.fh-flensburg.de/lang/algorithmen/sortieren/networks/oetsen.htm}! And prove that everything goes fine! Robusticity?
 
 Another $\NPC$ problem is Graph 3-coloring Problem, its task is to decide whether there exists an assignment of three colors to vertices of the graph so that no connected vertices have the same color.
 
 If $k$ is odd, we add a separated vertex thus resulting graph $G'$ is 3-colorable if and only if original graph $G$ is 3-colorable. See example in Figure \ref{fig:3-color}.
-
-%!% přidat převod na SAT (myslim že n log n) ?
-
-% Note that there exists a reduction of $\sf SAT$ in Cunjunctive Normal Form with length $n$ to Graph 3-coloring Problem on $O(n\log n)$ vertices.   %!% když už tak všude ty převody
 
 \subsection*{Set of tiles}
 

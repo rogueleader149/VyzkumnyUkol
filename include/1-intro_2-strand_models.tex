@@ -47,7 +47,7 @@
 			\item[Step 2.] Keep only those paths that begin with $v_{begin}$ and end with $v_{end}$.
 			\item[Step 3.] If the graph has $n$ vertices, then keep only those paths that enter exactly $n$ vertices.
 			\item[Step 4.] Keep only those paths that enter all of the vertices of the graph at least once.
-			\item[Step 5.] If any path remains, say ``Yes''; otherwise, say ``No.''\footnote{This is the original version, I would rectify the fifth step: If any paths remain, say ``Yes''; otherwise say ``{\em I do not know}''. That is because it may happen that there exists a valid path but unfortunately it did not assemble or got lost. Note the similarity to $\NP$ versus $\coNP$, see Section \ref{sec:PNP}.} %!% citaci, někdo to už taky kritizoval
+			\item[Step 5.] If any path remains, say ``Yes''; otherwise, say ``No.''\footnote{This is the original version, I would rectify the fifth step: If any paths remain, say ``Yes''; otherwise say ``{\em I do not know}''. That is because it may happen that there exists a valid path but unfortunately it did not assemble or got lost. Note the similarity to $\NP$ versus $\coNP$, see Section \ref{sec:PNP}.}
 		\end{description}
 		To see % sloveso od insight ?
 		how DNA can compute, let us describe this example more precisely. The computation itself (meaning the inception of the final solution) is hidden in Step 1. Each vertex $i$ is associated with a random\footnote{We will expect those sequences to be different enough.} $20$-mer sequence of DNA, let us denote its $5'\rightarrow 3'$ orientation by $O_i$, its 10-mer prefix by $p_i$ and its 10-mer suffix by $q_i$. Each edge $i\rightarrow j$ is then associated with $O_{i\rightarrow j} = \overline{q_i p_j}$ sequence with reverse backbone orientation where $\overline{a}$ stands for Watson-Crick complementary word to the word $a$. There is an exception for $i=v_{begin}$ and every $k$: instead of $\overline{q_i p_k}$ there is $\overline{O_i p_k}$ and in a similar way for $j=v_{end}$ and $\overline{q_k p_j}$.
@@ -111,5 +111,4 @@
 		
 		In a real computation we will need to read the bottom line's sequence in a row thus it is practically reasonable to use DAE molecules. Moreover we will require even number of half-turns between crossovers in adjacent molecules. This is well explained in \cite[p.37]{winfree_phd}.
 		
-		DAE molecules thus have many reasons to be the most promising % citovat tunu praktickejch článků
-		thus Chapter \ref{chap:problems} will be dedicated especially to models with these molecules.
+		DAE molecules thus have many reasons to be the most promising thus Chapter \ref{chap:problems} will be dedicated especially to models with these molecules.

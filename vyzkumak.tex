@@ -15,9 +15,9 @@
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 \fancyhf{}
-\fancyhead[L]{\slshape \rightmark} % \leftmark .. kapitola
+\fancyhead[L]{\slshape \rightmark}   % \leftmark .. kapitola
 \fancyhead[R]{\thepage}
-\oddsidemargin=10mm   % jednostranný tisk !!!
+\oddsidemargin=10mm   % jednostranný tisk
 %~ \makenomenclature   % vyrobí nomenklaturu
 %~ \makeindex   % pomůže nomenklatuře
 
@@ -33,7 +33,6 @@
 \newtheorem{thesis}[thm]{Thesis}
 \newtheorem{conj}[thm]{Conjecture}
 \newtheorem{cor}[thm]{Corollary}
-%~ \newtheorem{predpoklad}{Předpoklad}[chapter]
 \newtheorem{example}{Example}[chapter]
 \newtheorem{alg}{Algorithm}[chapter]
 
@@ -41,7 +40,7 @@
 \newtheorem{remark}{Remark}[chapter]
 \newtheorem{note}[remark]{Note}
 
-\DeclareMathOperator*{\E}{E\,}   % operátor* bude umět používat \limit :)
+\DeclareMathOperator*{\E}{E\,}   % operátor* bude umět používat \limit
 \DeclareMathOperator{\de}{d\!}   % v integrálech
 \renewcommand{\P}{\mathsf{P}}
 \newcommand{\NP}{\mathsf{NP}}
@@ -75,13 +74,10 @@
 \let\epsilon\varepsilon
 \let\phi\varphi
 
-%%% VYHLEDAT A OPRAVIT !!! %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %!% program vlna nakonec!
-% taky opravit N-1 na N\!-\!1
-% zkontrolovat \min \; ...
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%%% k vyplnění ZAČÁTEK -------------------------------------------------
+%%%   k vyplnění ZAČÁTEK   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \newcommand{\cvut}{ČESKÉ VYSOKÉ UČENÍ TECHNICKÉ V~PRAZE}
 \newcommand{\fjfi}{Fakulta jaderná a fyzikálně inženýrská}
 \newcommand{\km}{Katedra matematiky}
@@ -112,7 +108,8 @@ Poté odvozuji model vhodný pro řešení $\NP$-úplných problémů. Dva $\NP$
 \newcommand{\abstrEN}{DNA computing promises new possibilities in solving hard computational problems. Since first computational DNA experiment by Adleman in 1994 much work has been done to describe both mathematical and physical phenomenas. In this work we focus on mathematical informatics, especially on computational feasibility. We present four kinds of resources to be studied in case of DNA algorithms and give a relation to ``classical'' resources of Turing machine such as time and space.
 
 Then we derive a model suitable for solving $\NPC$ problems. Two $\NPC$ problems and one $\NP$ problem are then solved using this model, one of them is also simulated using DNA tile assembly simulator.}
-%%% k vyplnění KONEC ---------------------------------------------------
+
+%%%   k vyplnění KONEC   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 \begin{document}
@@ -259,8 +256,10 @@ Děkuji \vedoucimu, za vedení \mePrace ~a za podnětné návrhy, které \kohoCo
 		\input{./include/n-1.tex}
 		
 		%%% LITERATURA
-		% \renewcommand\bibname{Literatura}
 		\input{./include/n-biblio.tex}
+		
+		%%% APPENDIX
+		\input{./include/p-appendix.tex}
 		
 		
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

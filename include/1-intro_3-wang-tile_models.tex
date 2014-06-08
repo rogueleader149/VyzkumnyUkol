@@ -7,7 +7,7 @@
 	
 	Wang tiles are named after Hao Wang who introduced this concept in his work {\em Proving Theorems by Pattern Recognition}, \cite{wang_tiles}. His original definition was rather informal but there appeared also some very formal definitions, e.g. Rothemund, Winfree, \cite{square_lb}. We will rather define Wang tile models less formally because it will be clear what they mean and excessive formality could cause confusions.
 	
-	Wang tile is a square tile with one color (also index, glue) from a finite nonempty set $I$ on each its edge\footnote{Tiles keep orientation, they are {\em not} allowed to rotate nor reflect.}. Let us denote (nonempty) set of all available tiles $T$. Wang tiling is a mapping ${\cal T}: (\Z^2) \rightarrow T$ with restrictions: neighboring tiles must have the same color on the adjacent edge and its domain is required to be (topologically) connected. Wang tiling ${\cal T}_2$ is called {\em reachable} from Wang tiling ${\cal T}_1$ if and only if ${\cal T}_1 \subseteq {\cal T}_2$. A tiling $\cal T$ is called {\em terminal} if and only if there does not exist any strictly larger tiling reachable from $\cal T$. %!% říct jaký to uspořádání je, že má minimální prvek
+	Wang tile is a square tile with one color (also index, glue) from a finite nonempty set $I$ on each its edge\footnote{Tiles keep orientation, they are {\em not} allowed to rotate nor reflect.}. Let us denote (nonempty) set of all available tiles $T$. Wang tiling is a mapping ${\cal T}: (\Z^2) \rightarrow T$ with restrictions: neighboring tiles must have the same color on the adjacent edge and its domain is required to be (topologically) connected. Wang tiling ${\cal T}_2$ is called {\em reachable} from Wang tiling ${\cal T}_1$ if and only if ${\cal T}_1 \subseteq {\cal T}_2$. A tiling $\cal T$ is called {\em terminal} if and only if there does not exist any strictly larger tiling reachable from $\cal T$. % relace je uspořádání (množ. inkluze), max. prvek odp. terminálnímu
 	
 	Rothemund and Winfree \cite{square_lb} extended this definition for DNA tile assembly purposes and introduced Abstract Tile Assembly Model\footnote{A modification to this model introduced by Winfree is Kinetic Tile Assembly Model ($\ktam$) which describes system dynamics.} ($\atam$). Additionally
 	\begin{itemize}
@@ -40,7 +40,7 @@
 		\end{equation*}
 	\end{note}
 
-% tady začíná moje práce => vyzdvihnout?
+% tady začíná moje práce
 
 \subsection{Studied complexities}
 	
@@ -51,7 +51,7 @@
 			\item[Biostep complexity.] Refers to the number of laboratory steps required to handle the computation, denoted by $Bs(n)$. Adleman \cite{adleman95biostep} describes formally in his {\em unrestricted model} few types of such lab procedures -- {\em Separate, Merge, Detect} and {\em Amplify}, Winfree \cite{winfree_phd} adds another -- {\em Append}. Both of them remind that one biostep takes tens of mi\-nu\-tes. Thus the only practically feasible DNA algorithms are those with $O(1)$ biostep complexity.
 			\item[Binding complexity.] Refers to the number of bindings in terminal tiling, denoted by $Bnd(n)$. In deterministic computation the value is unique, in non-deterministic computation we consider the value for the smallest accepting terminal tile, in probabilistic computation we consider the mean value. Too high binding complexity leads to lower probability of correct computation $P_c$ because it holds $P_c(n) = (1-p_e)^{Bnd(n)} \approx \; 1-p_e \cdot Bnd(n)$ where $p_e$ denotes probability of erroneous binding.
 			\item[Tile complexity.] Refers to the number of different DNA tiles, denoted by $Ti(n)$. The higher tile complexity the more demanding it is to prepare required tiles.
-			\item[Glue complexity.] Refers to the number of different sticky-end sequences (commonly referred to as {\em glues}), denoted by $Gl(n)$. Each sequence with its Watson-Crick complement is considered as one glue. Higher glue complexity will require longer DNA sequences in the sticky ends. % which leads to higher probability of erroneous binding $p_e$. %!% něco citovat co zminuje závislost p_e na dýlce sekvence, to přece musí rost ...
+			\item[Glue complexity.] Refers to the number of different sticky-end sequences (commonly referred to as {\em glues}), denoted by $Gl(n)$. Each sequence with its Watson-Crick complement is considered as one glue. Higher glue complexity will require longer DNA sequences in the sticky ends. % which leads to higher probability of erroneous binding $p_e$. % závislost p_e na dýlce sekvence, to přece musí rost ...
 		\end{description}
 	\end{defn}
 	
@@ -128,16 +128,13 @@
 		~
 		\begin{description}
 			\item[Biostep.] All tiles are designed to operate altogether thus only constant number of biosteps is needed.
-			\item[Binding.] All Turing machine steps are simulated one-to-one or one-to-constant number of bindings with only one exception which is tape-copying as soon as head changes its direction. The length of %!% popsaný
-			used tape is less than or equal to $s(n)$. Every copied length is thus bounded by $s(n) + C$ where $C$ is a constant, copying process is thus bounded by $2(s(n)+C)$ bindings. Copying occurs maximally once per simulated step thus number of copying is bounded by $t(n)$. Altogether number of bindings is bounded by $2(s(n)+C)\cdot t(n) \in O\bigl(s(n)\cdot t(n)\bigr)$.
+			\item[Binding.] All Turing machine steps are simulated one-to-one or one-to-constant number of bindings with only one exception which is tape-copying as soon as head changes its direction. The length of used tape is less than or equal to $s(n)$. Every copied length is thus bounded by $s(n) + C$ where $C$ is a constant, copying process is thus bounded by $2(s(n)+C)$ bindings. Copying occurs maximally once per simulated step thus number of copying is bounded by $t(n)$. Altogether number of bindings is bounded by $2(s(n)+C)\cdot t(n) \in O\bigl(s(n)\cdot t(n)\bigr)$.
 			\item[Tile.] Number of non-input tiles is constant, it is proportional to Turing machine size which is constant. There must only be prepared $n$ special input tiles thus $Ti(n) \in O(n)$.
 			\item[Glue.] Follows from Lemma \ref{lem:ti_gl} which states that $Gl(n) \leq 4Ti(n)$.
 		\end{description}
 	\end{proof}
 	\begin{cor}
 	\label{cor:poly_resist}
-		% in corresponding type of the model, i.e. determ, non-determ, prob
-		
 		In 2D at temperature $\tau = 2$ using corresponding type of $\atam$ (i.e. deterministic, non-deterministic or probabilistic), all classes resistant to polynomial slowdown ($\P$, $\ZPP$, $\RP$, $\BPP$, $\NP$, \ldots) remain preserved with respect to all studied complexities. Moreover, biostep complexity remains in $O(1)$.
 	\end{cor}
 	

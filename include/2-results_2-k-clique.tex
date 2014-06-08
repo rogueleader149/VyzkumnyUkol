@@ -6,8 +6,6 @@ For technical reasons we need $k$ to be even in all following examples; reductio
 
 Here if $k$ is odd, we add another vertex connected to every original vertex resulting in $G'$. Then existence of $(k+1)$-clique in $G'$ is equivalent to existence of $k$-clique in $G$. In the following example in Figure \ref{fig:k-clique} we consider $k$ even.
 
-% reduction from SAT (wiki) ??
-
 \subsection*{Set of tiles}
 
 Here we describe tiles used by proposed DNA algorithm, Figure \ref{fig:k-clique} might be helpful. The amount of required tiles of given type will be given in terms of $n$ -- number of vertices, $e$ -- number of edges and $k$ -- size of seeked clique.
@@ -47,17 +45,15 @@ Binding complexity is thus asymptotically equivalent to $\nicefrac{5}{4} \cdot 4
 
 {\tt xgrow} is an open source DNA tile assembly simulator written by Erik Winfree, Rebecca Schulman and Constantine Evans and it is freely available on the internet\footnote{\url{www.dna.caltech.edu/Xgrow} as of June 2014.}. It is capable of both $\atam$ and $\ktam$ simulations.
 
-%!% rozkecat se
-
-{\tt xgrow} takes settings and a file with tiles on input, then it conducts a simulation. We used {\tt xgrow} to verify our algorithm for $k$-clique Problem so we wrote a script which generates input file with tiles for {\tt xgrow}. The script is called {\tt k-clique.rb}, it is written in Ruby language and it is provided on the attached CD.
+{\tt xgrow} is a program executable from command line. It takes settings and a file with tiles in input parameters, then it conducts a simulation. We used {\tt xgrow} to verify our algorithm for $k$-clique Problem so we wrote a script which generates input file with tiles for {\tt xgrow}. The script is called {\tt k-clique.rb}, it is written in Ruby language and it is provided on the attached CD.
 
 \subsubsection*{Running a simulation}
 
 Though everything is cross-platform, this paragraph describes how to run a simulation under Linux systems. You need to download and compile {\tt xgrow} and install Ruby interpreter. Then you need to generate an input graph representation. Open Terminal in your directory with {\tt k-clique.rb} and run {\tt irb} which is an interactive Ruby shell. Then run following commands:
 \begin{verbatim}
 require "yaml"
-# replace by your graph's adjacency matrix written
-# as array of lines (upper triangle suffices):
+# replace with adjacency matrix of your graph written
+# as an array of lines (upper triangle suffices):
 graph = [[0, 1, 0], [0, 0, 1], [0, 0, 0]]
 # define output file
 f = File.open("graph.yaml", "w")
@@ -66,7 +62,7 @@ f.write(YAML.dump(graph))
 f.close
 exit
 \end{verbatim}
-Your graph is now stored in {\tt graph.yaml}. Now run {\tt k-clique.rb} in your directory with two parameters: first parameter is $k$ -- size of clique, second parameter is filename with your graph, and redirect output to a new {\tt *.tiles} file, e.g. {\tt ./k-clique.rb 4 graph.yaml > 4-clique.tiles}. Then move your {\tt *.tiles} file to {\tt xgrow-install-dir/tilesets/} directory and run an $\atam$ simulation by e.g. {\tt ./xgrow 4-clique T=2} or a $\ktam$ simulation by e.g. {\tt ./xgrow 4-clique}.
+Your graph is now stored in {\tt graph.yaml}. Now run {\tt k-clique.rb} in your directory with two parameters: first parameter is $k$ -- size of clique, second parameter is filename with your graph, and redirect output to a new {\tt tiles} file, e.g. {\tt ./k-clique.rb 4 graph.yaml > 4-clique.tiles}. Then move your {\tt tiles} file to {\tt xgrow-install-dir/tilesets/} directory and run an $\atam$ simulation by e.g. {\tt ./xgrow 4-clique T=2} or a $\ktam$ simulation by e.g. {\tt ./xgrow 4-clique}.
 
 Note that {\tt xgrow} performs a probabilistic simulation thus DONE tile\footnote{In our script the DONE tile has magenta color.} can appear very unlikely (depends on probability of random choosing a $k$-clique in your graph). So if you want to see an accepting computation you need to set probabilities of tiles which generate our clique to a reasonably high value. These probabilities can be set in your {\tt tiles} file in the block {\tt tile edges}, on every line there is a number in square brackets which represents the relative concentration which is proportional to probability. A sample output for $\atam$ simulation can be seen in Figure \ref{fig:xgrow}.
 
