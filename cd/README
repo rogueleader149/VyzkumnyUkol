@@ -1,0 +1,5 @@
+This CD contains following files:
+	
+	vyzk_ukol.pdf ... Thesis in Portable Document Format, a description and instructions to the following files are given within
+	k-clique.rb ... Ruby script which generates an input for a simulation
+	graph.yaml ... File with example graph

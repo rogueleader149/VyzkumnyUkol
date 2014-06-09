@@ -1,27 +1,27 @@
 \section{$k$-clique Problem}
 
-$k$-clique Problem belongs to $\NPC$ problems, its task is to decide whether there exists a clique with $k$ vertices in given graph $G$ with $n$ vertices. Note that there exists a $k$-clique in $G$ if and only if there exists a $k$-independent set in $\overline{G}$ if and only if there exists an $(n-k)$-vertex cover of $\overline{G}$ where $\overline{G}$ stands for complement to $G$.
+$k$-clique Problem belongs to $\NPC$ problems, its task is to decide whether there exists a clique with $k$ vertices in a given graph $G$ with $n$ vertices. Note that there exists a $k$-clique in $G$ if and only if there exists a $k$-independent set in $\overline{G}$ if and only if there exists an $(n-k)$-vertex cover of $\overline{G}$ where $\overline{G}$ stands for the complement to $G$.
 
-For technical reasons we need $k$ to be even in all following examples; reduction from odd numbers will be solved in every single example.
+For technical reasons we need $k$ to be even in all following problems; a reduction from odd numbers will be solved in every single problem.
 
-Here if $k$ is odd, we add another vertex connected to every original vertex resulting in $G'$. Then existence of $(k+1)$-clique in $G'$ is equivalent to existence of $k$-clique in $G$. In the following example in Figure \ref{fig:k-clique} we consider $k$ even.
+Here if $k$ is odd, we add another vertex connected to every original vertex resulting in $G'$. Then existence of a $(k+1)$-clique in $G'$ is equivalent to existence of a $k$-clique in $G$. In the following example in Figure \ref{fig:k-clique} we consider $k$ even.
 
 \subsection*{Set of tiles}
 
-Here we describe tiles used by proposed DNA algorithm, Figure \ref{fig:k-clique} might be helpful. The amount of required tiles of given type will be given in terms of $n$ -- number of vertices, $e$ -- number of edges and $k$ -- size of seeked clique.
+Here we describe the tiles used by the proposed DNA algorithm, see Figure \ref{fig:k-clique}. The amount of required tiles of a given type will be given in terms of $n$ -- number of vertices, $e$ -- number of edges and $k$ -- size of seeked clique.
 
 \begin{description}
 	\item[Bottom tiles.] These tiles have colorless labels $2l$ and $2l-2$ $(0 < l \leq \frac{k}{2})$ on the bottom left and right sides, respectively. On the top sides there are numerically ordered\footnote{Later we will order by color. Note that this restriction does not reduce the set of candidate $k$-cliques.} numbers of vertices of all edges having $(k-2l+2)$-th and $(k-2l+1)$-th color, respectively. $e\cdot \frac{k}{2}$ tile types were required.
-	\item[Bottom corner tiles.] These two tiles are connected on the bottom by the largest and the least colorless number, respectively. On the top they have a special glue: \# which can be viewed as $-\infty$ with respect to used ordering and * as $+\infty$, respectively. $2$ tile types were required.
-	\item[Inner tiles.] These tiles are responsible for ordering\footnote{Principially they are the same as in Winfree \cite{winfree_phd}.} by color during which they verify e\-xi\-stence of every edge. There exist all 2-color combinations of numbers of all connected vertices in both number-orders with both correct and reverse color-order on the bottom. On the top there are the same glues with correct color order. Moreover there exist similar tiles with sharp and asterisk instead of left or right number, respectively, with an exception: sharp and least color, and asterisk and largest color do not exist -- these are reserved for verification tiles. Remind that the top sharp or asterisk must have glue-strength equal to $2$.
+	\item[Bottom corner tiles.] These two tiles have the largest and the least colorless number, respectively, on the bottom. On the top they have a special glue: \# which can be viewed as $-\infty$ with respect to used ordering and * as $+\infty$, respectively. $2$ tile types were required.
+	\item[Inner tiles.] These tiles are responsible for ordering\footnote{Principially they are the same as in Winfree \cite{winfree_phd}.} by color during which they verify e\-xi\-stence of every edge. There exist all 2-color combinations of numbers of all connected vertices in both number-orders with both correct and reverse color-order on the bottom. On the top there are the same glues with correct color order. Moreover there exist similar tiles with sharp and asterisk instead of left or right number, respectively, with an exception: sharp and least color, and asterisk and largest color do not exist -- these are reserved for verification tiles. Remind that the top sharp or asterisk must have glue strength equal to $2$.
 	
-	As soon as there appear numbers of unconnected vertices next to each other, the self assembly cannot continue and reach ``DONE'' because no tile can connect to this place. Note that colors were generated in reverse color order so they must meet each other during color ordering. Every missing edge would be revealed thus ``DONE'' tile connects if and only if the generated subset is a clique. $2\cdot\binom{k}{2}\cdot 2e + 2(k-1)n \sim 2 k^2 e + 2kn$ tile types were required.
-	\item[Border tiles.] There are two tile types on the borders, one with sharps, one with asterisks. They just keep the structure growing up and signalize border. Remind that the bottom sharp or asterisk must have glue-strength $2$. $2$ tile types were required.
-	\item[Verification tiles.] As soon as the least color reaches sharp and the largest color reaches asterisk there connect two special tiles which start verification whether nothing is missing. There exist two types of verification sequences ``C'' and ``D'' with all color--number combinations: ``D'' with the smaller half (by color), ``C'' with the higher half. $kn$ tile types were required.
-	\item[DONE tile.] If everything is verified and verification sequences meet each other, ``DONE'' tile will be connected to signalize correct solution. $1$ tile type was required.
+	As soon as there appear numbers of unconnected vertices next to each other (in the following text also ``meet''), the self assembly cannot continue and reach ``DONE'' because no tile can connect to this place. Note that colors were generated in reverse color order so they must meet each other during color ordering. Every missing edge would be revealed thus ``DONE'' tile connects if and only if the generated subset is a clique. $2\cdot\binom{k}{2}\cdot 2e + 2(k-1)n \sim 2 k^2 e + 2kn$ tile types were required.
+	\item[Border tiles.] There are two tile types on the borders, one with sharps, one with asterisks. They just keep the structure growing up and signalize the border. Remind that the bottom sharp or asterisk must have glue strength $2$. $2$ tile types were required.
+	\item[Verification tiles.] As soon as the least color meets sharp and the largest color meets asterisk there connect two special tiles which start verification whether nothing is missing. There exist two types of verification sequences ``C'' and ``D'' with all color--number combinations: ``D'' with the smaller half (by color), ``C'' with the higher half. $kn$ tile types were required.
+	\item[DONE tile.] If everything is verified and left and right verification sequences meet each other, ``DONE'' tile will be connected to signalize a correct solution. $1$ tile type was required.
 \end{description}
 
-Summed up, tile complexity of this DNA algorithm is asymptotically equivalent to $2 k^2 e + 3 kn$. To compute Binding complexity easily we use following lemma.
+Summed up, the tile complexity of this DNA algorithm is asymptotically equivalent to $2 k^2 e + 3 kn$. To compute the binding complexity easily we use the following lemma.
 
 \begin{lemma}
 	In a square $\myatam$ tiling with $n$ bottom tiles, the number of bonds is asymptotically equivalent to $4 n^2$.
@@ -30,7 +30,7 @@ Summed up, tile complexity of this DNA algorithm is asymptotically equivalent to
 	Note that the square can be divided by diagonals into four triangles consisting of asymptotically $\frac{n^2}{2}$ tiles thus there are asymptotically $2n^2$ tiles. Every inner tile has four bonds, every inner bond belongs to two tiles thus there are asymptotically $4n^2$ bonds.
 \end{proof}
 
-Binding complexity is thus asymptotically equivalent to $\nicefrac{5}{4} \cdot 4 \bigl(\frac{k}{2}\bigr)^2 = \nicefrac{5}{4}\,k^2$, glue complexity is asymptotically equivalent to $kn$.
+The binding complexity is thus asymptotically equivalent to $\nicefrac{5}{4} \cdot 4 \bigl(\frac{k}{2}\bigr)^2 = \nicefrac{5}{4}\,k^2$, the glue complexity is asymptotically equivalent to $kn$.
 
 \begin{figure}[H]
 \begin{center}

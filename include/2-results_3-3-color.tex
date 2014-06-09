@@ -6,20 +6,20 @@
 
 Another $\NPC$ problem is Graph 3-coloring Problem, its task is to decide whether there exists an assignment of three colors to vertices of the graph so that no connected vertices have the same color.
 
-If $k$ is odd, we add a separated vertex thus resulting graph $G'$ is 3-colorable if and only if original graph $G$ is 3-colorable. See example in Figure \ref{fig:3-color}.
+If $k$ is odd, we add a separated vertex resulting in graph $G'$. Then $G'$ is 3-colorable if and only if the original graph $G$ is 3-colorable. See example in Figure \ref{fig:3-color}.
 
 \subsection*{Set of tiles}
 
 \begin{description}
 	\item[Bottom tiles.] These tiles have colorless labels $2l$ and $2l-2$ $(0 < l \leq \frac{k}{2})$ on the bottom left and right sides, respectively. On the top sides there are all color combinations of $2l-1$ and $2l-2$; if corresponding vertices are connected by edge, single-color combinations can be omitted. $\frac{9n}{2}$ tile types were required.
 	\item[Bottom corner tiles.] These tiles are exactly the same like for $k$-clique. $2$ tile types were required.
-	\item[Inner tiles.] These tiles are responsible for numerical ordering, they are very similar to those in previous problem. There exist all color combinations for all different numbers in both orders on the bottom sides with an exception: there do not exist tiles with numbers of connected vertices with the same color. Thus as soon as there meet vertices which are connected and have the same color, the assembly stops. Moreover there exist similar tiles with sharp and asterisk with an exception: sharp and the least number, and largest number and asterisk do not exist because they will trigger verification. $\binom{n}{2} \cdot 2 \cdot 9 + 2 \cdot 3 (n-1) - 2 \cdot 3 e \sim 9n^2 - 6e$ tile types were required.
+	\item[Inner tiles.] These tiles are responsible for numerical ordering, they are very similar to those in the previous problem. There exist all color combinations for all different numbers in both orders on the bottom sides with an exception: there do not exist tiles with numbers of connected vertices with the same color. Thus as soon as vertices which are connected and have the same color meet, the assembly stops. Moreover there exist similar tiles with sharp and asterisk with an exception: sharp and the least number, and the largest number and asterisk do not exist because they are used to trigger verification. $\binom{n}{2} \cdot 2 \cdot 9 + 2 \cdot 3 (n-1) - 2 \cdot 3 e \sim 9n^2 - 6e$ tile types were required.
 	\item[Border tiles.] These tiles are exactly the same like for $k$-clique. $2$ tile types were required.
 	\item[Verification tiles.] These tiles are almost the same like for $k$-clique, the only difference is that they are triggered by the least and the largest number instead of the least and the largest color, respectively. $3n$ tile types were required.
 	\item[DONE tile.] The tile is exactly the same like for $k$-clique. $1$ tile type was required.
 \end{description}
 
-Summed up, tile complexity of this DNA algorithm is asymptotically equivalent to $9n^2 - 6e$. Binding complexity is asymptotically equivalent to $\nicefrac{5}{4}\,n^2$, glue complexity is asymptotically equivalent to $\nicefrac{7}{2}\,n$.
+Summed up, the tile complexity of this DNA algorithm is asymptotically equivalent to $9n^2 - 6e$. The binding complexity is asymptotically equivalent to $\nicefrac{5}{4}\,n^2$, the glue complexity is asymptotically equivalent to $\nicefrac{7}{2}\,n$.
 
 \begin{figure}[H]
 \begin{center}
