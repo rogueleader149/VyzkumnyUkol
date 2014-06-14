@@ -32,8 +32,6 @@
 
 \renewcommand{\P}{\mathsf{P}}
 \newcommand{\NP}{\mathsf{NP}}
-\newcommand{\NPH}{\mathsf{NP}\textnormal{-hard}}
-\newcommand{\NPC}{\mathsf{NP}\textnormal{-complete}}
 \newcommand{\coNP}{\mathsf{co}\textnormal{-}\mathsf{NP}}
 \newcommand{\RP}{\mathsf{RP}}
 \newcommand{\coRP}{\mathsf{co}\textnormal{-}\mathsf{RP}}
@@ -77,7 +75,9 @@
 \newtheorem{pozn}{Poznámka}
 
 % ======================================================================
+%
 %    S T A R T
+%
 % ======================================================================
 
 \title{Modely sebeskládajících DNA nanostruktur}
@@ -105,33 +105,32 @@
 %~ \tableofcontents[currentsection,currentsubsection,hideothersubsections,sectionstyle=show/shaded,]
 %~ \end{frame}
 
-\section{Motivace}
+\section{Úvod}
 \begin{frame}
-\frametitle{Motivace}
-	{\em There's plenty of room at the bottom} -- R. P. Feynman, 1959, \cite{feynman}
-	\begin{itemize}
-		\item budoucnost počítačů na úrovni molekul
-	\end{itemize}
+\frametitle{Úvod}
 	První experiment s DNA -- L. Adleman, 1994, \cite{adleman94}
 	\begin{itemize}
-		\item využití sebeskládajících DNA molekul ke hledání Hamiltonovské cesty orientovaným grafem
-		\item Hamiltonovská cesta projde každý vrchol grafu právě jednou, počáteční a cílový vrchol jsou označeny
-		\item rozhodovací problém existence HC je $\NPC$
+		\item hledání Hamiltonovské cesty (HC) orientovaným grafem
+		%~ \item HC projde každý vrchol grafu právě jednou, počáteční a cílový vrchol jsou zadány
+		\item rozhodovací problém existence HC je $\NP$-úplný
 	\end{itemize}
 \end{frame}
 
 \begin{frame}
-\frametitle{Motivace}
+\frametitle{Úvod}
 	Výhody
 	\begin{itemize}
-		\item paralelizmus -- ve zkumavce může být až $10^{18}$ \uv{větších} molekul
+		\item paralelizmus -- ve zkumavce až $10^{18}$ \uv{větších} molekul
+		\item energetická efektivita (Adleman \cite{adleman94})
 	\end{itemize}
+	\pause
 	Nevýhody
 	\begin{itemize}
-		\item $10^{18}$ není zdaleka neupočitatelné hrubou silou
+		\item na $10^{18}$ operací stačí hrubá síla (řádově dny na clusteru s tisíci jader)
 		\item pravděpodobnostní povaha
 		\item chybovost
 	\end{itemize}
+	\pause
 	Pole studia
 	\begin{itemize}
 		\item kinetika reakcí
@@ -143,7 +142,7 @@
 \subsection{Regulární jazyky}
 \begin{frame}
 \frametitle{Souvislost s Chomského hierarchií}
-	Lineární vlákna $\leftrightarrow$ regulární jazyky (E. Winfree \cite{winfree_phd})
+	Lineární vlákna $\leftrightarrow$ regulární jazyky (Winfree \cite{winfree_phd})
 	\begin{figure}[h]
 	\begin{center}
 		\includegraphics[width=0.502\textwidth]{../figures/strand_types/linear.pdf} % {šířka v mm}/370 je to původně
@@ -156,7 +155,7 @@
 \subsection{Bezkontextové jazyky}
 \begin{frame}
 \frametitle{Souvislost s Chomského hierarchií}
-	Stromové struktury $\leftrightarrow$ bezkontextové jazyky (E. Winfree \cite{winfree_phd})
+	Stromové struktury $\leftrightarrow$ bezkontextové jazyky (Winfree \cite{winfree_phd})
 	\begin{figure}[h]
 	\begin{center}
 		\includegraphics[width=0.502\textwidth]{../figures/strand_types/dendrimer.pdf} % {šířka v mm}/370 je to původně
@@ -168,14 +167,13 @@
 \subsection{Turingova univerzalita}
 \begin{frame}
 \frametitle{Souvislost s Chomského hierarchií}
-	Dvojkřížené molekuly $\leftrightarrow$ Turingův stroj (TS) (E. Winfree \cite{winfree_phd})
+	Dvojkřížené molekuly $\leftrightarrow$ Turingův stroj (TS) (Winfree \cite{winfree_phd})
 	\begin{figure}[h]
 	\begin{center}
 		\includegraphics[width=0.502\textwidth]{../figures/strand_types/double_crossover.pdf} % {šířka v mm}/370 je to původně
-		\caption{Dvojkřížená molekula.}
+		\caption{Dvojkřížená molekula, velmi stabilní (Seeman, Fu \cite{seeman93}).}
 	\end{center}
 	\end{figure}
-	Předpoklady budou upřesněny v abstraktním modelu.
 \end{frame}
 
 \section{Modely založené na Wangovo dláždění}
@@ -185,8 +183,8 @@
 	Čtvercové dláždění roviny (její části), kde
 	\begin{itemize}
 		\item dlaždice mají na hranách barvu z konečné množiny barev (lepidel)
-		\item máme-li fond, dlaždicemi je zakázáno rotovat nebo je překlápět
-		\item soudedit smí pouze dlaždice se stejnou barvou na společné hraně
+		\item jsou orientované (zakázáno rotovat nebo překlápět)
+		\item sousedit smí pouze dlaždice se stejnou barvou na společné hraně
 	\end{itemize}
 	\begin{figure}[h]
 	\begin{center}
@@ -202,7 +200,7 @@
 	Rothemund, Winfree rozšířili definici
 	\begin{itemize}
 		\item každé lepidlo má přidružené přirozené číslo -- síla lepidla
-		\item existuje prázdné lepidlo se silou 0, které smí soudedit se všemi
+		\item existuje prázdné lepidlo se silou 0, které smí sousedit se všemi
 		\item dláždění se utváří
 		\begin{itemize}
 			\item z iniciální dlaždice
@@ -217,7 +215,7 @@
 \frametitle{Studované složitosti I}
 	Biostep complexity $Bs(n)$
 	\begin{itemize}
-		\item počet laboratorních procedur
+		\item počet laboratorních procedur (popsané v Adleman \cite{adleman95biostep}, Winfree \cite{winfree_phd})
 		\item jedna trvá až desítky minut
 		\item za proveditelné budeme uvažovat pouze $Bs(n) \in O(1)$
 	\end{itemize}
@@ -242,6 +240,7 @@
 		\item počet různých lepidel -- sekvencí
 		\item příliš dlouhé se mohou vázat chybně -- proveditelné $Gl(n)$ polynomiální
 	\end{itemize}
+	\pause
 	\begin{lemma}
 		\begin{enumerate}
 			\item $Ti(n) \leq Gl^4(n)$,
@@ -250,9 +249,9 @@
 	\end{lemma}
 \end{frame}
 
-\subsection{Výpočetní síla}
+\subsection{Výpočetní síla $\atam$u}
 \begin{frame}
-\frametitle{Výpočetní síla}
+\frametitle{Výpočetní síla $\atam$u}
 	$\atam$ je Turingovsky univerzální (TU)
 	\begin{itemize}
 		\item ve 2D při teplotě $\tau=2$, Winfree \cite{winfree_phd}
@@ -274,33 +273,18 @@
 	\begin{itemize}
 		\item přímočarý
 		\item včetně odhadů studovaných složitostí v závislosti na čase a prostoru spotřebovaným simulovaným TS
+		\item v práci str. 15-16
 	\end{itemize}
-\end{frame}
-
-\begin{frame}[plain]
-	\begin{figure}[h]
-	\begin{center}
-		\includegraphics[width=0.7\textwidth]{../figures/turing_tiles/out1-1.pdf} % {šířka v mm}/370 je to původně
-	\end{center}
-	\end{figure}
-\end{frame}
-
-\begin{frame}[plain]
-	\begin{figure}[h]
-	\begin{center}
-		\includegraphics[width=0.7\textwidth]{../figures/turing_tiles/out2-1.pdf} % {šířka v mm}/370 je to původně
-	\end{center}
-	\end{figure}
 \end{frame}
 
 \subsection{Meze studovaných složitostí}
 \begin{frame}
 \frametitle{Meze studovaných složitostí}
 	\begin{lemma}
-		Studované složitosti v tomto systému jsou omezené jak následuje:
+		Studované složitosti v tomto systému jsou omezené:
 		\begin{description}
 			\item[Biostep.] $Bs(n) \in O(1)$.
-			\item[Binding.] $Bnd(n) \in O\bigl(s(n)\cdot t(n)\bigr)$, kde $t(n)$ stojí za čas a $s(n)$ za prostor spotřebovaný simulovaným TS.
+			\item[Binding.] $Bnd(n) \in O\bigl(s(n)\cdot t(n)\bigr)$, kde $t(n)$ je čas a $s(n)$ prostor spotřebovaný simulovaným TS.
 			\item[Tile.] $Ti(n) \in O(n)$.
 			\item[Glue.] $Gl(n) \in O(n)$.
 		\end{description}
@@ -309,19 +293,12 @@
 
 \subsection{Důsledky}
 \begin{frame}
-\frametitle{Zachování tříd složitosti}
-	\begin{dusl}
-		Ve 2D při $\tau=2$ se za použití přísušného modelu (determ., nedeterm. nebo pravď.) zachovají složitostní třídy odolné k polynomiálnímu zpomalení pro všechny studované složitosti (tj. $\P$, $\ZPP$, $\RP$, $\BPP$, $\NP$, \ldots).
-		
-		Navíc, biostep complexity zůstane v $O(1)$.
-	\end{dusl}
-\end{frame}
-
-\begin{frame}
 \frametitle{Proveditelnost $\BPP$ ve 2D při $\tau=2$}
-	$\BPP$ se považuje za proveditelnou na TS, z předchozího důsledku (zachování tříd a $Bs(n)\in O(1)$) pak plyne:
+	$\BPP$ je třída jazyků rozhodnutelných pravděpodobnostním Turingovým strojem (PTS) v~polynomiálním čase, považuje se za proveditelnou\\
+	~\\
+	Z~předchozího lemmatu plyne:
 	\begin{dusl}
-		$\BPP$ je proveditelná  ve 2D při $\tau=2$.
+		$\BPP$ je proveditelná v modelu $\atam$ ve 2D při $\tau=2$.
 	\end{dusl}
 	\begin{pozn}
 		$\P$, $\ZPP$, $\RP$, $\coRP \subseteq \BPP$.
@@ -331,7 +308,7 @@
 \section{Návrh řešení $\NP$ problémů}
 \subsection{Přizpůsobení modelu $\NP$}
 \begin{frame}
-\frametitle{Přizpůsobení $\atam$u}
+\frametitle{Přizpůsobení $\atam$u řešení $\NP$ problémů}
 	Odvozen z Winfreeho ukázky řešení problému Hamiltonovské cesty -- avšak srozumitelnější
 	\begin{itemize}
 		\item $\tau=2$
@@ -367,11 +344,11 @@
 \subsection{Problém $k$-kliky}
 \begin{frame}
 \frametitle{Problém $k$-kliky}
-	$\NPC$ problém, $Bnd \sim \nicefrac{5}{4}k^2$, $Ti \sim 2k^2e + 3kn$, $Gl \sim kn$.
+	$\NP$-úplný problém, $Bnd \sim \nicefrac{5}{4}k^2$, $Ti \sim 2k^2e + 3kn$, $Gl \sim kn$.
 	\begin{figure}[h]
 	\begin{center}
 		\includegraphics[scale=0.6]{../figures/k-clique/k-clique.pdf}
-		\caption{Nalezení $k$-kliky. Pořadí barev je dáno jejich vlnovou délkou.}
+		\caption{Nalezení $k$-kliky. Řazení barev je dáno jejich vlnovou délkou.}
 	\end{center}
 	\end{figure}
 \end{frame}
@@ -381,17 +358,9 @@
 \frametitle{Simulace v $\tt xgrow$}
 	$\tt xgrow$ je open-source simulátor jak kinetických tak abstraktních modelů.
 	\begin{itemize}
-		\item skriptem k zadanému grafu generuji potřebné dlaždice
+		\item skriptem (na CD) k zadanému grafu generuji potřebné dlaždice
 		\item se zapnutím kinetiky není jednoduché dosáhnout bezchybného dláždění
 	\end{itemize}
-\end{frame}
-
-\begin{frame}[plain]
-	\begin{figure}[h]
-	\begin{center}
-		\includegraphics[scale=0.45]{../figures/xgrow/xgrow.png}
-	\end{center}
-	\end{figure}
 \end{frame}
 
 \subsection{Další vyřešené problémy}
@@ -399,25 +368,16 @@
 \frametitle{Další vyřešené problémy}
 	$3$-obarvení grafu
 	\begin{itemize}
-		\item $\NPC$ problém
+		\item $\NP$-úplný problém
 	\end{itemize}
 	Grafový izomorfizmus
 	\begin{itemize}
-		\item je domníváno, že není $\NPC$
+		\item domnívá se, že není $\NP$-úplný
 	\end{itemize}
 \end{frame}
 
-\begin{frame}[plain]
-	~\\$Bnd \sim \nicefrac{5}{4}n^2$, $Ti \sim 8e^2 - 4en^2 + n^4$, $Gl \sim n^2$.
-	\begin{figure}[h]
-	\begin{center}
-		\includegraphics[scale=0.52]{../figures/isomorphism/isomorphism.pdf}
-	\end{center}
-	\end{figure}
-\end{frame}
-
 \section*{Reference}
-\begin{frame}
+\begin{frame}[allowframebreaks=0.95]
 \frametitle{Reference}
 	\bibliography{../biblio}{}
 	\bibliographystyle{plain}
