@@ -126,9 +126,9 @@
 	\pause
 	Nevýhody
 	\begin{itemize}
-		\item na $10^{18}$ operací stačí hrubá síla (řádově dny na clusteru s tisíci jader)
 		\item pravděpodobnostní povaha
 		\item chybovost
+		\item na $10^{18}$ operací stačí hrubá síla (řádově dny na clusteru s tisíci jader)
 	\end{itemize}
 	\pause
 	Pole studia
@@ -139,35 +139,11 @@
 \end{frame}
 
 \section{DNA vs. Chomského hierarchie}
-\subsection{Regulární jazyky}
 \begin{frame}
-\frametitle{Souvislost s Chomského hierarchií}
-	Lineární vlákna $\leftrightarrow$ regulární jazyky (Winfree \cite{winfree_phd})
-	\begin{figure}[h]
-	\begin{center}
-		\includegraphics[width=0.502\textwidth]{../figures/strand_types/linear.pdf} % {šířka v mm}/370 je to původně
-		\caption{Vlákno pro iniciální symbol $I$ a vlákno pro pravidlo $A\rightarrow bB$.}
-	\end{center}
-	\end{figure}
-	$\overline{B}$ značí Watson-Crick komplementární sekvenci k $B$ ($A \leftrightarrow T$, $C \leftrightarrow G$)
-\end{frame}
-
-\subsection{Bezkontextové jazyky}
-\begin{frame}
-\frametitle{Souvislost s Chomského hierarchií}
-	Stromové struktury $\leftrightarrow$ bezkontextové jazyky (Winfree \cite{winfree_phd})
-	\begin{figure}[h]
-	\begin{center}
-		\includegraphics[width=0.502\textwidth]{../figures/strand_types/dendrimer.pdf} % {šířka v mm}/370 je to původně
-		\caption{Struktura odpovídající pravidlu $A\rightarrow aBbC$.}
-	\end{center}
-	\end{figure}
-\end{frame}
-
-\subsection{Turingova univerzalita}
-\begin{frame}
-\frametitle{Souvislost s Chomského hierarchií}
-	Dvojkřížené molekuly $\leftrightarrow$ Turingův stroj (TS) (Winfree \cite{winfree_phd})
+\frametitle{Souvislost s Chomského hierarchií (Winfree \cite{winfree_phd})}
+	Lineární vlákna $\leftrightarrow$ regulární jazyky\\~\\
+	Větvená vlákna $\leftrightarrow$ bezkontextové jazyky\\~\\
+	Dvojkřížené molekuly $\leftrightarrow$ Turingův stroj (TS)
 	\begin{figure}[h]
 	\begin{center}
 		\includegraphics[width=0.502\textwidth]{../figures/strand_types/double_crossover.pdf} % {šířka v mm}/370 je to původně
@@ -222,8 +198,6 @@
 	Binding complexity $Bnd(n)$
 	\begin{itemize}
 		\item počet vazeb v koncovém dláždění
-		\item v nedeterministickém případě uvažujeme nejmenší přijímací
-		\item v pravděpodobnostním případě uvažujeme střední hodnotu
 		\item kvůli rostoucí psti chyby -- proveditelné $Bnd(n)$ polynomiální
 	\end{itemize}
 \end{frame}
@@ -238,7 +212,7 @@
 	Glue complexity $Gl(n)$
 	\begin{itemize}
 		\item počet různých lepidel -- sekvencí
-		\item příliš dlouhé se mohou vázat chybně -- proveditelné $Gl(n)$ polynomiální
+		\item dlouhé se mohou vázat chybně -- proveditelné $Gl(n)$ polynomiální
 	\end{itemize}
 	\pause
 	\begin{lemma}
@@ -249,30 +223,19 @@
 	\end{lemma}
 \end{frame}
 
-\subsection{Výpočetní síla $\atam$u}
+\subsection{Turingovská univerzalita $\atam$u}
 \begin{frame}
-\frametitle{Výpočetní síla $\atam$u}
-	$\atam$ je Turingovsky univerzální (TU)
+\frametitle{Turingovská univerzalita $\atam$u}
+	\begin{tvr}[Winfree \cite{winfree_phd}]
+		$\atam$ je při teplotě $\tau=2$ Turingovsky univerzální (TU).
+	\end{tvr}
 	\begin{itemize}
-		\item ve 2D při teplotě $\tau=2$, Winfree \cite{winfree_phd}
-		\item ve 3D při teplotě $\tau=1$, Cook \cite{cook_temp1}
+		\item důkaz převodem na celulární automat
+		\item nezjistím nic o spotřebě zdrojů
 	\end{itemize}
-	Neví se ve 2D při teplotě $\tau=1$
-	\begin{itemize}
-		\item existují modifikace $\atam$u, které jsou TU
-	\end{itemize}
-	Důkaz TU ve 2D při teplotě $\tau=2$ -- převod na celulární automat
-	\begin{itemize}
-		\item neříká nic o spotřebě zdrojů
-	\end{itemize}
-\end{frame}
-
-\subsection{Jiný důkaz TU}
-\begin{frame}
-\frametitle{Důkaz TU ve 2D při $\tau=2$}
+	Vlastní důkaz
 	\begin{itemize}
 		\item přímočarý
-		\item včetně odhadů studovaných složitostí v závislosti na čase a prostoru spotřebovaným simulovaným TS
 		\item v práci str. 15-16
 	\end{itemize}
 \end{frame}
