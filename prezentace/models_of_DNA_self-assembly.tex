@@ -105,7 +105,7 @@
 %~ \tableofcontents[currentsection,currentsubsection,hideothersubsections,sectionstyle=show/shaded,]
 %~ \end{frame}
 
-%~ \section{Úvod}
+\section{Úvod}
 %~ \begin{frame}
 %~ \frametitle{Úvod}
 	%~ První experiment s DNA -- L. Adleman, 1994, \cite{adleman94}
@@ -138,19 +138,19 @@
 	\end{itemize}
 \end{frame}
 
-\section{DNA vs. Chomského hierarchie}
-\begin{frame}
-\frametitle{Souvislost s Chomského hierarchií (Winfree \cite{winfree_phd})}
-	Lineární vlákna $\leftrightarrow$ regulární jazyky\\~\\
-	Větvená vlákna $\leftrightarrow$ bezkontextové jazyky\\~\\
-	Dvojkřížené molekuly $\leftrightarrow$ Turingův stroj (TS)
-	\begin{figure}[h]
-	\begin{center}
-		\includegraphics[width=0.502\textwidth]{../figures/strand_types/double_crossover.pdf} % {šířka v mm}/370 je to původně
-		\caption{Dvojkřížená molekula, velmi stabilní (Seeman, Fu \cite{seeman93}).}
-	\end{center}
-	\end{figure}
-\end{frame}
+%~ \section{DNA vs. Chomského hierarchie}
+%~ \begin{frame}
+%~ \frametitle{Souvislost s Chomského hierarchií (Winfree \cite{winfree_phd})}
+	%~ Lineární vlákna $\leftrightarrow$ regulární jazyky\\~\\
+	%~ Větvená vlákna $\leftrightarrow$ bezkontextové jazyky\\~\\
+	%~ Dvojkřížené molekuly $\leftrightarrow$ Turingův stroj (TS)
+	%~ \begin{figure}[h]
+	%~ \begin{center}
+		%~ \includegraphics[width=0.502\textwidth]{../figures/strand_types/double_crossover.pdf} % {šířka v mm}/370 je to původně
+		%~ \caption{Dvojkřížená molekula, velmi stabilní (Seeman, Fu \cite{seeman93}).}
+	%~ \end{center}
+	%~ \end{figure}
+%~ \end{frame}
 
 \section{Modely založené na Wangovo dláždění}
 \subsection{Wangovo dláždění}
@@ -214,7 +214,7 @@
 		\item počet různých lepidel -- sekvencí
 		\item dlouhé se mohou vázat chybně -- proveditelné $Gl(n)$ polynomiální
 	\end{itemize}
-	\pause
+	%~ \pause
 	%~ \begin{lemma}
 		%~ \begin{enumerate}
 			%~ \item $Ti(n) \leq Gl^4(n)$,
@@ -264,7 +264,7 @@
 		$\BPP$ je proveditelná v modelu $\atam$ ve 2D při $\tau=2$.
 	\end{dusl}
 	\begin{pozn}
-		$\P$, $\ZPP$, $\RP$, $\coRP \subseteq \BPP$.
+		$\P \subseteq \BPP$.
 	\end{pozn}
 \end{frame}
 
@@ -276,7 +276,7 @@
 	\begin{itemize}
 		\item $\tau=2$
 		\item $5$ dalších typů dlaždic včetně daných sil lepidel
-		\item pevně nastavená počáteční $t_0$
+		\item pevně nastavená počáteční dlaždice
 	\end{itemize}
 	\begin{pozn}
 		Tento model lze snadno simulovat klasickým $\atam$em.
@@ -323,19 +323,6 @@
 	\begin{itemize}
 		\item skriptem (na CD) k zadanému grafu generuji potřebné dlaždice
 		\item se zapnutím kinetiky není jednoduché dosáhnout bezchybného dláždění
-	\end{itemize}
-\end{frame}
-
-\subsection{Další vyřešené problémy}
-\begin{frame}
-\frametitle{Další vyřešené problémy}
-	$3$-obarvení grafu
-	\begin{itemize}
-		\item $\NP$-úplný problém
-	\end{itemize}
-	Grafový izomorfizmus
-	\begin{itemize}
-		\item domnívá se, že není $\NP$-úplný
 	\end{itemize}
 \end{frame}
 
