@@ -172,7 +172,7 @@
 
 \subsection{$\atam$}
 \begin{frame}
-\frametitle{$\atam$}
+\frametitle{$\atam$ (Abstract Tile Assembly Model)}
 	Rothemund, Winfree rozšířili definici
 	\begin{itemize}
 		\item každé lepidlo má přidružené přirozené číslo -- síla lepidla
@@ -273,17 +273,13 @@
 \begin{frame}
 \frametitle{Přizpůsobení $\atam$u řešení $\NP$ problémů}
 	Odvozen z Winfreeho ukázky řešení problému Hamiltonovské cesty
-	\begin{itemize}
-		\item $\tau=2$
-		\item $5$ dalších typů dlaždic včetně daných sil lepidel
-		\item pevně nastavená počáteční dlaždice
-	\end{itemize}
 	\begin{pozn}
 		Tento model lze snadno simulovat klasickým $\atam$em.
 	\end{pozn}
 \end{frame}
 
 \begin{frame}
+\frametitle{Přizpůsobení $\atam$u řešení $\NP$ problémů}
 	\begin{figure}[H]
 	\begin{center}
 		\begin{subfigure}[b]{0.33\textwidth}
@@ -298,7 +294,7 @@
 			\includegraphics[width=\textwidth]{../figures/tile_model/abstract_model.pdf} % 70mm
 			\caption{Model}
 		\end{subfigure}
-		\caption{Evoluce modelu od molekul k dlaždicím. Zde lepidla {\sf A}, {\sf B}, {\sf G} a {\sf J} mají sílu $2$, všechna ostatní mají sílu $1$.}
+		\caption{Evoluce modelu od molekul k dlaždicím.}
 		\label{fig:evolution}
 	\end{center}
 	\end{figure}
@@ -307,7 +303,7 @@
 \subsection{Problém $k$-kliky}
 \begin{frame}
 \frametitle{Problém $k$-kliky}
-	$\NP$-úplný problém, $Bnd \sim \nicefrac{5}{4}k^2$, $Ti \sim 2k^2e + 3kn$, $Gl \sim kn$.
+	$\NP$-úplný problém
 	\begin{figure}[h]
 	\begin{center}
 		\includegraphics[scale=0.6]{../figures/k-clique/k-clique.pdf}
